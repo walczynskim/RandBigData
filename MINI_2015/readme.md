@@ -14,6 +14,17 @@ Web based data products
 * shiny + REST + Rserve
 
 
+[web scraping]
+
+http://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/
+http://www.r-bloggers.com/web-scraping-the-basics/
+
+Twitter
+http://cran.r-project.org/web/packages/twitteR/index.html
+
+Facebook
+http://pablobarbera.com/blog/archives/3.html
+
 [addon]
 
 R dla HPC:
