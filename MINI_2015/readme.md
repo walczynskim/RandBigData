@@ -31,6 +31,10 @@ Zrównoleglanie
 http://www.nimbios.org/ifiles/hpc/4_parallelism.pdf
 
 
+[peer review - performance]
+
+
+
 Materia&#322;y:
 ---------------
 
