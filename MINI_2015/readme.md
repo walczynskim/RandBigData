@@ -14,6 +14,22 @@ Web based data products
 * shiny + REST + Rserve
 
 
+[addon]
+
+R dla HPC:
+http://www.nimbios.org/tutorials/TT_RforHPC
+http://www.nimbios.org/ifiles/hpc/hpcR.pdf
+
+Debugowaniw benchamrk profilowanie:
+http://www.nimbios.org/ifiles/hpc/1_basics.pdf
+http://www.nimbios.org/ifiles/hpc/2_performance.pdf
+
+Rcpp
+http://www.nimbios.org/ifiles/hpc/3_compiled.pdf
+
+Zrównoleglanie
+http://www.nimbios.org/ifiles/hpc/4_parallelism.pdf
+
 
 Materia&#322;y:
 ---------------
