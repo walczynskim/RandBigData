@@ -1,6 +1,21 @@
 Zakres:
 -------
 
+Motto: 
+50% narzędzi o których myślałem w grudniu układając sylabs będzie przestarzała gdy w czerwcu będziemy kończyć zajęcia. 
+Nie dlatego, że narzędzia są źle wybrane, ale dlatego że tak szybko się rozwijają.
+
+Dlatego celem tych zajęć nie jest poznanie żadnego konkrentego języka, narzędzia czy techniki, ale:
+
+1. zaznajomienie się z problemami, które generuje praca z dużymi danymi,
+2. zaznajomienie się z podejściami do rozwiązywania tych problemów,
+3. wykształcenie umiejętności ciągłego wyszukiwania rozwiązań dla pojawiających się problemów,
+4. krytycznego patrzenia na własne rozwiązania,
+5. uczenia się z rozwiązań innych.
+
+Sylabus
+
+
 Dostęp i przetwarzanie dużych zbiorów danych
 * Praca z pakietami tidyr + dplyr + in database [SQL]
 * web scraping
