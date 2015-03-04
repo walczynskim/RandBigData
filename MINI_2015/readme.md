@@ -1,76 +1,73 @@
 Zakres:
 -------
 
-Motto: 
+# Motto
+
 50% narzędzi o których myślałem w grudniu układając sylabs będzie przestarzała gdy w czerwcu będziemy kończyć zajęcia. 
 Nie dlatego, że narzędzia są źle wybrane, ale dlatego że tak szybko się rozwijają.
 
 Dlatego celem tych zajęć nie jest poznanie żadnego konkrentego języka, narzędzia czy techniki, ale:
 
-1. zaznajomienie się z problemami, które generuje praca z dużymi danymi,
+1. zaznajomienie się z problemami, które pojawiają się przy pracy z dużymi danymi,
 2. zaznajomienie się z podejściami do rozwiązywania tych problemów,
 3. wykształcenie umiejętności ciągłego wyszukiwania rozwiązań dla pojawiających się problemów,
 4. krytycznego patrzenia na własne rozwiązania,
 5. uczenia się z rozwiązań innych.
 
-Sylabus
 
+
+# Punkt wyjścia
+
+Pomysł na zajęcia bazuje silnie na doświadczeniach z Data School
+http://www.dataschool.io/teaching-data-science/#usingvideosasteachingtools
+
+Być może nie wszystkie pomysły tam przedstawione są dobre, to właśnie sprawdzimy.
+
+
+
+# Sylabus
 
 Dostęp i przetwarzanie dużych zbiorów danych
-* Praca z pakietami tidyr + dplyr + in database [SQL]
-* web scraping
+* Web scraping [2 spotkania ]
+* Praca z pakietami tidyr + dplyr [2 spotkania] 
+* Praca z SQL i bazami danych [1 spotkanie]
 
 Obliczenia równoległe / masywne
-* Praca z klastrami obliczeniowymi HPC 
-* hadoop/spark
+* Równoległe uruchamianie zadań na domowym komputerze [1 spotkanie]
+* profilowanie i debugowanie kodu [1 spotkanie]
+* Praca z klastrami obliczeniowymi HPC [2 spotkania]
+* Praca z hadoop/spark [1 spotkanie]
 
 Web based data products
-* Praca z pakietami 
-* shiny + REST + Rserve
-
-
-[web scraping]
-
-http://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/
-http://www.r-bloggers.com/web-scraping-the-basics/
-
-Twitter
-http://cran.r-project.org/web/packages/twitteR/index.html
-
-Facebook
-http://pablobarbera.com/blog/archives/3.html
-
-[addon]
-
-R dla HPC:
-http://www.nimbios.org/tutorials/TT_RforHPC
-http://www.nimbios.org/ifiles/hpc/hpcR.pdf
-
-Debugowaniw benchamrk profilowanie:
-http://www.nimbios.org/ifiles/hpc/1_basics.pdf
-http://www.nimbios.org/ifiles/hpc/2_performance.pdf
-
-Rcpp
-http://www.nimbios.org/ifiles/hpc/3_compiled.pdf
-
-Zrównoleglanie
-http://www.nimbios.org/ifiles/hpc/4_parallelism.pdf
-
-
-[peer review - performance]
+* Tworzenie pakietów [1 spotkanie]
+* OpenCPU i serwer REST [2 spotkania]
+* Shiny [2 spotkania]
 
 
 
 Materia&#322;y:
 ---------------
 
-Doświadczenia z Data School
-http://www.dataschool.io/teaching-data-science/#usingvideosasteachingtools
-
 
 
 Plan spotka&#324; MINI PW:
 -------------------------
+
+* 26 II - nie było zajęć, BigDataTech
+* 5 III
+* 12 III
+* 19 III
+* 26 III
+* 9 IV 
+* 16 IV
+* 23 IV
+* 30 IV
+* 7 V
+* 14 V
+* 21 V
+* 28 V
+* 11 VI
+
 
 Projekty:
 ---------
