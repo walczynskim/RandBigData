@@ -73,6 +73,7 @@ Projekty:
 ---------
 
 Projekty mogą być realizowane w grupach od 2 do 4 osób. Te same osoby nie mogą razem uczestniczyć w obu projektach.
+Projekty będą przedstawiane na zajęciach (terminy wypisane powyżej). Należy je zgłosić przez GitHuba przed prezentacją. Projekty, które nie będą zaprezentowane nie zostaną ocenione.
 
 1. Projekt 'Wybory'
 
@@ -104,5 +105,5 @@ Ocena ko&#324;cowa zale&#380;e&#263; b&#281;dzie od sumy ocen cz&#261;stkowych z
 
 Prace domowe:
 -------------
-Cz&#281;&#347;&#263; wyk&#322;adów ko&#324;czy&#263; si&#281; b&#281;dzie zadaniem domowym. Samodzielne wykonanie zadania domowego i przes&#322;anie rozwi&#261;zania w ci&#261;gu tygodnia od daty og&#322;oszenia mailem z tematem rozpoczynaj&#261;cym si&#281; od znacznika _[Praca Domowa]_ to zysk 4 punktów.
+Cz&#281;&#347;&#263; wyk&#322;adów ko&#324;czy&#263; si&#281; b&#281;dzie zadaniem domowym. Samodzielne wykonanie zadania domowego i przes&#322;anie przez GitHuba to zysk 4 punktów.
 
