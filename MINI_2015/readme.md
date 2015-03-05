@@ -8,8 +8,8 @@ Nie dlatego, że narzędzia są źle wybrane, ale dlatego że tak szybko się ro
 
 Dlatego celem tych zajęć nie jest poznanie żadnego konkrentego języka, narzędzia czy techniki, ale:
 
-1. zaznajomienie się z problemami, które pojawiają się przy pracy z dużymi danymi,
-2. zaznajomienie się z podejściami do rozwiązywania tych problemów,
+1. poznanie problemów, które pojawiają się przy pracy z dużymi danymi,
+2. poznanie podejść do rozwiązywania tych problemów,
 3. wykształcenie umiejętności ciągłego wyszukiwania rozwiązań dla pojawiających się problemów,
 4. krytycznego patrzenia na własne rozwiązania,
 5. uczenia się z rozwiązań innych.
