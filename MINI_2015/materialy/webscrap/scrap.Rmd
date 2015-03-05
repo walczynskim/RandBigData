@@ -1,0 +1,273 @@
+---
+title: "Pobieranie danych z Internetu"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Intro
+
+Duże dane najczęściej są generowane strumieniowo, przykładowo:
+
+* wielkie maszyny w kopalniach z setkami czujników, monitorujących ich działanie (predictive maintenance),
+* monitoring transakcji bankowych (fraud detection),
+* dane z serwisów społecznościowych,
+* logi ruchu sieciowego,
+* scapping stron internetowych,
+* i wiele innych.
+
+# Intro
+
+Dostęp do tych danych jest możliwy na różne sposoby, trzy najczęstsze to:
+
+* dostęp do plików tekstowych lub bazy danych z danymi, 
+* dostęp zapewniony przez dostawcę danych: API (Application Programming Onterface), często typu REST (Representational State Transfer),
+* zbieranie skrawków danych na własną rękę, jeżeli dane są publicznie dostępne ale nie są w strukturze łatwej do dalszego przetwarzania.
+
+Dziś i za tydzień omówimy przykłady obu sposobów na pozyskanie danych.
+
+# Bezpośrednie odczytanie danych z Internetu
+
+Dane są dostępne w Internecie w strukturze tabelarycznej nie wymagającej dalszego przetwarzania.
+
+```{r, warning=FALSE, message=FALSE}
+# Ranking uczelni według Polityki
+dane <- read.table("http://tofesi.mimuw.edu.pl/~cogito/smarterpoland/rankingUczelni2011/RankingUczelni2011.csv", 
+                   sep=";", skip=1, header=TRUE)
+head(dane)
+```
+
+# Bezpośrednie odczytanie danych z Internetu
+
+Dane nie mają struktury i takimi je chcemy odczytać.
+
+```{r, warning=FALSE, message=FALSE}
+# http://www.gutenberg.org/ebooks/103
+# http://www.gutenberg.org/cache/epub/103/pg103.txt
+
+# W 80 dni dookoła świata
+w80dni <- readLines("http://www.gutenberg.org/cache/epub/103/pg103.txt")
+
+# Kilka pierwszych linii
+head(w80dni)
+# rozbicie linii na słowa
+slowa <- unlist(strsplit(w80dni, split="[^A-Za-z0-9]+"))
+# liczba słów i charakterystyki
+length(slowa)
+barplot(table(nchar(slowa)))
+head(sort(table(slowa), decreasing = TRUE), 20)
+```
+
+# Parsowanie strony HTML
+
+Dane mają strukturę ale aby je wyłuskać wymaga to trochę pracy
+[i znajomosci wyrażeń regularnych]
+
+```{r, warning=FALSE, message=FALSE}
+# Odczytanie treści strony www
+html <- readLines("http://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_pi%C5%82ce_no%C5%BCnej")
+html <- paste(html, collapse="")
+
+# Wydzieramy dane łyżeczką
+tmp1 <- strsplit(html, split="Reprezentacja Polski w Rankingu FIFA")[[1]][5]
+tmp2 <- strsplit(tmp1, split="najlepsze miejsce")[[1]][1]
+tmp3 <- strsplit(tmp2, split="<[^>]+>")[[1]]
+wartosci <- na.omit(as.numeric(tmp3))
+
+# i rysunek pozycji reprezentajci Polski w rankingu FIFA
+barplot(wartosci[wartosci < 1000], las=1, col="black")
+```
+
+# Parsowanie stroni HTML z użyciem pakietu XML
+
+Aby nie parsować strony HTML ręcznie za każdym razem dostępnych jest wiele narzędzi, robiących parsowanie za nas.
+
+Pakiet `XML` zawiera funkcję `readHTMLTable()` wyszukującą wszystkie tabele oraz konwertującą je do ramek danych w R.
+
+```{r, warning=FALSE, message=FALSE}
+# http://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_pi%C5%82ce_no%C5%BCnej
+library(XML)
+html <- "http://pl.wikipedia.org/wiki/Reprezentacja_Polski_w_pi%C5%82ce_no%C5%BCnej"
+tabele <- readHTMLTable(html, stringsAsFactors = FALSE)
+# Tabel jest dużo, a ta której szukamy jest akurat 19
+zwyciestwa <- tabele[[19]]
+
+library(dplyr)
+zwyciestwa$ProcentZwyciestw <- as.numeric(as.character(zwyciestwa[,2])) /
+                                 as.numeric(as.character(zwyciestwa[,5]))
+arrange(zwyciestwa, ProcentZwyciestw)
+```
+
+# Parsowanie stroni HTML z pakietem rvest
+
+Jeżeli dane nie są w postaci tabelarycznej, bardzo wygodną biblioteką do pracy z danymi jest `rvest`.
+
+Użyteczne funkcje:
+
+- html - tworzy strukturę drzewiastą html
+- html_nodes - wyszukuje węzły w drzewie pasujące do określonego wzorca
+- html_text, html_tag, html_attrs - wyciąga treść lub atrybuty węzłów html.
+
+```{r, warning=FALSE, message=FALSE}
+library(rvest)
+gazeta <- html("http://gazeta.pl")
+cast <- html_nodes(gazeta, "span.title")
+html_text(cast)
+```
+
+# Jak znajdować uchwyty CSS
+
+Używając gadgetSeelctor można łatwo określić ścieżkę wyszukiwania w drzewie html.
+
+```{r, warning=FALSE, message=FALSE}
+oskary <- html("http://www.filmweb.pl/oscary")
+filmy <- html_nodes(oskary, "#awardYearList .sep-comma a")
+html_text(filmy)
+```
+
+Pakiet `rvest` pozwala też na parsowanie tabel oraz na obsługę formularzy, sesji i śledzenie linków.
+
+```{r, warning=FALSE, message=FALSE}
+lego_movie <- html("http://www.imdb.com/title/tt1490017/")
+
+htab <- html_nodes(lego_movie, "table")[[3]]
+html_table(htab)
+```
+
+# API bez autoryzacji
+
+Fundacja MojePanstwo udostępnia API dzieki któremu można automatycznie pobrać dane w formacie JSON.
+
+Między innymi udostępnia kopię Banku Danych Lokalnych. Poleceniem `search` można wyszukiwać tabele z odpowiednimi danymi.
+
+http://api.mojepanstwo.pl/bdl/search?q=bezrobocie
+
+```{r, warning=FALSE, message=FALSE}
+url <- 'http://api.mojepanstwo.pl/bdl/search?q=bezrobocie'
+document <- rjson::fromJSON(file=url, method='C')
+
+tematy <- sapply(document, function(x) x$data$bdl_wskazniki.tytul)
+kody <- sapply(document, function(x) x$data$bdl_wskazniki.id)
+cbind(tematy, kody)
+```
+
+# API bez autoryzacji
+
+Poleceniem `series` można pobierać dane o określonej serii danych.
+
+http://api.mojepanstwo.pl/bdl/series?metric_id=776
+
+```{r, warning=FALSE, message=FALSE}
+url <- "http://api.mojepanstwo.pl/bdl/series?metric_id=776"
+document <- rjson::fromJSON(file=url, method='C')
+
+lista <- document[[1]][[1]]$series
+vrok <- sapply(lista, function(x) x$year)
+vwal <- sapply(lista, function(x) x$value)
+cbind(vrok, vwal)
+
+library(ggplot2)
+qplot(as.numeric(vrok), as.numeric(vwal), geom="line")
+```
+
+# Streaming API dla Twittera
+
+Aby korzystać z API Twittera potrzebujemy aplikacji, która autoryzuje się z Twitterem
+https://dev.twitter.com/apps/new  
+
+Pakiet `streamR` umożliwia nasłuch danych z Twittera.
+Kilka interesujących funkcji:
+
+* filterStream - wybiera tweety spełniające określone warunki (lokalizacja, język, słowa kluczowe)
+* userStream - pobiera dane od określonego użytkownika
+* parseTweets - zamienia dane z pliku JSON do ramki danych data frame
+
+```{r, eval=FALSE}
+# API dla strumienia, nasłuchuje czy określone tweety się pojawiły
+library(streamR)
+library(ROAuth)
+requestURL <- "https://api.twitter.com/oauth/request_token"
+accessURL <- "https://api.twitter.com/oauth/access_token"
+authURL <- "https://api.twitter.com/oauth/authorize"
+consumerKey <- "XXXXXXXXXXXXXXXXX"
+consumerSecret <- "XXXXXXXXXXXXXXXXX"
+oauthKey <- "XXXXXXXXXXXXXXXXX"
+oauthSecret <- "XXXXXXXXXXXXXXXXX"
+
+# proces autoryzacji jest trzykrokowy
+paczka <- OAuthFactory$new(consumerKey = consumerKey, consumerSecret = consumerSecret, 
+    oauthKey = oauthKey, oauthSecret = oauthSecret,
+    requestURL = requestURL, accessURL = accessURL, authURL = authURL)
+
+paczka$handshake(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+
+# zapiszemy dane tymczasowe do katalogu tmp
+setwd("~/tmp")
+
+# nasłuch przez około 5 minut
+# wszystkie z geotagiem LUB zawierające słowa klucze
+filterStream( file="ukraine.json", 
+              track=c("ukraina","ukraine","krym", "crime","russia","rosja"), 
+              timeout=30*60, oauth=paczka, 
+              locations=c(-180,-90,180,90))
+```
+
+```{r, warning=FALSE, message=FALSE}
+parsedTwees <- parseTweets("~/tmp/ukraine.json", simplify = FALSE, verbose = TRUE)
+head(parsedTwees)
+sort(table(parsedTwees$country))
+
+library(maps)
+map(mar=c(0,0,0,0))
+points(parsedTwees$lon, parsedTwees$lat, col="red", pch=".", cex=4)
+```
+
+# API dla historii Twittera
+
+Pakiet `twitteR` umożliwia odczytywanie danych z Twittera.
+Kilka interesujących funkcji:
+
+* searchTwitter - wyszukiwanie tweetów na określony temat
+* userTimeline - wyszukiwanie tweetów określonego użytkownika
+* twListToDF - zamiana tweetów na ramkę danych
+
+```{r, eval=FALSE}
+# Klient dla Twittera, umożliwia szukanie w historii tweetów o określonej treści
+library(twitteR)
+
+consumerKey    <- "XXXXXXXXXXXXXX"
+consumerSecret <- "XXXXXXXXXXXXXX"
+access_token   <- "XXXXXXXXXXXXXX"
+access_secret  <- "XXXXXXXXXXXXXX"
+setup_twitter_oauth(consumerKey, consumerSecret, access_token, access_secret)
+```
+
+```{r, warning=FALSE, message=FALSE}
+# Wyszukujemy w historii twittera wpisy z określoną frazą
+tweets <- searchTwitter("BigData", n=150)
+# zamieniamy na ramkę danych
+dftweets <- twListToDF(tweets)
+dftweets$text
+``` 
+ 
+# API dla historii tweetów użytkownika
+
+Jedną z najbardziej aktywnych osób publicznych na Twitterze w polsce jest Radosław Sikorski (sikorskiradek). Zobaczmy o czym ostantio pisał.
+
+```{r, warning=FALSE, message=FALSE}
+# Możemy też wczytać tweety określonego użytkownika
+ut <- userTimeline("sikorskiradek", n=100)
+twListToDF(ut)
+``` 
+
+# Zadanie
+
+Wybierz ineresujący Cię serial lub film. 
+
+Poszukaj danych o nim w bazie IMDB, na wikipedii, na twitterze. 
+
+Napisz skrypt pobierający wybrane informacje (np. średnią ocenę, oglądalność, kraje w których piszą o tym filmie internauci).
