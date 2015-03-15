@@ -1,0 +1,6 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "469702339755768" "Pawe³ Tanajno" NA "2015-03-15T13:06:31+0000" "photo" "https://www.facebook.com/DemokracjaBezposrednia/photos/a.249757315119382.54640.249677948460652/777718882323220/?type=1" "469702339755768_898660900193241" 5 1 0
+"2" "469702339755768" "Pawe³ Tanajno" "Czy to nie oznaka choroby tego systemu w³adzy - demokracji przedstawicielskiej, gdy nieustannie podwy¿sza siê kary dla nie trzeŸwych kierowców, zamiast nie ustanie podnosiæ kary za korupcjê ?
+
+Co powiecie na 25 lat pozbawienia wolnoœci i utratê mienia jako karê dla urzêdników i polityków za korupcjê ?
+Np. 25 lat za kilometrówki ?" "2015-03-15T06:37:17+0000" "status" NA "469702339755768_898510933541571" 2 1 3

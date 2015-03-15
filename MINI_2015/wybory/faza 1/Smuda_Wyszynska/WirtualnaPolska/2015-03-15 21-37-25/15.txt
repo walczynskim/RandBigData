@@ -1,0 +1,43 @@
+Michał Kamiński o dzieciach na wiecu Komorowskiego: nadgorliwość jest gorsza od faszyzmu
+
+
+- To była nadgorliwość nie prezydenta, a jakiegoś burmistrza, który zrobił głupstwo, bo chciał pomóc, a zaszkodził. A jak mówili komuniści: nadgorliwość jest gorsza od faszyzmu - mówił w "Kropce nad i" Michał Kamiński, komentując obecność uczniów na wiecu poparcia prezydenta Bronisława Komorowskiego. Kamiński odniósł się też do sprawy SKOK i Grzegorza Biereckiego oraz chwalił rząd za sposób radzenia sobie w sytuacji narastającego kryzysu ukraińsko-rosyjskiego.
+
+
+Chodzi o wtorkową wizytę Bronisława Komorowskiego w Aleksandrowie Kujawskim. Przywitały go tam m.in. dzieci z okolicznych szkół i przedszkoli. Niektóre trzymały w rękach tabliczki i flagi z napisem "#popieram Komorowskiego". Spotkanie odbyło się w czasie, kiedy uczniowie powinni być na lekcjach. Dzieci widać m.in. na przygotowanym przez sztab Komorowskiego filmie relacjonującym wtorkową wizytę.
+
+                            
+                                
+                                    if (typeof isSrd0517342021 == 'undefined') {
+                                        NPB("005");
+                                    }
+                                
+                    
+                    
+                        if (NJB('srodtekst') && typeof isSrd0517342021=='undefined' && $('#rekSrd0517342021').height() > 60) {
+                            document.getElementById('rekSrd0517342021').style.display='block';var isSrd0517342021=true;
+                        }
+                    
+Minister chce wyjaśnień ws. dzieci na wiecu Komorowskiego
+
+			
+				
+					
+				Kampania się rozkręca
+			
+		
+		
+Media prawicowe pisały o "skandalu" i "wykorzystywaniu dzieci w kampanii". Minister edukacji Joanna Kluzik-Rostkowska zapowiedziała, że poprosi kuratora o szczegółowe informacje w tej sprawie. Zapewniła też, iż rozmawiała już z sztabem wyborczym Komorowskiego na temat wykorzystywania uczniów w kampanii i prowadzenia jej w szkołach.
+Michał Kamiński w TVN24 przyznał, że prezydent nie powinien wykorzystywać dzieci w swojej kampanii. - Nie usłyszy pani ode mnie pochwały wykorzystywania dzieci do kampanii wyborczej, to jest jasne - powiedział prowadzącej Monice Olejnik.
+
+Tłumaczył jednak, że obecność uczniów na spotkaniu z prezydentem nie była pomysłem sztabu Bronisława Komorowskiego, ale burmistrza Aleksandrowa Kujawskiego. - Zrobił głupstwo, chciał pomóc, a zaszkodził i jak to mówili komuniści: nadgorliwość jest gorsza od faszyzmu - stwierdził.
+"Kopacz powiedziała prawdę"
+
+Polityk był też pytany o przemówienie Ewy Kopacz na konwencji programowej Bronisława Komorowskiego, w którym szefowa rządu przestrzegała przed rządami Prawa i Sprawiedliwości. Kamiński zaznaczył, że premier wcale nie straszyła rządami PiS, a jedynie powiedziała prawdę. Tłumaczył, że najbliższe wybory zdecydują o tym, kto będzie rządził Polską być może "w godzinach ciężkich prób". - To jest pytanie, które każdy Polak musi sobie zadać: kto podniesie telefon, kiedy będzie kryzys - podkreślał.
+
+Sprawa SKOK-ów i Biereckiego
+
+Kamiński komentował także sprawę SKOK-ów. W poniedziałek "Wprost" napisał, że senator PiS i twórca SKOK-ów Grzegorz Bierecki wyprowadził kilkadziesiąt milionów złotych do spółki, której dziś jest właścicielem i prezesem. - Jarosław Kaczyński zgodził się na to, żeby pan Bierecki został zawieszony w prawach członka PiS, a to znaczy, że sam szef PiS widzi w tej sprawie jakiś problem - przekonywał.
+
+Mówiąc o obecnej polityce zagranicznej, Kamiński stwierdził, że "głos Polski rządzonej przez Bronisława Komorowskiego , Ewę Kopacz i jej ministrów w sprawach rosyjskich, to jest głos, z którym liczą się na Zachodzie". Mówiąc o wraku prezydenckiego tupolewa, przyznał, że wrak powinien być zwrócony Polsce.
+Źródło: TVN24

@@ -1,0 +1,3 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "263216690369140" "Iwona Pi¹tek" "Zmienia siê Polska, zmieniaj¹ siê równie¿ polscy mê¿czyŸni i bardzo Wam za to dziêkujê!!!
+„Ani ubiór, ani wygl¹d, ani zachowanie ani s³aboœæ nie usprawiedliwiaj¹ gwa³tu, molestowania ani innych form przemocy. Zapraszamy wszystkich mê¿czyzn do publikowania swoich zdjêæ w spódnicach. Poka¿my, ¿e jesteœmy razem z kobietami. Przeciw kulturze gwa³tu” – czytamy na facebookowym profilu inicjatywy." "2015-03-15T10:40:25+0000" "link" "http://www.tvp.info/19264182/kobieta-w-spodnicy-zaprasza-do-gwaltu-polscy-mezczyzni-to-my-tez-zapraszamy" "263216690369140_958018907555578" 18 0 1

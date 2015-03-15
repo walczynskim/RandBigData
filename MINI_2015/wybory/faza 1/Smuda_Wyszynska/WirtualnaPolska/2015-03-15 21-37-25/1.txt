@@ -1,0 +1,25 @@
+Bronkobus "ostrzelany" w Kielcach przez "snajperów"
+
+
+Autobus kampanii prezydenckiej Bronisława Komorowskiego został "ostrzelany" kulami do paintballa z żółtą farbą. Do incydentu doszło w centrum Kielc w pobliżu Urzędu Wojewódzkiego.
+
+
+Nikomu z podróżujących tzw. Bronkobusem nic się nie stało. W autobusie nie było prezydenta. - Na pewno było to mało przyjemne, ale nie było to nic groźnego. To był jakiś mały wygłup ludzi, którzy wracali z jakiegoś paintballa. Ci, którzy wyskoczyli ze swojego busa, byli ubrani w moro i w kominiarki, a więc to było zupełnie groteskowe - powiedział poseł PO Artur Gierada, który podróżował autobusem kampanii prezydenckiej Komorowskiego. - Traktujemy, to jako pewnego rodzaju happening osób, które za bardzo poniosła fantazja - dodał.
+
+                            
+                                
+                                    if (typeof isSrd0517348540 == 'undefined') {
+                                        NPB("005");
+                                    }
+                                
+                    
+                    
+                        if (NJB('srodtekst') && typeof isSrd0517348540=='undefined' && $('#rekSrd0517348540').height() > 60) {
+                            document.getElementById('rekSrd0517348540').style.display='block';var isSrd0517348540=true;
+                        }
+                    
+O incydencie została poinformowana kielecka policja. Jak powiedział mł. asp. Mariusz Bednarski z Zespołu Prasowego Komendy Wojewódzkiej Policji "padło kilkanaście strzałów w przednią szybę i atrapę autobusu".
+
+Niedługo po incydencie funkcjonariusze zatrzymali dwóch podejrzanych kielczan w wieku 52 i 28 lat. Pierwszy z nich - mówił Bednarski - "przyznał się do popełnionego czynu, w chwili zdarzenia był nietrzeźwy". - Policja zabezpieczyła sprzęt, obaj mężczyźni zostali zatrzymani do wyjaśnienia - dodał.
+
+Do zdarzenia doszło w centrum miasta na Alei IX Wieków Kielc, na wysokości gmachu Urzędu Wojewódzkiego. "Bronkobus" w ramach kampanii objeżdżał północne powiaty województwa świętokrzyskiego, gdzie zbierano m.in. podpisy na listach poparcia dla ubiegającego się o reelekcję prezydenta. 

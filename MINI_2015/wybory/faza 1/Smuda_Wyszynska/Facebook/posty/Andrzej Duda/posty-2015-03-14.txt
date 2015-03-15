@@ -1,0 +1,4 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "160906857259563" "Andrzej Duda" NA "2015-03-14T18:17:54+0000" "video" "https://www.facebook.com/video.php?v=1072501466100093" "160906857259563_1072501466100093" 1580 126 474
+"2" "160906857259563" "Andrzej Duda" NA "2015-03-14T14:27:31+0000" "link" "http://andrzejduda.pl/aktualnosci/62" "160906857259563_1072382282778678" 785 68 87
+"3" "160906857259563" "Andrzej Duda" "Dziœ w Warszawie otwarto Muzeum Zgody Bronis³awa Komorowskiego. Zapraszam do wirtualnej wycieczki po muzeum. Podajcie dalej (y)" "2015-03-14T10:56:40+0000" "link" "http://muzeumkomorowskiego.pl/" "160906857259563_1072283782788528" 2157 140 1096

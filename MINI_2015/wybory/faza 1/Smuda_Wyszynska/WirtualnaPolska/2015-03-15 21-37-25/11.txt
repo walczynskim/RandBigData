@@ -1,0 +1,35 @@
+Bronisław Komorowski zarejestrował się w PKW. Zebrał 250 tys. podpisów
+
+
+Sztab Bronisława Komorowskiego złożył w PKW pierwsze 250 tysięcy podpisów z poparciem dla jego kandydatury w wyborach prezydenckich. Jak zapewniają członkowie sztabu, do ostatniego dnia kampanii będą zbierane kolejne podpisy.
+
+
+Szef sztabu Komorowskiego Robert Tyszkiewicz poinformował na konferencji prasowej przed siedzibą PKW, że 250 tysięcy podpisów, to nie koniec, a sztab prezydenta do ostatniego dnia kampanii będzie zbierać podpisy pod deklaracją poparcia dla kandydatury Komorowskiego.
+
+                            
+                                
+                                    if (typeof isSrd0517344061 == 'undefined') {
+                                        NPB("005");
+                                    }
+                                
+                    
+                    
+                        if (NJB('srodtekst') && typeof isSrd0517344061=='undefined' && $('#rekSrd0517344061').height() > 60) {
+                            document.getElementById('rekSrd0517344061').style.display='block';var isSrd0517344061=true;
+                        }
+                    
+Pełnomocnik komitetu wyborczego Komorowskiego, Sławomir Rybicki zauważył, że 250 tys. podpisów udało się zebrać w ciągu pierwszego tygodnia zbierania.
+
+Tyszkiewicz zapowiedział też, że od przyszłego tygodnia kampania Komorowskiego wejdzie w nową fazę medialną - pojawią się billboardy z hasłem kampanii: "Wybierz zgodę i bezpieczeństwo"; pojawią się też spoty telewizyjne i radiowe.
+
+			
+				
+					
+				Pod kandydaturą Korwin-Mikkego podpisało się ponad 200 tys. osób
+			
+		
+		
+Do północy 26 marca jest czas na dostarczenia do PKW minimum 100 tys. podpisów, koniecznych, do zarejestrowania kandydata w wyborach prezydenckich.
+Wybory odbędą się 10 maja; jeśli żaden z kandydatów nie uzyska ponad połowy ważnie oddanych głosów, 24 maja odbędzie się druga tura wyborów.	
+Zobacz także - Incydent z krzesłem na wiecu Komorowskiego
+new WP.player({url:"http://get.wp.tv/?mid=1658063&ast=yes&s=1"});

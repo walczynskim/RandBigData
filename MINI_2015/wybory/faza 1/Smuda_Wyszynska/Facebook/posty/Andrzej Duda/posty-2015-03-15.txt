@@ -1,0 +1,4 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "160906857259563" "Andrzej Duda" "Tymczasem w powiatach pojawi³y siê pierwsze bannery (y)" "2015-03-15T20:08:12+0000" "photo" "https://www.facebook.com/andrzejduda/photos/a.168002319883350.46642.160906857259563/1073367032680203/?type=1" "160906857259563_1073369066013333" 305 18 12
+"2" "160906857259563" "Andrzej Duda" NA "2015-03-15T19:12:22+0000" "link" "http://andrzejduda.pl/aktualnosci/63" "160906857259563_1073343902682516" 500 28 75
+"3" "160906857259563" "Andrzej Duda" "Od poniedzia³ku do pi¹tku Muzeum Zgody Bronis³awa Komorowskiego (ul. Piêkna 24 w Warszawie) otwarte w godz. 10.00-18.00. Zapraszam (y)" "2015-03-15T14:49:27+0000" "link" "http://muzeumzgody.pl/" "160906857259563_1073187282698178" 601 35 108

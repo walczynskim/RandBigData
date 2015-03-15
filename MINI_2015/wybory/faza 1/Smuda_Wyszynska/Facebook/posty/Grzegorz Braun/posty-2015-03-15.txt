@@ -1,0 +1,6 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "268872956643088" "Grzegorz Braun" NA "2015-03-15T20:16:09+0000" "photo" "https://www.facebook.com/268872956643088/photos/a.357341287796254.1073741830.268872956643088/357341364462913/?type=1" "268872956643088_357341704462879" 65 3 1
+"2" "268872956643088" "Grzegorz Braun" NA "2015-03-15T19:47:45+0000" "photo" "https://www.facebook.com/1060330820651123/photos/a.1060400157310856.1073741828.1060330820651123/1063597313657807/?type=1" "268872956643088_357335784463471" 19 2 0
+"3" "268872956643088" "Grzegorz Braun" "Wczoraj w Skierniewicach" "2015-03-15T16:13:00+0000" "photo" "https://www.facebook.com/popieramBrauna/photos/a.1446559772276891.1073741828.1446406722292196/1551603568439177/?type=1" "268872956643088_357279864469063" 60 4 0
+"4" "268872956643088" "Grzegorz Braun" "Relacja z Czêstochowy" "2015-03-15T16:12:33+0000" "video" "http://youtu.be/Dfhbj0lp5UU" "268872956643088_357279697802413" 35 0 0
+"5" "268872956643088" "Grzegorz Braun" "W spo³ecznoœci koptyjskiej wytatuowany krzy¿ jest wa¿nym elementem identyfikuj¹cym przynale¿noœæ religijn¹." "2015-03-15T14:27:57+0000" "video" "https://www.youtube.com/watch?v=lMwF_ZbiYKg" "268872956643088_357239917806391" 32 1 11

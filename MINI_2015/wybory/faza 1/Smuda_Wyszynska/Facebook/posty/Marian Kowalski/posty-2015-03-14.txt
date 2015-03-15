@@ -1,0 +1,6 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "181063088664933" "Marian Kowalski" NA "2015-03-14T22:06:37+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.630509127053658.1073741835.181063088664933/630515753719662/?type=1" "181063088664933_630687187035852" 345 9 32
+"2" "181063088664933" "Marian Kowalski" "Proszê o pomoc w reklamie przez udostêpnienie zdjêcia. Dziêkujê!
+Marian Kowalski" "2015-03-14T19:13:07+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.361353880635852.1073741828.181063088664933/630557393715498/?type=1" "181063088664933_630557757048795" 904 24 955
+"3" "181063088664933" "Marian Kowalski" "Konwencja wyborcza" "2015-03-14T12:04:02+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.573579836079921.1073741834.181063088664933/630364040401500/?type=1" "181063088664933_630364087068162" 107 7 1
+"4" "181063088664933" "Marian Kowalski" "Za chwilê rozpoczynamy konwencjê wyborcz¹!" "2015-03-14T11:12:47+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.573579836079921.1073741834.181063088664933/630354377069133/?type=1" "181063088664933_630354403735797" 134 12 1

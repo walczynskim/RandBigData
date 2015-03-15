@@ -1,0 +1,3 @@
+"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
+"1" "181063088664933" "Marian Kowalski" "Wyprawa delegacji Ruchu Narodowego na Wêgry." "2015-03-15T18:01:22+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.631157300322174.1073741836.181063088664933/631157373655500/?type=1" "181063088664933_631167166987854" 314 12 17
+"2" "181063088664933" "Marian Kowalski" "Mimo ró¿nicy jêzyków, Wêgrzy przyjêli moje wyst¹pienie bardzo ciep³o. Czas odbudowaæ prawdziw¹ Polsko-Wêgiersk¹ przyjaŸñ." "2015-03-15T17:36:28+0000" "photo" "https://www.facebook.com/Kowalski.Marian/photos/a.361353880635852.1073741828.181063088664933/631155520322352/?type=1" "181063088664933_631155780322326" 536 26 19
