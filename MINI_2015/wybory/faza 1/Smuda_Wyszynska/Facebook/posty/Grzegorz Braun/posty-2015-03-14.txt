@@ -1,3 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "268872956643088" "Grzegorz Braun" NA "2015-03-14T21:47:46+0000" "photo" "https://www.facebook.com/popieramBrauna/photos/a.1446559772276891.1073741828.1446406722292196/1551508858448648/?type=1" "268872956643088_356788877851495" 165 4 0
-"2" "268872956643088" "Grzegorz Braun" NA "2015-03-14T07:07:33+0000" "photo" "https://www.facebook.com/PortalMysliKonserwatywnej/photos/a.273311619486755.1073741828.273283746156209/469742906510291/?type=1" "268872956643088_356395561224160" 126 2 0

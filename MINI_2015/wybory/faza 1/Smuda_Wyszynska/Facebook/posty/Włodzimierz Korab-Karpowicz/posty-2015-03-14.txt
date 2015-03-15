@@ -1,2 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "2037280793079296" "W³odzimierz Julian Korab-Karpowicz" "http://www.iszk.pl/" "2015-03-14T10:59:43+0000" "link" "http://www.iszk.pl/" "2037280793079296_2053206898153352" 7 0 12

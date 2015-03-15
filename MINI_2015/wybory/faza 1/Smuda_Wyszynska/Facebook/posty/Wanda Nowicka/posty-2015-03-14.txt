@@ -1,7 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "271664979535448" "Wanda Nowicka" "Zapraszam wszystkich do akcji zbierania podpisów pod moj¹ kandydatur¹: www.wandanowicka.pl. 
-Zapraszam równie¿ do kontaktu pod adresem kontakt@wandanowicka.pl" "2015-03-14T14:00:31+0000" "status" NA "271664979535448_823888267646447" 24 5 1
-"2" "271664979535448" "Wanda Nowicka" "Retweeted Bronis³aw Komorowski (@Komorowski):
-
-Podpisa³em ustawê o ratyfikacji konwencji antyprzemocowej." "2015-03-14T13:15:35+0000" "status" NA "271664979535448_823845177650756" 71 2 0
-"3" "271664979535448" "Wanda Nowicka" "Kobiety i polityka w #sejm panele dyskusyjne rozpoczête. @tvp_info @gazeta_wyborcza @tvn24 @tvsuperstacja http://t.co/RT8Mvn0kJb" "2015-03-14T08:31:59+0000" "link" "http://twitter.com/WandaNowicka/status/576662026094772224/photo/1/large?utm_source=fb&utm_medium=fb&utm_campaign=WandaNowicka&utm_content=576662026094772224" "271664979535448_823683834333557" 14 0 1

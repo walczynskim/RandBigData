@@ -1,3 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "259175827459379" "Anna Grodzka" "Tam mo¿ecie na pewno z³o¿yæ podpis poparcia mojej kandydatury :-)" "2015-03-15T13:27:37+0000" "link" "https://www.facebook.com/partiazieloni/posts/10152805742917695" "259175827459379_861943840515905" 14 2 0
-"2" "259175827459379" "Anna Grodzka" "Dziêkujê i proszê: przysy³ajcie nadal!" "2015-03-15T08:56:36+0000" "video" "https://www.youtube.com/watch?v=vjnzMXGUkSg&feature=youtu.be" "259175827459379_861836970526592" 105 9 1

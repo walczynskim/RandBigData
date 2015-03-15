@@ -1,6 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "259175827459379" "Anna Grodzka" "Ludzie pisz¹ listy... i wysy³aj¹ podpisy. To tylko wierzcho³ek sterty przesy³ek z poparciem, które dosta³am w ostatnich dniach. Za wszystkie bardzo dziêkujê i proszê o wiêcej! Podpisujcie siê, zbierajcie podpisy od znajomych, do³¹czcie do wolontariuszy. Razem nam siê uda! 
-SprawdŸcie, jak podpisaæ i jak zbieraæ: 
->> http://bit.ly/Grodzka2015 
-PrzyjdŸcie na moje urodziny i podpiszcie osobiœcie: 
->> https://www.facebook.com/events/391196147726888/" "2015-03-14T17:43:50+0000" "photo" "https://www.facebook.com/annagrodzka.polityk/photos/a.273190262724602.67528.259175827459379/861576963885926/?type=1" "259175827459379_861578097219146" 107 3 1

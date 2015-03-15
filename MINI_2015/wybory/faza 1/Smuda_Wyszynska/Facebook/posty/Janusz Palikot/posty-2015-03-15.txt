@@ -1,4 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "191495590897988" "Janusz Palikot" "W poniedzia³ek mia³ siê odbyæ od dawna planowany wyk³ad Janusza Palikota na Wydziale Politologii UMCS, jednak na parê dni wczeœniej w³adze Wydzia³u odwo³a³y to wydarzenie. Nasz kandydat jednak i tak siê pojawi - jeœli nie na Wydziale, to pod nim! NIE dla cenzury! /Sztab
-
-#Palikot2015" "2015-03-15T14:38:59+0000" "photo" "https://www.facebook.com/JanuszPalikotJP/photos/a.467922973255247.98968.191495590897988/813230542057820/?type=1" "191495590897988_813233292057545" 67 10 24

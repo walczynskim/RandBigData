@@ -1,4 +1,0 @@
-"from_id" "from_name" "message" "created_time" "type" "link" "id" "likes_count" "comments_count" "shares_count"
-"1" "191495590897988" "Janusz Palikot" "Zapraszam na moj¹ stronê! /JP
-
-#Palikot2015" "2015-03-14T11:29:03+0000" "link" "http://palikot2015.pl/" "191495590897988_812724032108471" 182 18 22
