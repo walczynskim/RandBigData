@@ -1,0 +1,530 @@
+{1}{1}25
+{2250}{2349}www.NapiProjekt.pl - nowa jakoœæ napisów.|Napisy zosta³y specjalnie dopasowane do Twojej wersji filmu.
+{2351}{2396}Ogl¹daj legalnie, polecaj i zarabiaj – Vodeon.pl
+{2400}{2555}{y:b}WICHROWE WZGÓRZA
+{2640}{2740}T³umaczenie:|{y:b}WuHaPe
+{2750}{2850}Korekta:|{y:b}Eil33n
+{2860}{2950}Synchro:|{y:b}kasander
+{4541}{4636}{y:i}- Tata wróci³!
+{4676}{4737}{y:i}Nareszcie, martwi³am siê.
+{4740}{4767}Dobry ch³opak.
+{4859}{4893}Czeka³am na ciebie, tato.
+{4895}{4962}- Przynios³eœ mój bat?|- Spokojnie, Cathy.
+{4965}{4989}Masz go?
+{5004}{5041}- Chwila.|- Gdzie by³eœ?
+{5044}{5085}- Jest pan.|- Josephie.
+{5088}{5154}{y:i}Martwiliœmy siê w zwi¹zku z pogod¹,|{y:i}panie Earnshaw.
+{5157}{5218}{y:i}Przemok³eœ do suchej nitki.|{y:i}Usi¹dŸ przy ogniu.
+{5221}{5246}{y:i}Niech siê pan ogrzeje.
+{5249}{5293}{y:i}Mam dla was niespodziankê.
+{5412}{5461}Zostaw.
+{5635}{5687}Spotka³em go na ulicy.
+{5764}{5800}Nie ma nikogo.
+{5824}{5873}- Pomyœla³em wiêc...|- Co?
+{5963}{6023}Post¹pi³em po chrzeœcijañsku.
+{6310}{6347}Przywitaj siê.
+{6363}{6396}Suka!
+{6399}{6467}WstydŸ siê, Catherine!|OdejdŸ!
+{6642}{6700}{y:i}Obmyjesz go, Nelly?
+{6881}{6945}{y:i}Zostaw.
+{6997}{7037}Œci¹gnij kurtkê.
+{7191}{7234}Odpierdol siê, suko.
+{7237}{7277}Ty niewdziêczniku...
+{10024}{10049}Dobrze spa³eœ?
+{10163}{10188}Odsuñ siê.
+{11780}{11817}Coœ ci jest?
+{11904}{11952}Rozumiesz co mówiê?
+{12025}{12054}ChodŸ.
+{12115}{12140}{y:i}Rusz siê.
+{14871}{14900}ChodŸ.
+{16924}{16969}B³otniaka zbo¿owego.
+{17380}{17416}To samca pardwy szkockiej.
+{17801}{17858}Czajki, moje ulubione.
+{18089}{18144}Powtórz: czajka.
+{18174}{18202}Czarka.
+{18308}{18332}Czajka.
+{20632}{20692}"Zabiorê was spoœród ludów,
+{20695}{20751}zbiorê was ze wszystkich krajów
+{20754}{20824}i przyprowadzê was z powrotem do waszego kraju,
+{20869}{20980}pokropiê was czyst¹ wod¹, abyœcie siê stali czystymi,
+{21005}{21105}i oczyszczê was od wszelkiej zmazy|i od wszystkich waszych bo¿ków".
+{21108}{21148}Oczyszczam ciê.
+{21186}{21216}Jakie imiê mu nadamy?
+{21297}{21343}Heathcliff.
+{21346}{21425}Heathcliffie, czy wyrzekasz siê Szatana?
+{21428}{21454}No, dalej.
+{21524}{21564}Nie sprzeciwiaj siê.
+{21642}{21675}Doœwiadcz tego.
+{22257}{22289}Cathy?!
+{22586}{22621}Poszed³.
+{23648}{23672}Zamknij oczy.
+{23688}{23718}Nic ci nie zrobiê.
+{23752}{23786}Otwórz usta.
+{24683}{24713}Bezbo¿nicy.
+{24865}{24921}- Bóg wam to wybaczy.|- Ale my...
+{24924}{24964}Zamknij siê i idŸ do swojego pokoju!
+{24967}{25016}Nie chcê was ju¿ dzisiaj|widzieæ razem!
+{27330}{27370}Który ci siê podoba, Heathcliffie?
+{27373}{27424}Potrzebujesz mieæ w³asnego.
+{27710}{27775}- Siwek.|- Doskonale.
+{27800}{27846}Hindley, mo¿esz mieæ drugiego.
+{28507}{28552}Coœ z nim nie tak.
+{28635}{28675}Chyba jest kulawy.
+{29119}{29156}Dok¹d idziesz?
+{29457}{29498}Daj mi swojego konia.
+{29520}{29560}Spierdalaj, psie.
+{29624}{29670}Mam mu pokazaæ co mi zrobi³eœ?
+{29966}{29989}Powiem mu.
+{29992}{30046}WeŸ sobie konia, cholerny Cyganie.
+{30049}{30128}Mam nadziejê, ¿e siê na nim po³amiesz|i rozpierdolisz ³eb.
+{30533}{30568}Poka¿.
+{30880}{30910}Przykro mi.
+{31197}{31248}Próbowa³em ciê czegoœ nauczyæ.
+{31277}{31342}Pokazaæ, jak byæ dobrym chreœcijaninem.
+{31388}{31445}Myœla³em, ¿e bêdziesz|go traktowaæ jak brata.
+{31448}{31498}Nie jest moim bratem.|To czarnuch.
+{31519}{31576}Nie dajesz mi wyboru.|Wystaw d³onie.
+{31579}{31608}Wystaw d³onie!
+{31970}{32024}A teraz zejdŸ mi z oczu.
+{32750}{32810}Mam nadziejê, ¿e nie odczuwasz satysfakcji.
+{32860}{32895}Spójrz na mnie.
+{33785}{33819}{y:i}Joseph!
+{33844}{33875}{y:i}PodejdŸ!
+{34170}{34215}Postawcie tutaj.
+{34372}{34437}Nauka ciê ukszta³tuje.
+{34457}{34505}Dbaj o siebie.
+{34508}{34541}Bezpiecznej podró¿y.
+{34544}{34595}Do zobaczenia, Hindley.
+{37927}{37960}Nieznoœne dziecko.
+{37979}{38066}Jak mam ciê kochaæ?|¯a³ujê dnia, w którym siê poczê³aœ.
+{38123}{38197}IdŸcie zrzuciæ te przemokniête ubrania.
+{38348}{38398}I proœcie Boga o przebaczenie.
+{40752}{40792}Zaœpiewaj nam, Cathy.
+{41948}{42011}Dlaczego nie mo¿esz byæ zawsze|dobr¹ dziewczynk¹, Cathy?
+{42069}{42144}Dlaczego nie mo¿esz byæ zawsze|dobrym cz³owiekiem, ojcze?
+{42954}{42984}Co to by³o, do diab³a?
+{43008}{43059}IdŸ sprawdziæ, Heathcliffie.
+{43756}{43804}{y:i}Wezwij doktora!
+{43807}{43846}{y:i}Ruszysz siê, kobieto?!
+{43960}{44010}{y:i}WyjdŸ, Cathy!
+{44118}{44169}{y:i}Nie zostawiê taty!
+{44172}{44245}- Cathy, idŸ na górê!|- Nie!
+{44248}{44299}Heathcliff!|Zabierz j¹ na górê!
+{44302}{44329}Ju¿!
+{44377}{44437}Chcê byæ przy tacie!
+{46863}{46898}To Hindley.
+{46913}{46953}Przyjecha³ z kimœ.
+{47043}{47088}Witaj, Hindley.
+{47116}{47168}- Czeœæ, dziewczyno.|- Wróci³eœ. Kim ona jest?
+{47171}{47221}Jesteœmy razem.
+{47368}{47434}Witaj w domu.
+{47477}{47520}Joseph, poznaj moj¹ ¿onê,|Frances.
+{47523}{47585}- Mi³o pani¹ poznaæ.|- Witaj, Josephie.
+{47588}{47677}{y:i}Musicie byæ g³odni z zziêbniêci,|{y:i}wejdŸcie do œrodka.
+{47680}{47759}- To moja siostra, Cathy.|- Mi³o ciê poznaæ.
+{47762}{47809}A to kto?
+{47812}{47837}Heathcliff.
+{47840}{47904}Zabierz torby do domu.
+{47907}{47963}Daj spokój, Cathy.|Teraz ja za wszystko odpowiadam.
+{47966}{47999}ChodŸmy.
+{48040}{48097}- S³ysza³eœ?|- Nie b¹dŸ taki, Hindley.
+{48100}{48139}Twój wybór, czarnuchu.
+{48142}{48184}Pracujesz albo odejdŸ.
+{48308}{48345}{y:i}Czekam na decyzjê.
+{48348}{48405}{y:i}ChodŸmy do œrodka, Cathy.
+{48408}{48444}{y:i}WeŸ baga¿e.
+{48526}{48555}Gdy skoñczysz,
+{48558}{48633}zabierz swoje rzeczy i przenieœ siê|do stajni, tam twoje miejsce.
+{48636}{48673}Jesteœ pieprzonym kretynem, Hindley.
+{48676}{48736}Teraz wszystko siê zmieni.
+{48819}{48924}{y:i}"Okryje ciê swymi piórami|{y:i}i schronisz siê pod Jego skrzyd³a:
+{48948}{49029}{y:i}Jego wiernoœæ to puklerz i tarcza.|{y:i}W nocy nie ulêkniesz siê strachu
+{49030}{49069}{y:i}ani za dnia - lec¹cej strza³y,
+{49072}{49146}{y:i}ani zarazy, co idzie w mroku,
+{49149}{49186}{y:i}ni moru, co niszczy w po³udnie".
+{49589}{49634}To jacyœ obcy ludzie.
+{49637}{49692}Jak siê macie?
+{50238}{50296}{y:i}To ten Czarny,|{y:i}którego Earnshaw spotka³ w Liverpoolu?
+{50299}{50353}Mo¿e poczyni jakieœ postêpy.
+{50356}{50427}{y:i}- Macie jeszcze trochê drewna?|{y:i}- Na zewn¹trz.
+{50430}{50467}{y:i}Trzeba dorzuciæ.
+{50470}{50505}{y:i}Masz racjê.
+{50721}{50772}IdŸ po drewno, Heathcliff.
+{53054}{53087}Skoñczy³em.
+{53090}{53146}{y:i}Bêdziecie siê sma¿yæ w piekle!
+{53149}{53185}{y:i}Tam siê spotkamy, Joseph.
+{53218}{53248}{y:i}Jest bezu¿yteczny.
+{53260}{53306}{y:i}Zupe³nie do niczego!
+{53549}{53586}Jesz jak œwinia.
+{54332}{54416}To nie jego wina,|ja go wyci¹gnê³am!
+{54424}{54465}Hindley, to nasz brat!
+{54468}{54517}{y:i}Nie b¹dŸ g³upia, spójrz na niego.
+{54550}{54579}{y:i}Przestañ!
+{54582}{54605}{y:i}Cathy, odejdŸ!
+{54660}{54691}{y:i}Puœæ mnie!
+{54739}{54820}Gdyby tata wci¹¿ ¿y³,|pokaza³by ci, jaki z ciebie drañ.
+{54823}{54873}By³oby mu wstyd za ciebie!
+{54907}{54999}- Zostaw go!|- Tutaj nawet zwierzêta pracuj¹.
+{55002}{55043}Masz pracowaæ!
+{55046}{55080}I bêdziesz to robiæ!
+{56084}{56136}W porz¹dku, kochanie?
+{56700}{56736}Poka¿ plecy.
+{58724}{58772}Tam mieszkaj¹ ci obcy ludzie, racja?
+{58812}{58851}W tym du¿ym domu?
+{58964}{59004}ChodŸmy tam.
+{60079}{60113}ChodŸ.
+{60860}{60925}{y:i}To nasz pies.
+{61004}{61086}{y:i}Jest mój.|{y:i}Zostaw go!
+{61089}{61125}Idioci.
+{61204}{61231}{y:i}Ojcze!
+{61385}{61448}Z³apa³ mnie!|Biegnij!
+{61643}{61688}Skulker, zostaw j¹!
+{61853}{61903}ChodŸ, panienko.
+{62049}{62078}Robert?
+{62081}{62116}Skulker dopad³ t¹ panienkê.
+{62119}{62184}By³ z ni¹ ten m³odzieniec.
+{62524}{62554}To tylko ch³opiec.
+{62579}{62621}Powinniœmy ciê powiesiæ,|zanim doroœniesz.
+{62624}{62659}Zrobilibyœmy hrabstwu przys³ugê.
+{62662}{62684}Pierdolcie siê.
+{62738}{62773}To Cathy Earnshaw.
+{62776}{62832}S³ysza³am, ¿e jej brat pozwala jej szaleæ.
+{62835}{62877}To ciebie Earnshaw œci¹gn¹³ z Liverpoolu.
+{62880}{62917}Muzu³manin. Wyrzutek.
+{62920}{62967}{y:i}To by siê zgadza³o.|{y:i}S³yszeliœcie jak mówi?
+{62970}{63051}- Spuœci³aœ na nas psy, g³upia dziwko.|- Wyrzuæ go, Robert.
+{63068}{63124}Wyœlij kogoœ po doktora Kennetha.
+{63137}{63175}{y:i}Dziewczyny, przynieœcie wodê.
+{63178}{63213}{y:i}I brandy.
+{63246}{63270}Wynoœ siê!
+{63410}{63455}Poczêstuj siê.
+{63844}{63884}Jak leci, doktorze?
+{64654}{64694}Hindley ciê szuka.
+{65164}{65200}{y:i}Powinienem ciê wyrzuciæ.
+{65233}{65293}{y:i}Gdy Cathy wróci,|{y:i}masz z ni¹ nie rozmawiaæ.
+{65296}{65336}{y:i}Zrozumiano?
+{65568}{65625}Jeœli zobaczê, ¿e rozmawiacie|bez zezwolenia,
+{65628}{65668}odejdziesz st¹d.
+{65842}{65892}Hindley, jesteœ mi potrzebny.
+{65927}{65998}Myœlê, ¿e to dobry pomys³,|aby Cathy zosta³a u Lintonów.
+{66001}{66036}To jej dobrze zrobi.
+{67573}{67605}{y:i}Wolê samca pardwy.
+{67608}{67708}{y:i}Mam w domu du¿¹ kolekcjê piór,|{y:i}równie¿ czajek.
+{67760}{67835}{y:i}Spodoba ci siê na Wzgórzu.|{y:i}Tutaj jest inaczej.
+{69481}{69587}Jaka piêkna sukienka.|Trudno ciê poznaæ.
+{69888}{69932}WejdŸmy do œrodka.
+{70590}{70652}{y:i}Spójrz na siebie, jaka jesteœ piêkna.
+{70655}{70701}{y:i}- Hindley!|{y:i}- Czy¿ nie wygl¹da cudownie?
+{70704}{70742}{y:i}Jest urocza.
+{70745}{70805}{y:i}- Isabella podarowa³a mi j¹.|{y:i}- Szczêœciara z ciebie.
+{70808}{70880}{y:i}Mówi³am, ¿e pobyt u Lintonów|{y:i}dobrze jej zrobi.
+{70881}{70916}{y:i}Gdzie jest Heathcliff?
+{70919}{70976}{y:i}Gdzieœ siê w³óczy.
+{71023}{71072}- Chce ktoœ herbaty?|- Tak, poproszê.
+{71235}{71267}Na mi³oœæ bosk¹.
+{71527}{71563}Nie cieszysz siê, ¿e mnie widzisz?
+{71622}{71664}Œmiejesz siê ze mnie?
+{71667}{71712}Sk¹d¿e.
+{71755}{71801}Musisz tylko siê umyæ
+{71804}{71843}i nie bêdziesz wygl¹daæ Ÿle.
+{71856}{71905}Jesteœ brudny.
+{71983}{72012}Nie musisz mnie dotykaæ.
+{72252}{72284}Lubiê byæ brudny.
+{72688}{72752}Mogê sprawiæ, byœ wygl¹da³ powa¿niej.
+{72856}{72921}Jeœli pójdziesz ze mn¹,|zd¹¿ymy przed obiadem.
+{74241}{74313}Chcê dobrze wygl¹daæ.|Umyjesz mnie?
+{74332}{74361}To mi siê podoba.
+{74382}{74467}Lintonowie przyje¿d¿aj¹ dzisiaj.|Doprowadzê ciê do ³adu.
+{75076}{75105}Niech spojrzê.
+{75157}{75224}Wygl¹dasz jak ksi¹¿ê.
+{75264}{75342}Za³o¿ê siê, ¿e twoja matka|by³a afrykañsk¹ królow¹.
+{75345}{75396}Ojciec zaœ chiñskim cesarzem.
+{75435}{75524}Ktoœ ciê pewnie porwa³|i sprowadzi³ do Anglii.
+{76060}{76117}{y:i}- Masz siê ju¿ dobrze?|{y:i}- Tak.
+{76120}{76191}{y:i}Podaj mi rêkê.
+{76233}{76313}Nelly gotowa³a ca³y ranek.
+{76344}{76383}Lubisz gêœ?
+{76424}{76471}Uwielbiam.
+{76569}{76610}Têdy proszê.
+{77033}{77071}{y:i}Wygl¹da wybornie.
+{77095}{77135}Usi¹dŸ tutaj.
+{77183}{77233}Spójrzcie na to.
+{77236}{77279}Heathcliff, dobrze wygl¹dasz.
+{77292}{77315}Wynoœ siê!
+{77318}{77392}Wystroi³ siê jak cyrkowa ma³pa.
+{77468}{77497}Wynoœ siê.
+{77500}{77545}Mog³eœ normalnie do niego siê zwróciæ.
+{77548}{77608}Teraz go wyrzuci za drzwi.|Nie cierpiê tego.
+{77624}{77655}Zostaw go.
+{77838}{77881}Przestañ!
+{77884}{77933}Stop it, Hindley!
+{78243}{78294}Co siê dzieje?|Co znowu zrobi³?
+{78297}{78362}Zamknij go, nie chcê go widzieæ.
+{78387}{78453}Wstañ!
+{79954}{79994}{y:i}S³yszysz?
+{80044}{80085}{y:i}Przyjecha³ zespó³.
+{80464}{80495}Jesteœ ranny?
+{81759}{81816}{y:i}Powinien ju¿ wróciæ.
+{82336}{82401}{y:i}ChodŸ tu szybko, Nelly!
+{82404}{82471}{y:i}- Poród siê zacz¹³!|- Zawo³aj Hindley'a.
+{82474}{82528}I sprowadŸ doktora!
+{83100}{83125}Ju¿ nie mogê.
+{83438}{83498}Oddychaj.
+{83515}{83539}{y:i}Przyj.
+{83638}{83718}Wychodzi, widzê g³ówkê.
+{83749}{83817}{y:i}"Chwalmy Imiê Pana."
+{83820}{83911}{y:i}"Bêdê pilnowa³ dróg moich,|{y:i}abym nie zgrzeszy³ jêzykiem...
+{83914}{83992}{y:i}dopóki naprzeciw mnie jest wystêpny."
+{83995}{84060}{y:i}"Oniemia³em, zamilk³em
+{84086}{84219}{y:i}pozbawiony szczêœcia,|{y:i}lecz moja boleœæ wzmog³a siê na nowo.
+{84253}{84364}{y:i}Serce w mym wnêtrzu rozgorza³o;|{y:i}gdy rozwa¿a³em, zap³on¹³ w nim ogieñ:
+{84367}{84431}{y:i}jêzyk mój przemówi³.
+{84462}{84524}{y:i}O Panie, mój kres pozwól mi poznaæ
+{84527}{84570}{y:i}i jaka jest miara dni moich..."
+{86976}{87047}{y:i}Wdech.|{y:i}Wstrzymaj oddech.
+{87126}{87165}{y:i}Grzeczna dziewczyna.
+{87269}{87314}{y:i}Jak wygl¹dam, Nelly?
+{87341}{87376}{y:i}Cudownie.
+{87928}{87958}{y:i}Wstrzymaj jeszcze.
+{87979}{88015}Wybierasz siê gdzieœ?
+{88018}{88072}- Pada deszcz.|- Po co wiêc to ubierasz?
+{88075}{88124}Nie powinieneœ pracowaæ?
+{88150}{88177}Nie.
+{88209}{88251}Joseph ciê wsypie.
+{88296}{88346}Nie dowie siê, nie ma go tutaj.
+{88464}{88528}Rozczeszesz mi loki.
+{88581}{88636}ChodŸ do mnie.
+{89029}{89053}Co chcesz powiedzieæ?
+{89056}{89102}Spêdzasz z nimi wiêcej czasu|ni¿ ze mn¹.
+{89116}{89175}- Nie zauwa¿y³am.|- Ale ja zauwa¿y³em.
+{89217}{89298}Nigdy nic nie mówisz.|Jakbym bawi³a siê z dzieckiem.
+{89349}{89404}Wczeœniej nie narzeka³aœ.
+{89544}{89581}Nie przyszed³em zbyt wczeœnie?
+{89584}{89622}Nie.
+{89956}{89984}Edgar?
+{90044}{90094}Nie odchodŸ!
+{90221}{90273}{y:i}Proszê, wróæ.
+{91608}{91641}Ju¿ dobrze.
+{93892}{93927}Umiesz dochowaæ tajemnicy?
+{93968}{94012}Nie lubiê tajemnic.
+{94083}{94132}Edgar poprosi³ mnie o rêkê.
+{94254}{94281}{y:i}Zgodzi³am siê.
+{94329}{94368}{y:i}Post¹pi³am Ÿle?
+{94408}{94444}{y:i}Kochasz go?
+{94474}{94504}{y:i}Tak.
+{94530}{94581}{y:i}Jest przystojny, pogodny i bogaty.
+{94584}{94610}{y:i}Kocha mnie.
+{94661}{94707}{y:i}Czemu wiêc jesteœ nieszczêœliwa?
+{94822}{94859}Zarówno tutaj i tu,
+{94892}{94977}gdziekolwiek znajduje siê dusza,|czujê, ¿e Ÿle robiê.
+{95104}{95184}Gdyby Hindley nie upodli³ tak Heathcliffa,
+{95187}{95242}{y:i}Nie zastanawia³abym siê|{y:i}nad poœlubieniem Edgara.
+{95272}{95338}{y:i}Poœlubienie Heathcliffa poni¿y³oby mnie.
+{95466}{95532}{y:i}Nie dowiê siê, jak bardzo go kocham.
+{95660}{95712}{y:i}Nie ze wzglêdu na wygl¹d.
+{95736}{95797}{y:i}Dostrzegam w nim siebie.
+{100361}{100392}Jest tu Cathy?
+{100824}{100865}Co jest, do kurwy?
+{100984}{101031}Jest tutaj?
+{101048}{101095}Poœlubi³a Lintona.
+{101315}{101345}Gdzie siê zatrzyma³eœ?
+{101369}{101408}Wynajmê ci tanio pokój.
+{103076}{103107}Nelly.
+{103156}{103194}Heathcliff!
+{103197}{103231}To ty?
+{103276}{103306}Jest tutaj?
+{103365}{103411}Jest pani¹ domu.
+{103414}{103459}Rodzice Edgara zmarli.
+{103462}{103521}Powiedz jej, ¿e ktoœ chce j¹ zobaczyæ.
+{103524}{103569}Zastanawialiœmy siê,|co siê z tob¹ sta³o.
+{103572}{103644}- Nelly, proszê.|- Dobrze.
+{105312}{105372}{y:i}Cathy!|{y:i}PrzyprowadŸ goœcia!
+{105413}{105464}Poczekaj, powiem mu.
+{105985}{106019}{y:i}Wiem, ¿e go nie lubisz,
+{106022}{106068}{y:i}ale musisz byæ uprzejmy.
+{106071}{106100}{y:i}Spróbuj siê godnie zachowaæ.
+{106103}{106199}{y:i}Nie musz¹ widzieæ, ¿e witasz|{y:i}zbieg³ego s³u¿¹cego jak brata.
+{106428}{106457}Usi¹dŸ, proszê.
+{106824}{106874}{y:i}Powiem, ¿eby przynieœli herbatê.
+{106912}{106940}{y:i}Nelly?
+{107096}{107146}Nie mog³am uwierzyæ.
+{107180}{107208}{y:i}Zobaczy³am ciê...
+{107228}{107264}{y:i}Dotknê³am...
+{107267}{107302}Rozmawia³am z tob¹.
+{107464}{107519}Jak mog³eœ przez ca³y ten czas|nie myœleæ o mnie?
+{107548}{107604}Wygl¹da na to, ¿e ty te¿|nie myœla³aœ.
+{107622}{107673}W³aœnie dowiedzia³em siê,|¿e wysz³aœ za m¹¿.
+{107978}{108006}Mia³em zamiar
+{108024}{108064}ujrzeæ twoj¹ twarz,
+{108078}{108131}zemœciæ siê na Hindley'u...
+{108198}{108228}I pope³niæ samobójstwo.
+{108294}{108340}Ale zmieni³em zdanie.
+{108380}{108417}Nie opuszczê ciê
+{108420}{108448}ju¿ nigdy wiêcej.
+{108556}{108641}Moje ¿ycie by³o pe³ne goryczy,|odk¹d ostatni raz s³ysza³em twój g³os.
+{108666}{108700}Trwa³em myœl¹c tylko o tobie.
+{108996}{109060}{y:i}Chyba nie pozwolimy, by herbata wystyg³a?
+{109193}{109228}Cathy?
+{109362}{109416}{y:i}Napije siê pan herbaty?
+{109480}{109515}Panie Heathcliff?
+{109596}{109633}Tak, panie Linton.
+{109636}{109671}Dziêkujê.
+{109852}{109892}Gdzie siê zatrzyma³eœ?
+{109922}{109992}Hindley wynaj¹³ mi pokój.
+{110033}{110074}Przyjadê tam jutro.
+{110309}{110350}{y:i}Przeziêbisz siê.
+{110416}{110451}Dobranoc.
+{111118}{111157}{y:i}No, dalej.
+{111160}{111202}{y:i}Myœlisz, ¿e jestem g³upi?
+{111205}{111259}{y:i}Wyci¹gnij tê kartê z rêkawa.
+{111331}{111370}{y:i}To by³ ostatni raz.
+{112596}{112632}Spadaj!
+{112697}{112752}Pierdol siê!
+{114862}{114917}{y:i}Poradzi³eœ sobie.
+{114988}{115037}Pewnie dziêki mordowaniu i z³odziejstwu.
+{115040}{115086}Tylko to potrafisz.
+{115196}{115232}Potrzebujê zap³aty z góry.
+{115471}{115536}{y:i}Nie zostanê na d³ugo.|{y:i}Zawo³aj Heathcliffa.
+{115717}{115758}Chcê pokwitowania.
+{116154}{116184}Pani Linton.
+{116207}{116237}Nie mów tak.
+{116562}{116636}Pamiêtasz Isabellê?|Pomys³ Edgara.
+{116696}{116723}Witaj, Heathcliffie.
+{116765}{116810}Kawa³ czasu.
+{116851}{116876}Mo¿emy ruszaæ?
+{117668}{117720}Isabello, zostaniesz z koñmi?
+{117723}{117772}Chcê pokazaæ coœ Heathcliffowi.
+{117988}{118017}Pomó¿ mi.
+{118204}{118234}Dziêkujê.
+{119768}{119814}Jak mog³eœ to zostawiæ?
+{120025}{120064}Jak mog³eœ zostawiæ mnie?
+{120464}{120524}Mo¿emy wracaæ?|Zaczyna padaæ deszcz.
+{120643}{120683}Ju¿ idziemy.
+{121155}{121249}{y:i}- Znowu?|{y:i}- Jeszcze jedn¹ kartê.
+{122729}{122791}- Czy to rozs¹dne?|- Przeka¿ jej, ¿e przyjecha³em.
+{122794}{122834}By³o dobrze, dopóki nie wróci³eœ.
+{122837}{122897}Tak myœla³am, ¿e s³yszê twój g³os.
+{122900}{122955}WejdŸ, przygotujê siê.
+{122975}{123009}Cathy, nie biegnij!
+{123386}{123416}{y:i}Witaj.
+{123699}{123748}Masz pewnie co opowiadaæ.
+{123782}{123809}Co?
+{123827}{123887}Có¿, d³ugo ciê nie by³o.
+{123929}{123959}Zmieni³eœ siê.
+{123980}{124024}Martwiliœmy siê o ciebie.
+{124052}{124104}Nie ma niczego, co chcia³bym pamiêtaæ.
+{124107}{124176}Jesteœ zbyt skromny.
+{124179}{124216}Nie jestem.
+{124706}{124736}Jestem gotowa.
+{124815}{124840}Dziêkujê.
+{125343}{125377}Znowu wychodzisz?
+{125392}{125428}{y:i}Tak.
+{125431}{125457}Uwa¿aj na siebie.
+{125476}{125504}Dobrze.
+{125524}{125568}{y:i}Zabierz ze sob¹ Isabellê.
+{125571}{125620}{y:i}Z przyjemnoœci¹ do was do³¹czê.
+{125638}{125664}Oczywiœcie.
+{125676}{125712}{y:i}WeŸmiemy j¹ ze sob¹
+{126798}{126889}Mo¿e przekonasz Heathcliffa|¿eby nam coœ opowiedzia³.
+{126892}{126968}Przestañ go zadrêczaæ, Isabello.
+{127239}{127285}Nie mówisz zbyt wiele, to prawda.
+{127294}{127333}By³o minê³o.
+{127424}{127459}Liczy siê teraŸniejszoœæ.
+{127544}{127616}{y:i}Mo¿e wiêc Catherine podzieli siê nowin¹.
+{127705}{127736}Jak¹ nowin¹?
+{127747}{127776}¯adn¹.
+{127802}{127843}Nic wa¿nego.
+{130932}{130992}Pomo¿esz nam rozwiaæ w¹tpliwoœci.
+{131332}{131394}Wygl¹da na to, ¿e Isabella|lubi ciê bardziej ni¿ ja.
+{131468}{131503}Nie odchodŸ.
+{131556}{131645}- Mo¿esz jej powiedzieæ, ¿eby mnie puœci³a?|- Nie jad³a od dwóch.
+{131648}{131678}Jest chora z mi³oœci.
+{131768}{131813}Prawdziwy tygrys.
+{131988}{132024}Mówisz prawdê?
+{132096}{132133}A jak myœlisz?
+{133270}{133311}Potrzebujê wiêcej pieniêdzy.
+{133357}{133396}Zap³aci³em za rok z góry.
+{133496}{133536}Potrzebujê wiêcej.
+{133708}{133754}WeŸ ile potrzebujesz.
+{133780}{133828}Ale potrzebujê czegoœ w zamian.
+{133831}{133865}Bierz co chcesz.
+{133868}{133920}Zawsze by³eœ z³odziejskim czarnuchem.
+{135460}{135496}Powinnam iœæ.
+{135519}{135554}To prawda?
+{136654}{136690}Pójdê ju¿.
+{137543}{137583}Co ty sobie myœlisz?
+{137606}{137652}A co ciê to obchodzi?
+{137655}{137700}Nie masz powodów do zazdroœci.
+{137745}{137781}Nie jestem twoim mê¿em.
+{137877}{137920}Podoba ci siê?
+{137968}{138024}le mnie potraktowa³aœ.
+{138077}{138124}Myœlisz, ¿e bêdziesz mi³a
+{138149}{138200}i wszystko bêdzie w porz¹dku.
+{138292}{138332}Co masz na myœli?
+{138335}{138375}Nie potraktowa³am ciê Ÿle.
+{138615}{138659}Co siê dzieje?
+{138662}{138721}Nic.
+{138724}{138789}Zgodzi³em siê na twoj¹ wizytê,|bo moja ¿ona ciê lubi.
+{138792}{138852}Ale dosyæ ju¿, wyjdŸ.
+{138855}{138892}Masz gust, Cathy.
+{138942}{139020}Wolisz tego tchórza ode mnie.
+{139046}{139076}Wystarczy tego.
+{139102}{139134}Tak nie mo¿e byæ.
+{139169}{139213}Musisz wybraæ, Cathy.
+{139216}{139251}Albo on albo ja.
+{139355}{139424}Twoje ¿y³y s¹ pe³ne lodu, Edgarze.
+{139775}{139803}{y:i}Robert!
+{140133}{140160}Lepiej ju¿ idŸ.
+{140163}{140206}ChodŸ ze mn¹.
+{140279}{140328}Wychowam to dziecko jak w³asne.
+{140374}{140403}Nie.
+{146234}{146284}A wiêc to prawda.|O¿eni³eœ siê.
+{146299}{146361}B³ogos³aw nam Panie|i wybacz nam.
+{146468}{146501}ZaprzyjaŸnimy siê?
+{146504}{146558}Odwal siê albo spuszczê psy!
+{146940}{146992}Jakieœ wieœci od Cathy?
+{147015}{147075}P³aci za sw¹ uleg³oœæ.
+{147114}{147157}Bóg j¹ pokara³.
+{147160}{147224}- Zachorowa³a?|- Odk¹d wyjecha³eœ.
+{147227}{147279}Od tygodni ma gor¹czkê i majaczy.
+{147282}{147324}Nelly te¿ uwa¿a, ¿e na siebie|to sprowadzi³a.
+{149575}{149617}Umar³a ju¿?
+{150135}{150200}Zostaw mnie!
+{153545}{153593}Ty i Edgar z³amaliœcie mi serce.
+{153623}{153663}Zabiliœcie mnie.
+{154049}{154112}Bedziesz zadowolony, gdy mnie porzebi¹?
+{154163}{154203}Zapomnisz o mnie?
+{154324}{154365}Nie drêcz mnie!
+{154568}{154614}Nie zabi³em ciê.
+{154617}{154680}Szybciej zapomnia³ bym o sobie.
+{154754}{154793}Gdy ty osi¹gniesz spokój,
+{154835}{154875}Mnie poch³onie piek³o.
+{154976}{155020}Nigdy nie zaznam spokoju.
+{155284}{155324}Nie odchodŸ.
+{155327}{155367}PodejdŸ.
+{155412}{155452}Nie z³oœæ siê.
+{157280}{157315}Pomó¿ jej.
+{157348}{157380}Ju¿ dobrze, Cathy.
+{157459}{157529}{y:i}Ukochana, obudŸ siê.
+{157556}{157616}S³yszysz?|Spójrz na mnie.
+{159612}{159644}Umar³a, prawda?
+{159680}{159715}Tak.
+{159800}{159860}Nie odzyska³a przytomnoœci.
+{159905}{159969}Mo¿e obudzi siê zdrowa w innym œwiecie.
+{159972}{160007}A mo¿e bêdzie cierpieæ w agonii.
+{160148}{160222}Nie zostawiaj mnie tu,|gdzie nie mogê ciê znaleŸæ.
+{160716}{160757}Zostaw mnie.
+{160847}{160871}Zostaw mnie w spokoju!
+{166879}{166929}To koniec.
+{170320}{170384}- Otwórz drzwi!|- Hindley ciê zabije, jeœli ciê wpuszczê.
+{170387}{170440}Zabijê was oboje,|jeœli mnie nie wpuœcisz!
+{170443}{170541}Na twoim miejscu po³o¿y³abym siê|na jej grobie i zdycha³a jak pies!
+{170544}{170605}¯ycie pewnie nie ma ju¿|dla ciebie sensu, racja?
+{170998}{171063}Przestañ!
+{171256}{171307}Puœæ mnie!
+{171591}{171666}Gdyby nie ty, Cathy wci¹¿ by ¿y³a.
+{171778}{171817}Nienawidzê ciê!
+{174512}{174558}Wygl¹da na to,|¿e wszystko siê zgadza.
+{174589}{174670}Jest pan prawowitym posiadaczem farmy,|panie Heathcliff.
+{175029}{175064}¯yczê mi³ego dnia.
+{175289}{175388}www.NapiProjekt.pl - nowa jakoœæ napisów.|Napisy zosta³y specjalnie dopasowane do Twojej wersji filmu.

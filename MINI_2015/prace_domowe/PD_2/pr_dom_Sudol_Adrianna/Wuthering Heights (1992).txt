@@ -1,0 +1,686 @@
+00:02:16:www.NapiProjekt.pl - nowa jakosc napisów.|Napisy zostaly specjalnie dopasowane do Twojej wersji filmu.
+00:02:20:Najpierw znalaz³am ten dom.
+00:02:23:Zastanowi³o mnie, kto tu mieszka³|i jakie by³o ich ¿ycie.
+00:02:30:Coœ szepnê³o mi do ucha|i zaczê³am pisaæ.
+00:02:36:Moje pióro opisuje œwiat,|który móg³ istnieæ,
+00:02:41:œwiat wyobraŸni.
+00:02:45:A oto historia, któr¹ opowiem.
+00:02:55:Ale nie uœmiechajcie siê,|s³uchaj¹c jej.
+00:03:04:Zaczyna siê od przyjazdu|nieznajomego.
+00:03:16:- Pan Heathcliff?|- Pan Heathcliff?
+00:03:19:- Musi pan poczekaæ.|- Musi pan poczekaæ.
+00:04:18:Kim pan jest?
+00:04:21:Jestem Lockwood,|pañski nowy lokator w Grange.
+00:04:25:Wybra³ siê pan na przeja¿d¿kê|podczas burzy?
+00:04:29:Zgubi³em siê na wrzosowisku.|Daleko st¹d do Grange?
+00:04:39:- Mo¿e dosta³bym przewodnika?|- Nie.
+00:04:44:- Odprowadzê go do parku.|- Odprowadzisz go do piek³a.
+00:04:50:Jeœli nie dostanê przewodnika,|bêdê dziœ spa³ tutaj.
+00:04:55:Nie mam wolnych pokoi dla obcych.
+00:05:06:Wiêc bêdê spa³ na krzeœle.
+00:05:22:Jest pokój, z którego nie korzystaj¹.
+00:05:37:- Niech jej pan nie zostawia przy oknie.|- Dlaczego nie?
+00:07:11:,,Catherine Heathcliff. Catherine|Linton. Catherine Earnshaw".
+00:07:44:Wpuœæ mnie. Wpuœæ mnie.
+00:07:53:- Co za diabe³ tam pana wpuœci³?|- Tak, diabe³.
+00:07:59:Ona... Jej twarz...
+00:08:04:Wygl¹da³a jak...
+00:08:08:Nie powinien by³ pan tam wchodziæ.
+00:08:14:Lockwood trafi³|na fina³ dziwnej historii.
+00:08:20:Historii, która zaczê³a siê|30 lat wczeœniej,
+00:08:25:gdy stary cz³owiek wróci³|do Wichrowych Wzgórz,
+00:08:28:zmêczony, po d³ugiej podró¿y.
+00:08:48:- Idzie.|- Joseph.
+00:08:51:Nie pospieszaj mnie.
+00:08:56:- Ojciec!|- Nareszcie w domu, Cathy.
+00:08:59:- Co mi przynios³eœ, ojcze?|- Pozwól ojcu z³apaæ oddech.
+00:09:04:Poczekaj, zaraz zobaczysz.
+00:09:08:O Bo¿e!
+00:09:10:Znalaz³em go wyg³odnia³ego|na ulicach Liverpoolu.
+00:09:14:- To brudne cygañskie dziecko.|- To dar od Boga.
+00:09:17:- Traktuj go jak swojego brata.|- A gdzie mój prezent?
+00:09:21:- Nie ma ¿adnej rodziny?|- Nale¿y teraz do naszej rodziny.
+00:09:26:To twój brat, Hindley.|A to twoja siostra, Cathy.
+00:09:35:Podaj rêkê, tak jak ciê uczy³em.
+00:09:46:Earnshaw nazwa³ go Heathcliffem.
+00:09:59:Milcz¹cy, zamkniêty ch³opiec|przyci¹ga³ do siebie Cathy.
+00:10:06:Lecz to jego hardoœæ, a nie|³agodnoœæ sprawia³y, ¿e milcza³.
+00:10:18:Nic nie nale¿y tu do ciebie.|Ani teraz ani nigdy.
+00:10:25:Od pocz¹tku Heathcliff by³ bardziej|bratem Cathy ni¿ Hindleya.
+00:10:30:Jak wszystkie dzikie natury,|kochali otwart¹ przestrzeñ,
+00:10:35:ska³y i o³owiane niebo.
+00:10:39:Mi³osierny Bo¿e, Ojcze|naszego Pana, Jezusa Chrystusa...
+00:10:43:Choæ Hathcliff sta³ siê|ulubionym synem Earnshawa,
+00:10:46:œmieræ starego pana|pozbawi³a go jedynej ochrony.
+00:10:51:...nie umrze na wieki; który uczy³ nas|przez œw. Paw³a aposto³a,
+00:10:57:by nie rozpaczaæ,|gdy¿ ci, którzy w Niego wierz¹,
+00:11:01:dost¹pi¹ wiecznego zbawienia.|Przez Jezusa Chrystusa, Amen.
+00:11:07:Od dziœ bêdziesz mieszka³ w stajni.
+00:11:13:Heathcliff!
+00:11:48:- Dzieñ dobry, Cathy.|- Dzieñ dobry.
+00:12:31:"Sta³ wiêc rabsak i donoœnym g³osem|wo³a³ po hebrajsku tymi s³owami":
+00:12:36:"S³uchajcie s³ów wielkiego króla,|nie s³uchajcie Ezechiasza",
+00:12:42:"bo tak mówi król asyryjski:|Zawrzyjcie ze mn¹ pokój"
+00:12:47:"i mnie siê poddajcie, a bêdziecie|jedli owoce, ze swej winoroœli",
+00:12:53:"i pili wodê, ka¿dy ze swej cysterny".
+00:13:04:"A¿ przyjdê zabraæ was do kraju|podobnego do waszego",
+00:13:09:"kraju zbo¿a i wina,|kraju chleba i winnic".
+00:13:14:"Ezechiasz niech was nie oszukuje,|mówi¹c..."
+00:13:21:Co? Ju¿ skoñczyliœcie?
+00:13:24:Ojciec pozwala³ siê nam|bawiæ w niedzielê.
+00:13:27:- Zostaw ich, Hindley.|- Niech czytaj¹ Pismo Œwiête.
+00:13:31:Przepytaj ich.
+00:13:40:- Zwierzê?|- O, nie.
+00:13:47:- Pieprz.|- Pieprz?
+00:13:55:Jak kora drzewa.
+00:13:59:- Kora brzozy.|- Brzozy?
+00:14:03:Tylko cieplejsza.
+00:14:10:Moja kolej.
+00:14:13:Co za wstyd! Pomyœlcie|o waszych duszach.
+00:14:21:Hindley! Hindley!
+00:14:33:O czym myœlisz?
+00:14:38:Myœla³am o morzu.|Widzia³eœ kiedyœ morze?
+00:14:43:Chyba tak. Nie pamiêtam.
+00:14:47:Moje ¿ycie zaczê³o siê dopiero, gdy...
+00:14:52:- Gdy...|- Kto ciê przys³a³?
+00:14:55:- Nikt.|- Ptak?
+00:14:59:- Ptak?|- Albo drzewo?
+00:15:01:- A mo¿e wiatr?|- Nie, ptak.
+00:15:05:- Nie wiem.|- A co wiesz?
+00:15:11:Umiesz rozmawiaæ z drzewami? Nie?
+00:15:16:Dotykaæ wiatru?
+00:15:22:- Wyœlijmy twoj¹ duszê do tego drzewa.|- Gdzie?
+00:15:28:- Tam.|- Tam?
+00:15:33:Niech do nas przemówi.
+00:15:35:- Mów do mnie.|- S³uchaj.
+00:15:47:S³uchaj.
+00:15:54:- Wo³aj¹ twoje imiê.|- Jak to zrobi³eœ?
+00:15:59:- Umiem robiæ ró¿ne rzeczy.|- Jakie rzeczy?
+00:16:02:Wstañ.
+00:16:05:Gdzie idziesz?|ChodŸ tutaj. Wracaj.
+00:16:12:ChodŸ tutaj.
+00:16:19:Zamknij oczy.
+00:16:23:Zamknij oczy.
+00:16:28:Jeœli bêdzie jasno i s³onecznie,|gdy je otworzysz,
+00:16:34:taka bêdzie twoja przysz³oœæ,|lecz jeœli zerwie siê burza...
+00:16:43:...burzliwe bêdzie twoje ¿ycie.
+00:16:48:A teraz otwórz oczy.
+00:17:14:Co zrobi³eœ?
+00:17:19:Nie obawiam siê.|S³yszysz? Nie obawiam siê.
+00:17:42:- Gdzie idziesz?|- Popatrzeæ. ChodŸ!
+00:17:46:Schowany w dolinie,|wyœcielony szkar³atem,
+00:17:51:sta³ Grange, dom Edgara Lintona|i Isabelli, jego siostry.
+00:18:03:Nie ¿a³ujesz, ¿e nie zosta³eœ|zaadoptowany przez Lintonów?
+00:18:08:Nie odda³bym tego, co mam,|za ¿adne skarby Lintonów.
+00:18:22:ChodŸ.
+00:18:29:ChodŸ!
+00:18:32:- Dalej, uciekaj!|- Nie!
+00:18:40:- Zróbcie miejsce.|- O mój Bo¿e!
+00:18:45:- To Catherine Earnshaw, ojcze.|- Phipps.
+00:18:49:Wyœlij po doktora Kennetha.|Wnieœ j¹.
+00:18:53:Zostawcie j¹! Zostawcie!
+00:19:00:- To musi byæ znajda Earnshawa.|- Wyrzuciæ go!
+00:19:03:Cathy! Cathy!
+00:19:18:- Spójrzcie na ni¹.|- Biedna dziewczyna.
+00:19:23:Muszê porozmawiaæ z Hindleyem.|To jego siostra.
+00:19:29:Mo¿e powinna tu zostaæ|przez jakiœ czas.
+00:19:58:Dziêkujê.
+00:20:33:Jak ona siê czuje?
+00:20:37:Chyba lepiej.
+00:20:40:Lintonowie lubi¹ jej towarzystwo.
+00:20:45:Kiedy wraca do domu?
+00:20:53:Pyta³a o mnie?
+00:21:01:Pan Hindley zakaza³ ci rozmawiaæ|z Cathy, gdy wróci.
+00:21:19:Nie mia³a dla mnie wiadomoœci?
+00:21:26:Myœlê, ¿e wróci bardzo zmieniona.
+00:21:50:- Dziêkujê. Jak siê masz?|- O wiele lepiej.
+00:21:54:Dziêkujê, Hindley.
+00:21:55:Joseph.
+00:21:58:Nelly.
+00:22:00:Witamy w domu, panno Cathy.
+00:22:02:O, Nelly. Co o niej myœlisz?|Jest teraz dam¹.
+00:22:08:- Gdzie jest Heathcliff?|- Heathcliff, mo¿esz wyjœæ.
+00:22:14:Przywitaj siê z panienk¹ Catherine|jak reszta s³u¿by.
+00:22:28:Có¿, Heathcliff. Zapomnia³eœ mnie?
+00:22:31:Podaj rêkê. To jest dozwolone.
+00:22:38:Nie zostanê, by siê ze mnie œmiano.
+00:22:42:Przykro mi. Nie chcia³am siê œmiaæ.|Ale spójrz na siebie.
+00:22:51:Nie trzeba by³o mnie dotykaæ.
+00:24:05:WyprowadŸcie tego cygana.
+00:24:16:Nie nadajesz siê|do cywilizowanego domu.
+00:24:37:Najgorsze jest to, ¿e nie dostrzegasz|obowi¹zków innych.
+00:24:43:O mój Bo¿e.
+00:24:51:Opiekowali siê mn¹ przez trzy|miesi¹ce.
+00:25:01:Znalaz³em gniazdo czajki|w Penistone Crag, gdy ciê nie by³o.
+00:25:09:Codziennie czeka³em na ciebie|na wrzosowiskach.
+00:25:15:Ale nie przysz³aœ.
+00:25:17:Nakry³em gniazdo drucian¹ siatk¹.|Pisklêta umar³y, gdy siê wyklu³y.
+00:25:23:Dlaczego?
+00:25:24:Poniewa¿ rodzice nie mogli siê|do nich dostaæ.
+00:25:27:Nie, dlaczego je zabi³eœ?
+00:25:30:Nie by³o sensu, by ¿y³y,|skoro nie chcia³aœ ich zobaczyæ.
+00:25:35:Gdybyœ wróci³a, uratowa³bym je.
+00:25:40:W przysz³oœci musisz je uratowaæ.
+00:25:49:Nie ufasz mi?
+00:25:53:Nie wiesz, ¿e zawsze wrócê?|Nie wiesz tego? Heathcliff.
+00:26:02:Zawsze?
+00:26:16:Przy porodzie, Frances,|¿ona Hindleya Earnshawa, umar³a.
+00:26:23:Hindley, nie potrafi¹c wyp³akaæ ¿alu|ani znaleŸæ pocieszenia w modlitwie,
+00:26:29:po jej œmierci|straci³ chêæ do ¿ycia.
+00:26:38:Nadaj mu imiê.
+00:26:44:Hareton Earnshaw.
+00:26:47:Haretonie Earnshaw,|chrzczê ciê w imiê Ojca
+00:26:52:i Syna i Ducha Œwiêtego. Amen.
+00:26:58:Przyjmij to dziecko|do wspólnoty chrzeœcijañskiej.
+00:27:02:Naznacz go znakiem krzy¿a,|aby nigdy
+00:27:05:nie wypar³ siê wiary|w Chrystusa ukrzy¿owanego.
+00:27:09:I aby walczy³ pod jego sztandarem|z grzechem, œwiatem i szatanem.
+00:27:35:Po co siê tak wystroi³aœ?
+00:27:40:Wci¹¿ jesteœmy w ¿a³obie,|panno Cathy.
+00:27:45:- Nie powinieneœ byæ na polu?|- Nie.
+00:27:59:A, znalaz³am.
+00:28:07:Edgar i Isabella Lintonowie mówili,|¿e mog¹ zajrzeæ dziœ po po³udniu.
+00:28:25:Krzy¿ykami oznaczam dni,|które spêdzi³aœ z Lintonami.
+00:28:32:Kó³ka to dni, które spêdzi³aœ ze mn¹.
+00:28:38:Widzisz? Oznaczam ka¿dy dzieñ.
+00:28:48:Bardzo g³upie.
+00:28:50:Jakby to mia³o znaczenie.|Jaki to ma sens?
+00:28:55:- Dla mnie ma znaczenie.|- Rozumiem.
+00:29:02:Zawsze mam z tob¹ siedzieæ?
+00:29:06:Mo¿e milczenie z tob¹|przesta³o mnie bawiæ?
+00:29:10:Nigdy siê nie skar¿y³aœ,|¿e mówiê za ma³o.
+00:29:13:I ¿e nie lubisz|mojego towarzystwa.
+00:29:18:To ¿adne towarzystwo, gdy ludzie|nic nie wiedz¹ i nic nie mówi¹.
+00:29:50:Jak mi³o ciê widzieæ.
+00:29:54:WejdŸ.
+00:30:32:Nelly.
+00:30:34:Och, Cathy.
+00:30:41:Myœla³am, ¿e to Frances|wsta³a z grobu.
+00:30:45:Nelly, potrafisz dochowaæ tajemnicy?
+00:30:51:A warta jest dochowania?
+00:30:56:Edgar Linton poprosi³ mnie dzisiaj...
+00:31:00:...o rêkê.
+00:31:04:Có¿...
+00:31:07:Co mam odpowiedzieæ?
+00:31:13:Panno Cathy,|sk¹d ja mogê to wiedzieæ?
+00:31:19:Przyjê³am oœwiadczyny.
+00:31:25:- Kochasz pana Edgara?|- Oczywiœcie, ¿e tak.
+00:31:29:Oczywiœcie. Jak mog³abym nie kochaæ?
+00:31:34:Co w nim kochasz, Cathy?
+00:31:37:Jest przystojny i mi³y.
+00:31:41:le!
+00:31:43:Jest m³ody i weso³y.
+00:31:48:Dalej Ÿle.
+00:31:52:I bêdzie bogaty,
+00:31:54:a ja bêdê najœwietniejsz¹|kobiet¹ w okolicy.
+00:32:04:Czy w³aœnie tego chcesz?
+00:32:07:Wiêc wyjdŸ za pana Edgara.|Gdzie przeszkoda?
+00:32:21:Tutaj.
+00:32:26:W g³êbi serca czujê, ¿e robiê Ÿle.
+00:32:35:Gdyby mój brat|nie poni¿y³ tak Heathcliffa,
+00:32:40:nie musia³abym siê zastanawiaæ.
+00:32:44:Ma³¿eñstwo z Heathcliffem|poni¿y³oby mnie.
+00:32:48:Nigdy nie bêdzie wiedzia³,|jak bardzo go kocham.
+00:32:58:Moje najwiêksze cierpienia,|by³y cierpieniami Heathcliffa.
+00:33:04:Patrzy³am na nie|i czu³am je od samego pocz¹tku.
+00:33:16:Moja mi³oœæ do Lintona jest jak listowie.
+00:33:21:Czas je zmieni...
+00:33:26:...jak zima zmienia drzewa.
+00:33:40:Moja mi³oœæ do Heathcliffa...
+00:33:49:...jest jak podziemna ska³a...
+00:33:56:...nie ciesz¹ca oczu, lecz konieczna.
+00:34:05:Nelly, jestem Heathcliffem.
+00:34:14:- Cii.|- Dlaczego?
+00:34:17:To Joseph,|Heathcliff mo¿e byæ razem z nim.
+00:34:23:Nie jestem pewna,|czy nie by³o go tu wczeœniej.
+00:34:28:Ten diabelski cygan|robi siê coraz gorszy.
+00:34:32:Zostawi³ otwart¹ bramê|i pobieg³ na wrzosowiska.
+00:34:37:IdŸ za nim. Zawo³aj go.|Nie, znajdŸ go.
+00:34:45:- Myœlisz, ¿e s³ysza³?|- Myœlê, ¿e coœ s³ysza³.
+00:34:50:Co?
+00:34:53:Co powiedzia³am?
+00:34:56:Powiedzia³aœ, ¿e ma³¿eñstwo z nim|by³oby dla ciebie poni¿aj¹ce.
+00:35:13:Proszê wracaæ, panienko Cathy.
+00:35:15:Straci³am go! Straci³am go!
+00:35:45:Nie mogê ¿yæ bez mojego ¿ycia.
+00:35:53:Nie mogê ¿yæ bez mojej duszy.
+00:36:05:Heathcliff z jej dzieciñstwa|na zawsze odszed³ tej nocy.
+00:36:11:Nie mog³a go znaleŸæ.
+00:36:15:Gdy wyzdrowia³a,|czeka³a na jego powrót.
+00:36:19:Ale on nie wróci³.
+00:36:23:W koñcu Cathy odrzuci³a|dawne ¿ycie w Wichrowych Wzgórzach.
+00:36:41:W ma³¿eñstwie z Edgarem|znalaz³a swoje ma³e szczêœcie.
+00:36:49:Dusze ró¿ni¹ce siê jak promieñ|ksiê¿yca od b³yskawicy,
+00:36:54:albo szron od ognia.
+00:37:13:Ale myœli s¹ tyranami,|które wracaj¹, by nas przeœladowaæ.
+00:37:30:Joseph!
+00:37:35:Przeklêty starzec...
+00:38:24:Jakiœ cz³owiek z Gimmerton|pragnie pani¹ zobaczyæ.
+00:38:26:- Czego chce?|- Nie pyta³am go.
+00:38:31:Wrócê za chwilê.
+00:38:39:Jeden z wierzycieli Hindleya?
+00:38:42:Nie, proszê pana.|To ktoœ, kogo pani nie oczekuje.
+00:39:05:Heathcliff wróci³.
+00:39:08:Nie uduœ mnie z tego powodu.
+00:39:13:Wiem, ¿e go nie lubi³eœ,|ale musicie zostaæ przyjació³mi.
+00:39:18:Mogê go poprosiæ? ZgódŸ siê.
+00:39:23:Poproœ go.
+00:39:26:Spróbuj siê cieszyæ, nie oœmieszaj¹c siê|przed ca³ym domem.
+00:39:30:Heathcliff to zbieg³y s³u¿¹cy.
+00:39:51:Proszê usi¹œæ.
+00:39:55:Pani Linton prosi³a, bym pana powita³.
+00:39:59:Raduje mnie wszystko,|co sprawia jej przyjemnoœæ.
+00:40:02:Mnie tak¿e.|Zw³aszcza jeœli mam w tym udzia³.
+00:40:10:Gdzie by³eœ w ci¹gu|tych dwóch lat, Heathcliff?
+00:40:13:- Wygl¹da na to, ¿e ci siê powiod³o.|- Tak.
+00:40:21:Mo¿e otrzyma³eœ spadek?
+00:40:25:- Tak.|- Dobrze wygl¹dasz.
+00:40:31:Mo¿e zaci¹gn¹³eœ siê do wojska|i walczy³eœ za granic¹.
+00:40:36:Tak.
+00:40:41:Jutro pomyœlê, ¿e to by³ sen,|ale nie zas³ugujesz na to przyjêcie.
+00:40:47:Dwuletnia nieobecnoœæ i milczenie.
+00:40:51:Us³ysza³em o twoim ma³¿eñstwie,|Cathy, ca³kiem niedawno.
+00:40:59:Przyjecha³em tutaj,|by spojrzeæ na twoj¹ twarz.
+00:41:04:Moje ¿ycie by³o udrêk¹, odk¹d|ostatni raz s³ysza³em twój g³os.
+00:41:09:Musisz przebaczyæ mi to milczenie,|gdy¿ zmaga³em siê tylko dla ciebie.
+00:41:22:Gdzie siê pan zatrzyma³?
+00:41:25:W Wichrowych Wzgórzach.
+00:41:28:Hindley pozwoli³ ci siê zatrzymaæ|w Wichrowych Wzgórzach?
+00:41:32:To ja mu pozwoli³em zostaæ.
+00:41:35:Hindley zastawi³ maj¹tek,|by pokryæ swoje karciane d³ugi.
+00:41:40:Pomog³em staremu przyjacielowi,|sp³acaj¹c wierzycieli.
+00:41:48:Jestem w³aœcicielem|Wichrowych Wzgórz.
+00:41:52:Hindley i Hareton s¹ wydziedziczeni?
+00:41:55:To dom,|w którym dorasta³em razem z Cathy.
+00:42:04:Jestem do niego|szczególnie przywi¹zany.
+00:42:21:Wszystko siê budzi do ¿ycia.
+00:42:26:Pamiêtasz,|jak wyobra¿aliœmy sobie niebo?
+00:42:29:Pamiêtam,|jak ty je sobie wyobra¿a³aœ.
+00:42:31:- A ty jak je sobie wyobra¿a³eœ?|- Z tob¹.
+00:42:35:Kiedykolwiek i gdziekolwiek|spêdza³aœ ze mn¹ czas.
+00:42:39:Zostaw nas.
+00:42:52:Kocham ciê.
+00:42:59:Gdy odszed³eœ, zerwa³am z ¿yciem|w Wichrowych Wzgórzach.
+00:43:04:Zakorzeni³am siê w Grange.|Nie mogê siê znów wykorzeniæ.
+00:43:10:- Dlaczego nie?|- Nie mogê, nie mogê.
+00:43:17:- Poca³ujmy siê na po¿egnanie.|- Nie odtr¹cisz mnie kolejny raz.
+00:43:21:Nie chcê.
+00:43:26:Ale poca³ujmy siê jako Cathy|i Heathcliff z dawnych czasów.
+00:43:32:I po¿egnajmy tamte czasy.
+00:44:00:Dobrze. Uœpiliœmy stare dzieje.
+00:44:06:Gdy spotkamy siê jutro,|bêdziemy innymi ludŸmi.
+00:44:10:- I poca³ujê ciê znowu.|- Nie pozwalam ci.
+00:44:13:Kocham Edgara, jestem mu potrzebna.
+00:44:17:Jeœli mnie poca³ujesz, bêdê musia³a|go zostawiæ i nie prze¿yjê tego.
+00:44:26:Jeœli chcesz mnie zabiæ,|poca³uj mnie jeszcze raz.
+00:44:45:Odes³a³aœ mnie, bo wiedzia³aœ,|¿e chcê z nim byæ.
+00:44:50:Nie mogê uwierzyæ w te bzdury.|Jesteœ zakochana w Heathcliffie?
+00:44:55:Kocham go bardziej, ni¿ ty|kiedykolwiek kocha³aœ Edgara.
+00:45:00:Wiêc nie chcia³abym byæ w twojej skórze.
+00:45:02:Skryte, samotne stworzenie.|Dumny, bezlitosny, dziki cz³owiek.
+00:45:06:To nieprawda!|Heathcliff ma szlachetn¹ duszê.
+00:45:11:- Myœlisz, ¿e kieruje mn¹ egoizm?|- Jestem tego pewna.
+00:45:16:Dobrze. Spróbuj sama. Ja próbowa³am.
+00:45:27:Walczymy o ciebie jak dwie kotki.
+00:45:30:Catherine, nie!
+00:45:33:Puœæ mnie!
+00:45:35:Moja biedna szwagierka|ma z³amane serce,
+00:45:38:na sam¹ myœl o twojej fizycznej|i moralnej piêknoœci.
+00:45:42:Gniewa siê od wczoraj, odk¹d j¹|pozbawi³am twego towarzystwa.
+00:45:47:Zdaje siê,|¿e dziœ sama siê chce go pozbawiæ.
+00:45:55:- To tygrysica.|- Dziedziczy po bracie, prawda?
+00:46:08:Wiem, ¿e Cathy przedstawi³a mnie|w negatywnym œwietle.
+00:46:15:Nie myœl nawet przez chwilê,|¿e k³amie.
+00:46:20:Jestem nikczemnikiem.|Zale¿y mi tylko na twojej fortunie.
+00:46:34:- Podstêpny diabe³.|- Kto?
+00:46:38:Twój bezwartoœciowy przyjaciel.
+00:46:49:- Co ty robisz?|- Nie jestem twoim mê¿em.
+00:46:53:Potraktowa³aœ mnie okrutnie.|Nie myœl, ¿e siê nie zemszczê.
+00:46:58:Ja ciê okrutnie potraktowa³am?
+00:47:00:Pozwól, ¿e zabawiê siê|w tym samym stylu.
+00:47:07:S³ucha³eœ, Edgar?
+00:47:10:Proszê natychmiast opuœciæ mój dom.|W przeciwnym razie pana wyprowadzê.
+00:47:16:Cathy, ta twoja owieczka|grozi mi jak byk.
+00:47:22:Ellen, przyprowadŸ ludzi.
+00:47:27:Stosuj sprawiedliwe metody.
+00:47:29:Jeœli nie masz odwagi,|by go uderzyæ, przeproœ.
+00:47:34:Albo daj mu siê pobiæ.
+00:47:39:Cathy, daj mi klucz.
+00:47:44:Powiedzia³em, daj mi klucz.
+00:47:51:¯yczê ci szczêœcia z tym|zimnokrwistym tchórzem, Cathy.
+00:47:57:Gratulujê ci dobrego smaku.
+00:49:09:To nie pierwszy raz, proszê pana.
+00:49:13:Choruje, by nam zrobiæ na z³oœæ.
+00:49:17:To mo¿e byæ niebezpieczne|w jej stanie. Proszê.
+00:49:23:Niech pan z ni¹ porozmawia.
+00:49:27:Tak. Masz racjê, Ellen.
+00:49:34:To dziêki panu wróci³a do ¿ycia,|gdy Heathcliff uciek³...
+00:49:40:Nie chcê wiêcej s³yszeæ|tego imienia w moim domu.
+00:49:50:Dobranoc, Ellen.
+00:50:28:Heathcliff.
+00:50:53:- Nelly, bojê siê byæ sama.|- Nie jesteœ sama.
+00:50:59:Nelly jest z tob¹.
+00:51:02:- Cathy, Cathy...|- Daj mi poczuæ wiatr.
+00:51:07:- Wieje z wrzosowisk.|- Nie, Cathy, nie.
+00:51:21:Chcia³abym byæ znowu|ma³¹ dziewczynk¹...
+00:51:25:...która œmieje siê z ran,|a nie umiera z bólu.
+00:51:30:Dlaczego tak siê zmieni³am?
+00:51:35:Zobacz. To jest mój pokój.|Œwieca w oknie.
+00:51:46:Nie widaæ st¹d Wzgórz, Cathy.
+00:51:49:Joseph czeka, a¿ wrócê do domu.
+00:51:54:Jeszcze trochê poczeka.
+00:51:59:To trudna podró¿,|w któr¹ wyruszê z ciê¿kim sercem.
+00:52:06:By tam dojechaæ, trzeba min¹æ|koœció³ w Gimmerton.
+00:52:12:Czêsto wywo³ywaliœmy tam|duchy na cmentarzu.
+00:52:16:Stawaliœmy poœród grobów|i wo³aliœmy, by siê zjawi³y.
+00:52:22:Heathcliff, jeœli siê teraz odwa¿ê,|pójdziesz za mn¹?.
+00:52:47:Zastanawia siê.|Wola³by, bym ja przysz³a do niego.
+00:52:54:Jesteœ zbyt wolny.|Zawsze pod¹¿asz za mn¹.
+00:53:12:Przyj! Dobrze, dobrze.
+00:53:16:Jeszcze raz. Dobra dziewczynka.
+00:53:20:Przyj! Mocniej. Jeszcze, Cathy.
+00:53:25:Dobra dziewczynka.
+00:53:49:Pani Dean chcia³a ciê zobaczyæ.
+00:54:07:- Jak siê czuje Cathy?|- Pani Linton urodzi³a dziewczynkê.
+00:54:11:Wiêc maj¹tek Lintonów|nale¿y do mojej ¿ony.
+00:54:19:Zapominasz, ¿e mój brat nadal ¿yje.
+00:54:22:Nie zapomnia³em ani na sekundê.
+00:54:24:Ta m³oda pani nie czuje siê|chyba dobrze w nowym otoczeniu.
+00:54:28:Widocznie nie zazna³a|mi³oœci od mê¿a.
+00:54:32:To jej wina. Nienawidzi samej siebie.
+00:54:35:Jak widzisz,|zmieni³a siê w zwyk³¹ dziwkê.
+00:54:38:Z trudem zrozumia³a,|¿e jej nie kocha³em.
+00:54:44:Ale wreszcie zaczyna chyba|mnie poznawaæ.
+00:54:49:Powiedz swojemu panu, Nelly,|¿e nigdy w ¿yciu
+00:54:53:nie spotka³em tak nêdznej kobiety.
+00:54:56:Nawet nazwisku Linton|przynosi hañbê.
+00:55:01:Wiedz, Ellen, ¿e chce|przywieœæ Edgara do rozpaczy.
+00:55:06:Ja umrê pierwsza.
+00:55:09:Jedyn¹ przyjemnoœci¹ by³aby|dla mnie œmieræ. Lub jego œmieræ.
+00:55:17:Proszê.
+00:55:20:Na razie wystarczy.
+00:55:33:Jak nazwali córkê Cathy?
+00:55:40:Catherine. Catherine Linton.
+00:55:48:Hareton.
+00:55:54:Pamiêtam, gdy ten dom rozbrzmiewa³|œmiechem, panie Hindley.
+00:55:59:Teraz jest pe³en goryczy i nienawiœci.
+00:56:04:Nie ruszaj siê.|Nigdzie nie pójdziesz! Siadaj!
+00:56:21:Ellen, muszê siê z ni¹ zobaczyæ.
+00:56:27:Spróbuj zrozumieæ.|Cathy jest bardzo chora.
+00:56:32:Kolejne twoje starcie|z panem Edgarem mo¿e j¹ zabiæ.
+00:56:36:Muszê j¹ zobaczyæ, Nelly.
+00:57:06:Jak mam to znieœæ?
+00:57:10:Ty i Edgar z³amaliœcie mi serce.
+00:57:17:A teraz przychodzisz,|jakby to ciebie trzeba by³o pocieszaæ.
+00:57:25:Nie bêdê siê litowa³a nad tob¹.|Zabi³eœ mnie.
+00:57:29:Zabi³eœ mnie. Bêdziesz szczêœliwy,|gdy znajdê siê w ziemi.
+00:57:33:Czy opêta³ ciê diabe³, ¿e mówisz|do mnie te s³owa, umieraj¹c?
+00:57:38:Nie wiesz, ¿e wyryj¹ siê|w mojej pamiêci na zawsze
+00:57:43:i bêd¹ mnie drêczyæ,|gdy ty znajdziesz spokój?
+00:57:46:Nie zaznam spokoju.
+00:57:56:Nie chcê ciê drêczyæ.|Proszê, Heathcliff.
+00:58:02:ChodŸ do mnie. Proszê.
+00:58:14:Dlaczego zdradzi³aœ|w³asne serce, Cathy?
+00:58:20:Kocha³aœ mnie.
+00:58:24:Wiêc jakim prawem mnie zostawi³aœ?
+00:58:29:Z powodu g³upiego uczucia,|jakie ¿ywi³aœ dla Lintona?
+00:58:33:Nic z woli Boga ani szatana|nie mog³o nas rozdzieliæ.
+00:58:40:Zrobi³aœ to z w³asnej woli.
+00:58:45:Nie z³ama³em ci serca, Cathy.|Sama je z³ama³aœ.
+00:58:49:A ³ami¹c swoje, z³ama³aœ moje.
+00:58:55:Jeœli zrobi³am Ÿle, umieram za to.
+00:59:03:Ty te¿ mnie zostawi³eœ.|Ale przebaczam ci.
+00:59:09:Przebacz mi.
+00:59:12:Ciê¿ko. Tak ciê¿ko...
+00:59:17:...przebaczyæ te k³amstwa.
+00:59:25:Tak, przebaczam to, co mi zrobi³aœ.
+00:59:31:Kocham mojego mordercê.|Ale twojego?
+00:59:37:Jak mogê?
+00:59:43:Jak mogê?
+01:00:11:Nie ¿yje.
+01:00:20:Nie musia³em czekaæ na ciebie,|by siê dowiedzieæ. Od³ó¿ chusteczkê.
+01:00:26:Nie szlochaj przy mnie.
+01:00:32:B¹dŸcie wszyscy przeklêci.
+01:00:36:- Nie chce twoich ³ez.|- Osi¹gnê³a spokój, Heathcliff.
+01:00:44:Niech obudzi siê ³agodnie|w przysz³ym œwiecie.
+01:00:47:Niech obudzi siê|w piekielnych mêkach.
+01:00:58:Modlê siê o jedno.
+01:01:02:Bêdê to powtarza³,|nim jêzyk mi zdrêtwieje.
+01:01:08:Catherine Earnshaw,|nie spoczniesz, póki ja ¿yjê.
+01:01:14:- Heathcliffe, nie.|- Powiedzia³aœ, ¿e ciê zabi³em.
+01:01:19:Wiêc opêtaj mnie.
+01:01:22:Wiem, ¿e duchy|chodz¹ po tym œwiecie.
+01:01:26:B¹dŸ ze mn¹ zawsze.|Przyjmij ka¿d¹ formê, jak¹ zechcesz.
+01:01:32:Spraw, bym oszala³.
+01:01:36:Tylko nie zostawiaj mnie w tej pró¿ni,|w której ciê nie ma.
+01:01:49:Bo¿e!
+01:01:55:Nie mogê ¿yæ bez mojego ¿ycia.
+01:02:05:Nie mogê ¿yæ bez mojej duszy.
+01:03:30:...wybaw nas od grzechu|i zaprowadŸ na drogê sprawiedliwoœci,
+01:03:35:abyœmy, w dniu œmierci,|mogli spocz¹æ w Panu,
+01:03:38:w krainie pokoju i œwiat³oœci,
+01:03:42:a w Dzieñ S¹du Ostatecznego,
+01:03:44:zostali przyjêci do Twojej chwa³y.
+01:03:50:Nim nadesz³o lato,
+01:03:52:brat Cathy, Hindley,|pod¹¿y³ za ni¹ do grobu.
+01:03:57:Zapi³ siê na œmieræ, zostawiaj¹c|Haretona, syna i spadkobiercê,
+01:04:03:by wznieci³ iskrê mi³oœci|w pe³nym goryczy sercu Heathcliffa.
+01:04:07:- Amen.|- Amen.
+01:04:11:Teraz, ch³opcze, jesteœ mój.
+01:04:14:Zobaczymy, czy jedno drzewo|wyroœnie tak krzywe jak inne,
+01:04:17:smagane tym samym wichrem.
+01:04:28:Heathcliff wzi¹³ w posiadanie|ostatniego ¿yj¹cego Earnshawa.
+01:04:33:Wykorzystywa³ go tak,|jak sam by³ wykorzystywany.
+01:05:10:Szuka³am ptasich gniazd.
+01:05:23:Minê³o osiemnaœcie lat.
+01:05:26:Catherine Linton,|córka Cathy i Edgara,
+01:05:31:wyros³a w granicach Grange,|chroniona przez ojca,
+01:05:37:i nigdy nie zbli¿y³a siê|do dzikich mieszkañców Wzgórz...
+01:05:45:...a¿ do tego dnia.
+01:06:30:- Kto to jest? Nie zgadujesz?|- Twój syn?
+01:06:36:Tak, ale nie rozpoznajesz|swojego kuzyna Lintona?
+01:06:43:- Linton. Mieszka³eœ w Londynie.|- Ojciec zabra³ mnie po œmierci matki.
+01:06:54:Nie masz nic do pokazania|swojej kuzynce? WeŸ j¹ na dwór.
+01:07:05:Myœlê, ¿e mój ojciec ciê nie lubi, wuju.
+01:07:08:Uwa¿a³, ¿e nie by³em wart,|by o¿eniæ siê z jego siostr¹.
+01:07:31:Co oznacza ten napis?
+01:07:35:- Nie wiem. Nie umiem tego odczytaæ.|- Ja umiem.
+01:07:39:Chcia³abym wiedzieæ, co to znaczy.
+01:07:42:Mo¿esz uwierzyæ w istnienie|takiego têpaka?
+01:07:47:Nie umie przeczytaæ w³asnego imienia.
+01:07:57:To twoje imiê? Hareton Earnshaw?|Moja matka te¿ by³a z Earnshawów.
+01:08:03:Nie wiedzia³aœ?|Hareton to tak¿e twój kuzyn.
+01:08:09:Jak siê masz?
+01:08:36:Ojcze...
+01:08:42:Zgadnij, kogo dziœ spotka³am|na spacerze.
+01:08:44:Ellen mi powiedzia³a, Catherine.
+01:08:50:Dlaczego nie pozwalasz|mi chodziæ do Wichrowych Wzgórz?
+01:08:59:Dlatego, ¿e nie lubisz pana Heathcliffa?
+01:09:03:Nie dlatego,|¿e nie lubiê pana Heathcliffa.
+01:09:07:To pan Heathcliff nie lubi mnie.
+01:09:13:By³ ca³kiem mi³y, ojcze.
+01:09:20:Usi¹dŸ.
+01:09:26:Nie mam mêskiego|spadkobiercy, Catherine.
+01:09:29:Jestem pewny, ¿e Heathcliff próbuje,
+01:09:31:jakimiœ sposobami, pozbawiæ ciê|mo¿liwoœci dziedziczenia.
+01:09:38:I w ten sposób zemœciæ siê na mnie.
+01:09:47:To cz³owiek|opêtany przez diab³a, Catherine.
+01:09:51:Nie powstrzyma siê przed niczym,|by zgubiæ tych, których nienawidzi.
+01:10:00:Mog³aby jeszcze ¿yæ...|gdyby nie on.
+01:10:09:Najdro¿sza Catherine...
+01:10:17:...dlaczego do mnie nie wróci³aœ?
+01:10:23:Codziennie na ciebie czekam.
+01:10:34:Nie przestajê o tobie myœleæ.
+01:10:41:Mo¿e wuj Edgar zabroni³ ci|przychodziæ do Wichrowych Wzgórz.
+01:10:47:Musisz znaleŸæ jakiœ sposób,|by mnie znów zobaczyæ.
+01:10:59:¯y³em w uœpieniu,|póki nie ujrza³em twojej twarzy.
+01:11:07:Dlaczego do mnie nie wróci³aœ?
+01:11:14:Catherine...
+01:11:20:Czekam od tak dawna.
+01:11:25:Teraz podpisz...
+01:11:32:..."Linton".
+01:12:12:- Jesteœ chory?|- Czujê siê lepiej. Jestem zmêczony.
+01:12:28:Có¿, kuzynie,|przysz³am na twe wezwanie.
+01:12:34:Dobrze wygl¹dasz, panno Linton.
+01:12:38:Panno Linton? Panno Linton!
+01:12:44:Mój ojciec jest ciê¿ko chory.|Wymknê³am siê w tajemnicy.
+01:12:50:Czego chcia³eœ ode mnie?
+01:12:57:Mój dom nie jest ow³adniêty plag¹.|Usi¹dŸ i napij siê herbaty.
+01:13:18:Panno Linton...
+01:13:21:...dajê ci wszystko, co mam.
+01:13:29:Prezent nie jest wart, by go przyj¹æ,|ale nie mam nic innego.
+01:13:36:To jest mój syn, Linton.
+01:13:40:Co pan mówi?
+01:13:45:Ojciec chce, byœmy siê pobrali.
+01:13:48:Wie, ¿e wuj Edgar na to nie pozwoli,|ale boi siê, ¿e umrê.
+01:13:55:Mamy siê pobraæ dziœ w nocy,|a wtedy ojciec bêdzie panem Grange.
+01:14:01:Nie bojê siê ciebie. Daj mi klucz.
+01:14:22:Pomó¿ mi!
+01:14:39:Nikt nie wie, ¿e tu jesteœ, Catherine.
+01:14:43:Przysiêgam, ¿e st¹d nie wyjdziesz,|póki nie zostanê twoim ojcem.
+01:14:49:Jedynym ojcem, jakiego bêdziesz|mia³a za dzieñ lub dwa.
+01:14:55:Wiêc siê mnie nie boisz.
+01:14:58:Dobrze udawana odwaga.
+01:15:03:Bojê siê, poniewa¿ jeœli zostanê,|ojciec bêdzie nieszczêœliwy.
+01:15:08:Pozwól mi wróciæ do domu.
+01:15:12:Jego szczêœliwe dni siê skoñczy³y,|gdy twoje siê zaczê³y.
+01:15:16:Przeklina³ ciê, tak jak ja,|za to ¿e przysz³aœ na œwiat.
+01:15:20:P³acz sobie. Od tej pory|bêdzie to twoja najwiêksza rozrywka.
+01:15:27:Panie Heathcliff, jest pan okrutnikiem,|ale nie potworem.
+01:15:33:Jeœli mój ojciec umrze, nim wrócê,|jak bêdê mog³a ¿yæ?
+01:15:38:Uklêknê przed tob¹
+01:15:41:i nie wstanê,|póki na mnie nie spojrzysz.
+01:15:47:Nie odwracaj siê. Spójrz.
+01:15:52:Czy w swoim ¿yciu|nigdy nikogo nie kocha³eœ, wuju?
+01:16:03:WeŸ te paluchy.
+01:16:06:Odsuñ siê, bo ciê kopnê.
+01:16:11:Jak mog³aœ nawet œniæ o tym,|by siê do mnie przymilaæ.
+01:16:15:Gardzê tob¹.
+01:17:26:Ellen!
+01:17:51:Pytam was w imieniu Chrystusa,
+01:17:54:przed którym odpowiecie|w dzieñ S¹du Ostatecznego,
+01:17:57:gdy otworz¹ siê tajemnice|wszystkich serc.
+01:18:01:Jeœli istniej¹ przeszkody,
+01:18:04:które zabraniaj¹ wam|wst¹piæ w œwiêty zwi¹zek ma³¿eñski,
+01:18:08:wyznajcie je teraz.
+01:18:12:Jest bowiem napisane,
+01:18:14:¿e kto wstêpuje w zwi¹zek|w niezgodzie z wol¹ bo¿¹,
+01:18:19:nie jest po³¹czony przez Boga.
+01:18:23:A jego ma³¿eñstwo|jest w niezgodzie z prawem.
+01:18:36:Ojcze.
+01:18:43:Czeka³em na ciebie.
+01:18:48:Czy to prawda, ¿e wysz³aœ za m¹¿?
+01:18:51:Tak.
+01:18:55:- Jesteœ szczêœliwa?|- Tak.
+01:19:00:Twój maj¹tek|nale¿y teraz do Heathcliffa.
+01:19:06:Powiedz, ¿e jesteœ bezpieczna,|a Linton bêdzie ciê chroni³.
+01:19:12:Bêdzie mnie chroni³.
+01:19:16:Wiêc niech tak bêdzie.
+01:19:28:Idê teraz do niej.
+01:19:34:Ojcze...
+01:19:37:Nie.
+01:20:06:Jaka ona by³a?
+01:20:09:Kto?
+01:20:14:Moja matka.
+01:20:18:By³a dzik¹, szalon¹ dziewczyn¹.
+01:20:22:Nie pasowa³a do tego œwiata.
+01:20:38:- Jestem do niej podobna?|- Najwiêcej widzê jej w Haretonie.
+01:20:58:Przyszed³em ciê zabraæ do domu,|do Wichrowych Wzgórz.
+01:21:02:Znalaz³em lokatora do tego domu|i chcê, by moje dzieci by³y przy mnie.
+01:21:07:IdŸ i przygotuj siê.
+01:21:24:Nie by³em w tym pokoju od dnia,|gdy wróci³em.
+01:21:50:Kaza³em grabarzowi usun¹æ|ziemiê z jej trumny.
+01:21:57:- Nie wstyd ci niepokoiæ zmar³ych?|- Nikogo nie niepokoi³em.
+01:22:03:Ul¿y³o mi,|gdy znów zobaczy³em jej twarz.
+01:22:13:Wci¹¿ niezmieniona.
+01:22:36:Twój syn nie ¿yje.
+01:22:40:Co czujesz?
+01:22:50:Co czujesz, Catherine?
+01:22:55:Czujê i widzê tylko œmieræ.
+01:23:03:- PodejdŸ do ognia. Pewno ci zimno.|- OdejdŸ ode mnie.
+01:23:07:Jak œmiesz mnie dotykaæ?
+01:23:11:Gdy by³am wiêziona, odda³abym|¿ycie za jedno przyjazne s³owo.
+01:23:16:Ale wtedy trzyma³eœ siê z dala.
+01:23:21:Myœlisz, ¿e teraz zaakceptujê|twoj¹ przyjaŸñ?
+01:23:30:Przysz³am do tego pokoju|tylko dlatego, ¿e jest mi zimno.
+01:23:50:- Co to jest?|- Testament mojego syna.
+01:23:54:Odda³ mi Grange i ca³y twój maj¹tek.
+01:23:58:Tutaj podpisa³. Linton.
+01:24:06:To niewa¿ne. Nic ju¿ nie jest wa¿ne.
+01:24:24:Proszê. Pij.
+01:25:12:Jest jak koñ poci¹gowy, prawda?
+01:25:15:Pracuje, je i œpi.
+01:25:20:Czy potrafisz marzyæ, Hareton?
+01:25:27:Zrozumia³am, ¿e siê cieszê.
+01:25:30:Chcê, byœ by³ moim kuzynem.
+01:25:36:Hareton, s³yszysz mnie?
+01:25:57:- IdŸ do diab³a i daj mi ¿yæ.|- Nie. S³uchaj mnie.
+01:26:01:Wola³bym iœæ do piek³a,|ni¿ na ciebie spojrzeæ.
+01:26:04:Powinniœcie byæ przyjació³mi.
+01:26:07:Przyjació³mi? Ona mnie nienawidzi.
+01:26:11:Uwa¿a, ¿e nie jestem godny,|by wyczyœciæ jej buty.
+01:26:15:To nie ja ciê nienawidzê.|Ty mnie nienawidzisz.
+01:26:18:Nienawidzisz mnie tak samo|jak Heathcliff, jeszcze bardziej.
+01:26:22:K³amiesz!
+01:26:24:Dlaczego go z³oœci³em,|wstawiaj¹c siê za ciebie setki razy?
+01:26:31:Nie wiedzia³am,|¿e wstawia³eœ siê za mnie.
+01:27:01:Pani Dean...
+01:27:05:...proszê, przeka¿ ten prezent|panu Haretonowi Earnshawowi
+01:27:08:i powiedz mu, ¿e jeœli go przyjmie,|nauczê go czytaæ,
+01:27:14:a jeœli odmówi, pójdê na górê|i nigdy nie bêdê mu dokuczaæ.
+01:27:40:Powiedz, ¿e mi wybaczasz.
+01:27:43:Bêdziesz siê mnie wstydzi³a|ka¿dego dnia.
+01:27:49:Tym bardziej,|im bardziej mnie poznasz.
+01:27:53:Wiêc nie bêdziesz|moim przyjacielem?
+01:28:14:Panie Heathcliff,|chcia³abym mieæ ma³y ogród.
+01:28:21:Nie bêdzie tu ogrodów.
+01:28:25:Nie powinien mi pan sk¹piæ kawa³ka|ziemi, zabrawszy ca³y mój maj¹tek.
+01:28:29:Twój maj¹tek? Nigdy go nie mia³aœ.
+01:28:32:- I moje pieni¹dze.|- Wystarczy.
+01:28:38:- Ziemiê i pieni¹dze Haretona.|- Nie mo¿esz tak do niego mówiæ.
+01:28:42:Jeœli mnie uderzysz, Hareton|mnie obroni, wiêc lepiej usi¹dŸ.
+01:28:52:Jakim prawem oœmielasz siê|buntowaæ go przeciwko mnie!
+01:29:13:Musisz siê nauczyæ|nie wyprowadzaæ mnie z równowagi,
+01:29:19:bo kiedyœ naprawdê ciê zabijê.
+01:29:54:Wracaj i skoñcz swój obiad.
+01:29:58:IdŸ do domu. Masz inne towarzystwo.
+01:30:07:Nie wiem, jak mog³eœ j¹ zostawiæ.
+01:30:30:Jak mo¿esz go broniæ?|Odebra³ ci Wichrowe Wzgórza.
+01:30:36:Twoje imiê jest nad drzwiami.
+01:30:40:To niewa¿ne. Nawet gdyby by³|samym diab³em, to by siê nie liczy³o.
+01:30:49:Jak byœ siê czu³a,|gdybym Ÿle mówi³ o twoim ojcu?
+01:30:54:- Heathcliff nie jest twoim ojcem.|- Jest moim prawdziwym ojcem.
+01:31:01:Fatalne zakoñczenie, prawda?|Moi starzy wrogowie mnie nie pobili.
+01:31:08:Teraz by³by doskona³y moment,|by zemœciæ siê na ich dzieciach.
+01:31:17:Móg³bym to zrobiæ.
+01:31:21:Nikt nie mo¿e mnie powstrzymaæ.
+01:31:26:- Ale po co?|- Jedz, póki ciep³e.
+01:31:41:Na litoœæ bosk¹,|nie patrz tak na mnie.
+01:31:48:Odwróæ siê.
+01:31:51:Powiedz, czy jesteœmy sami?
+01:32:09:Heathcliff, nie mia³eœ w rêku Biblii,|odk¹d by³eœ ma³ym ch³opcem.
+01:32:16:Pójdê po pastora.
+01:32:19:Zbli¿a siê dziwna zmiana.
+01:32:28:Co masz na myœli?
+01:32:31:To by³a d³uga walka.
+01:32:38:Chcia³bym, by siê skoñczy³a.
+01:33:43:- Pan Heathcliff?|- Bêdzie pan musia³ poczekaæ.
+01:34:17:Kim pan jest?
+01:34:18:Jestem Lockwood,|pañski nowy lokator w Grange.
+01:34:22:Wybra³ siê pan na przeja¿d¿kê|podczas burzy?
+01:34:57:- Co za diabe³ tam pana wpuœci³?|- Tak, diabe³.
+01:35:02:Mówi, ¿e chodzi po tej ziemi|od 20 lat.
+01:35:06:Catherine Linton, Earnshaw,|czy jak tam siê nazywa.
+01:35:10:Jej twarz... Wygl¹da³a jak...
+01:35:15:Nie powinien by³ pan tam wchodziæ.
+01:35:24:Pójdziesz ze mn¹?.
+01:35:27:Nie. Dla ciebie|by³em gorszy od diab³a.
+01:38:10:Razem nie bali siê niczego.
+01:38:14:Wyzywali szatana i jego legiony.
+01:38:36:Za jak¹ cenê?
+01:38:40:Trzy groby przy niskim murze, gdzie|cmentarz graniczy z wrzosowiskiem.
+01:38:46:Pokolenie, które odesz³o.
+01:38:49:Edgar, Cathy, Heathcliff.
+01:38:56:Niech œpi¹ g³êboko w tej cichej ziemi.
+01:39:01:Ale ludzie przysiêgaj¹ na Bibliê,|¿e nadal on chodzi po wrzosowiskach.
+01:39:12:www.NapiProjekt.pl - nowa jakosc napisów.|Napisy zostaly specjalnie dopasowane do Twojej wersji filmu.
