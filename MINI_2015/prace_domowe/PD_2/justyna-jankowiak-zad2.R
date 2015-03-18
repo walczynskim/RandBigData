@@ -43,7 +43,9 @@ podstawoweDane <- function(x){
    anne <- tabelaSort["anne"]
    gilbert <- tabelaSort["gilbert"]
    diana <- tabelaSort["diana"]
-   return(list(tabelaSort, tabelaSort[1:10], anne, gilbert, diana))
+   iloscSlow <- sum(tabelaSort)
+   return(list(tabelaSort, tabelaSort[1:10], anne, gilbert/iloscSlow,
+               diana/iloscSlow))
 }
 
 rysuj <- function(tabelaSort){
