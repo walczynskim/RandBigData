@@ -15,11 +15,11 @@ library("ROAuth")
 #oauthKey<-"XXXXXXXXXXXXXXXXXXXXXXXXXX"
 #oauthSecret<-"XXXXXXXXXXXXXXXXXXXXXXXXXX"
 
-#paczka<-OAuthFactory$new(consumerKey=consumerKey,consumerSecret=consumerSecret,
+#tw_oauth<-OAuthFactory$new(consumerKey=consumerKey,consumerSecret=consumerSecret,
 #      oauthKey=oauthKey,oauthSecret=oauthSecret,requestURL=requestURL,
 #      accessURL=accessURL,authURL=authURL)
 
-#3. Następnie zapisuje się ją do pliku przy pomocy funkcji save(fb_oauth,file)
+#3. Następnie zapisuje się ją do pliku przy pomocy funkcji save(tw_oauth,file)
 #4. Teraz można wczytać plik
 
 load("D:/Dokumenty/studia/8 semestr/R i Big Data/projekt - wybory/tw_oauth")
