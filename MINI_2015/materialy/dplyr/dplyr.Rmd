@@ -1,5 +1,5 @@
 ---
-title: "Pakiety dplyr i tidyr z Internetu"
+title: "Pakiety dplyr i tidyr"
 author: "Przemysław Biecek"
 date: "R i Duże Dane"
 output:
@@ -280,6 +280,20 @@ df
 separate(df, daty, c("rok", "miesiac", "dzien"), "-")
 ```
 
-# Cheatsheet RStudio
+# Materialy
+
+Cheatsheet z RStudio
 
 http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+Materiały z Pogromców Danych
+
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/17_dplyr_filter.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/18_dplyr_sort.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/19_dplyr_potok.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/20_dplyr_select.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/21_dplyr_mutate.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/22_dplyr_summarise.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/23_dplyr_groupby.html
+http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/24_tidyr.html
+
