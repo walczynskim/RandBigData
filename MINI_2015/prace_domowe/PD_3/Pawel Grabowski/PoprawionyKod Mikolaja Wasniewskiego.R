@@ -47,35 +47,12 @@ OnetArtykulInfo <- function(link, id) {
               "tagi" = tagi, "liczba komentarzy" = liczba_kom)
 }
 OnetInfo <- function(link, path1, pathczas) {
-   #czas ostatniego pobierania danych
-   czass <- readLines(pathczas)
-   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
-   artykuly <- html(link) %>% 
-      html_nodes(., "#staticStreamContent > div > a")
-   
-   #linki do artykulow:
-   atrykuly_linki <- html_attr(artykuly, "href") %>%
-      unique(atrykuly_linki)
-   n <- length(atrykuly_linki)
-   df <- data.frame()
-   
+   atrykuly_linki <- html(link) %>% 
+      html_nodes(., "#staticStreamContent > div > a") %>%
+      html_attr(artykuly, "href") %>%
+      unique(.)
    # Zapisywanie do pliku po uwzglednieniu daty:
-   for (i in 1:n) {
-      df1 <- onet_artykul_info(atrykuly_linki[i], i)
-      if (unclass(czas1-strptime(df1$data, "%Y-%m-%d %H:%M")) < 0) {
-         df <- rbind(df, df1)
-      }
-   }
-   odroznik <- Sys.time()#ta czesc nazwy pliku odroznia go od pozostalych
-   odroznik1 <- strftime(odroznik, "%Y-%m-%d %H:%M:%S %Z")
-   writeLines(odroznik1, pathczas)
-   odroznik <- stri_replace_all_regex(odroznik, "\\.","")
-   path <- stri_paste(path1, "\\c", coll="") %>%
-      stri_paste(path, odroznik, coll="") %>%
-      stri_paste(path, ".txt", coll="")
-   if (nrow(df) > 0) {
-      write.table(df, path)  
-   }
+   ZapisDoPliku(pathczas, path, df, onet_artykul_info, atrykuly_linki)
    return(invisible(NULL))
 }
 Tvn24ArtykulInfo <- function(link, id) {
@@ -123,9 +100,6 @@ Tvn24ArtykulInfo <- function(link, id) {
 }
 
 Tvn24Info <- function(link, path1, pathczas) {
-   #czas ostatniego pobierania danych
-   czass <- readLines(pathczas)
-   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
    #linki do artykulow:
    html_link <- html(link)
    artykuly_linki1 <- html_nodes(html_link, "div.textRight > h1 > a") %>%
@@ -137,25 +111,7 @@ Tvn24Info <- function(link, path1, pathczas) {
    artykuly_linki <- stri_paste("http://www.tvn24.pl",
                               c(artykuly_linki1, artykuly_linki2, artykuly_linki3)) %>%
       unique(.)
-   n <- length(artykuly_linki)   
-   df <- data.frame()
-   for(i in 1:n) {
-      df1 <- tvn24_artykul_info(artykuly_linki[i], i)
-      # sprawdzanie daty(patrze czy dany artyku mam juz w bazie)
-      if(unclass(czas1-strptime(df1$data, "%Y-%m-%d %H:%M")) < 0) {
-         df <- rbind(df, df1)
-      }
-   }
-   odroznik <- Sys.time()#ta czesc nazwy pliku odroznia go od pozostalych
-   odroznik1 <- strftime(odroznik, "%Y-%m-%d %H:%M:%S %Z")
-   writeLines(odroznik1, pathczas)
-   path <- stri_paste(path1, "\\b",coll="")
-   odroznik <- stri_replace_all_regex(odroznik, "\\.","")
-   path <- stri_paste(path, odroznik, coll="") %>%
-      stri_paste(path, ".txt",coll="")
-   if(nrow(df) > 0) {
-      write.table(df, path)  
-   } 
+   ZapisDoPliku(pathczas, path, df, tvn24_artykul_info, atrykuly_linki)
    return(invisible(NULL))
 }
 WpArtykulInfo <- function(link, id) {
@@ -189,25 +145,22 @@ WpArtykulInfo <- function(link, id) {
               "tagi" = tagi, "liczba komentarzy" = liczba_kom)  
 }
 WpInfo <- function(link, path1, pathczas) {
+   atrykuly_linki <- html(link) %>%
+      html_nodes(., ".kontener h2 a") %>%
+      stri_paste("http://wiadomosci.wp.pl", html_attr(., "href")) %>%
+      unique(.)
+   ZapisDoPliku(pathczas, path, df, wp_artykul_info, atrykuly_linki)
+   return(invisible(NULL))
+}
+ZapisDoPliku <- function(pathczas, path, df, strona_artykul_info, atrykuly_linki) {
    czass <- readLines(pathczas)
    czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
-   html_link <- html(link)
-   artykuly <- html_nodes(html_link, ".kontener h2 a")
-   #linki do artykulow:
-   atrykuly_linki <- stri_paste("http://wiadomosci.wp.pl", html_attr(artykuly, "href")) %>%
-      unique(.)
    n <- length(atrykuly_linki)
    df <- data.frame()
-   daty <- html_nodes(html_link, ".stampZrodloData") %>%
-      html_text()
-   godziny <- html_nodes(html_link, ".stampZrodloCzas .stampZrodloGodzina") %>% 
-      html_text() %>%
-      stri_extract_all_regex(., "[0-9]{2}:[0-9]{2}") %>% 
-      unlist()
-   czasyArt <- stri_paste(daty, godziny, sep=" ")
    for(i in 1:n) {
-      if(unclass(czas1-strptime(czasy_art[i], "%Y-%m-%d %H:%M")) <= 0) {
-         df <- rbind(df ,wp_artykul_info(atrykuly_linki[i], i))
+      dfTemp <- strona_artykul_info(atrykuly_linki[i], i)
+      if(unclass(czas1-strptime(dfTemp$data, "%Y-%m-%d %H:%M")) <= 0) {
+         df <- rbind(df, dfTemp)
       }
    }
    odroznik <- Sys.time()#ta czesc nazwy pliku odroznia go od pozostalych
