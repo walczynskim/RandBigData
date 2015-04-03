@@ -47,14 +47,10 @@ OnetArtykulInfo <- function(link, id) {
               "tagi" = tagi, "liczba komentarzy" = liczba_kom)
 }
 OnetInfo <- function(link, path1, pathczas) {
-   #czas ostatniego pobierania danych
-   czass <- readLines(pathczas)
-   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
-   artykuly <- html(link) %>% 
-      html_nodes(., "#staticStreamContent > div > a")
-   #linki do artykulow:
-   atrykuly_linki <- html_attr(artykuly, "href") %>%
-      unique(atrykuly_linki)
+   atrykuly_linki <- html(link) %>% 
+      html_nodes(., "#staticStreamContent > div > a") %>%
+      html_attr(artykuly, "href") %>%
+      unique(.)
    # Zapisywanie do pliku po uwzglednieniu daty:
    ZapisDoPliku(pathczas, path, df, onet_artykul_info, atrykuly_linki)
    return(invisible(NULL))
@@ -104,9 +100,6 @@ Tvn24ArtykulInfo <- function(link, id) {
 }
 
 Tvn24Info <- function(link, path1, pathczas) {
-   #czas ostatniego pobierania danych
-   czass <- readLines(pathczas)
-   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
    #linki do artykulow:
    html_link <- html(link)
    artykuly_linki1 <- html_nodes(html_link, "div.textRight > h1 > a") %>%
@@ -152,19 +145,16 @@ WpArtykulInfo <- function(link, id) {
               "tagi" = tagi, "liczba komentarzy" = liczba_kom)  
 }
 WpInfo <- function(link, path1, pathczas) {
-   czass <- readLines(pathczas)
-   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
-   html_link <- html(link)
-   artykuly <- html_nodes(html_link, ".kontener h2 a")
-   #linki do artykulow:
-   atrykuly_linki <- stri_paste("http://wiadomosci.wp.pl", html_attr(artykuly, "href")) %>%
+   atrykuly_linki <- html(link) %>%
+      html_nodes(., ".kontener h2 a") %>%
+      stri_paste("http://wiadomosci.wp.pl", html_attr(., "href")) %>%
       unique(.)
    ZapisDoPliku(pathczas, path, df, wp_artykul_info, atrykuly_linki)
    return(invisible(NULL))
 }
-
-
-ZapisDoPliku <- function(pathczas, path, czasy_art, df, strona_artykul_info, atrykuly_linki) {
+ZapisDoPliku <- function(pathczas, path, df, strona_artykul_info, atrykuly_linki) {
+   czass <- readLines(pathczas)
+   czas1 <- strptime(czass, "%Y-%m-%d %H:%M")
    n <- length(atrykuly_linki)
    df <- data.frame()
    for(i in 1:n) {
