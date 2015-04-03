@@ -146,6 +146,8 @@ tylkoMalyPrzebieg <-
   filter(Przebieg.w.km < 50000)                 # pozostał tylko auta o małym przebiegu
 
 head(tylkoMalyPrzebieg)
+
+colnames(tylkoMalyPrzebieg)[4] <- "f"
 ```
 
 Potoki można stosować nie tylko do funkcji `dplyr` ale też każdej innej.

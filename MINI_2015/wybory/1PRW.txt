@@ -1,0 +1,27 @@
+Kryteria
+
+1. Automatyzacja
+
+Skrypty nie nadają się do automatycznego powtórzenia
+są w nich pozaszywane linki do konkretnych artykułów
+http://www.tvn24.pl/wiadomosci-z-kraju,3/bronislaw-komorowski-odpowiada-na-muzeum-zgody,524168.html
+
+Kod się bardzo trudno czyta, jest go niewiele ale będzie Panom trudno go zmieniać po jakimś czasie
+
+
+2. Ilość danych
+
+Niewiele zebranych danych
+poniżej 1MB
+
+3. Bogactwo słownika
+
+Nie ma słownika,
+Zbierane są dane z portali
+Dla tweetera zbierane są dane z określonych kont kandydatów, ale nie jest sprawdzane co o tych kandydatach mówiono
+
+
+W sumie
+
+1/3 + 1/3 + 1/3 + 1 = 4
+
