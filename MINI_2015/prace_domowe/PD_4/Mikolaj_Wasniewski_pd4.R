@@ -1,24 +1,31 @@
-library(PogromcyDanych)
-library(dplyr)
 
-wybrane.auta <- function(marka = character(0), model = character(0),
-              rodzaj.paliwa = character(0), moc.silnika = numeric(0),
-              rok.produkcji= numeric(0), przebieg= numeric(0)) {
+
+wybrane.auta <- function(marka = "", model = "", rodzaj.paliwa = "", 
+                         moc.silnika = 0, rok.produkcji= 0, przebieg= 0) {
    
-   temp <- tbl_df(auta2012)
-   
-   if (length(marka) == 1)
+   stopifnot(is.character(marka), is.character(model), 
+             is.character(rodzaj.paliwa), is.numeric(moc.silnika),
+             is.numeric(rok.produkcji), is.numeric(przebieg))
+   stopifnot(length(marka) == 1, length(model) == 1, 
+             length(rodzaj.paliwa) == 1, length(moc.silnika) == 1,
+             length(rok.produkcji) == 1,length(przebieg) == 1)
+
+   library(PogromcyDanych)
+   library(dplyr)
+   temp<-auta2012
+   if (marka != "")
       temp <- temp %>% filter(Marka == marka)
-   if (length(model) == 1)
+   if (model != "")
       temp <- temp %>% filter(Model == model)
-   if (length(rodzaj.paliwa) == 1)
+   if (rodzaj.paliwa != "")
       temp <- temp %>% filter(Rodzaj.paliwa == rodzaj.paliwa)
-   if (length(moc.silnika) == 1)
+   if (moc.silnika > 0)
       temp <- temp %>% filter(KM >= moc.silnika)
-   if (length(rok.produkcji) == 1)
+   if (rok.produkcji > 0)
       temp <- temp %>% filter(Rok.produkcji >= rok.produkcji)
-   if (length(przebieg) == 1)
+   if (przebieg > 0)
       temp <- temp %>% filter(Przebieg.w.km <= przebieg)
+   
    if (nrow(temp)>0) {
     temp<-temp %>%  summarise(Minimalna.cena = min(Cena.w.PLN, na.rm=TRUE),
                 Q1.ceny = quantile(Cena.w.PLN, 0.25, na.rm=TRUE),
