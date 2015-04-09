@@ -30,3 +30,6 @@
 
 
 ![graph1](https://raw.githubusercontent.com/MarcinKosinski/web-scraping/master/graphs/Rplot01.jpeg)
+
+![graph1](https://github.com/sommermarta/RandBigData/blob/master/MINI_2015/wybory/faza%202/Kosinski_Sommer/graphs/kiedy_twitty.pdf)
+
