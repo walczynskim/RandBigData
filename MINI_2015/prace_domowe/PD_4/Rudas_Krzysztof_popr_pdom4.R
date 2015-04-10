@@ -6,6 +6,8 @@ statystykiauta<-function(marka=character(),model=character(),rodzajpaliwa=charac
    library(PogromcyDanych)
    library(dplyr)
    lista<-list(marka,model,rodzajpaliwa,mocsilnika,rokprodukcji,przebieg)
+   #Zabezpieczenie przed zduplikowaniem wartosci w wektorach parametrow
+   lista<-lapply(lista,unique)
    dlugosci<-sapply(lista,length)
    dane<-tbl_df(auta2012)
    naglowki<-c(which(names(dane)=="Marka"),which(names(dane)=="Model"),which(names(dane)=="Rodzaj.paliwa"),
@@ -14,11 +16,19 @@ statystykiauta<-function(marka=character(),model=character(),rodzajpaliwa=charac
    {
       if(dlugosci[i]!=0)
       {
-         dane<-filter(dane,dane[naglowki[i]] == lista[[i]])
-         if(nrow(dane)==0)
+         dfpom<-data.frame()
+         #filtrujmy element po elemencie i zapisujmy to do pomocniczej ramki
+         for(j in 1:dlugosci[i])
+         {
+            d<-filter(dane,dane[naglowki[i]] == lista[[i]][j])
+            #Nie musze sie martwic o unikaty,bo za kazdym razem filtrujemy po innej wartosci
+            dfpom<-rbind(dfpom,d)
+         }
+         if(nrow(dfpom)==0)
          {
             stop("zle wartosci argumentow")
          }
+         dane<-dfpom
       }
    }
 
@@ -27,7 +37,10 @@ statystykiauta<-function(marka=character(),model=character(),rodzajpaliwa=charac
              maksimum=max(Cena.w.PLN))
 }
 #testy
-statystykiauta(marka = "Volkswagen", rok = 2006,model="Golf")
+statystykiauta(marka = c("Volkswagen","Opel"), rok = 2006,model=c("Golf","Transporter","Astra"))
+statystykiauta(marka = c("Opel","Opel"), rok = 2006,model=c("Golf","Transporter","Astra"))
+statystykiauta(marka = c("Volkswagen","Volvo"), rok = 2006,model=c("Astra","Golf"))
 statystykiauta(marka = "Volkswagen",mocsilnika = 0) #zla wartosc mocy silnika
 statystykiauta(marka = "Fiat", rok = 2010,model="Punto")
-statystykiauta(marka = "Fiat", rok = 2010,model="Punto",mocsilnika =75)
+statystykiauta(marka = "Fiat", rok = 2010,model="Punto",mocsilnika =c(75,65))
+
