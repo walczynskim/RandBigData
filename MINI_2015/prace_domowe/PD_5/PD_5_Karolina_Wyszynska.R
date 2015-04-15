@@ -47,7 +47,7 @@ rownames(ramkaDanych) <- daty
 library("RMySQL")
 library(dplyr)
 haslo <- '64tl1bp6un9sqxp8'
-haslo <- stri_reverse(haslo)
+
 
 polaczenie <- src_mysql(dbname = 'students', 
                         host = 'beta.icm.edu.pl', user = 'pbiecek', password = haslo)
