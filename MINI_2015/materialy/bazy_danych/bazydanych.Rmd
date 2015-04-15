@@ -1,0 +1,218 @@
+---
+title: "Bazy danych a R"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Wprowadzenie
+
+Chcemy pracować z dużymi danymi, a dużę dane zajmują dużo miejsca.
+
+Zdecydowana większość funkcji w programie R wymaga by dane na których pracujemy były w pamięci RAM.
+
+Mamy więc dwie możliwości:
+
+- pracować na ,,tłustych'' komputerach z dużą ilością RAM (jednak dzisiaj trudno wyjść poza 1 TB RAM, chyba że ma się baaardzo duży budżet),
+
+- trzymać dane poza R, możliwie dużo przetwarzania wykonywać poza R, a do R wczytywać tylko takie dane, które są naprawdę niezbędne.
+
+Do opcji pierwszej wrócimy za jakiś czas, dzisiaj omówimy kilka rozwiązań bazujących na bazach danych pozwalających na trzymanie dużych danych poza R i wczytywanie do R tylko potrzebnych agregatów.
+
+---
+
+# Bazy danych
+
+Z programu R możemy łączyć się do zabawkowych baz danych takich jak `SQLite`, baz średniego kalibru, takich jak Postgress czy MySQL oraz baz nastawionych na duże dane, takich jak RedShift, Teradata, Netezza i inne.
+
+O ile te bazy różnią się funckjonalnością, skalowalnością i prędkością, to z perspektywy użytkownika R korzystanie z nich jest dosyć podobne. Poniżej pokażemy jak korzystać z SQLite i MySQLa.
+
+---
+
+# SQLite
+
+SQLite to lekka bazująca na pliku baza danych. Ma ona dosyć ograniczone funkcjonalności, ale tak prosto ją zainstalować, że wręcz trudno powiedzieć w którym momencie się to robi.
+
+Aby połączyć się z bazą danych wystarczy wskazać plik, w którym przechowywane są dane
+
+```{r, eval=FALSE}
+library("RSQLite")
+
+# ładujemy sterownik do bazy danych
+sterownik <- dbDriver("SQLite")
+
+# inicjujemy połączenie z serwerem bazodanowym
+polaczenie <- dbConnect(sterownik,"zabawka.db")
+
+# wyświetlamy tabele widoczne w bazie danych
+dbListTables(polaczenie)
+
+# wyświetlamy kolumny w określonej tabeli
+dbListFields(polaczenie, "auta2012")
+
+# używając funkcji dbGetQuery możemy wykonać na bazie zapytanie SQLowe
+pierwsze10 <- dbGetQuery(polaczenie, 
+           "select * from auta2012 limit 10")
+pierwsze10
+agregat <- dbGetQuery(polaczenie, 
+           "select count(*) as liczba, 
+           avg(`Cena.w.PLN`) as 
+           cena, Marka from auta2012 
+           group by Marka")
+agregat
+
+# używając funkcji dbDisconnect() możemy się z bazą danych rozłączyć
+# wazne jest by po sobie sprzątać na wypadek gdyby dane z pamięci nie zostały zapisane do pliku
+dbDisconnect(polaczenie)
+```
+
+# MySQL
+
+Większość poważniejszych baz danych do zalogowania wymaga autoryzacji przez określonego użytkownika.
+Tabele z danymi są pogrupowane w bazach danych i uprawnienia definiuje się osobno do tabel i baz i operacji.
+
+MySQL to najlżejsza z baz danych średniego kalibru. Poniżej przedstawimy proste operacje na tej bazie.
+
+```{r, eval=FALSE}
+haslo <- '64tl1bp6un9sqxp8'
+
+library(RMySQL)
+
+# ładujemy sterownik do bazy danych
+sterownik <- MySQL()
+
+# aby się połączyć musimy podać użytkownika, hasło i wskazać bazę danych
+# inicjujemy połączenie z serwerem bazodanowym
+mpolaczenie = dbConnect(sterownik, 
+                        user='pbiecek', password=haslo, dbname='students', 
+                        host='beta.icm.edu.pl')
+
+# wyświetlamy tabele widoczne w bazie danych
+dbListTables(mpolaczenie)
+
+# wyświetlamy kolumny w określonej tabeli
+dbListFields(mpolaczenie, "auta2012")
+
+# używając funkcji dbGetQuery możemy wykonać na bazie zapytanie SQLowe
+pierwsze10 <- dbGetQuery(mpolaczenie, 
+           "select * from auta2012 limit 10")
+pierwsze10
+agregat <- dbGetQuery(mpolaczenie, 
+           "select count(*) as liczba, avg(`Cena.w.PLN`) as cena, Marka from auta2012 group by Marka")
+agregat
+
+# używając funkcji dbDisconnect() możemy się z bazą danych rozłączyć
+# wazne jest by po sobie sprzątać na wypadek gdyby dane z pamięci nie zostały zapisane do pliku
+dbDisconnect(mpolaczenie)
+```
+
+
+# Po co się uczyć SQLa skoro znamy dplyr'a
+
+Standardów i implementacji SQLa jest tak wiele, że zastanawiające jest dlaczego nazywane są standardami.
+
+Praktycznie każda baza danych różni się listą zaimplementowanych funkcjonalności czy agregatów. 
+
+Jeżeli pracujemy z jedną bazą danych to może nam to nie doskiwerać, ale jeżeli trzeba jednocześnie korzystać z MSSQL'a, MySQLa, RedShifta i Postgresa? (wcale nie taki wydumany przykład)
+
+Wielu problemów można sobie oszczędzić używając pośrednika do komunikacji z bażą danych takiego jak dplyr.
+Pozwala on do pewnego stopnia na pracę z danymi bez zastanawiania się gdzie te dane aktualnie są i jaką funkcją w aktualnej bazie danych liczy się średnią.
+
+```{r, eval=FALSE}
+library(dplyr)
+
+# w pakiecie dplyr połączenia tworzy się funkcjami src_...
+# zobacz jakie funkcje zaczynają się od tego prefixu (help.search("src_.*"))
+# poniżej skorzystamy z src_mysql i src_sqlite
+
+# inicjujemy połączenie z bazą danych sqlite
+polaczenie <- src_sqlite(path = 'zabawka.db')
+
+# inicjujemy połączenie z bazą danych mysql
+polaczenie <- src_mysql(dbname = 'pbiecek', 
+                        host = 'alpha.mini.pw.edu.pl', user = 'pbiecek', password = haslo)
+
+polaczenie <- src_mysql(dbname = 'students', 
+                        host = 'beta.icm.edu.pl', user = 'pbiecek', password = haslo)
+
+# obiekt klasy tbl_sql można utworzyć podając nazwę tabeli
+# lub zapytania SELECT 
+auta1 <- tbl(polaczenie, "auta2012")
+auta2 <- tbl(polaczenie, sql("SELECT * FROM auta2012"))
+
+# mając taki obiekt, reszta operacji wygląda tak jak w zwykłym dplyr
+auta1 %>% 
+  head(2)
+
+# a robić możemy dosyć zaawansowane rzeczy
+auta1 %>% 
+  group_by(Marka) %>% 
+  summarise(sr.cena = mean(Cena.w.PLN)) %>% 
+  filter(sr.cena < 3000)
+
+# obiekt tbl_sql nie przechowuje danych, ale instrukcje pozwalające na dostęp do danych
+sq1 <- auta1 %>% group_by(Marka) %>% summarise(sr.cena = mean(Cena.w.PLN))
+
+# można z niego wyłuskać zapytanie SQL, które dane wygeneruje
+sq1$query
+# oraz plan zapytania
+explain(sq1)
+```
+
+# Leniwość ale nie lenistwo
+
+Leniwość, tak jest takie słowo w SJP. I świetnie oddaje prace z obiektami `tbl_sql`.
+
+Operacje na tych obiektach nie są materializowane o ile nie muszą być materializowane (użytkownik wprost tego zarząda).
+Gdy już jest jasne co użytkownik chce zrobić i gdy jawnie zarząda wyniku, wszystkie operacje są wykonywane w możliwie małej liczbie (=jeden) kroków.
+
+```{r, eval=FALSE}
+# niby coś robi, ale niewiele
+tmp1 <- filter(auta1, Przebieg.w.km < 100000) 
+tmp2 <- group_by(tmp1, Marka) 
+tmp3 <- summarise(tmp2, sr.cena = mean(Cena.w.PLN)) 
+tmp4 <- filter(tmp3, sr.cena < 3000) 
+str(tmp4)
+tmp4$query
+
+# dopiero gdy już nie ma wyjścia
+# collect(tmp4) - wyznacza wynik oraz pobiera do R
+# compute(tmp4) - wyznacza wynik i zapisuje w tymczasowej tabeli w bazie danych
+
+```
+
+# Zapisz wynik do bazy
+
+```{r, eval=FALSE}
+# policzmy coś
+wynik <- collect(tmp4)
+
+# odświeżmy połączenie, na wypadek gdyby wygasło
+polaczenie <- src_mysql(dbname = 'students', 
+                        host = 'beta.icm.edu.pl', user = 'pbiecek', password = haslo)
+
+# to jest bardzo nieładne, nieudokumentowane, naganne, ale działa
+db_drop_table(polaczenie$con, table='wynik')
+
+# serializujemy tabelę w bazie danych
+# opcjonalnie argumentem name= możemy wskazać nazwę tabeli
+# do której zapiszemy wynik
+uchwyt_doTabeli <- copy_to(polaczenie, wynik, temporary = FALSE)
+
+```
+
+# Linki, linki, linki
+
+Skrypt z najciekawszymi funkcjami RSQLita
+
+http://faculty.washington.edu/kenrice/sisg-adv/exampleSQLite.R
+
+Łagodne wprowadzenie do baz danych z dplyr'em
+
+http://cran.rstudio.com/web/packages/dplyr/vignettes/databases.html
+
+
