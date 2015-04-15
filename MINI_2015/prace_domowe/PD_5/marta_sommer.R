@@ -1,8 +1,6 @@
 library("dplyr")
 library("RMySQL")
 
-# haslo (ma odwrocone znaki):
-
 haslo <- '64tl1bp6un9sqxp8'
 
 # wczytanie mojej tabeli:
