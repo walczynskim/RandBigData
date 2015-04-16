@@ -25,8 +25,7 @@ setwd("MINI_2015/prace_domowe/PD_5/")
 write.csv(wszystkie_twitty,"wszystkie_twitty.txt")
 
 # łączenie
-# haslo <- '64tl1bp6un9sqxp8'
-# haslo <- paste0(rev(strsplit(haslo,"")[[1]]),collapse = "")
+
 mpolaczenie = src_mysql(dbname = 'students', host = 'beta.icm.edu.pl',
                         user = 'pbiecek', password = haslo)
 
