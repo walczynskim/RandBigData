@@ -1,8 +1,8 @@
-haslo <- '64tl1bp6un9sqxp8'
 
 library(RMySQL)
 library(stringi)
 library(dplyr)
+haslo <- '64tl1bp6un9sqxp8'
 
 haslo<-stri_reverse(haslo)
 
