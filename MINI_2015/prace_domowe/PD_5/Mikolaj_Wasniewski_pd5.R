@@ -1,10 +1,9 @@
 
 library(RMySQL)
-library(stringi)
 library(dplyr)
 haslo <- '64tl1bp6un9sqxp8'
 
-haslo<-stri_reverse(haslo)
+
 
 # wczytanie pliku z danymi do ramki danych:
 Mikolaj_Wasniewski_dane<-read.table("C:/Users/Miko³aj/Documents/SMAD/R and Big Data/wybory/d/a2015-04-06_10_23_28.txt")
