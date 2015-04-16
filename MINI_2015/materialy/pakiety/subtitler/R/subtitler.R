@@ -2,5 +2,4 @@
 #'
 #' @docType package
 #' @name subtitler
-#' @import ggplot2
-NULL 
+NULL

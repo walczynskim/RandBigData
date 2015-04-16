@@ -12,6 +12,7 @@
 #' readSubtitle()
 #' }
 #' @seealso \code{\link{readLines}} for other arguments.
+#' @import ggplot2
 
 readSubtitle <- function(link, ...) {
     readLines(link, ...)
