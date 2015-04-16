@@ -3,7 +3,7 @@ library(dplyr)
 library(stringi)
 
 haslo<-'64tl1bp6un9sqxp8'
-nowe_haslo<-stri_reverse(haslo)
+
 
 #Ustawiam sciezke
 setwd("C:\\Users\\Krzysztof\\Documents\\Pytlak_Rudas_Wasniewski\\riduzedane")
