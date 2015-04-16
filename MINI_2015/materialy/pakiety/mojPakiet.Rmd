@@ -1,0 +1,126 @@
+---
+title: "Pakiety"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Wprowadzenie
+
+Z pewnością korzystaliśmy już z nie jednego pakietu. Po co tworzyć własne?
+
+Jednym z powodów jest chęć podzielenia się kodem (z współpracownikami, studentami lub całym światem).
+
+Innym, być może nawet ważniejszym jest możliwość uporządkowania swojej pracy. Pakiet wymusza strukturę.
+
+Cytując Hilary Parker 
+*Seriously, it doesn’t have to be about sharing your code (although that is an added benefit!). It is about saving yourself time.*
+
+---
+
+# Linki
+
+Materiałów o tym jak tworzyć pakiety jest dużo. Trzy bardzo przydatne źródła to
+
+- Bardzo rozbudowana, niespecjalnie czytelna ale wyczerpująca (z różnymi znaczeniami tego słowa) dokumentacja
+http://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages
+
+- Nowa książka Hadleya o tym jak pisać pakiety. Lektura na 3-4 godziny, obowiązkowa!
+http://r-pkgs.had.co.nz/intro.html
+
+- Dokumentacja pakietu Roxygen2
+https://github.com/klutometis/roxygen#roxygen2
+
+# Zaczynamy budowę pakietu
+
+Pakiet można budować 
+
+- zupełnie ręcznie, samemu troszcząc się o strukturę plików
+
+- z użyciem narzędzi, które to ułatwiają
+
+Bardzo wiele przydatnych funkcji do budowy i zarządzania pakietami ma pakiet devtools.
+
+```{r, eval=FALSE}
+library(roxygen2)
+library(testthat)
+devtools::session_info()
+```
+
+# Zaczynamy budowę pakietu
+
+Obecnie najłatwiej to zrobić z użyciem funkcji `devtools::create`.
+
+```{r, eval=FALSE}
+unlink("/Users/pbiecek/GitHub/RandBigData/MINI_2015/materialy/pakiety/subtitler2",recursive = TRUE)
+devtools::create("/Users/pbiecek/GitHub/RandBigData/MINI_2015/materialy/pakiety/subtitler2")
+```
+
+Pakiety będą żyły w trzech odsłonach
+
+- zródło (katalog)
+- pakiet źródłowy (plik tar.gz
+- pakiet binarny (plik zip/tgz)
+- zainstalowany pakiet to rozpakowany pakiet binarny
+
+# Gdzie instalowane są pakiety?
+
+```{r, eval=FALSE}
+.libPaths() 
+```
+
+Od dzisiaj wprowadźmy sobie trzy zasady.
+
+- Nigdy nie używać funkcji source() w kodzie R.
+- Starać się nie używać funkcji library() w kodzie R.
+- Starać się  nie używać funkcji require() w kodzie R.
+
+# Gdzie instalowane są pakiety?
+
+Ważne elementy pakietu:
+
+- Plik DESCRIPTION
+- katalogi R, man, data
+- Imports i Suggests
+- Roxyen2
+
+# Najważniejsze funkcje
+
+```{r, eval=FALSE}
+# przetestuj pakiet
+devtools::check()
+
+# zbuduj pakiet
+devtools::build()
+
+# zainstaluj pakiet
+devtools::install()
+# lub z githuba
+# zadziałą ale bardzoooooo długo
+devtools::install_github("RandBigData", "pbiecek", subdir = "MINI_2015/materialy/pakiety/subtitler")
+
+# zbuduj dokumentacje
+devtools::document()
+
+# dodaj informacje o zależnościach
+devtools::use_testthat()
+
+# wykonaj testy z użyciem pakietu testthat
+devtools::test()
+
+# dodaj nową ilustrację
+devtools::use_vignette("sherlock")
+```
+
+# Gdzie instalowane są pakiety?
+
+```{r, eval=FALSE}
+library("formatR")
+formatR::tidy_dir("/Users/pbiecek/GitHub/RandBigData/MINI_2015/materialy/pakiety/subtitler/R")
+```
+
+
