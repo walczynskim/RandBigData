@@ -22,4 +22,7 @@ downloadMost_Subtitle('new')
 downloadMost_Subtitle(unzip=FALSE)
 downloadMost_Subtitle('recommended', unzip=TRUE, info=TRUE)
 }
+\author{
+Justyna Jankowiak
+}
 

@@ -12,8 +12,11 @@
 #' downloadMost_Subtitle(unzip=FALSE)
 #' downloadMost_Subtitle('recommended', unzip=TRUE, info=TRUE)
 #'
-#'@import rvest
-#'@import stringi
+#' @author Justyna Jankowiak
+#'
+#' @import rvest
+#' @import stringi
+#'
 
 downloadMost_Subtitle <- function(which = "popular", unzip = TRUE, info = FALSE) {
     if (!is.logical(unzip) | !is.logical(info))
