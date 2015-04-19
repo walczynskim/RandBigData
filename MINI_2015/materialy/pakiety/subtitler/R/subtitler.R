@@ -2,4 +2,4 @@
 #'
 #' @docType package
 #' @name subtitler
-NULL 
+NULL

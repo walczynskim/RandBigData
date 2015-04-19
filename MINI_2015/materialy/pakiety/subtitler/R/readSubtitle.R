@@ -16,4 +16,4 @@
 
 readSubtitle <- function(link, ...) {
     readLines(link, ...)
-} 
+}
