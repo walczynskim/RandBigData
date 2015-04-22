@@ -8,6 +8,7 @@
 #' @return Character vector with the file's entry.
 #' @examples
 #' readSubtitle('http://dl.opensubtitles.org/pl/download/file/1954081967')
+#' readSubtitleId('1954081967')
 #' \dontrun{
 #' readSubtitle()
 #' }
@@ -16,4 +17,9 @@
 
 readSubtitle <- function(link, ...) {
     readLines(link, ...)
-} 
+}
+
+readSubtitleId <- function(id, ...) {
+  readLines(paste0('http://dl.opensubtitles.org/pl/download/file/',id), ...)
+}
+
