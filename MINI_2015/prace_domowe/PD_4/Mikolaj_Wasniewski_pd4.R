@@ -1,4 +1,6 @@
 
+library(PogromcyDanych)
+library(dplyr)
 
 wybrane.auta <- function(marka = "", model = "", rodzaj.paliwa = "", 
                          moc.silnika = 0, rok.produkcji= 0, przebieg= 0) {
@@ -10,8 +12,6 @@ wybrane.auta <- function(marka = "", model = "", rodzaj.paliwa = "",
              length(rodzaj.paliwa) == 1, length(moc.silnika) == 1,
              length(rok.produkcji) == 1,length(przebieg) == 1)
 
-   library(PogromcyDanych)
-   library(dplyr)
    temp<-auta2012
    if (marka != "")
       temp <- temp %>% filter(Marka == marka)
@@ -22,7 +22,7 @@ wybrane.auta <- function(marka = "", model = "", rodzaj.paliwa = "",
    if (moc.silnika > 0)
       temp <- temp %>% filter(KM >= moc.silnika)
    if (rok.produkcji > 0)
-      temp <- temp %>% filter(Rok.produkcji >= rok.produkcji)
+      temp <- temp %>% filter(Rok.produkcji == rok.produkcji)
    if (przebieg > 0)
       temp <- temp %>% filter(Przebieg.w.km <= przebieg)
    
