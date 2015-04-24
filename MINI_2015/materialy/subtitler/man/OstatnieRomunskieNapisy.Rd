@@ -4,17 +4,24 @@
 \alias{OstatnieRomunskieNapisy}
 \title{Ostatnio dodane napisy w jezyku romunskim.}
 \usage{
-OstatnieRomunskieNapisy(hd = FALSE)
+OstatnieRomunskieNapisy(movieYear = 2015, imdbGrade = 5, fileSave = FALSE,
+  hd = FALSE)
 }
 \arguments{
+\item{movieYear}{Zmienna ilosciowa wybierajaca filmy ktore zostaly wyprodukowane w danym roku.}
+
+\item{imdbGrade}{Zmienna ilosciowa, selekcjonujaca filmy ktore maja ocene <z portalu Imdb.com> nie nizsza niz podana w argumencie.}
+
+\item{fileSave}{Zmienna logiczna, jesli TRUE to zapisuje do pliku 'OstatnieRomunskieNapisy.txt' w working directory.}
+
 \item{hd}{Zmienna logiczna, jesli TRUE to zwraca napisy tylko dla filmow 'w duzej rozdzielczosci', domyslnie FALSE.}
 }
 \description{
-Funkcja \code{OstatnieRomunskieNapisy()} patrzy na stronie ostatnio dodane napisy do romunskich filmow i zapisuje je do pliku. Kazdy tytul filmu jest zapisywany z jego rokiem premiery.
+Funkcja \code{OstatnieRomunskieNapisy()} patrzy na stronie ostatnio dodane napisy do romunskich filmow i w zaleznosci od argumentu fileSave zapisuje je do pliku. Kazdy tytul filmu jest zapisywany z rokiem jego premiery.
 }
 \examples{
-OstatnieRumunskieNapisy('example.txt')
-OstatnieRumunskieNapisy('example.txt', hd = TRUE)
+OstatnieRumunskieNapisy(2011, 9.0, FALSE, TRUE)
+OstatnieRumunskieNapisy(movieYear = 2001, imdbGrade = 8, fileSave = TRUE, hd = TRUE)
 }
 \author{
 Pawel Grabowski
