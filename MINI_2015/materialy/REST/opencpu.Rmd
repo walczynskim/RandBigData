@@ -100,18 +100,21 @@ httr::POST("http://localhost:4348/ocpu/library/stats/R/rnorm",
 
 Lista obiektów w sesji
 
-http://localhost:4348/ocpu/tmp/x05f50cc67c/
+http://localhost:4348/ocpu/tmp/x0d6d220455/
 
 Lista obiektów R zapisanych w sesji
 
-http://localhost:4348/ocpu/tmp/x05f50cc67c/R/
+http://localhost:4348/ocpu/tmp/x0d6d220455/R/
 
 ```{r, eval=FALSE}
-(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x05f50cc67c/R"))
+(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x0d6d220455/R"))
 rawToChar(tmp$content)
 
 load(url("http://localhost:4348/ocpu/tmp/x05f50cc67c/R/.val/rda"))
 .val
+readLines(url("http://localhost:4348/ocpu/tmp/x05f50cc67c/R/.val/csv"))
+.val
+
 ```
 
 # Grafika
@@ -151,7 +154,7 @@ httr::POST("http://localhost:4348/ocpu/library/subtitler/R/readSubtitleId",
            body = list(id = "1954081967"))
 
 # pobieramy wyniki
-(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x08820f6ec7/R"))
+(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x01965fe999/R"))
 cat(rawToChar(tmp$content))
 
 load(url("http://localhost:4348/ocpu/tmp/x098bc38aa3/R/.val/rda"))
