@@ -20,6 +20,6 @@ readSubtitle <- function(link, ...) {
 }
 
 readSubtitleId <- function(id, ...) {
-  readLines(paste0('http://dl.opensubtitles.org/pl/download/file/',id), ...)
+    readLines(paste0("http://dl.opensubtitles.org/pl/download/file/", id), ...)
 }
-
+ 

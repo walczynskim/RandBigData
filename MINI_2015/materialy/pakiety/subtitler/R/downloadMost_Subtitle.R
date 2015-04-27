@@ -19,28 +19,28 @@
 #'
 
 downloadMost_Subtitle <- function(which = "popular", unzip = TRUE, info = FALSE) {
-    if (!is.logical(unzip) | !is.logical(info))
+    if (!is.logical(unzip) | !is.logical(info)) 
         stop("arguments 'unzip' and 'info' must be logical")
-    if (info == TRUE & unzip == FALSE)
+    if (info == TRUE & unzip == FALSE) 
         stop("'info' can be TRUE only if 'unzip' is TRUE")
-    if (!(which %in% c("popular", "new", "recommended")))
+    if (!(which %in% c("popular", "new", "recommended"))) 
         stop("wrong 'which' argument")
-
-    if (which == "popular")
+    
+    if (which == "popular") 
         html <- html("http://www.opensubtitles.org/en/search/sublanguageid-all/subadddate-3/sort-7/asc-0")
-    if (which == "new")
+    if (which == "new") 
         html <- html("http://www.opensubtitles.org/pl/search/sublanguageid-pol")
-    if (which == "recommended")
+    if (which == "recommended") 
         html <- html("http://www.opensubtitles.org/pl/search/sublanguageid-pol/subfeatured-on")
-
+    
     nodes <- html_nodes(html, "#search_results td:nth-child(5) a")
     href <- html_attr(nodes, "href")[1]
     hrefShort <- unlist(stri_extract_all_regex(href, "[0-9]+"))
     hrefBig <- paste("http://www.opensubtitles.org", href, sep = "")
-
+    
     name <- "downloaded_subtitles"
     dir <- file.path(getwd(), name)
-    if (!file.exists(dir))
+    if (!file.exists(dir)) 
         dir.create(file.path(getwd(), name))
     nameWithDir <- paste(name, "/", hrefShort, ".zip", sep = "")
     download.file(hrefBig, nameWithDir, mode = "wb")
@@ -52,4 +52,4 @@ downloadMost_Subtitle <- function(which = "popular", unzip = TRUE, info = FALSE)
         }
     }
     return("Downloaded.")
-}
+} 

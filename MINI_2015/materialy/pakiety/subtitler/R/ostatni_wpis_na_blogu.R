@@ -7,21 +7,15 @@
 #' @import dplyr
 #' @import rvest
 
-ostatni_wpis_na_blogu <- function(){
-
-  strona <- "http://blog.opensubtitles.org/"
-
-  strona %>%
-    html() %>%
-    html_nodes("#recent-posts-2 li:nth-child(1) a") %>%
-    html_attr("href") -> link
-
-  link %>%
-    html() %>%
-    html_nodes("p") %>%
-    html_text()
-
+ostatni_wpis_na_blogu <- function() {
+    
+    strona <- "http://blog.opensubtitles.org/"
+    
+    link <- strona %>% html() %>% html_nodes("#recent-posts-2 li:nth-child(1) a") %>% html_attr("href")
+    
+    link %>% html() %>% html_nodes("p") %>% html_text()
+    
 }
 
 
-
+ 

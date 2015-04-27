@@ -84,12 +84,12 @@
 #' 
 #' @export
 
-znajdz_tytul_jezyk <- function(tytul, jezyk){
-      
-      if (missing(tytul) | missing(jezyk))
-            stop('Nie podano argumentu')
-      url <- paste0('http://www.opensubtitles.org/pl/search2/sublanguageid-', jezyk,'/moviename-')
-      title <- strsplit(tytul," ")[[1]]
-      sciezka <- paste0(url, ifelse(length(title)==1, title, paste0(title,collapse = "+")))
-      return(sciezka)  
-}
+znajdz_tytul_jezyk <- function(tytul, jezyk) {
+    
+    if (missing(tytul) | missing(jezyk)) 
+        stop("Nie podano argumentu")
+    url <- paste0("http://www.opensubtitles.org/pl/search2/sublanguageid-", jezyk, "/moviename-")
+    title <- strsplit(tytul, " ")[[1]]
+    sciezka <- paste0(url, ifelse(length(title) == 1, title, paste0(title, collapse = "+")))
+    return(sciezka)
+} 
