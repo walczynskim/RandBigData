@@ -20,7 +20,6 @@ Function \code{readSubtitle} reads directly from http the subtitle in srt format
 }
 \examples{
 readSubtitle('http://dl.opensubtitles.org/pl/download/file/1954081967')
-readSubtitleId('1954081967')
 \dontrun{
 readSubtitle()
 }
