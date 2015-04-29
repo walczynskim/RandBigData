@@ -1,0 +1,21 @@
+---
+title: "Sherlock - the tv series"
+author: "Przemyslaw Biecek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+Read a subtitle for the first episode of the Sherlock tv series
+
+```{r, fig.show='hold'}
+library(subtitler)
+napi <- readSubtitle("http://dl.opensubtitles.org/pl/download/file/1954081967")
+head(napi, 30)
+
+hist(rnorm(100))
+```
+
