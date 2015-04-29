@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Przemysław Biecek" />
-  <title>Pakiety dplyr i tidyr z Internetu</title>
+  <title>Pakiety dplyr i tidyr</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -33,7 +33,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Pakiety dplyr i tidyr z Internetu</h1>
+  <h1 class="title">Pakiety dplyr i tidyr</h1>
   <p class="author">
 Przemysław Biecek
   </p>
@@ -124,16 +124,21 @@ autaZCenaBrutto &lt;-<span class="st"> </span><span class="kw">mutate</span>(aut
 <div id="wybor-zmiennych" class="slide section level1">
 <h1>Wybór zmiennych</h1>
 <p>Funkcja <code>select()</code> pozwala na wybór jednej lub wielu zmiennych z ramki danych</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">select</span>(autaZWiekiem, Wiek.auta, Rok.produkcji))</code></pre>
-<pre><code>## Source: local data frame [6 x 2]
+<pre class="sourceCode r"><code class="sourceCode r">dplyr:::<span class="kw">select</span>(autaZWiekiem, Wiek.auta, Rok.produkcji)</code></pre>
+<pre><code>## Source: local data frame [207,602 x 2]
 ## 
-##   Wiek.auta Rok.produkcji
-## 1         5          2008
-## 2         5          2008
-## 3         4          2009
-## 4        10          2003
-## 5         6          2007
-## 6         9          2004</code></pre>
+##    Wiek.auta Rok.produkcji
+## 1          5          2008
+## 2          5          2008
+## 3          4          2009
+## 4         10          2003
+## 5          6          2007
+## 6          9          2004
+## 7          7          2006
+## 8          5          2008
+## 9          7          2006
+## 10         6          2007
+## ..       ...           ...</code></pre>
 </div>
 <div id="sortowanie" class="slide section level1">
 <h1>Sortowanie</h1>
@@ -200,6 +205,7 @@ tylkoMalyPrzebieg &lt;-<span class="st"> </span><span class="kw">filter</span>(t
 ##   (fctr), Kraj.aktualnej.rejestracji (fctr), Kraj.pochodzenia (fctr),
 ##   Pojazd.uszkodzony (fctr), Skrzynia.biegow (fctr),
 ##   Status.pojazdu.sprowadzonego (fctr), Wyposazenie.dodatkowe (fctr)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(tylkoMalyPrzebieg)[<span class="dv">4</span>] &lt;-<span class="st"> &quot;f&quot;</span></code></pre>
 <p>Potoki można stosować nie tylko do funkcji <code>dplyr</code> ale też każdej innej.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tylkoMalyPrzebieg %&gt;%<span class="st"> </span><span class="kw">dim</span>()
 tylkoMalyPrzebieg %&gt;%<span class="st"> </span><span class="kw">head</span>()</code></pre>
@@ -371,9 +377,38 @@ df</code></pre>
 ## 3 2006      10    29  3
 ## 4 2010      03    03  4</code></pre>
 </div>
-<div id="cheatsheet-rstudio" class="slide section level1">
-<h1>Cheatsheet RStudio</h1>
+<div id="materialy" class="slide section level1">
+<h1>Materialy</h1>
+<p>Cheatsheet z RStudio</p>
 <p><a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf" class="uri">http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf</a></p>
+<p>Materiały z Pogromców Danych</p>
+<p><a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/17_dplyr_filter.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/17_dplyr_filter.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/18_dplyr_sort.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/18_dplyr_sort.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/19_dplyr_potok.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/19_dplyr_potok.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/20_dplyr_select.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/20_dplyr_select.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/21_dplyr_mutate.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/21_dplyr_mutate.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/22_dplyr_summarise.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/22_dplyr_summarise.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/23_dplyr_groupby.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/23_dplyr_groupby.html</a> <a href="http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/24_tidyr.html" class="uri">http://pogromcydanych.icm.edu.pl/materials/1_przetwarzanie/24_tidyr.html</a></p>
+</div>
+<div id="challenge" class="slide section level1">
+<h1>Challenge</h1>
+<p>Poniższe operacje wykonaj na bazie zbioru danych <code>auta2012</code></p>
+<ol style="list-style-type: decimal">
+<li>Która Marka występuje najczęściej w zbiorze danych <code>auta2012</code>?</li>
+<li>Spośród aut marki Toyota, który model występuje najczęściej.</li>
+<li>Sprawdź ile jest aut z silnikiem diesla wyprodukowanych w 2007 roku?</li>
+<li>Jakiego koloru auta mają najmniejszy medianowy przebieg?</li>
+<li>Gdy ograniczyć się tylko do aut wyprodukowanych w 2007, która Marka występuje najczęściej w zbiorze danych <code>auta2012</code>?</li>
+<li>Spośród aut marki Toyota, który model najbardziej stracił na cenie pomiędzy rokiem produkcji 2007 a 2008.</li>
+<li>Spośród aut z silnikiem diesla wyprodukowanych w 2007 roku która marka jest najdroższa?</li>
+<li>Ile jest aut z klimatyzacją?</li>
+<li>Gdy ograniczyć się tylko do aut z silnikiem ponad 100 KM, która Marka występuje najczęściej w zbiorze danych <code>auta2012</code>?</li>
+<li>Spośród aut marki Toyota, który model ma największą różnicę cen gdy porównać silniki benzynowe a diesel?</li>
+<li>Spośród aut z silnikiem diesla wyprodukowanych w 2007 roku która marka jest najtańsza?</li>
+<li>W jakiej marce klimatyzacja jest najczęściej obecna?</li>
+<li>Gdy ograniczyć się tylko do aut o cenie ponad 50 000 PLN, która Marka występuje najczęściej w zbiorze danych <code>auta2012</code>?</li>
+<li>Spośród aut marki Toyota, który model ma największy medianowy przebieg?</li>
+<li>Spośród aut z silnikiem diesla wyprodukowanych w 2007 roku który model jest najdroższy?</li>
+<li>W jakim modelu klimatyzacja jest najczęściej obecna?</li>
+<li>Gdy ograniczyć się tylko do aut o przebiegu poniżej 50 000 km o silniku diesla, która Marka występuje najczęściej w zbiorze danych <code>auta2012</code>?</li>
+<li>Spośród aut marki Toyota wyprodukowanych w 2007 roku, który model jest średnio najdroższy?</li>
+<li>Spośród aut z silnikiem diesla wyprodukowanych w 2007 roku który model jest najtańszy?</li>
+<li>Jakiego koloru auta mają największy medianowy przebieg?</li>
+</ol>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
