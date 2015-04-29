@@ -1,9 +1,3 @@
-library("stringi")
-library("dplyr")
-library("rvest")
-library("RCurl")
-library("XML")
-
 #' Pobierz charakterystyki filmow z roznych portali.
 #'
 #' Funkcja \code{znajdz_info_o_filmie} szuka informacji o filmach na Wikipedii, Opensubtitles lub IMDB.
