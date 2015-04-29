@@ -15,7 +15,7 @@ Do poważnych zastosowań potrzebowalibyśmy OpenCPU zainstalowanego na zewnętr
 
 Aby uniknąć przechodzenia przez administrację serwera, który i tak nie byłby dostępny przez wifi (z mojego komputera) będziemy pracować na lokalnej instalacji.
 
-Instrukcje dotyczące tego jak można pobrać i zainstalowac wersję serwerową i lokalną, znajdują się tutaj: 
+Instrukcje dotyczące tego jak można pobrać i zainstalować wersję serwerową i lokalną, znajdują się tutaj: 
 
 https://www.opencpu.org/download.html
 
@@ -33,6 +33,8 @@ Dzisiaj omówimy model, które pozwala na odsunięcie przetwarzania na inną mas
 
 ```{r, eval=FALSE}
 library(opencpu)
+opencpu$stop()
+opencpu$start(4348);
 ```
 
 Po włączeniu pakietu na porcie 4348 nasłuchuje serwer.
@@ -146,10 +148,9 @@ http://localhost:4348/ocpu/tmp/x0ba6b83f97/console/text
 Dowolne funkcjonalności można udostępniać zamykając je w funkcje nowych pakietów
 
 ```{r, eval=FALSE}
-library(opencpu)
-
 # równoważnie
 readSubtitleId('1954081967')
+# równoważnie
 httr::POST("http://localhost:4348/ocpu/library/subtitler/R/readSubtitleId", 
            body = list(id = "1954081967"))
 
@@ -157,10 +158,78 @@ httr::POST("http://localhost:4348/ocpu/library/subtitler/R/readSubtitleId",
 (tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x01965fe999/R"))
 cat(rawToChar(tmp$content))
 
+# pobieramy wyniki v2
 load(url("http://localhost:4348/ocpu/tmp/x098bc38aa3/R/.val/rda"))
 .val
+
+# pobieramy wyniki v3
+readLines("http://localhost:4348/ocpu/tmp/x0ac0bafa14/R/.val/csv")
+
 ```
 
+# Przekazywanie argumentów do funkcji
+
+```{r, eval=FALSE}
+# argumenty przekazane jako wartości
+httr::POST("http://localhost:4348/ocpu/library/stats/R/rpois", 
+           body = list(n = "1", lambda= "10"))
+
+# przekazanie kodu R jako argumentu
+httr::POST("http://localhost:4348/ocpu/library/stats/R/rexp", 
+           body = list(n = "sqrt(9)", rate= "1"))
+
+# przekazanie wyników jednej funkcji jako argumentu drugiej
+httr::POST("http://localhost:4348/ocpu/library/stats/R/rexp", 
+           body = list(n = "x0dbb106c30", rate= "1"))
+
+```
+
+# Serwis public.opencpu.org
+
+Zdalne wykonanie funkcji można przećwiczyć na serwisie udostępnionym przez public.opencpu.org.
+
+```{r, eval=FALSE}
+# zdalne uruchomienie funkcji rexp
+httr::POST("https://public.opencpu.org/ocpu/library/stats/R/rexp", 
+           body = list(n = "2+12", rate= "1"))
+
+# Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz
+# https://public.opencpu.org/ocpu/tmp/x06921c10f6/R
+
+```
+
+# Jak wywołać większy kod
+
+Używając funkcji identity możemy skrypt do wykonania przesłać jako argument funkcji identity ()
+
+```{r, eval=FALSE}
+httr::POST("https://public.opencpu.org/ocpu/library/base/R/identity", 
+           body = list(x = "coef(lm(speed~dist, data=cars))"))
+
+# Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz
+# https://public.opencpu.org/ocpu/tmp/x063cc14cb9/R
+
+```
+
+# Zdalne uruchamianie skryptów
+
+Możemy uruchamiać skrypty R / Rmd itp.
+
+```{r, eval=FALSE}
+
+httr::POST("http://localhost:4348/ocpu/library/subtitler/demo/data.R")
+
+# http://localhost:4348/ocpu/tmp/x0206198d33/stdout/text
+```
+
+Skrypty Rmd są kompilowane do różnych formatów.
+
+```{r, eval=FALSE}
+
+httr::POST("http://localhost:4348/ocpu/library/subtitler/examples/sherlock.Rmd")
+
+# http://localhost:4348/ocpu/tmp/x065d7d3fb6/files/
+```
 
 # Linki 
 
@@ -171,3 +240,15 @@ https://www.opencpu.org/download.html
 Szersza dokumentacja pakietu
 
 https://www.opencpu.org/api.html#api-root
+
+
+# Zadanie
+
+W zespołach dwuosobowych należy przygotować API do usługi, która (każdy zespół robi jedną z niżej wymienionych rzeczy):
+
+A. Dla wskazanego filmu i języka pobiera napisy oraz wyznacza częstość liter dla tych napisów.
+
+B. Dla wskazanego filmu i języka przedstawi chmurę słów.
+
+C. Dla wskazanego filmu pobierze napisy w języku angielskim i wyznaczy wydźwięk (sentiment) tych napisów / z podziałem na trend w trakcie trwania filmu.
+
