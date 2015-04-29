@@ -48,6 +48,7 @@ Materia&#322;y:
 ---------------
 
 * Web scraping https://rawgithub.com/pbiecek/RandBigData/master/MINI_2015/materialy/webscrap/scrap.html
+* Awesome R https://github.com/qinwf/awesome-R
 
 
 Plan spotka&#324; MINI PW:
