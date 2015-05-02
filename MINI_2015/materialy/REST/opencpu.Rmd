@@ -96,8 +96,9 @@ http://localhost:4348/ocpu/library/stats/man/rnorm/pdf
 Funkcje należy wywoływać przez protokół POST. Można podawać argumenty a wynik będzie zapisany w sesji.
 
 ```{r, eval=FALSE}
-httr::POST("http://localhost:4348/ocpu/library/stats/R/rnorm", 
-           body = list(n = "5"))
+
+(tmp <- httr::POST("http://localhost:4348/ocpu/library/stats/R/rnorm", 
+           body = list(n = "5")))
 ```
 
 Lista obiektów w sesji
@@ -109,7 +110,7 @@ Lista obiektów R zapisanych w sesji
 http://localhost:4348/ocpu/tmp/x0d6d220455/R/
 
 ```{r, eval=FALSE}
-(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x0d6d220455/R"))
+(tmp <- httr::GET("http://localhost:4348/ocpu/tmp/x096265a4cd/R"))
 rawToChar(tmp$content)
 
 load(url("http://localhost:4348/ocpu/tmp/x05f50cc67c/R/.val/rda"))
@@ -180,7 +181,9 @@ httr::POST("http://localhost:4348/ocpu/library/stats/R/rexp",
 
 # przekazanie wyników jednej funkcji jako argumentu drugiej
 httr::POST("http://localhost:4348/ocpu/library/stats/R/rexp", 
-           body = list(n = "x0dbb106c30", rate= "1"))
+           body = list(n = "x0300823580", rate= "1"))
+
+dotkliwosc(rate = 3)
 
 ```
 
@@ -190,8 +193,11 @@ Zdalne wykonanie funkcji można przećwiczyć na serwisie udostępnionym przez p
 
 ```{r, eval=FALSE}
 # zdalne uruchomienie funkcji rexp
-httr::POST("https://public.opencpu.org/ocpu/library/stats/R/rexp", 
+httr::POST("http:/192.168.143.72:7415/")
+
+res <- httr::POST("https://public.opencpu.org/ocpu/library/stats/R/rexp", 
            body = list(n = "2+12", rate= "1"))
+
 
 # Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz
 # https://public.opencpu.org/ocpu/tmp/x06921c10f6/R
@@ -207,7 +213,7 @@ httr::POST("https://public.opencpu.org/ocpu/library/base/R/identity",
            body = list(x = "coef(lm(speed~dist, data=cars))"))
 
 # Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz
-# https://public.opencpu.org/ocpu/tmp/x063cc14cb9/R
+# https://public.opencpu.org/ocpu/tmp/x044bc7b4f3/R
 
 ```
 
