@@ -19,16 +19,13 @@ sentyment_dla_filmu <- function( tytul ){
    napisy2 <- stri_extract_all_words(napisy)
    napisy2 <- napisy[stri_length(napisy) > 4]
    napisy3 <- napisy2[!grepl("-->", napisy2)]
-   napisy3 <- "joy"
-   
+
    
    negative <- readLines("https://raw.githubusercontent.com/pbiecek/RandBigData/master/MINI_2015/materialy/webscrap/negative-words.txt")
    positive <- readLines("https://raw.githubusercontent.com/pbiecek/RandBigData/master/MINI_2015/materialy/webscrap/positive-words.txt")
    positive <- positive[-c(1:36)]
    negative <- negative[-c(1:35)]
-   positive <- "you"
-   nagative <- "joy"
-   
+
    sapply( napisy3, function( element ){
       sum( unlist(stri_extract_all_words(element)) %in% positive)-
          sum( unlist(stri_extract_all_words(element)) %in% negative)
