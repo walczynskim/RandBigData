@@ -21,7 +21,7 @@
 #' @import stringi
 #' @export
 
-pobierz_napisy2 <- function(tytul, jezyk){
+pobierz_napisy <- function(tytul, jezyk){
    if (missing(tytul) | missing(jezyk))
       stop('Nie podales wszystkich argumentow')
    url <- znajdz_tytul_jezyk(tytul, jezyk)
@@ -93,7 +93,7 @@ pobierz_rozpakuj <- function(pobierz_attrs){
 
 #przydaje sie w sentyment_dla_filmu
 
-pobierz_napisy2 <- function(tytul, jezyk){
+pobierz_napisy_pierwsze_mozliwe <- function(tytul, jezyk){
    if (missing(tytul) | missing(jezyk))
       stop('Nie podales wszystkich argumentow')
    url <- znajdz_tytul_jezyk(tytul, jezyk)

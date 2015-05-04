@@ -14,7 +14,7 @@
 #' @export
 
 sentyment_dla_filmu <- function( tytul ){
-   x <- pobierz_napisy2( tytul ,"eng")
+   x <- pobierz_napisy_pierwsze_mozliwe( tytul ,"eng")
    napisy <- readLines( paste0(x, "/", grep(".srt", list.files( x), value = TRUE)) )
    napisy2 <- stri_extract_all_words(napisy)
    napisy2 <- napisy[stri_length(napisy) > 4]
