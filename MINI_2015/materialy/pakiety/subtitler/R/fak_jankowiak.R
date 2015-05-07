@@ -12,8 +12,8 @@
 #' @author Justyna Jankowiak & Katarzyna Fak
 #'
 #' @examples
-#' zrob_chmure("La vita e bella","pol")
-#' zrob_chmure("Madagaskar","heb") # napisy w jezyku hebrajskim
+#' fak_jankowiak("La vita e bella","pol")
+#' fak_jankowiak("Madagaskar","heb") # napisy w jezyku hebrajskim
 #' @import rvest
 #' @import stringi
 #' @import tm
