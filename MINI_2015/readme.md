@@ -48,6 +48,7 @@ Materia&#322;y:
 ---------------
 
 * Web scraping https://rawgithub.com/pbiecek/RandBigData/master/MINI_2015/materialy/webscrap/scrap.html
+* Awesome R https://github.com/qinwf/awesome-R
 
 
 Plan spotka&#324; MINI PW:
@@ -62,8 +63,8 @@ Plan spotka&#324; MINI PW:
 * 16 IV 
 * 23 IV - prezentacja pierwszej części projektu 'Filmy'
 * 30 IV
-* 7 V  - prezentacja trzeciej części projektu 'Wybory'
-* 14 V
+* 7 V 
+* 14 V - prezentacja trzeciej części projektu 'Wybory'
 * 21 V - prezentacja drugiej części projektu 'Filmy'
 * 28 V
 * 11 VI - prezentacja trzeciej części projektu 'Filmy'

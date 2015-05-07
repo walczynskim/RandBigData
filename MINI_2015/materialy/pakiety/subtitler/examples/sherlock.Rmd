@@ -15,5 +15,7 @@ Read a subtitle for the first episode of the Sherlock tv series
 library(subtitler)
 napi <- readSubtitle("http://dl.opensubtitles.org/pl/download/file/1954081967")
 head(napi, 30)
+
+hist(rnorm(100))
 ```
 

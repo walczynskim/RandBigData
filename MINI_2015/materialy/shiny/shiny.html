@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Przemysław Biecek" />
-  <title>Usługi oparte o dane a OpenCPU</title>
+  <title>Aplikacje webowe - shiny</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -33,7 +33,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Usługi oparte o dane a OpenCPU</h1>
+  <h1 class="title">Aplikacje webowe - shiny</h1>
   <p class="author">
 Przemysław Biecek
   </p>
@@ -41,160 +41,26 @@ Przemysław Biecek
 </div>
 <div id="wprowadzenie" class="slide section level1">
 <h1>Wprowadzenie</h1>
-<p>Do poważnych zastosowań potrzebowalibyśmy OpenCPU zainstalowanego na zewnętrznym serwerze.</p>
-<p>Aby uniknąć przechodzenia przez administrację serwera, który i tak nie byłby dostępny przez wifi (z mojego komputera) będziemy pracować na lokalnej instalacji.</p>
-<p>Instrukcje dotyczące tego jak można pobrać i zainstalować wersję serwerową i lokalną, znajdują się tutaj:</p>
-<p><a href="https://www.opencpu.org/download.html" class="uri">https://www.opencpu.org/download.html</a></p>
-<p>Wystarczy napisać</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;opencpu&quot;</span>)</code></pre>
+<p>Dzielenie się wynikami z analiz w R z innymi osobami odbwały się kiedyś na dwa sposoby: Można było podzielić się skryptem w R i odbiorca zaawansowany technicznie miał możliwość modyfikacji ścieżki analiz, musiał mieć jedna wiedzę o skrypcie. Można było podzielić się raportem który ukrywa techniczne detale ale nie pozostawia możliwości dynamicznej zmiany.</p>
+<p>Shiny łączy najlepsze cechy obu podejść. Pozwala na interaktywną eksplorację danych przy ukryciu szczegółów technicznych.</p>
+<p>Materiały do nauki krop po kroku: <a href="http://shiny.rstudio.com/tutorial/" class="uri">http://shiny.rstudio.com/tutorial/</a></p>
+<p>Gdzie hostować aplikacje: <a href="http://shiny.rstudio.com/deploy/" class="uri">http://shiny.rstudio.com/deploy/</a></p>
+<p>Galeria rozwiązań: <a href="http://shiny.rstudio.com/gallery/" class="uri">http://shiny.rstudio.com/gallery/</a></p>
+<p>Dokumentacja: <a href="http://shiny.rstudio.com/reference/shiny/latest/" class="uri">http://shiny.rstudio.com/reference/shiny/latest/</a></p>
 </div>
-<div id="ale-o-co-chodzi" class="slide section level1">
-<h1>Ale o co chodzi?</h1>
-<p>Dwa tygodnie temu omawialiśmy bazy danych, pozwalają one odsunąć dane od lokalnego komputera. Przetwarzanie danych może mieć miejsce na silniejszej maszynie a do użytkownika trafiają tylko małe obliczone agregaty.</p>
-<p>Dzisiaj omówimy model, które pozwala na odsunięcie przetwarzania na inną maszynę. Dzięki temu możemy wymagające obliczeniowo zadania przesunąć na większe maszyny, możemy też zlecać przetwarzanie spoza R (integracja usług).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(opencpu)
-opencpu$<span class="kw">stop</span>()
-opencpu$<span class="kw">start</span>(<span class="dv">4348</span>);</code></pre>
-<p>Po włączeniu pakietu na porcie 4348 nasłuchuje serwer.</p>
-<p>Otwarte porty - Network Utility / Port Scan</p>
+<div id="przykady" class="slide section level1">
+<h1>Przykłady</h1>
+<p>shiny1 - prosta aplikacja</p>
+<p>shiny2 - panel z różnymi wyjściami</p>
+<p>shiny3 - wyrażenia reaktywne</p>
 </div>
-<div id="banalne-uzycie" class="slide section level1">
-<h1>Banalne użycie</h1>
-<p>Zobaczmy przykład użycia z pomocą API do testowania</p>
-<p><a href="http://localhost:4348/ocpu/test/" class="uri">http://localhost:4348/ocpu/test/</a></p>
-</div>
-<div id="co-mozemy-zrobic" class="slide section level1">
-<h1>Co możemy zrobić</h1>
-<p>Listing funkcji z pakietu (domyślnie info)</p>
-<p><a href="http://localhost:4348/ocpu/library/stats/" class="uri">http://localhost:4348/ocpu/library/stats/</a></p>
-<p>Lista funkcji i zbiorów danych eksportowanych przez pakiet</p>
-<p><a href="http://localhost:4348/ocpu/library/stats/R" class="uri">http://localhost:4348/ocpu/library/stats/R</a> <a href="http://localhost:4348/ocpu/library/stats/data" class="uri">http://localhost:4348/ocpu/library/stats/data</a></p>
-<p>Z linii poleceń można używać też curl’a</p>
-<p><code>curl http://localhost:4348/ocpu/library/stats/data/</code></p>
-<p>A z R można wykonywać GET i POST</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(httr)
-httr::<span class="kw">GET</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/data&quot;</span>)
-
-httr::<span class="kw">GET</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/R/rnorm&quot;</span>)</code></pre>
-</div>
-<div id="co-mozemy-zrobic-1" class="slide section level1">
-<h1>Co możemy zrobić</h1>
-<p>Dane można konwertować np. do pliku txt lub do jsona</p>
-<p><a href="http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/print" class="uri">http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/print</a> <a href="http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/json" class="uri">http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/json</a> <a href="http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/csv" class="uri">http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/csv</a> <a href="http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/rda" class="uri">http://localhost:4348/ocpu/library/PogromcyDanych/data/koty_ptaki/rda</a></p>
-<p>Podobnie dla funkcji dostępna jest metoda print</p>
-<p><a href="http://localhost:4348/ocpu/library/stats/R/rnorm" class="uri">http://localhost:4348/ocpu/library/stats/R/rnorm</a></p>
-<p>oraz dokumentacja dostępna przez API</p>
-<p><a href="http://localhost:4348/ocpu/library/stats/man/rnorm/" class="uri">http://localhost:4348/ocpu/library/stats/man/rnorm/</a> <a href="http://localhost:4348/ocpu/library/stats/man/rnorm/text" class="uri">http://localhost:4348/ocpu/library/stats/man/rnorm/text</a> <a href="http://localhost:4348/ocpu/library/stats/man/rnorm/html" class="uri">http://localhost:4348/ocpu/library/stats/man/rnorm/html</a> <a href="http://localhost:4348/ocpu/library/stats/man/rnorm/pdf" class="uri">http://localhost:4348/ocpu/library/stats/man/rnorm/pdf</a></p>
-</div>
-<div id="wykonywanie-funkcji" class="slide section level1">
-<h1>Wykonywanie funkcji</h1>
-<p>Funkcje należy wywoływać przez protokół POST. Można podawać argumenty a wynik będzie zapisany w sesji.</p>
-<pre class="sourceCode r"><code class="sourceCode r">httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/R/rnorm&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="st">&quot;5&quot;</span>))</code></pre>
-<p>Lista obiektów w sesji</p>
-<p><a href="http://localhost:4348/ocpu/tmp/x0d6d220455/" class="uri">http://localhost:4348/ocpu/tmp/x0d6d220455/</a></p>
-<p>Lista obiektów R zapisanych w sesji</p>
-<p><a href="http://localhost:4348/ocpu/tmp/x0d6d220455/R/" class="uri">http://localhost:4348/ocpu/tmp/x0d6d220455/R/</a></p>
-<pre class="sourceCode r"><code class="sourceCode r">(tmp &lt;-<span class="st"> </span>httr::<span class="kw">GET</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x0d6d220455/R&quot;</span>))
-<span class="kw">rawToChar</span>(tmp$content)
-
-<span class="kw">load</span>(<span class="kw">url</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x05f50cc67c/R/.val/rda&quot;</span>))
-.val
-<span class="kw">readLines</span>(<span class="kw">url</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x05f50cc67c/R/.val/csv&quot;</span>))
-.val</code></pre>
-</div>
-<div id="grafika" class="slide section level1">
-<h1>Grafika</h1>
-<p>Wynikiem mogą być nie tylko obiekty R, ale też grafika w formacie png, pdf, svg</p>
-<pre class="sourceCode r"><code class="sourceCode r">httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/graphics/R/hist&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;[0,1,1,1,1,5]&quot;</span>, <span class="dt">col=</span><span class="st">&quot;'black'&quot;</span>))</code></pre>
-<p>Odwołać do wyników można się przez link</p>
-<p><a href="http://localhost:4348/ocpu/tmp/x0ba6b83f97" class="uri">http://localhost:4348/ocpu/tmp/x0ba6b83f97</a> <a href="http://localhost:4348/ocpu/tmp/x0ba6b83f97/graphics/1/pdf" class="uri">http://localhost:4348/ocpu/tmp/x0ba6b83f97/graphics/1/pdf</a></p>
-</div>
-<div id="sesja" class="slide section level1">
-<h1>Sesja</h1>
-<p>Cała sesja jako jeden plik</p>
-<p><a href="http://localhost:4348/ocpu/tmp/x0ba6b83f97/zip" class="uri">http://localhost:4348/ocpu/tmp/x0ba6b83f97/zip</a></p>
-<p>Co zostało uruchomione</p>
-<p><a href="http://localhost:4348/ocpu/tmp/x0ba6b83f97/console/text" class="uri">http://localhost:4348/ocpu/tmp/x0ba6b83f97/console/text</a></p>
-</div>
-<div id="wasny-pakiet" class="slide section level1">
-<h1>Własny pakiet</h1>
-<p>Dowolne funkcjonalności można udostępniać zamykając je w funkcje nowych pakietów</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># równoważnie</span>
-<span class="kw">readSubtitleId</span>(<span class="st">'1954081967'</span>)
-<span class="co"># równoważnie</span>
-httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/subtitler/R/readSubtitleId&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">id =</span> <span class="st">&quot;1954081967&quot;</span>))
-
-<span class="co"># pobieramy wyniki</span>
-(tmp &lt;-<span class="st"> </span>httr::<span class="kw">GET</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x01965fe999/R&quot;</span>))
-<span class="kw">cat</span>(<span class="kw">rawToChar</span>(tmp$content))
-
-<span class="co"># pobieramy wyniki v2</span>
-<span class="kw">load</span>(<span class="kw">url</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x098bc38aa3/R/.val/rda&quot;</span>))
-.val
-
-<span class="co"># pobieramy wyniki v3</span>
-<span class="kw">readLines</span>(<span class="st">&quot;http://localhost:4348/ocpu/tmp/x0ac0bafa14/R/.val/csv&quot;</span>)</code></pre>
-</div>
-<div id="przekazywanie-argumentow-do-funkcji" class="slide section level1">
-<h1>Przekazywanie argumentów do funkcji</h1>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># argumenty przekazane jako wartości</span>
-httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/R/rpois&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="st">&quot;1&quot;</span>, <span class="dt">lambda=</span> <span class="st">&quot;10&quot;</span>))
-
-<span class="co"># przekazanie kodu R jako argumentu</span>
-httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/R/rexp&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="st">&quot;sqrt(9)&quot;</span>, <span class="dt">rate=</span> <span class="st">&quot;1&quot;</span>))
-
-<span class="co"># przekazanie wyników jednej funkcji jako argumentu drugiej</span>
-httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/stats/R/rexp&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="st">&quot;x0dbb106c30&quot;</span>, <span class="dt">rate=</span> <span class="st">&quot;1&quot;</span>))</code></pre>
-</div>
-<div id="serwis-public.opencpu.org" class="slide section level1">
-<h1>Serwis public.opencpu.org</h1>
-<p>Zdalne wykonanie funkcji można przećwiczyć na serwisie udostępnionym przez public.opencpu.org.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># zdalne uruchomienie funkcji rexp</span>
-httr::<span class="kw">POST</span>(<span class="st">&quot;https://public.opencpu.org/ocpu/library/stats/R/rexp&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="st">&quot;2+12&quot;</span>, <span class="dt">rate=</span> <span class="st">&quot;1&quot;</span>))
-
-<span class="co"># Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz</span>
-<span class="co"># https://public.opencpu.org/ocpu/tmp/x06921c10f6/R</span></code></pre>
-</div>
-<div id="jak-wywoac-wiekszy-kod" class="slide section level1">
-<h1>Jak wywołać większy kod</h1>
-<p>Używając funkcji identity możemy skrypt do wykonania przesłać jako argument funkcji identity ()</p>
-<pre class="sourceCode r"><code class="sourceCode r">httr::<span class="kw">POST</span>(<span class="st">&quot;https://public.opencpu.org/ocpu/library/base/R/identity&quot;</span>, 
-           <span class="dt">body =</span> <span class="kw">list</span>(<span class="dt">x =</span> <span class="st">&quot;coef(lm(speed~dist, data=cars))&quot;</span>))
-
-<span class="co"># Wyniki można odczytać i wykorzystać jak w przypadku poprzednich analiz</span>
-<span class="co"># https://public.opencpu.org/ocpu/tmp/x063cc14cb9/R</span></code></pre>
-</div>
-<div id="zdalne-uruchamianie-skryptow" class="slide section level1">
-<h1>Zdalne uruchamianie skryptów</h1>
-<p>Możemy uruchamiać skrypty R / Rmd itp.</p>
-<pre class="sourceCode r"><code class="sourceCode r">httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/subtitler/demo/data.R&quot;</span>)
-
-<span class="co"># http://localhost:4348/ocpu/tmp/x0206198d33/stdout/text</span></code></pre>
-<p>Skrypty Rmd są kompilowane do różnych formatów.</p>
-<pre class="sourceCode r"><code class="sourceCode r">httr::<span class="kw">POST</span>(<span class="st">&quot;http://localhost:4348/ocpu/library/subtitler/examples/sherlock.Rmd&quot;</span>)
-
-<span class="co"># http://localhost:4348/ocpu/tmp/x065d7d3fb6/files/</span></code></pre>
-</div>
-<div id="linki" class="slide section level1">
-<h1>Linki</h1>
-<p>Jak zainstalować</p>
-<p><a href="https://www.opencpu.org/download.html" class="uri">https://www.opencpu.org/download.html</a></p>
-<p>Szersza dokumentacja pakietu</p>
-<p><a href="https://www.opencpu.org/api.html#api-root" class="uri">https://www.opencpu.org/api.html#api-root</a></p>
-</div>
-<div id="zadanie" class="slide section level1">
-<h1>Zadanie</h1>
-<p>W zespołach dwuosobowych należy przygotować API do usługi, która (każdy zespół robi jedną z niżej wymienionych rzeczy):</p>
-<p>A. Dla wskazanego filmu i języka pobiera napisy oraz wyznacza częstość liter dla tych napisów.</p>
-<p>B. Dla wskazanego filmu i języka przedstawi chmurę słów.</p>
-<p>C. Dla wskazanego filmu pobierze napisy w języku angielskim i wyznaczy wydźwięk (sentiment) tych napisów / z podziałem na trend w trakcie trwania filmu.</p>
+<div id="uruchamianie" class="slide section level1">
+<h1>Uruchamianie</h1>
+<p>,,Ręczne’’ uruchmianie aplikacji</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">runApp</span>(<span class="st">'katalog'</span>,  <span class="dt">display.mode =</span> <span class="st">&quot;showcase&quot;</span>)</code></pre>
+<p>Aplikacje możemy umieścić na serwerze (uruchamianie zdalne) lub na gist (będzie pobrana i uruchomiona lokalnie)</p>
+<p>Przykład dla <a href="https://gist.github.com/pbiecek/0617b36500f95daa3a00" class="uri">https://gist.github.com/pbiecek/0617b36500f95daa3a00</a></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">runGist</span>(<span class="st">&quot;0617b36500f95daa3a00&quot;</span>)</code></pre>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
