@@ -16,5 +16,5 @@ Imports:
     RCurl
 Suggests: knitr,
     testthat
-Depends: ggplot2
+Depends: ggplot2, wordcloud
 VignetteBuilder: knitr
