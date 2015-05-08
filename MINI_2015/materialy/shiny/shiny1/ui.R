@@ -3,6 +3,7 @@ library(PogromcyDanych)
 
 shinyUI(fluidPage(
   titlePanel("Eksplorator seriali"),
+  p("Jakis napis"),
   sidebarLayout(
     sidebarPanel(
       selectInput("serial",
