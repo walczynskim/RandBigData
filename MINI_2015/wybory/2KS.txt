@@ -1,0 +1,38 @@
+Kryteria
+
+1. Ilość danych i łatwość dostępu do danych
+
+Dane nie zostały załączone, 
+przez to trudno ocenić ile dokładnie ich jest i czy łatwo się do nich odwołać
+Można to zrobić wyłącznie na podstawie wykresów
+
+
+2. Ilość i różnorodność wskaźników
+
+W pliku md wymienionych jest kilka wskaźników i są dla nich wykresy
+ale same wskaźniki nie są opakowane w funkcje R
+trudno ocenić czy są to pomysły na przyszłe wskaźniki czy wskaźniki już zaimplementowane
+
+
+3. Czytelność kodu i struktury projektu
+
+! wiele plików to skrypty
+kod nie jest uporządkowany w postaci funkcji
+przez co całość nie jest reużywalna
+
+
+W sumie
+
+1/6 + 3/6 + 2/6 + 2 = 8
+
+
+skala:
+
+0 - słabe rozwiązanie
+1 - zaliczone
+2 - rozwiązanie poprawne ale mogłoby być rozszerzone
+3 - dobre, poprawne rozwiązanie
+4 - podoba mi się, tak powinny być realizowane tego typu projekty
+5 - bardzo dobre rozwiązanie, inne grupy powinny się mu szczegółowo przyjrzeć
+6 - wydrukowałem i powiesiłem sobie na ścianie
+
