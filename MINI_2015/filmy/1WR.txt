@@ -21,6 +21,6 @@ Samej bazy danych (SQLite) wciąż nie otrzymałem.
 
 W sumie
 
-2/3 + 3/3 + 2/3 + 1 = 8
+(2/3 + 3/3 + 2/3 + 1 = 8) x2 = 16
 
 
