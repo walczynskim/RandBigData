@@ -1,7 +1,4 @@
-export(film_info)
-export(pobierz_napisy)
-export(znajdz_tytul_jezyk)
-export(sentyment_dla_filmu)
+exportPattern("^[^\\.]")
 import(RCurl)
 import(XML)
 import(dplyr)

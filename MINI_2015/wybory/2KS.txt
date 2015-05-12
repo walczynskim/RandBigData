@@ -1,0 +1,55 @@
+Kryteria
+
+1. Ilość danych i łatwość dostępu do danych
+
+Dane nie zostały załączone, 
+przez to trudno ocenić ile dokładnie ich jest i czy łatwo się do nich odwołać
+Można to zrobić wyłącznie na podstawie wykresów
+
+
+2. Ilość i różnorodność wskaźników
+
+W pliku md wymienionych jest kilka wskaźników i są dla nich wykresy
+ale same wskaźniki nie są opakowane w funkcje R
+trudno ocenić czy są to pomysły na przyszłe wskaźniki czy wskaźniki już zaimplementowane
+
+
+3. Czytelność kodu i struktury projektu
+
+! wiele plików to skrypty
+kod nie jest uporządkowany w postaci funkcji
+przez co całość nie jest reużywalna
+
+
+W sumie
+
+1/6 + 3/6 + 2/6 + 2 = 8
+
+
+skala:
+
+0 - słabe rozwiązanie
+1 - zaliczone
+2 - rozwiązanie poprawne ale mogłoby być rozszerzone
+3 - dobre, poprawne rozwiązanie
+4 - podoba mi się, tak powinny być realizowane tego typu projekty
+5 - bardzo dobre rozwiązanie, inne grupy powinny się mu szczegółowo przyjrzeć
+6 - wydrukowałem i powiesiłem sobie na ścianie
+
+
+
+Marcin Kosinski:
+3. Czytelnosc kodu to wykonywanie 2 skryptów batch'owych:
+https://github.com/MarcinKosinski/web-scraping/tree/master/batch
+Nie wiem dlaczego te pliki sie nie zalaczyly, gdy przesylalem rozwiazania.
+
+1. Co do ilosci danych, to po spakowaniu nie bylem w stanie wrzucic ich na githuba, gdyz otrzymalem
+komunikat o tym, ze moge przesylac pliki mniejsze niz 50mb. Po prezentacji nikt nie zwrocil mi uwagi
+bym doslal gdziekolwiek w jakikolwiek sposob dane, ktore staram sie zbierac co 30 minut od ponad 2 miesiecy.
+
+
+
+Przemysław Biecek:
+Ad 3. kod wciąż jest mało uporządkowany, to co zostało przesłane to skrypty bez struktury
+Ad 1. proszę zaznaczyć jakoś ilość, strukturę i źródło danych, można je wgrać do bazy danych na beta.icm, można je umieścić na bitbucket, na dropbox lub w innym miejscu, z którego można je pobrać.
+
