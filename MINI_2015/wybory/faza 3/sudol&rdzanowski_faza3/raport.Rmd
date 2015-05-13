@@ -1,0 +1,278 @@
+---
+title: "Raport - wybory 2015"
+author: "Adrianna Sudoł i Marcin Rdzanowski"
+date: "14 maja 2015"
+output: pdf_document
+---
+```{r,echo=FALSE,results='hide',warning=FALSE,error=FALSE,message=FALSE} 
+library(wsk)
+liczba_w = nrow(wybory2015)
+```
+#Dane:
+
+Ilość zebranych różnych tekstów o kandydatach biorących udział w wyborach prezydenckich 2015:
+```{r,echo=FALSE,warning=FALSE,error=FALSE,fig.align='center'} 
+print(liczba_w)
+``` 
+
+
+Dla poszczególnych portali liczba zebrnych danych jest nastepująca:
+
+```{r,echo=FALSE,warning=FALSE,fig.align='center'}
+l_onet = sum(as.numeric(wybory2015$portal=='onet'))
+l_onet_wybory = sum(as.numeric(wybory2015$portal=='onet_wybory'))
+l_wp = sum(as.numeric(wybory2015$portal=='wp'))
+l_news = sum(as.numeric(wybory2015$portal=='newsweek'))
+l_gazeta = sum(as.numeric(wybory2015$portal=='gazeta'))
+l_tvn = sum(as.numeric(wybory2015$portal=='tvn'))
+l_tvn_wybory = sum(as.numeric(wybory2015$portal=='tvn_wybory'))
+l_tvp = sum(as.numeric(wybory2015$portal=='tvp'))
+l_twit_nasluch = sum(as.numeric(wybory2015$portal=='tweeter_nasluch'))
+l_twit_kandydat = sum(as.numeric(wybory2015$portal=='tweeter_kandydat'))
+
+wynik = data.frame(portal=c("onet.pl","onet.pl/wybory","wp.pl",
+                            "newsweek.pl","gazeta.pl","tvn24.pl",
+                            "tvn24.pl/wybory", " tvpinfo.pl", "twitter-kandydat",
+                            "twitter-nasluch"), 
+                   liczba_artykulow = c(l_onet,l_onet_wybory,l_wp,l_news,
+                                        l_gazeta,l_tvn, l_tvn_wybory,l_tvp,
+                                        l_twit_nasluch,l_twit_kandydat))
+print(wynik)
+ 
+```
+
+Objętość zebranych danych spakowanych do pliku .zip wynosi:
+```{r,echo=FALSE,warning=FALSE,fig.align='center'}
+library(stringi)
+sciezka_do_danych = 'D:/szkola/R i Big Data/projekt 1/'
+info = file.info(stri_paste(sciezka_do_danych,'dane.zip'))
+rozmiar = info$size/(1024*1024)
+rozmiar = round(rozmiar,2)
+cat(stri_paste(rozmiar, ' MB'))
+```
+Dane były zbierane w dniach: od 16.03.2015 do 11.05.2015.
+
+Po uporządkowaniu i wyczszczeniu zebranych danych wszystkie zostały zapisane w ramce danych o nazwie *wybory2015*, którą można znaleźć w pakiecie **wsk** (*https://github.com/sudola*)
+
+Opis ramki danych:
+
+* *tekst* - treść artykułu lub tweeta,
+
+* *portal* - nazwa portalu z jakiego są pobierane dane,
+
+* *data* - data dnia w którym pojawił się artykuł lub tweet,
+
+* *waga* - zmienna 0-1 czy dany artykuł był głównym tematem czy nie (tweety wszystkie mają automatycznie wagę 1)
+
+* *l_retweet* - liczba kolejnych 'podaj dalej' tweetów (dla artykułów NA)
+
+* *l_polubien* - liczba polubień tweeta (dla artykułów NA)
+
+* *komorowski* - kolumna 0-1 czy dany tweet lub artykuł jest o Bronisławie Komorowskim (1) czy nie (0),
+
+* *duda* - kolumna 0-1 czy dany tweet lub artykuł jest o  Andrzeju Dudzie (1) czy nie (0),
+
+* *jarubas* - kolumna 0-1 czy dany tweet lub artykuł jest o  Adamie Jarubasie (1) czy nie (0),
+
+* *ogorek* - kolumna 0-1 czy dany tweet lub artykuł jest o  Magdalenie Ogórek (1) czy nie (0),
+
+* *palikot* - kolumna 0-1 czy dany tweet lub artykuł jest o  Januszu Palikocie (1) czy nie (0),
+
+* *korwin* - kolumna 0-1 czy dany tweet lub artykuł jest o  Januszu Korwin - Mikke (1) czy nie (0),
+
+* *kukiz* - kolumna 0-1 czy dany tweet lub artykuł jest o  Pawle Kukizie (1) czy nie (0),
+
+* *sentyment_1* - sentyment wyliczony dla danego tekstu na podstawie słownika 1
+* *sentyment_2* - sentyment wyliczony dla danego tekstu na podstawie słownika 2
+
+
+#Wskaźniki: 
+
+Dostępne wskaźniki są następujące:
+
+* *poz_do_neg* - stosunek artykułów o wydźwięku poztywnym do tych o wydźwięku negatywnym,
+
+* *pstwo_neg* - prawdopodobieństwo wystąpienia negatywnego tekstu o kandydacie w mediach,
+
+* *pstwo_neu* - prawdopodobieństwo wystąpienia neutralnego tekstu o kandydacie w mediach,
+
+* *pstwo_poz* - prawdopodobieństwo wystąpienia pozytywnego tekstu o kandydacie w mediach,
+
+* *pstwo_widocznosci* - prawdopodobieństwo widoczności kandydata w mediach,
+
+* *szansa_neg* - szansa wystąpienia tekstu o wydźwięku negatywnym,
+
+* *szansa_poz* - szansa wystąpienia tekstu o wydźwięku pozytywnym,
+
+* *szansa_neu* - szansa wystąpienia tekstu o wydźwięku neutralnym,
+
+* *twitt_poz_neg* - różnica średniej liczby 'reetweetów' ('polubień') pozytywnych i negatywnych.
+
+Ponadto każdy ze wskaźników można zastosować osobno dla każdego z kandydatów, osobno dla każdego portalu oraz dla osobnej daty oraz ich kombinacje.
+
+# Wizualizacja danych:
+Analiza sentymentu oparta jest o dwa różne słowniki: *słownik1*, *slownik2*, których opis można znaleźć w pakiecie **wsk**.
+Wykresy dla zależności stosunku pozytywnych do negatywnych tekstów na temat danego kandydata:
+
+```{r,echo=FALSE,warning=FALSE,fig.width = 8, fig.height = 6}
+library("RColorBrewer")
+
+# sentyment 1
+pn_kom1 = poz_do_neg(wybory2015$komorowski, wybory2015$sentyment_1)
+pn_duda1 = poz_do_neg(wybory2015$duda, wybory2015$sentyment_1)
+pn_jarubas1 = poz_do_neg(wybory2015$jarubas, wybory2015$sentyment_1)
+pn_ogorek1 = poz_do_neg(wybory2015$ogorek, wybory2015$sentyment_1)
+pn_kukiz1 = poz_do_neg(wybory2015$kukiz, wybory2015$sentyment_1)
+pn_palikot1 = poz_do_neg(wybory2015$palikot, wybory2015$sentyment_1)
+pn_korwin1 = poz_do_neg(wybory2015$korwin, wybory2015$sentyment_1)
+
+nazwy = c("Komorowski","Duda","Jarubas","Ogórek",
+          "Kukiz","Palikot","Korwin")
+ramka_pn1_ogolnie = data.frame(kandydat = nazwy, 
+                              p_n = c(pn_kom1,pn_duda1, pn_jarubas1,pn_ogorek1,
+                                      pn_kukiz1,pn_palikot1,pn_korwin1
+                                                        ))
+
+# sentyment 2
+pn_kom2 = poz_do_neg(wybory2015$komorowski, wybory2015$sentyment_2)
+pn_duda2 = poz_do_neg(wybory2015$duda, wybory2015$sentyment_2)
+pn_jarubas2 = poz_do_neg(wybory2015$jarubas, wybory2015$sentyment_2)
+pn_ogorek2 = poz_do_neg(wybory2015$ogorek, wybory2015$sentyment_2)
+pn_kukiz2 = poz_do_neg(wybory2015$kukiz, wybory2015$sentyment_2)
+pn_palikot2 = poz_do_neg(wybory2015$palikot, wybory2015$sentyment_2)
+pn_korwin2 = poz_do_neg(wybory2015$korwin, wybory2015$sentyment_2)
+
+
+ramka_pn2_ogolnie = data.frame(kandydat = nazwy, 
+                               p_n = c(pn_kom2,pn_duda2, pn_jarubas2,pn_ogorek2,
+                                       pn_kukiz2,pn_palikot2,pn_korwin2
+                               ))
+barplot(ramka_pn2_ogolnie$p_n,names.arg=as.character(ramka_pn2_ogolnie$kandydat),
+        col = brewer.pal(7,"Set1"))
+        title("Stosunek tekstów pozytywnych do negatywnych dla sentymentu 1")
+barplot(ramka_pn1_ogolnie$p_n,names.arg=as.character(ramka_pn1_ogolnie$kandydat),
+        col = brewer.pal(7,"Set1"),)
+        title("Stosunek tekstów pozytywnych do negatywnych dla sentymentu 2")
+
+```
+
+
+Wykresy przedstawiające procent pozytywnych, negatywnych i neutralnych tekstów:
+
+
+```{r,echo=FALSE,warning=FALSE,fig.width = 13, fig.height = 8.4}
+wyn = wybory2015 %>% group_by(portal) %>%
+  summarise(procent_obecnosci_poz = pstwo_poz(duda, wektor_sentyment = sentyment_2))
+nazwy = as.character(wyn$portal)
+nazwy[8] = 'tw_kand'
+nazwy[9]='tw_nasluch'
+barplot(wyn$procent_obecnosci_poz,names.arg = nazwy,
+        col = brewer.pal(10,"Set3"))
+title("Procenty pozytywnych tekstów na danym medium dla A. Dudy")
+```
+
+
+
+```{r,echo=FALSE,warning=FALSE,fig.width = 13, fig.height = 8.5}
+wyn = wybory2015 %>% group_by(portal) %>%
+  summarise(procent_obecnosci_poz = pstwo_neg(komorowski, wektor_sentyment = sentyment_2))
+nazwy = as.character(wyn$portal)
+nazwy[8] = 'tw_kand'
+nazwy[9]='tw_nasluch'
+barplot(wyn$procent_obecnosci_poz,names.arg = nazwy,
+        col = brewer.pal(10,"Set3"))
+title("Procenty negatywnych tekstów na danym medium dla B. Komorowskiego")
+```
+
+
+
+
+
+Szansa pozytywnych artykułów dla Magdaleny Ogórek na przełomie całego okresu zbierania danych:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.width = 13, fig.height = 8.4,}
+wyn = wybory2015 %>% group_by(data) %>%
+  summarise(szansa_poz = szansa_poz(ogorek, wektor_sentyment = sentyment_1))
+wyn = as.data.frame(wyn)
+library(ggplot2)
+ggplot(wyn, aes(x=c(1:58),y=szansa_poz)) +
+geom_point()+geom_line()+ xlim(as.character(wyn$data))
+
+```
+
+
+Ogólna widoczność kandydatów:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.width = 13, fig.height = 8.4}
+
+widocznosci = c(pstwo_widocznosci(wybory2015$komorowski),
+                pstwo_widocznosci(wybory2015$duda),
+                pstwo_widocznosci(wybory2015$jarubas),
+                pstwo_widocznosci(wybory2015$ogorek),
+                pstwo_widocznosci(wybory2015$kukiz),
+                pstwo_widocznosci(wybory2015$palikot),
+                pstwo_widocznosci(wybory2015$korwin)
+)
+nazwy = c("Komorowski","Duda","Jarubas","Ogórek",
+          "Kukiz","Palikot","Korwin")
+
+dane_widocznosci = data.frame(kandydat=nazwy,pstwo_widocznosci = widocznosci)
+barplot(dane_widocznosci$pstwo_widocznosci,
+        names.arg=as.character(dane_widocznosci$kandydat),
+        col = brewer.pal(7,"Set1"))
+        title("Ogólna widoczność kandydatów w mediach")
+
+```
+
+Wykres zależności obecności Pawła Kukiza w mediach na przełomie pełnego okresu zbierania dnaych:
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.width = 13, fig.height = 8}
+widocznosc_kukiz = wybory2015 %>% group_by(data) %>% 
+  summarise(procent_obecnosci = pstwo_widocznosci(kukiz))
+widocznosc_kukiz=as.data.frame(widocznosc_kukiz)
+ggplot(widocznosc_kukiz, aes(x=c(1:58),y=procent_obecnosci,fill='kukiz')) +
+geom_point()+geom_line()+ xlim(as.character(wyn$data))
+
+```
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.width = 13, fig.height = 8}
+
+widocznosc_komor = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(komorowski))
+widocznosc_komor = as.data.frame(widocznosc_komor)
+widocznosc_duda = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(duda))
+widocznosc_duda = as.data.frame(widocznosc_duda)
+widocznosc_jarubas = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(jarubas))
+widocznosc_jarubas = as.data.frame(widocznosc_jarubas)
+widocznosc_ogorek = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(ogorek))
+widocznosc_ogorek = as.data.frame(widocznosc_ogorek)
+widocznosc_palikot = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(palikot))
+widocznosc_palikot = as.data.frame(widocznosc_palikot)
+widocznosc_korwin = wybory2015 %>% group_by(data) %>% summarise(procent_obecnosci = pstwo_widocznosci(korwin))
+widocznosc_korwin = as.data.frame(widocznosc_korwin)
+widocznosc_kukiz = wybory2015 %>% group_by(data) %>% 
+  summarise(procent_obecnosci = pstwo_widocznosci(kukiz))
+widocznosc_kukiz = as.data.frame(widocznosc_kukiz)
+
+nazwiska = c(rep("komorowski",58),rep("duda",58),
+                              rep("jarubas",58), rep("ogorek",58),
+                              rep("palikot",58),rep("korwin",58),
+                              rep("kukiz",58))
+
+zbior = data.frame(kandydat=nazwiska,
+                   obecnosc = c(widocznosc_komor$procent_obecnosci,
+                                widocznosc_duda$procent_obecnosci,
+                                widocznosc_jarubas$procent_obecnosci,
+                                widocznosc_ogorek$procent_obecnosci,
+                                widocznosc_palikot$procent_obecnosci,
+                                widocznosc_korwin$procent_obecnosci,
+                                widocznosc_kukiz$procent_obecnosci
+                                ))
+library(ggplot2)
+ggplot(zbior, aes(x=rep(1:58,7),y=obecnosc, color=kandydat)) +
+  geom_line() +
+  labs(x = "data")
+
+```
+
+
