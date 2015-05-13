@@ -36,3 +36,20 @@ skala:
 5 - bardzo dobre rozwiązanie, inne grupy powinny się mu szczegółowo przyjrzeć
 6 - wydrukowałem i powiesiłem sobie na ścianie
 
+
+
+Marcin Kosinski:
+3. Czytelnosc kodu to wykonywanie 2 skryptów batch'owych:
+https://github.com/MarcinKosinski/web-scraping/tree/master/batch
+Nie wiem dlaczego te pliki sie nie zalaczyly, gdy przesylalem rozwiazania.
+
+1. Co do ilosci danych, to po spakowaniu nie bylem w stanie wrzucic ich na githuba, gdyz otrzymalem
+komunikat o tym, ze moge przesylac pliki mniejsze niz 50mb. Po prezentacji nikt nie zwrocil mi uwagi
+bym doslal gdziekolwiek w jakikolwiek sposob dane, ktore staram sie zbierac co 30 minut od ponad 2 miesiecy.
+
+
+
+Przemysław Biecek:
+Ad 3. kod wciąż jest mało uporządkowany, to co zostało przesłane to skrypty bez struktury
+Ad 1. proszę zaznaczyć jakoś ilość, strukturę i źródło danych, można je wgrać do bazy danych na beta.icm, można je umieścić na bitbucket, na dropbox lub w innym miejscu, z którego można je pobrać.
+
