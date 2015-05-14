@@ -21,6 +21,6 @@ Nie jestem pewien co jest kluczem (czy tytuł) i czy jest on unikalny.
 
 W sumie
 
-2/3 + 2/3 + 2/3 + 1 = 7
+(2/3 + 2/3 + 2/3 + 1 = 7)  x2 = 14
 
 

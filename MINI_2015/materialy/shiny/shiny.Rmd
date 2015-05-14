@@ -1,0 +1,50 @@
+---
+title: "Aplikacje webowe - shiny"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Wprowadzenie
+
+Dzielenie się wynikami z analiz w R z innymi osobami odbwały się kiedyś na dwa sposoby:
+Można było podzielić się skryptem w R i odbiorca zaawansowany technicznie miał możliwość modyfikacji ścieżki analiz, musiał mieć jedna wiedzę o skrypcie.
+Można było podzielić się raportem który ukrywa techniczne detale ale nie pozostawia możliwości dynamicznej zmiany.
+
+Shiny łączy najlepsze cechy obu podejść. Pozwala na interaktywną eksplorację danych przy ukryciu szczegółów technicznych.
+
+Materiały do nauki krop po kroku: http://shiny.rstudio.com/tutorial/
+
+Gdzie hostować aplikacje: http://shiny.rstudio.com/deploy/
+
+Galeria rozwiązań: http://shiny.rstudio.com/gallery/
+
+Dokumentacja: http://shiny.rstudio.com/reference/shiny/latest/
+
+# Przykłady
+
+shiny1 - prosta aplikacja
+
+shiny2 - panel z różnymi wyjściami
+
+shiny3 - wyrażenia reaktywne
+
+# Uruchamianie
+
+,,Ręczne'' uruchmianie aplikacji
+
+```{r, eval=FALSE}
+runApp('katalog',  display.mode = "showcase")
+```
+
+Aplikacje możemy umieścić na serwerze (uruchamianie zdalne) lub na gist (będzie pobrana i uruchomiona lokalnie)
+
+Przykład dla https://gist.github.com/pbiecek/0617b36500f95daa3a00
+
+```{r, eval=FALSE}
+runGist("0617b36500f95daa3a00")
+```

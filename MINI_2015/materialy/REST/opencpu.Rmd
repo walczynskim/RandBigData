@@ -69,6 +69,9 @@ library(httr)
 httr::GET("http://localhost:4348/ocpu/library/stats/data")
 
 httr::GET("http://localhost:4348/ocpu/library/stats/R/rnorm")
+
+httr::GET("http://192.168.143.80:2018/ocpu/library/subtitler/R/")
+
 ```
 
 # Co możemy zrobić
