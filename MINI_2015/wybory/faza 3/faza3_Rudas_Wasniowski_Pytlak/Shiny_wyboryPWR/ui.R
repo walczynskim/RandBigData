@@ -13,12 +13,12 @@ shinyUI(navbarPage("Projekt wybory",
                          h3("Mikolaj Wasniewski, Krzysztof Rudas, Pawel Pytlak", 
                             align = "center"),
                          
-                         p("W okresie miedzy 10.03.2015, a 14.05.2015 zbiraliœmy ",
+                         p("W okresie miedzy 10.03.2015, a 14.05.2015 zbieralismy ",
                            "dane z 4 portali informacyjnych (gazeta.pl, wiadomosci.onet.pl,
                            wiadomosci.wp.pl, tvn24.pl) oraz z Twittera 
-                           (nas³uch i oficjalne konta kandydatów). Zebralismy okolo 700 
-                           unikalnych artukolow z portali informcyjnych i okolo 215 tys. tweetow z 
-                           nasluchu i oko³o 6,5 tys tweetow z oficjalnych kont kandydatow. ")
+                           (nasluch i oficjalne konta kandydatow). Zebralismy okolo 700 
+                           unikalnych artykolow z portali informacyjnych i okolo 215 tys. tweetow z 
+                           nasluchu i okolo 6,5 tys tweetow z oficjalnych kont kandydatow. ")
                    )
    ,
    tabPanel("Portale zmmiennosc w czasie",
@@ -30,7 +30,7 @@ shinyUI(navbarPage("Projekt wybory",
                                  "Kowalski", "Kukiz", "Ogorek", "Palikot", "Wilk"),
                               c("Komorowski","Duda","Kukiz")
             ),
-            dateRangeInput("od_do_dzien","Podaj przedzial czawowy:",
+            dateRangeInput("od_do_dzien","Podaj przedzial czasowy:",
                            start="03-13-2015", end= "05-15-2015",
                            min = "03-13-2015", max = "05-15-2015",
                            format="dd-mm-yyyy",
@@ -56,7 +56,7 @@ shinyUI(navbarPage("Projekt wybory",
             tabsetPanel(
                tabPanel("Liczba na dzien",
                         p("Liczba wystapien nazwisk wybranych kandydatow w tytule lub tresci 
-                          na zadanym przediale czasu i dla wybranego zrodla danych z podzialem na dni."),
+                          na zadanym przedziale czasu i dla wybranego zrodla danych z podzialem na dni."),
                         br(),
                         plotOutput("wykres_ile_dziennie")),
                tabPanel("Wykres zliczen przez dni",
@@ -75,9 +75,9 @@ shinyUI(navbarPage("Projekt wybory",
                            wystapien nazwisk wybranych kandydatow dla ustalonego przedzialu 
                            czasu."),
                         plotOutput("wykresLiczbySerii")),
-               tabPanel("Maksymala seria", 
+               tabPanel("Maksymalna seria", 
                         p("Wykres przedstawiajacy zmiane wartosci maksymalnej serii wysapien 
-                          nazwiska kandydata w tytule lub tresci na zadnym przediale czasu 
+                          nazwiska kandydata w tytule lub tresci na zadnym przedziale czasu 
                           i dla wybranego zrodla danych."),
                         plotOutput("wykresMaksymalnejSerii"))
                )
@@ -97,7 +97,7 @@ shinyUI(navbarPage("Projekt wybory",
                                  "Korwin-Mikke","Kowalski", "Kukiz", 
                                  "Ogorek", "Palikot", "Wilk")
             ),
-            dateRangeInput("od_do_ilosc","Podaj przedzial czawowy:",
+            dateRangeInput("od_do_ilosc","Podaj przedzial czasowy:",
                            start="03-13-2015",  end= "05-15-2015",
                            min = "03-13-2015", max = "05-15-2015",
                            format="dd-mm-yyyy",
@@ -156,7 +156,7 @@ shinyUI(navbarPage("Projekt wybory",
                         p("Wykres slupkowy przedstawiajacy liczbe wystapiem nazwisk 
                           wybranych kandydatow w tytule lub tresci z podzialem na pore dnia. 
                           Wskaznik jest liczony na zadanym przedziale czasu i zrodle danych. 
-                          Przyjeliœmy nastepujacy podzial dnia: 8-12 rano, 12-18 w ciagu dnia, 
+                          Przyjelismy nastepujacy podzial dnia: 8-12 rano, 12-18 w ciagu dnia, 
                           18-24 wieczorem, 24-6 w nocy."), 
                         br(),
                         plotOutput("wykres_pora_dnia"),
@@ -165,8 +165,8 @@ shinyUI(navbarPage("Projekt wybory",
                
                tabPanel("Wykres rangi", 
                         br(),
-                        p("Wykres slupkowy przestawiajacy rangi dla wybranych kandydatow,
-                          Rangi sa licznone dla podanego zakresu czasu. Ranga wystawiana na
+                        p("Wykres slupkowy przedstawiajacy rangi dla wybranych kandydatow,
+                          Rangi sa liczone dla podanego zakresu czasu. Ranga wystawiana na
                           zasadzie: 0 - zaden artykul sie nie pojawil,
                           1 - wartosc miary powyzej 168h(tydzien),
                           2 - wartosc miary ponizej 168h(tydzien), 3 - wartosc miary ponizej 96h(cztery doby),
@@ -196,7 +196,7 @@ shinyUI(navbarPage("Projekt wybory",
       )
    ),
 # oficjalny twitter
-   tabPanel("Oficjale tweety kandydatow",
+   tabPanel("Oficjalne tweety kandydatow",
          sidebarLayout(
             sidebarPanel(
                checkboxGroupInput("kandydaci_ofic",
@@ -211,7 +211,7 @@ shinyUI(navbarPage("Projekt wybory",
                                   c("Bronislaw Komorowski","Andrzej Duda",
                                     "Pawel Kukiz")
                ),
-               dateRangeInput("od_do_ofic","Podaj przedzial czawowy:",
+               dateRangeInput("od_do_ofic","Podaj przedzial czasowy:",
                               start="2015-02-07", end= "05-15-2015",
                               min = "2015-02-07", max = "2015-05-15",
                               format="yyyy-mm-dd",
@@ -224,7 +224,7 @@ shinyUI(navbarPage("Projekt wybory",
                tabsetPanel(
                   tabPanel("Liczba oficjalnych tweetow", 
                            p("Liczba tweetow z oficjalnych tweetow wybranych kandydatow 
-                             z podzia³em na dni."),
+                             z podzialem na dni."),
                            br(),
                            plotOutput("wykres_ilosc_ofic")),
                   tabPanel("Srednia polubien na dzien", 
@@ -257,7 +257,7 @@ tabPanel("Nasluch twittera",
                                   c("Bronislaw Komorowski","Andrzej Duda",
                                     "Pawel Kukiz")
                ),
-               dateRangeInput("od_do_nasluch","Podaj przedzial czawowy:",
+               dateRangeInput("od_do_nasluch","Podaj przedzial czasowy:",
                               start="2015-03-20", end= "05-15-2015",
                               min = "2015-03-20", max = "2015-05-15",
                               format="yyyy-mm-dd",
@@ -269,7 +269,7 @@ tabPanel("Nasluch twittera",
                tabsetPanel(
                   tabPanel("Liczba tweetow na dzien", 
                            p("Liczba tweetow dotyczaca wybranych kandydatow 
-                             z podzia³em na dni. Wykres rysowany na zadanym przedziale czasu."),
+                             z podzialem na dni. Wykres rysowany na zadanym przedziale czasu."),
                            br(),
                            plotOutput("wykres_ilosc_nasluch")),
                   tabPanel("Sredni wydzwiek na dzien",
