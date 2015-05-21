@@ -1,0 +1,8 @@
+sample.interval=10000
+"NextMethod" "Ops.factor" "==" ".Call" "filter_impl" "filter_.tbl_df" "filter_" "as.data.frame" "filter_.data.frame" "filter_" "filter" "<Anonymous>" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+".Call" "filter_impl" "filter_.tbl_df" "filter_" "as.data.frame" "filter_.data.frame" "filter_" "filter" "<Anonymous>" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+"na.omit.data.frame" "na.omit" ".External2" "model.frame.default" "<Anonymous>" "eval" "eval" "lm" "<Anonymous>" "withVisible" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+".External2" "model.matrix.default" "model.matrix" "lm" "<Anonymous>" "withVisible" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+"lm.fit" "lm" "<Anonymous>" "withVisible" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+"lm.fit" "lm" "<Anonymous>" "withVisible" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
+"c" "lm.fit" "lm" "<Anonymous>" "withVisible" "freduce" "_fseq" "eval" "eval" "withVisible" "%>%" 
