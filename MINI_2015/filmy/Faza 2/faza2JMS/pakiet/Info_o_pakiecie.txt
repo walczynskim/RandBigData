@@ -1,0 +1,20 @@
+Pakiet to rozszerzony pakiet z fazy pierwszej. Dodane funkcje:
+
+czas
+czy_to_samo
+czy_zawiera
+frakcja
+frakcja_powtarzanych_slow
+odleglosc
+porownaj_mediany
+porownaj_rozrzut
+rok
+roznica
+tworz_macierz
+
+Do pakietu nie do³¹czono funkcji pomocniczych (czyszeczenie danych, scalanie ich itd), tzn.
+aktorzy_wyszukaj_wiek_kraj
+czyszczenie_danych (skrypt)
+dodaj_aktorzy_rezyser
+rezyser_wyszukaj_wiek_kraj
+scalanie_ramek (skrypt)
