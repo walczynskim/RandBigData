@@ -32,6 +32,7 @@ Użyteczną funkcją w takiej pracy jest `dump.frames()`, zapisująca wszystkie 
 
 ```{r, eval=FALSE}
 options(error=quote(dump.frames("errorDump",TRUE)))
+options(error=NULL)
 ```
 
 Przykład wywołania tej funkcji.
@@ -44,7 +45,7 @@ funkcja("napis")
 ## log: Using log base e.
 ## Error in log(x) : Non-numeric argument to mathematical function
 ## Execution halted
-load("errorDump.rda")
+(load("errorDump.rda"))
 debugger(errorDump)
 ```
 
@@ -67,6 +68,7 @@ Warto jednak ją znać, gdy pracujemy zdalnie na maszynie bez graficznego edytor
 Jeżeli funkcja nie generuje błędu, ale zachowuje się inaczej niż byśmy chcieli, to do prześledzenia jej wykonania krok po kroku można wykorzystać funkcję `debug()` (debugowanie wyłącza się funkcją `undebug()`). 
 
 ```{r, eval=FALSE}
+funkcja2 <- function(x,y) {funkcja(x);funkcja(y)}
 debug(funkcja2)
 funkcja2(1, "jeden")
 ```
@@ -77,6 +79,10 @@ Jeżeli uruchamiamy jakieś obliczenia na wielu jednostkach i spodziewamy się, 
 
 Można do tego wykorzystać funkcja `try()` i `tryCatch()`.
 
+```{r, eval=FALSE}
+try(funkcja2(1, "jeden"), silent=TRUE)
+
+```
 
 # Profiler
 
@@ -109,10 +115,15 @@ library(profr)
 library(PogromcyDanych)
 
 Rprof("profiler2.out", interval = 0.01, memory.profiling=FALSE)
-auta2012 %>% 
-  filter(Marka == "Volkswagen") %>% 
-  lm(Cena.w.PLN~factor(Model), data=.) -> model
+lm(Cena.w.PLN~factor(Model), data=x) -> model
 Rprof()
+
+x <- auta2012 %>% 
+  filter(Marka == "Volkswagen")
+
+
+rep(rnorm(1), 5)
+replicate(5, rnorm(1))
 
 out <- parse_rprof("profiler2.out")
 plot(out)
@@ -142,7 +153,10 @@ microbenchmark(
   wektoryzacja = { x=NULL; x = runif(10^3) })
 
 boxplot(.Last.value)
+autoplot(.Last.value)
 ```
+
+
 
 
 # Materiały
