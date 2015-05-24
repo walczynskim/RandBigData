@@ -5,7 +5,7 @@ Kryteria
 Dane nie zostały załączone, 
 przez to trudno ocenić ile dokładnie ich jest i czy łatwo się do nich odwołać
 Można to zrobić wyłącznie na podstawie wykresów
-
+(update, dane zostały dołączone, zmiana z 1 na 4 punkty)
 
 2. Ilość i różnorodność wskaźników
 
@@ -23,7 +23,7 @@ przez co całość nie jest reużywalna
 
 W sumie
 
-1/6 + 3/6 + 2/6 + 2 = 8
+4/6 + 3/6 + 2/6 + 2 = 11
 
 
 skala:
