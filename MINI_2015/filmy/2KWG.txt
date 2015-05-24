@@ -1,0 +1,30 @@
+Kryteria
+
+1. Czy jest liczone podobieństwo pomiędzy filmami
+
+Tak, 
+podobieństwo wyznaczano na trzy sposoby
+wykorzystywano też niestandardowe rozwiązania, takie jak rzadką dekompozycję SVD.
+
+2. Czy jest reprezentacja macierzy podobieństw (np. mapa)
+
+Jest i mapa odległości i mapa ciepła (choć bardzo dziwna, niesymetryczna)
+Biorąc pod uwagę wykres z rozproszeniem, ta mapa ciepła najciemniejszy kolor (najbardziej widoczny) przypisuje parom które są najmniej podobne.
+(a nie pokazuje grup podobnych do siebie filmów)
+
+3. Czy wyniki są odtwarzalne (np. pakiet)
+
+Jest pakiet, ale w porównaniu z innymi grupami skromnie udokumentowany.
+Są skrypty, którymi można pewnie odtworzyć część wyników, ale nie wiadomo jak to zrobić (od której funkcji zacząć)
+
+W sumie
+
+4/6 + 3/6 + 3/6 + 2 = 12
+
+
+Stopnie oceny:
+2 - odpowiedź na pytanie jest pozytywna
+4 - rozwiązanie jest bardzo dobre
+6 - nie ma niczego, co można by dodać lub poprawić w tym rozwiązaniu
+
+
