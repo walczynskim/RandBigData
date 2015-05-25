@@ -1,0 +1,32 @@
+Kryteria
+
+Bardzo ciekawie przygotowana prezentacja, brakuje tylko pliku Rmd by ją odtworzyć (heatmapy).
+
+1. Czy jest liczone podobieństwo pomiędzy filmami
+
+Podobieństwo jest liczone,
+dla różnych charakterystyk (ocena, rok, słowa kluczowe) 
+używane są różne funkcje.
+Funkcje są przemyślane (ważenie w zależności od tego czy aktor jest popularny czy nie).
+Macierz podobieństwa jest wyznaczona dla 4000 filmów.
+
+2. Czy jest reprezentacja macierzy podobieństw (np. mapa)
+
+W prezentacji znajdują się mapy ciepła dla dwóch wybranych zestawów filmów.
+Jest też chmura dla wszystkich punktów i powiększenie dla wycinka chmury.
+
+3. Czy wyniki są odtwarzalne (np. pakiet)
+
+Jest pakiet z funkcjami do liczenia odległości oraz z danymi.
+Brakuje skryptów do odtworzenia chmury filmów i prezentacji (dostępna tylko w html).
+
+W sumie
+
+5/6 + 4/6 + 5/6 + 2 = 16
+
+
+Stopnie oceny:
+2 - odpowiedź na pytanie jest pozytywna
+4 - rozwiązanie jest bardzo dobre
+6 - nie ma niczego, co można by dodać lub poprawić w tym rozwiązaniu
+

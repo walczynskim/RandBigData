@@ -1,0 +1,34 @@
+Kryteria
+
+Skrypty i dane solidnie przygotowane,
+brakuje tylko skryptów pozwalających na odtworzenie pobierania danych 
+i obliczeń macierzy podobieństwa.
+Jest dużo plików R, ale nie wiadomo które czemu służą (te w pakiecie są udokumentowane, ale pozostałe? i po co je duplikować?)
+
+1. Czy jest liczone podobieństwo pomiędzy filmami
+
+Tak,
+w repozytorium znajdują się dane i macierz podobieństwa.
+przedstawiony jest też zrzut ekranu z fragmentu macierzy Excela.
+
+2. Czy jest reprezentacja macierzy podobieństw (np. mapa)
+
+Tak, przykładowe macierze są umieszczone w prezentacji.
+
+3. Czy wyniki są odtwarzalne (np. pakiet)
+
+Jest pakiet, choć część jego funkcji ma dokumentacje w języku polskim a część angielskim.
+W pakiecie jest wiele funkcji, które są też wkopiowane do innych katalogów.
+Nie bardzo wiadomo co trzeba uruchomić by odtworzyć macierz odległości.
+
+W sumie
+
+4/6 + 4/6 + 3/6 + 2 = 13
+
+
+Stopnie oceny:
+2 - odpowiedź na pytanie jest pozytywna
+4 - rozwiązanie jest bardzo dobre
+6 - nie ma niczego, co można by dodać lub poprawić w tym rozwiązaniu
+
+

@@ -1,0 +1,170 @@
+---
+title: "Profilowanie i debugowanie"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Dziwne rzeczy się zdarzają
+
+```{r}
+(sekwencja <- seq(0.7, 1, by=0.1))
+(indeksy <- sekwencja*10 - 6)
+# jakie litery się wyświetlą?
+LETTERS[indeksy]
+```
+
+# Debugowanie
+
+Wykrywanie błędów i optymalizacja kodu jest przydatna, gdy pisze się programy działające w jednym procesie na jednej maszynie.
+
+Gdy jednak zaczynamy pisać programy rozproszone, wykorzystujące kilka procesów, potencjalnie na różnych maszynach, bardzo często coś ,,idzie źle''. 
+
+Znajomość podstawowych technik debugowania pozwala na identyfikacje i naprawienie problemu.
+
+## dump.frames()
+
+Użyteczną funkcją w takiej pracy jest `dump.frames()`, zapisująca wszystkie otwarte ramki do pliku.
+
+```{r, eval=FALSE}
+options(error=quote(dump.frames("errorDump",TRUE)))
+options(error=NULL)
+```
+
+Przykład wywołania tej funkcji.
+
+```{r, eval=FALSE}
+funkcja <- function(x) {
+  log(x)
+}
+funkcja("napis")
+## log: Using log base e.
+## Error in log(x) : Non-numeric argument to mathematical function
+## Execution halted
+(load("errorDump.rda"))
+debugger(errorDump)
+```
+
+## recover()
+
+Jeżeli pracujemy w trybie interaktywnym i każdy błąd lubimy przeanalizować, to wygodne będzie ustawienie funkcji `recover()` jako funkcji do wywołania po wystąpieniu błędu.
+
+```{r, eval=FALSE}
+options(error = recover)
+```
+
+## traceback()
+
+Jeżeli używamy RStudio, to funkcja `traceback()` nie jest nam już potrzebna, ponieważ środowisko zapewnia nam prześledzenie listy ramek w których pojawił się błąd.
+
+Warto jednak ją znać, gdy pracujemy zdalnie na maszynie bez graficznego edytora.
+
+## debug() / undebug()
+
+Jeżeli funkcja nie generuje błędu, ale zachowuje się inaczej niż byśmy chcieli, to do prześledzenia jej wykonania krok po kroku można wykorzystać funkcję `debug()` (debugowanie wyłącza się funkcją `undebug()`). 
+
+```{r, eval=FALSE}
+funkcja2 <- function(x,y) {funkcja(x);funkcja(y)}
+debug(funkcja2)
+funkcja2(1, "jeden")
+```
+
+## try() / tryCatch()
+
+Jeżeli uruchamiamy jakieś obliczenia na wielu jednostkach i spodziewamy się, że gdzieś może pojawić się błąd ale nie chcemy by przerywał on całość obliczeń (błąd niezależny od nas, zależne od nas byśmy obsłużyli), to dobrym rozwiązaniem jest przechwycenie błędu.
+
+Można do tego wykorzystać funkcja `try()` i `tryCatch()`.
+
+```{r, eval=FALSE}
+try(funkcja2(1, "jeden"), silent=TRUE)
+
+```
+
+# Profiler
+
+Dużo ciekawych informacji pomocnych w debugowaniu robi `Rprof()`.
+
+Podstawowe statystyki wykonania przedstawia funkcja `summaryRprof()`.
+
+```{r, eval=FALSE}
+generuj <- function() {
+  runif(10^6); rexp(10^6); rnorm(10^6); 1
+}
+wypisuj <- function() {
+  replicate(10^5, rnorm(1))
+}
+
+Rprof("profiler.out", interval = 0.01, memory.profiling=TRUE)
+for (i in 1:10) {
+  generuj()
+  wypisuj()
+}
+Rprof()
+
+summaryRprof("profiler.out", memory="both")
+```
+
+## Graficzne statystyki z profr
+
+```{r, eval=FALSE}
+library(profr)
+library(PogromcyDanych)
+
+Rprof("profiler2.out", interval = 0.01, memory.profiling=FALSE)
+lm(Cena.w.PLN~factor(Model), data=x) -> model
+Rprof()
+
+x <- auta2012 %>% 
+  filter(Marka == "Volkswagen")
+
+
+rep(rnorm(1), 5)
+replicate(5, rnorm(1))
+
+out <- parse_rprof("profiler2.out")
+plot(out)
+```
+
+
+## Mierzenie czasu
+
+Czas wykonania operacji można mierzyć na kilka sposobów. Gdy są to długie operacje, liczone  w sekundach, można wykorzystać `system.time()`
+
+```{r, eval=FALSE}
+system.time({ x=NULL; for (i in 1:10^5) x =c(x, runif(1)) })
+system.time({ x=NULL; for (i in 1:10^5) x[i] =runif(1) })
+system.time({x=numeric(10^5); for(i in 1:10^5) x[i]=runif(1)})
+system.time({ x=NULL; x = runif(10^5) })
+````
+
+Dla krótszych operacji lepiej wykorzystać bibliotekę microbenchmark
+
+```{r, eval=FALSE}
+library(microbenchmark)
+
+microbenchmark(
+  skladanie = { x=NULL; for (i in 1:10^3) x =c(x, runif(1)) },
+  skladanie2 = { x=NULL; for (i in 1:10^3) x[i] =runif(1) },
+  inicjacja = {x=numeric(10^3); for(i in 1:10^3) x[i]=runif(1)},
+  wektoryzacja = { x=NULL; x = runif(10^3) })
+
+boxplot(.Last.value)
+autoplot(.Last.value)
+```
+
+
+
+
+# Materiały
+
+Kilka bardzo ciekawych zadań do rozwiązania można znaleźć na stronie:
+
+http://www.nimbios.org/ifiles/hpc/1_basics.pdf
+
+http://www.nimbios.org/ifiles/hpc/2_performance.pdf
+
+
