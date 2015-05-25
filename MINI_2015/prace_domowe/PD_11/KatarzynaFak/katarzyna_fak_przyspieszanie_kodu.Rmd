@@ -1,0 +1,60 @@
+---
+title: "PD11"
+author: "Katarzyna Fąk"
+output: html_document
+---
+
+Stary kod:
+
+```{r, cache=TRUE, results='hide'}
+f0 <- function(){
+ # wylosuj dane, 2 kolumny, 10000 wierszy
+  df <- data.frame()
+  for (i in 1:10000) {
+    df <- rbind(df, data.frame(x=rnorm(1), y=rnorm(1)))
+  }
+
+  # policz modele regresji na probach bootstrapowych
+  resx <- numeric()
+  resy <- numeric()
+  inda <- NULL
+  for (i in 1:500) {
+    ind <- sample(1:nrow(df),  replace = TRUE)
+    resx[i] <- lm(x~y, data=df[ind,])$coef[1]
+    resy[i] <- lm(x~y, data=df[ind,])$coef[2]
+    inda <- rbind(inda, ind)
+  }
+
+  # posortuj wartosci w kazdym wierszu
+  df2 <- cbind(resx, resy, inda)
+  res <- apply(df2, 1, sort)
+}
+```
+
+Nowy kod:
+
+```{r, cache=TRUE}
+f1 <- function(){
+ # wylosuj dane, 2 kolumny, 10000 wierszy
+nc <- 2
+nr <- 10000
+df <- matrix(rnorm(nc*nr), nrow=nr)
+df <- cbind(1,df) # żeby wydobyć intercept z funkcji lm.fit
+
+f <- vector("list",500)
+for(i in 1:5){
+   ind <- sample(1:nr, replace = TRUE)
+   y <- c(lm.fit(x=as.matrix(df[ind,-3]), y=df[ind,3])$coef, ind)
+   f[[i]] <- y[order(y)]
+}
+
+df2 <- do.call("rbind", f)
+}
+```
+
+Czas działania obu funkcji:
+
+```{r}
+microbenchmark::microbenchmark(f0(),f1(),  times=1)
+```
+
