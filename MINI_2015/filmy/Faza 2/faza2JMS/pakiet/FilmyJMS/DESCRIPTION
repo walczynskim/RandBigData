@@ -1,0 +1,16 @@
+Package: FilmyJMS
+Title: Podobienstwa miedzy filmami
+Version: 0.0.0.9000
+Authors@R: c(person("Justyna", "Jankowiak", , "just.jankowiak@gmail.com", role = c("cre", "aut")),
+             person("Emilia", "Momotko", , "potem@cos.pl", role="aut"),
+             person("Adrianna", "Sudol", "totez@hmm.com", role="aut"))
+Description: Zbior funkcji sluzacych do znajdywania podobienstw miedzy filmami
+Depends: R (>= 3.1.2)
+License: GPL-2
+Imports: stringi, rvest, XML
+LazyData: true
+Packaged: 2015-05-20 21:17:07 UTC; Emilka
+Author: Justyna Jankowiak [cre, aut],
+  Emilia Momotko [aut],
+  Adrianna totez@hmm.com Sudol [aut]
+Maintainer: Justyna Jankowiak <just.jankowiak@gmail.com>
