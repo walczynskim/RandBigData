@@ -1,0 +1,26 @@
+Kryteria
+
+Bardzo rozbudowana aplikacja
+
+1. Prezentacja
+
+Bardzo rozbudowana aplikacja,
+Jest w niej wiele wskaźników i bardzo rozbudowane menu (trzy panele wyboru)
+
+Jeden punkt zabieram za niewystarczające skomentowanie jak z tej aplikacji korzystać. Przy takim poziomie złożoności przydałaby się szersza instrukcja.
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+Tak, wiele wskaźników można oglądać w funkcji czasu
+
+3. Czy w prezentacji widać ciekawą historię?
+
+Jako jedyny opis historii traktuje przesłany wykres z informacją że podczas świąt było mniej o polityce.
+Nie jest to historia uzasadniająca wysiłek w zbieranie i analizę danych. Stąd tylko jeden punkt.
+
+W sumie
+
+14/15 + 10/10 + 1/5  = 25
+
+
+

@@ -1,0 +1,34 @@
+Kryteria
+
+Aplikacja bardzo widowiskowa i rozbudowana.
+
+1. Prezentacja
+
+Dużo interaktywnych wykresów
+Dosyć złożony interface.
+Trudno bez dodatkowego opisu odgadnąć w jaki sposób można z aplikacji korzystać i co można zacząć zmieniać na początek
+
+Na stronie
+https://github.com/MarcinKosinski/web-scraping
+jest dosyć szczegółowa informacja o tym jak pobierano dane
+
+Jeden punkt jest zabrany za brak opisu co i w jakiej kolejności klikać, przez co elementy interface rozpraszają i utrudniają szybką orientację co klikać i gdzie są wyniki. 
+
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+Tak, wiele wskaźników jest przedstawionych w funkcji czasu.
+Do prezentacji wykorzystano interaktywne wykresy.
+
+
+3. Czy w prezentacji widać ciekawą historię?
+
+W aplikacji nie wyszczególniono żadnej konkretnej historii
+
+
+W sumie
+
+14/15 + 10/10 + 0/5  = 24
+
+
+

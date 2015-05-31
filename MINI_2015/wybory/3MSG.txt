@@ -1,0 +1,38 @@
+Kryteria
+
+Prezentacja w html bardzo dobrze dopracowana.
+Ale sama aplikacja poza pierwszym ekranem już sprawia wrażenie chaotycznej. Szczególnie ostatni ekran ma bardzo wiele opcji ale trudno odgadnąć co do czego służy.
+
+1. Prezentacja
+
+Prezentacja bardzo dobrze przygotowana.
+Estetyczna z wieloma informacjami i bardzo dobrze opisana.
+
+Jeżeli chodzi o aplikacje, to pierwszy ekran czytelny, ale kolejne zakładki już nie zawsze czytelne.
+W zakładce twitter nie zawsze to co wyświetla się z lewej strony ma wpływ na to co jest rysowane na wykresie.
+
+W zakładce facebook zmiana typu wykresu nie wpływa na to co wyświetlane jest na wykresie.
+
+Zakładka 'Portale informacyjne' jest bardzo rozbudowana.
+Jest na niej wiele wskaźników, ale nie zawsze jest jasne co należy ustawić 
+Pozycje w menu są kilkukrotnie powtórzone i nie bardzo wiadomo co wybrać
+
+Trzy punkty zabieram za to że nie wszystkie elementy menu działają, menu w wielu miejscach nie jest czytelne nie opisane.
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+Tak, znajdują się wykresy prezentujące wskaźniki w funkcji czasu
+
+3. Czy w prezentacji widać ciekawą historię?
+
+W prezentacji znajduje się historia liczby polubień na facebooku w czasie.
+Traktuję to jako przymiarka do historii z danych.
+Można by dla niej rozbudować narrację (za to zabieram jeden punkt).
+
+
+W sumie
+
+12/15 + 10/10 + 4/5  = 26
+
+
+

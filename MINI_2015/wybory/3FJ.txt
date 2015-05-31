@@ -1,0 +1,41 @@
+Kryteria
+
+Aplikacja jest bardzo robudowana (choć niestety tez bardzo wolna)
+Prezentacja ze slajdami i ineraktywnymi elementami to dobry pomysł
+
+1. Prezentacja
+
+Prezentacja z użyciem slajdów to dobry pomysł, można pokazać najistotniejsze elementy.
+Umieszczenie interktywnych elementów (np. kalendarzy widocznosci) dobrze wygląda.
+
+Aplikacja bardzo długo się uruchamia.
+
+Aplikacja ma wiele możliwości (zakładek).
+Jednak bez opisu trudno czasem odgadnąć co w określonej zakładce ma się pojawić.
+
+W zakładce Art. Chmura czasem pojawia się błąd (missing value where TRUE/FALSE needed)
+Ale brakuje informacji co mogło ten błąd spowodować.
+
+Graficznie aplikacja jest bardzo dopracowana, 
+bardzo dobrze wygląda mapa Polski z zaznaczonymi twitami.
+
+Dwa punkty są zabrane za brak opisu interface, przez co użytkownik może czuć się zagubiony oraz za ten błąd z chmurą.
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+Tak, zarówno za pomocą kalendarzy widoczności
+Za pomocą wykresu dla facebook i wykresu liniowego (dla jednego kandydata)
+
+3. Czy w prezentacji widać ciekawą historię?
+
+Ani w aplikacji ani w prezentacji nie wskazano konkretnych historii.
+A szkoda, bo prezentacja z użyciem slajdów dawała możliwość opowiedzenia o określonej zależności z ciekawym wnioskiem.
+
+Za najwyraźniejszy substytut historii traktuję wykresy kalendarzowe i za nie jest punkt.
+
+W sumie
+
+13/15 + 10/10 + 1/5  = 24
+
+
+

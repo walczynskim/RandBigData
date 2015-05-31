@@ -1,0 +1,31 @@
+Kryteria
+
+Wykresy i aplikacja są bardzo estetyczne i dopracowane.
+
+1. Prezentacja
+
+Wykresy są przedstawiane za pomocą tabeli i wykresu (z użyciem ggplot).
+Na wykresie elementy są czytelne, wskaźniki przedstawiane są wzdłuż osi czasu.
+Wykres jest estetyczny, dopracowany.
+
+Możliwość dodania trendu z użyciem funkcji loess/lm.
+
+Aplikacja ma bardzo wiele opcji i pozwala na eksploracje bogatego zbioru danych.
+
+Zabrałem jeden punkt, ponieważ brakuje instrukcji dla użytkownika jak korzystać z aplikacji i jak poruszać się po tym złożonym intereface.
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+W aplikacji dostępnych jest 7 wskaźników.
+Wskaźniki są liczone dla różnych kandydatów.
+Można wybrać źródło danych (do wyboru jest wiele źródeł)
+
+3. Czy w prezentacji widać ciekawą historię?
+
+Aplikacja pozwala na samodzielną eksplorację, ale nie została uwypuklona żadna wybrana historia.
+
+W sumie
+
+14/15 + 10/10 + 0/5  = 24
+
+
