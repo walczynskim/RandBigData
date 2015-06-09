@@ -1,0 +1,27 @@
+#!/bin/bash -l
+
+#SBATCH -J pd12_smudap
+
+#SBATCH -N 1
+
+#SBATCH --ntasks-per-node 12
+
+#SBATCH --mem 10000
+
+#SBATCH --time=5:00:00
+
+#SBATCH -A plgsmudap2015a
+
+#SBATCH -p plgrid-long
+
+#SBATCH --output="pd12_smudap.R.out"
+
+#SBATCH --mail-type=ALL
+
+#SBATCH --mail-user=smudap@student.mini.pw.edu.pl
+
+
+
+module load plgrid/apps/r
+
+R CMD BATCH pd12_smudap.R pd12_smudap.out
