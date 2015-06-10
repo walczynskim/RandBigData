@@ -1,0 +1,197 @@
+---
+title: "High-performance computing<br>R, PLGrid i hydra"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# PL-Grid
+
+PL-Grid to duży wspólny projekt kilku polskich ośrodków superkomputerowych, dla naukowców udostępnia moc obliczeniową do przetwarzania oraz miejsce do przechowywania danych. PL-Grid udostępnia też specjalistyczne oprogramowanie, w naszym przypadku będziemy korzystać z R i jego pakietów.
+
+Filmik reklamujący różne problemy badawcze
+
+https://www.youtube.com/watch?v=_o28UdudKY0&feature=youtu.be
+
+Ze strony projektu PL-Grid
+http://www.plgrid.pl/
+
+Infrastruktura PL-Grid została utworzona w ramach projektu PL-Grid w celu dostarczenia polskiej społeczności naukowej platformy informatycznej służącej e-Science w różnych dziedzinach. Polscy naukowcy oraz studenci mogą nieodpłatnie korzystać z zasobów i usług tej infrastruktury obliczeniowej.
+
+Korzystając z naszych grantów obliczeniowych zobaczymy jak z tej infrastruktury korzystać. 
+
+# Logowanie
+
+Założenia: 
+
++ mamy założone konto na PL-Gridzie, po założeniu konta automatycznie otrzymujemy dostęp do osobistego grantu obliczeniowego (https://portal.plgrid.pl)
++ mamy włączoną usługę 'Dostęp do klastra HYDRA' (https://portal.plgrid.pl/web/guest/useraccount)
+
+Opis logowania na serwer znajduje się tutaj:
+https://docs.plgrid.pl/pages/viewpage.action?pageId=4260613
+
+Lista węzłów dostępowych znajduje się tutaj:
+https://docs.plgrid.pl/pages/viewpage.action?pageId=4260595
+
+W naszym przypadku poleceniem ssh (pod Windowsem putty) logujemy się na serwer `login.icm.edu.pl`.
+
+Do logowania wykorzystujemy nasz `plg*` użytkownika i hasło.
+
+# Moduły
+
+Do korzystania z programów często potrzebne jest określone ustawienie zmiennych środowiskowych. Ponieważ jednak węzły PLGrida są heterogeniczne, a programów zainstalowanych jest wiele, nie ma sensu na każdym węźle ustawiać wszystkich zmiennych.
+
+Aby więc ustawić potrzebne zmienne stosuje się mechanizm modułów. Mechanizm ten jest opisany tutaj: https://docs.plgrid.pl/pages/viewpage.action?pageId=17629700
+
+Listę dostępnych modułów można wyświetlić poleceniem
+
+`module avail`
+
+Listę załadowanych modułów można wyświetlić poleceniem 
+
+`module list`
+
+Wczytać nowy moduł można poleceniem
+
+`module load __nazwa__`
+
+Przykładowo aby wczytać moduł dla R należy wpisać 
+
+`module load plgrid/apps/r/3.1.0`
+
+Po wpisaniu tej instrukcji poleceniem `R` można uruchomić program R.
+
+# Kolejki
+
+Główną zaletą projektu PLGrid jest dostęp do dużych węzłów obliczeniowych. Dużych np. z uwagi na ilość RAM (do 1TB w TASK, 256 GB w ICM), liczbę rdzeni obliczeniowych (do 192) dostępność kart GPU czy inne parametry. 
+
+Opis zasobów znajduje się tutaj:
+http://www.plgrid.pl/oferta/zasoby_obliczeniowe/opis_zasobow/HPC
+
+Aby umożliwić dostęp do tych zasobów gdy są wolne, zorganizowano system kolejkowy. W przypadku hydry jest to SLURM (Simple Linux Utiliy for Resource Management). Używając tego systemu można określać jakie zasoby są potrzebne i czekać na ich przydzielenie.
+
+# Maszyna z dużą ilością RAM
+
+Zaczniemy od tego by pozyskać maszynę z określonymi zasobami. W przypadku programu R najciekawszym zasobem jest ilość pamięci.
+
+Wpiszmy do konsoli następujące polecenie
+
+`srun -A plgpbi2015a --pty --mem 10000 -p plgrid-long bash -l`
+
+Poszczególne argumenty oznaczają:
+
+- `srun` to polecenie pozwalające na interaktywną pracę
+- `-A plgpbi2015a` zaznaczamy, że zasoby są rezerwowane w ramach grantu obliczeniowego `plgpbi2015a`
+- `--pty` oznacza pseudoterminal, jest potrzebny do interaktywnej pracy
+- `-p plgrid-long` określa z której kolejki chcemy korzystać do rezerwacji zasobów, lista kolejek znajduje się tutaj http://www.plgrid.pl/oferta/zasoby_obliczeniowe/opis_zasobow/kolejki, `plgrid-long` pozwala na uruchamianie dużych zadań
+- `--mem 10000` to argument określający zapotrzebowanie na pamięć w MB, tutaj żądamy 10GB
+- `bash -l` to polecenie, które ma być wykonane, w tym przypadku to interepreter.
+
+Mamy już węzeł z 10GB (w okresach dużej zajętości możemy na taki węzeł trochę poczekać)? Zobaczmy czy możemy zaalokować w R jakiś większy obiekt, np. macierz z $2*10^9$ komórek. 
+
+```{r, eval=FALSE}
+m <- matrix(1:10, 20000, 100000)
+object.size(m)/10^6
+## 8000.0002 bytes
+```
+
+# Maszyna z dużą liczbą procesorów
+
+A co gdybyśmy potrzebowali węzła z dużą liczbą rdzeni do zrównoleglenia wielu obliczeń?
+
+Wpiszmy do konsoli następujące polecenie
+
+`srun -A plgpbi2015a --pty -N 1 --ntasks-per-node 12 -p plgrid-long bash -l`
+
+lub
+
+`srun -A plgpbi2015a --pty -n 12 -p plgrid-long bash -l`
+
+Nowe argumenty:
+
+- `-N 1` określamy liczbę węzłów do obliczeń (tutaj wystarczy 1 węzeł)
+- `--ntasks-per-node 12` określamy liczbę rdzeni na węzeł (tutaj 12 rdzeni)
+- `-n 12` określamy liczbę rdzeni nie wskazując liczby węzłów (krótsze w zapisie)
+
+Jak wykorzystać nowe rdzenie? Zbudujmy mały klaster 12 procesów, które zrównoleglą obliczenia (podgrzejmy trochę atmosferę).
+
+```{r, eval=FALSE}
+library(parallel)
+fun <- function(i) { r <- replicate(10^3, sum(rnorm(i))); sum(r)}
+# mamy 12 rdzeni do użycia
+ncores <- detectCores()
+clust <- makeCluster(ncores)
+res <- parSapply(clust, 1:10000, fun)
+stopCluster(clust)
+```
+
+Pracując w konsoli warto wcześniej otworzyć sesję poleceniem `screen`, choćby po to by w sąsiednim oknie za pomocą polecenia `htop` zobaczyć zajętość procesorów.
+
+# Zadania batch
+
+Praca w trybie interaktywnym jest wygodna do debugowania zadań lub do krótkich błyskawicznych obliczeń. Ale nie ma sensu utrzymywać połączenia przez 5 dni tylko po t by patrzeć czy obliczenia wciąż trwają.
+
+Dla większych obliczeń sensowniej jest przygotować zadanie a następnie je wysłać do wykonania.
+
+Szczegółowe informacje, jak powinien wyglądać skrypt obliczeniowy, znajdują się tutaj: https://www.icm.edu.pl/kdm/SLURM
+
+Zobaczmy jak wykonać krok po kroku określone obliczenia.
+
+# Skrypt R
+
+Poniżej treść skryptu `RandBigData.R` (można go wgrać przez `scp` lub edytować poleceniem `vim`).
+
+```{r, eval=FALSE}
+library(MASS)
+odl <- dist(iris[,1:4])
+save(odl, file="odl.rda")
+```
+
+# Opis zadania
+
+Teraz musimy stworzyć opis zadania np. w pliku `RandBigData.sh`. 
+
+Kolejne linie muszą spełniać warunki:
+
+- pierwsza linia musi być poleceniem `#!/bin/bash -l`
+- polecenia `-N`, `--mem`, `--ntasks-per-node`, `-A`, `-p` mają to samo znaczenie co dla `srun`
+- polecenie `-J RandBigData` określa nazwę zadania (nie jest obowiązkowe, ale jeżeli jest dużo zadań to może pomóc)
+- `--output="RandBigData.R.out"` określa plik, do którego zapisywane sa wyniki
+- `--mail-user=przemyslaw.biecek@gmail.com` określa adres email, na który będzie wysłana informacja o tym, że zadanie jest przekazane do uruchomienia oraz kolejna informacja, gdy zadania się wykona.
+
+Nagłówek pliku z zadaniem opisuje parametry zadania, kolejne instrukcje to treść zadania.
+
+```{r, eval=FALSE}
+#!/bin/bash -l
+#SBATCH -J RandBigData
+#SBATCH -N 1 
+#SBATCH --ntasks-per-node 2
+#SBATCH --mem 1000
+#SBATCH --time=20:00:00 
+#SBATCH -A plgpbi2015a
+#SBATCH -p plgrid-long
+#SBATCH --output="RandBigData.R.out" 
+#SBATCH --mail-type=ALL 
+#SBATCH --mail-user=przemyslaw.biecek@gmail.com
+
+module load plgrid/apps/r
+R CMD BATCH RandBigData.R RandBigData.out
+```
+
+# Uruchomienie zadania
+
+Polecenia wstawia się do kolejki poleceniem `sbatch`
+
+`sbatch RandBigData.sh`
+
+Stan kolejki można sprawdzić poleceniem `squeue`
+
+`squeue | grep plgpbi`
+
+Zadanie można usunąć z kolejki polceniem `scancel`.
+
+

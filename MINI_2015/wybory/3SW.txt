@@ -1,0 +1,23 @@
+Kryteria
+
+1. Prezentacja
+
+Aplikacja wykonana bardzo estetycznie.
+
+Opis na stronie domowej pozwala na szybką orientację co można zrobić, gdzie są źródła itp.
+
+2. Czy wskaźniki przedstawiono w funkcji czasu?
+
+W aplikacji można przeglądać kilkanaście wskaźników. 
+Są one przedstawione na dynamicznych wykresach.
+Wskaźniki można wyglądać w agregacji dziennej, tygodniowej i miesięcznej (choć ta ostatnia niewiele pokazuje)
+
+3. Czy w prezentacji widać ciekawą historię?
+
+W aplikacji nie wyszczególniono żadnej konkretnej historii
+
+W sumie
+
+15/15 + 10/10 + 0/5  = 25
+
+
