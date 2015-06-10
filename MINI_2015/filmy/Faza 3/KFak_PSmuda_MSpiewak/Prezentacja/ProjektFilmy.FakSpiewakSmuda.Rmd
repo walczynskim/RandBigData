@@ -1,0 +1,238 @@
+---
+title: "ProjektFilmy.FakSpiewakSmuda"
+author: "Katarzyna F¹k, Piotr Smuda, Martyna Œpiewak"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ProjektFilmy.FakSpiewakSmuda)
+library(dplyr)
+library(ggplot2)
+library(stringi)
+```
+
+# Faza I
+
+W pierwszej fazie projektu naszym celem by³o przygotowanie narzêdzi do pobierania informacji o mo¿liwie du¿ym zbiorze filmów. Na tym etapie uda³o nam siê zebraæ informacjê na temat **102607** filmów wyprodukowanych od 1984 do 2014 roku. Informacje czerpaliœmy z strony internetowej [www.imdb.com](http://www.imdb.com).
+
+
+## Charakterystyki
+
+Podstawowe charakterystyki dotycz¹ce pobranych filmów:
+
+1. **Title** - tytu³ filmu
+2. **Year** - rok produkcji
+3. **Duration** - czas trwania
+4. **Genres** - gatunek (*Action, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama,Family, Fantasy, Game-Show, History, Horror, Music, Musical, Mystery, News, Reality-TV, Romance, Sci-Fi, Sitcom, Sport, Talk-Show, Thriller, War, Western*)
+5. **Rating** - srednia ocena filmu
+6. **Votes** - liczba g³osów oddanych na dany film
+7. **DirectedBy** - rezyser
+8. **Cast** - obsada
+9. **Writing** - scenariusz
+10. **ProducedBy** - producent
+11. **MusicBy** - muzyka
+12. **CinematographyBy** - zdjecia
+13. **Production_countries** - kraj podukcji filmu
+14. **Language** - jezyk filmu
+15. **Color** - wersja kolorystyczna
+16. **Keywords** - s³owa klucze powiazane z danym filmem
+
+Szczegó³owe statystyki:
+
+17. **Males, Females** - srednia ocena ze wzgledu na p³ec
+18. **Aged_under_18, Aged_18-29, Aged_30-44, Aged_45+** - srednia ocena w danej kategorii
+wiekowej
+19. **Males_under_18, Males_Aged_18,29, Males_Aged_30-44, Males_Aged_45+** - srednia
+ocen przyznanych przez mezczyzn w róznych kategoriach wiekowych
+20. **Females_under_18, Females_Aged_18-29, Females_Aged_30-44, Females_Aged_45+** - srednia ocen przyznanych przez kobiety w róznych kategoriach wiekowych
+21. **IMDb_staff, Top_1000_voters, US_users, Non-US_users** - srednie oceny w innych kategoriach
+22. **Vote_10 - Vote_1** - liczba g³osów na dana ocene
+
+Do pakietu do³¹czone s¹ dwie ramki danych `MoviesIMDB` oraz `movies10IMDB`. W pierwszej z nich s¹ informacje na temat **102607** pobranych filmów z przedzia³u czasowego 1894 - 2014. Natomiast w drugiej znajduj¹ siê informacje na temat **10494** z przedzia³u 1900 - 2014, wybrane w nastêpujacy sposób:
+
+1) 1900 - 1908 - wszystkie;
+2) 1909 - 1960 - po 50 filmów z ka¿dego roku;
+3) 1961 - 1990 - po 100 filmów z ka¿dego roku;
+4) 1991 - 2014 - po 200 filmów z ka¿dego roku.
+      
+# Faza II
+
+W kolejnej fazie projektu naszym zadaniem by³o zbudowanie macierzy odleg³oœæi pomiêdzy filmami opart¹ o zebrane dane. 
+
+## Macierze podobieñstwa 
+
+### Ogólny sposób wyznaczania ostatniej macierzy podobieñstwa
+
+Ostateczn¹ macierz podobieñstwa dla zebranych przez nas charakterystyk, wyznaczamy w ten sposób, ¿e pojedyñcze macierze charakterystyk dodajemy do siebie a nastêpnie ka¿dy element w wynikowej macierzy dzielimy przez liczbê wszystkich sumowanych macierzy.
+
+### Wybrane charakterystyki do macierzy podobieñstw
+
+Poni¿sze macierze podobieñstwa maj¹ takie same nazwy jak kolumny w ramce `MoviesIMDB` i zosta³y zapisane w formacie `.rda`.
+
+### Tytu³ (Title)
+
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia s³ów w tytu³ach}}{\text{moc sumy s³ów w tytu³ach}}$$
+
+![Alt Text](http://s18.postimg.org/4usaij8ax/rys1.jpg)
+
+### Rok (Year)
+#### Koszyki
+Podzia³ okresów w kinematografii dzieli siê nastêpuj¹co:
+
+1) 1894-1930 - kino nieme;
+2) 1931-1955 - pocz¹tek filmów z dŸwiêkiem;
+3) 1956-1975 - nurty "nowej fali";
+4) 1976-1995 - pocz¹tek kina wspó³czesnego;
+5) 1996-2014 - kino wspó³czesne;
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 5, fig.height = 3, dpi=144}
+l <- MoviesLinks %>% group_by(year = year) %>% summarise(n = n())
+wh <- which(l$year %in% c(1931, 1956, 1976, 1996))
+koszyk <- numeric(nrow(l))
+for(i in 1:(length(wh))){
+  if(i == 1) koszyk[1:(wh[i]-1)] <- i
+  else {
+    koszyk[wh[i-1]:(wh[i]-1)] <- i
+    koszyk[wh[i]:nrow(l)] <- i+1
+    }
+  }
+l <- cbind(l, koszyk)
+ggplot(l, aes(year,n, fill=koszyk)) + geom_bar(stat = "identity") + 
+  ggtitle(paste0("Liczba filmów pe³nometra¿owych ", "\n")) +
+    theme(plot.title = element_text(lineheight=1.2, size = 14, face="bold")) +
+       labs(x="", y="") +  theme(legend.position="none")
+
+```
+
+##### Sposób obliczenia
+$$P=\frac{\text{liczba koszyków - |nr koszyk 1 - nr koszyk 2|}}{\text{liczba koszyków}}$$
+
+### Gatunki (Genres)  
+
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia gatunków}}{\text{moc sumy gatunków}}$$
+
+### Re¿yser (Directedby)
+
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia re¿yserów}}{\text{moc sumy re¿yserów}}$$
+
+### Obsada (Cast)
+##### Sposób obliczenia
+Obsadê dzielimy na dwa podzbiory, dwie pierwsze osoby w kolejnoœci i reszta. Pierwszej grupie nadajemy wagê 0.8 natomiast drugiej 0.2.
+
+
+$$P=0.8\cdot\frac{\text{moc przeciêcia aktorów z I grupy}}{\text{moc sumy aktorówz I grupy}}+0.2\cdot\frac{\text{moc przeciêcia aktorów z II grupy}}{\text{moc sumy aktorówz II grupy}}$$
+
+![Alt Text](http://s22.postimg.org/5qlvri50h/aktorzy.jpg)
+
+### Scenariusz (Writing)
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia scenarzystów}}{\text{moc sumy scenarzystów}}$$
+
+### Kraj produkcji (Production_countries)
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia krajów}}{\text{moc sumy krajów}}$$
+
+### Kolor (Color)
+##### Sposób obliczenia
+$$P=\begin{cases} 1 \text{ dla takich samych typów} \\ 0 \text{ dla ró¿nych typów}\end{cases}$$
+
+### S³owa kluczowe (Keywords)
+##### Sposób obliczenia
+$$P=\frac{\text{moc przeciêcia s³ów kluczowych}}{\text{moc sumy s³ów kluczowych}}$$
+
+### Oceny  (Overall_Rating)
+**(Males, Females, Aged_under_18, Males_under_18, Females_under_18, Aged_18.29, Males_Aged_18.29, Females_Aged_18.29, Aged_30.44, Males_Aged_30.44, Females_Aged_30.44, Aged_45., Males_Aged_45., Females_Aged_45., IMDb_staff)**
+
+##### Sposób obliczenia
+$$P=\begin{cases} \frac{10 - |\text{ocena 1 - ocena 2}|}{10} \text{ gdy ¿adna ocenia nie jest "-1"} \\ 0 \text{ w p.p.}\end{cases}$$
+
+# Przyk³ad
+
+```{r, warning=FALSE}
+library(ProjektFilmy.FakSpiewakSmuda)
+``` 
+
+Wszystkie wykorzystywane funkcje przy tworzeniu tego projektu znajduj¹ siê w pakiecie **ProjektFilmy.FakSpiewakSmuda**. Nazwy funkcji zaczynaj¹ce siê od prefiksu **imdb_** dotycz¹ funkcji wykorzystywanych do pobierania informacji z strony [imdb.com](imdb.com). Natomiast funkcje zaczynaj¹ce siê od prefiksu **movies_** s¹ wykorzystywane do stworzenia macierzy podobieñstwa dla informacji o filmach pobranych w fazie I.
+
+
+Je¿eli chcemy pobraæ podstawowe informacje na temat filmów z wybranego przedzia³u czasowgo, mo¿emy wykorzystaæ w tym celu funkcjê `imbd_download`, natomiast jeœli chcielibyœmy pobraæ szczegó³owe informacje na temat statystyk dotycz¹cych danego filmu mo¿emy wykorzystaæ funkcjê `imdb_save_table_rating`.
+
+
+Je¿eli chcemy u¿yæ powy¿szych funkcji musimy posiadaæ unikalne nazwy filmów ze strony [imdb.com](imdb.com). Mo¿emy skorzystaæ z gotowej ramki danych dostêpnej w pakiecie `MoviesLinks`
+
+```{r}
+head(MoviesLinks, 5)
+```
+
+lub pobraæ takie infromacje korzystaj¹c z funkcji `imdb_download_movie_url_year`.
+
+```{r, eval=FALSE}
+imbd_download_info(from = 2000, to = 2014)
+
+imdb_save_table_rating(from = 2000, to = 2014)
+```
+
+Pobrane informacje i statystyki dotycz¹ce filmów zapisa³y siê odpowiednio w katalogu domowym w folderze `dane\\glowne` oraz `dane\\statystyki` w formacie `.csv`.
+
+W naszym pakiecie przygotowane s¹ gotowe ramki danych `MoviesIMDB` oraz `movies10IMDB`.
+
+```{r, results='asis', echo=FALSE}
+knitr::kable(tail(movies10IMDB, 1))
+```
+
+Teraz aby stworzyæ macierze podobieñstwa bêdziemy korzystaæ z funkcji `doSimilarityMatrix`. Funkcja ta na wejœciu przyjmuje parametry 
+
+* `po_czym` - nazwa charakterystyki wzglêdem, której bêdzie liczona macierz podobieñstwa, 
+
+* `n` - liczba filmów, dla których ma byæ utworzona macierz, liczymy od filmu najpóŸniej wyprodukowanego do filmu najwczeœniej wyprodukowane oraz 
+
+* `FUN` - funkcja, odpowiadaj¹ca sposobie liczenia danej charakterystyki:
+
+     * `moviesIntersect` - Title, Genres, DirectedBy, Writing, ProducedBy, MusicBy, CinematographyBy, Production_countries, Language, Color, Keywords;
+
+     * `moviesWeightedIntersect` - Cast;
+
+     * `moviesDist5` - Year;
+
+     * `moviesDist10` - Overall_Rating, Males, Females, Aged_under_18, Males_under_18, Females_under_18, Aged_18.29, Males_Aged_18.29, Females_Aged_18.29, Aged_30.44, Males_Aged_30.44, Females_Aged_30.44, Aged_45., Males_Aged_45., Females_Aged_45., IMDb_staff.
+
+```{r, eval=FALSE}
+movies_doSimilarityMatrix('Keywords', 4000, moviesIntersect)
+
+movies_doSimilarityMatrix('Overall_Ratings', 4000, moviesDist10)
+```
+
+Ka¿d¹ wyliczon¹ macierz podobieñstwa mo¿emy równie¿ znaleŸæ w naszym pakiecie (liczyliœmy dla 4000 najnowszych filmów). Ramka z danymi ma tak¹ sam¹ nazwê jak odpowiadaj¹ca jej charakterystyka. Wyj¹tkiem jest ramka `moviesDist`, w której znajduje siê podsumowanie najwa¿niejszych naszym zdaniem charakterystyk. Aby stworzyæ tak¹ ramkê u¿yliœmy w tym celu funkcji `movies_Dist`, która liczy œredni¹ arytmetyczn¹ z podanej listy macierzy, ponadto jest czu³a na braki danych.
+
+```{r, eval=FALSE}
+movies_Dist(list(Title, Genres, Directedby, Cast, Writing, Production_countries, Color, Keywords, 
+                 Overall_Rating, IMDb_staff))
+```
+
+SprawdŸmy jak wygl¹daj¹ podobieñstwa miêdzy wybranymi filmami:
+
+```{r, echo=FALSE, cache=TRUE, fig.width = 5, fig.height = 3, dpi=144}
+load("D://R//Filmy//ProjektFilmy.FakSpiewakSmuda//data//movies4IMDB.rda")
+load("D://R//Filmy//ProjektFilmy.FakSpiewakSmuda//data//moviesDist.rda")
+
+ktore <- which(stri_detect_regex(movies4IMDB$Title, "Shrek|Auta|Madagaskar|Szybcy|Hobbit"))
+MacierzPodobienstwa <- moviesDist[ktore, ktore]
+nazwa <- movies4IMDB$Title[ktore]
+
+heatmap(MacierzPodobienstwa, Rowv=NA, Colv=NA, col=colorRampPalette(c("white", "darkgreen"))(1000), scale="none", margins=c(5,5), labRow = nazwa, labCol = nazwa, 
+        cexRow = .75, cexCol = .75)
+
+```
+
+# Faza III
+
+Celem tej fazy jest zbudowanie us³ugi internetowej opartej o zebrane dane o filmach. 
+W celu obejrzenia szczegó³owych wyników zapraszamy do aplikacji Shiny.
