@@ -1,0 +1,299 @@
+---
+title: "Obliczenia ,,out of core''<br>Map Recuce, spark i inne pomysły"
+author: "Przemysław Biecek"
+date: "R i Duże Dane"
+output:
+  slidy_presentation:
+    highlight: default
+    css: ../style.css
+    font_adjustment: 0
+---
+
+# Duże dane
+
+Dopóki dane na których pracujemy mieszczą się w pamięci RAM możemy używać R i co najwyżej narzekać, że Garbage Collector jest niedopracowany i czasem trzeba restartować RStudio.
+
+Gdy dane przestają mieścić się w pamięci RAM mamy dwa rozwiązania do wyboru. 
+
+- znaleźć maszynę z większą ilością RAM
+- poszukać rozwiązania, które pozwala na przetwarzanie danych nie mieszczących się jednocześnie w pamięci RAM (tzw. przetwarzanie out-of-core).
+
+O pierwszym z tych rozwiązań mówiliśmy tydzień temu (hydra, PLGrid i ogólnie HPC),
+dziś będziemy mówić o drugim.
+
+# Mnogość rozwiązań
+
+Przetwarzanie out-of-core można realizować na wiele sposobów. Kilka wybranych rozwiązań
+
+* liczenie częściowych agregatów a następnie ich łączenie (przykład: suma, regresja, max)
+* paradygmat MapReduce (np. z hadoopem)
+* Bulk Synchronous Parallel
+* online learning
+* fork-join model (np. z MPI)
+* scalapack (algebra)
+* inne
+
+# Apache Hadoop
+
+Apache Hadoop to platforma do skalowalnych rozproszonych obliczeń. W jej skład wchodzą trzy główne moduły
+
+* Hadoop Distributed File System (HDFS) - rozproszony system plików, bezpieczny, zreplikowany
+* Hadoop YARN - planer (scheduler) dla zadań
+* Hadoop MapReduce - bazujący na YARN system przetwarzania danych (pomysł, też patent, Googla opisany w 2004 roku)
+
+#  Hadoop MapReduce
+
+Podstawową strukturą danych w przetwarzaniu są pary (klucz, wartość).
+
+Przetwarzanie danych sprowadza się do przetwarzania kolekcji takich par (oczywiście elementy tych par też mogą być kolekcjami).
+
+Osoby przyzwyczajone do danych w postaci tabelarycznej muszą teraz ,,przestawić się'' na nowy format.
+
+Algorytm MapReduce bazuje na czterech operacjach: split, map, shuffling, reduce.
+
+#  Hadoop MapReduce
+
+## Operacja Map
+
+Z punktu logiki przetwarzania operacja Map przekształca jedną parę (klucz, wartość) na listę par.
+
+Sygnatura:
+
+```{}
+Map(k1,w1) -> list(k2,w2)
+```
+
+Framework następnie grupuje wartości o wspólnym kluczu i wykonuje operację Reduce.
+
+#  Hadoop MapReduce
+
+## Operacja Reduce
+
+Z punktu logiki przetwarzania operacja Reduce przekształca listę wartości w najczęściej jedną (w teorii może być i więcej i mniej) wartości.
+
+Sygnatura:
+
+```{}
+Reduce(k2, list(w2)) -> list(w3)
+```
+
+Tyle teoria, w rzeczywistości aby efektywnie implementować różne algorytmu warto wiedzieć o dodatkowych krokach: przygotowanie par (split), shufling (sorting) 
+
+#  Hadoop MapReduce
+
+## Komentarz
+
+* Zadania MapReduce nie są szybkie, ale dobrze się skalują.
+
+* Jeżeli problem da się przedstawić jako sekwencja maperów i reducerów to framework wiele rzeczy załatwia za nas i można łatwo implementować nowe algorytmy.
+
+* Zbiór algorytmów do analizy danych bazujących na MapReduce to np. Mahout.
+
+* Dla R dostępnych jest kilka pakietów pozwalających na używanie funkcji R zarówno w fazie Map jak i Reduce: rmr, rmr2, rhdfs (RMapReduce).
+
+#  Hadoop MapReduce
+
+## Przykład
+```{r, eval=FALSE}
+library(rmr2)
+library(rhdfs)
+
+hdfs.init()
+
+# operacja Map (też split)
+map <- function(k,linie) {
+  slowaL <- strsplit(linie, '\\s')
+  slowa <- unlist(slowaL)
+  return( keyval(slowa, 1) )
+}
+
+# operacja Reduce
+reduce <- function(slowa, liczba) {
+  keyval(slowa, sum(liczba))
+}
+
+# zliczanie słów
+wordcount <- function (input, output=NULL) {
+  mapreduce(input=input, output=output, input.format="text", map=map, reduce=reduce)
+}
+
+# wywołaj obliczenia
+wordcount(katalog.wejsciowy, katalog.wyjsciowy) 
+```
+
+#  Hadoop MapReduce
+
+## Przykład zliczania słów (Word Count)
+
+<img width="100%" src="MapReduce.png">
+
+Żródło (i wiele ciekawych informacji)
+http://www.alex-hanna.com/tworkshops/lesson-5-hadoop-and-mapreduce/
+
+
+# Spark
+
+Hadoop jest (był?) bardzo popularny, ale ma kilka problemów, takich jak ograniczone ekspresja paradygmatu MapReduce i czas obliczeń. Ponieważ wszystkie operacje bazują na dysku to gdy trzeba wykonać wiele iteracji ponosi się duże (niepotrzebne?) koszty IO.
+
+Spark (zgodnie z reklamą ze strony https://spark.apache.org/) potrafi być 100x szybszy. Efekt ten uzyskuje się dzięki trzymaniu danych w pamięci RAM (około 10x) i innej implementacji sortowania i rozsiewania zadań do reducerów (nawet na dysku uzyskuje się przyśpieszenie kolejne 10x).
+
+Spark przez tom że trzyma (co się da) w pamięci pozwala na efektywne wykonywanie algorytmów iteracyjnych. Nie ma konieczności nieustannego zapisywania danych na dysk i z powrotem do pamięci. <i>Jakie iteracyjne algorytmy znamy?</i>
+
+Przez to, że Spark stara się trzymać dane w pamięci same klastry wymagają dużych ilości RAM i mogą być droższe niż te dla zadań Hadoopowych.
+
+Spark pozwala na operacje na obiektach RDD (resilient distributed datasets), które zapewniają abstrakcję w operacjach na danych oraz oblugę błędów, przeliczanie potrzebnych fragmentów gdy wystąpi awaria węzła 
+http://www.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-82.pdf
+
+Sam RDD może być postrzegany jako kolekcja wartości (lub par klucz - wartość).
+
+Natywnymi językami dla Sparka są Scala, Java, Python a za kilka dni też R.
+
+# Operacje w Spark
+
+Lista transformacji i akcji dostępnych w Spark znajduje się pod adresem
+https://spark.apache.org/docs/1.3.1/programming-guide.html#rdd-operations
+
+Wybrane transformacje:
+
+* map(fun), tworzy nową kolekcję poprzez zastosowanie funkcji fun do każdego elementu wejściowej kolekcji. Mapowanie jest 1-1
+* filter(fun), tworzy nową kolekcję pozostawiając tylko elementy dla których wynik funkcji fun jest TRUE.
+* flatMap(fun), tworzy nową kolekcję, podobnie jak map, tyle że funkcja fun jako wynik zwraca kolekcję o dowolnej długości, te częściowe kolekcje są następnie spłaszczane. Opracja 1-*
+* groupByKey(fun), na podstawie kolekcji par (K,W) tworzy nową kolekcję par (K, lista(W))
+* reduceByKey(fun), na podstawie kolekcji par (K,W) tworzy nową kolekcję redukując wartości. Sygnatura funkcji W powinna być WxW -> W (czyli dwuargumentowa).
+* sortByKey(), porządkuje elementy kolekcji po kluczu.
+* reduce(fun), podobnie jak reduceByKey, ale redukuje całą kolekcję.
+* collect(), take(n), pobiera dane z RDD do R (lub innego języka).
+
+
+# SparkR
+
+API do Sparka z poziomu R. Pozwala na przesyłanie danych pomiędzy R i Sparkiem oraz na zdalne i rozproszone wykonywanie funkcji R.
+
+Dokumentacja i pakiet do instalacji są dostępne na stronie http://amplab-extras.github.io/SparkR-pkg/.
+
+Od kwietnia oficjalne włączone w dystrybucję sparka (ale w dystrybucje 1.4, która dopiero będzie opublikowana).
+
+# SparkR na żywo
+
+Aby wykonać poniższe przykłady trzeba:
+
+* Zainstalować Sparka (https://spark.apache.org/downloads.html)
+* Uruchomić klaster, w przypadku wersji standalone może być klaster z jednym węzłem master i jednym worker (./start-all.sh)
+* Na porcie :8080 (domyślnie) można sprawdzić stan węzłów klastra.
+* Na porcie :7077 (domyślnie) nasłuchuje proces na węźle master.
+* Poniższe przykłady działają na napisach do filmu Whiplash 2014 pobranych z open subtitle.
+
+# SparkR na żywo
+
+```{r}
+# library(devtools)
+# install_github("amplab-extras/SparkR-pkg", subdir="pkg")	
+
+library(SparkR)
+
+# inicjacja połączenia ze sparkiem 
+# ?sparkR.init 
+sc <- sparkR.init(master = "local")
+ 
+# wczytujemy dane bezpośrednio na klaster Sparka
+# W R mamy uchwyt do wczytanego obiektu
+linesRDD  <-  textFile(sc,  "Whiplash.2014.srt")	
+
+take(linesRDD, 10)
+slowNaLinie <- lapply(linesRDD, function(line) { length(unlist(strsplit(line, " "))) })
+unlist(take(slowNaLinie,20))
+```
+
+# SparkR na żywo
+
+Pracując z tym samym kontekstem i z tymi samymi danymi wykonajmy bardziej złożone operacje.
+
+```{r}
+# dzielimy linie na słowa
+words <- flatMap(linesRDD,
+                 function(line) {
+                   tmp <- strsplit(line, split = "[^A-Za-z']")[[1]]
+                   tmp[nchar(tmp)>0]
+                 })
+
+# pobierz pierwsze 10
+take(words, 10)
+
+# pobierz wszystkie
+# SparkR::collect(words)
+```
+
+# MapReduce na żywo
+
+```{r}
+# tworzymy pary (slowo, 1)
+words1 <- lapply(words, function(w) {
+  list(w, 1)
+})
+
+# redukujemy, sumując wartości
+sumy.slow <- reduceByKey(words1, `+`, numPartitions = 2L)
+
+# pobieramy wyniki do R
+take(sumy.slow, 10)
+wszystkie <- SparkR::collect(sumy.slow)
+table(unlist(sapply(wszystkie, `[[`, 2)))
+
+# sortujemy
+library(dplyr)
+data.frame(slowo = sapply(wszystkie, '[[', 1), 
+           liczba = sapply(wszystkie, '[[', 2)) %>% 
+  arrange(liczba) %>%
+  tail(20)
+```
+
+# Inne przykładowe Mapery
+
+Na klaster Spark można wysłać dowolną funkcję R do mapowania.
+
+```{r, eval=FALSE}
+# regresja
+mapRes <- SparkR::map(parts, function(x) {
+  y <- as.numeric(sapply(x[[2]], '[', 1))
+  x <- seq_along(y)
+  lm(y~x)$coef
+})
+
+# klastrowanie
+mapRes2 <- SparkR::map(parts, function(x) {
+  y <- as.numeric(sapply(x[[2]], '[', 1))
+  x <- seq_along(y)
+  df <- data.frame(x,y)
+  unsupervised(x,2)$likelihood
+})
+
+# klasyfikacja
+# włączamy zdalnie pakiety R
+includePackage(sc, class)
+mapRes3 <- SparkR::map(parts, function(x) {
+  train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+  test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+  cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+  table(knn(train, test, cl, k = 3, prob=TRUE))
+})
+```
+
+# Inne przykładowe operacje
+
+Funkcją `parallelize()` można zamienić kolekcję w R na kolekcję na Sparku.
+
+```{r, eval=FALSE}
+rdd <- parallelize(sc, 1:100)
+unlist(SparkR::collect(filterRDD(rdd, function (x) { x %% 2 == 0 })))
+```
+
+Funkcją `broadcast()` można wysłać na wszystkie węzły klastra dowolny obiekt R.
+
+```{r, eval=FALSE}
+zm <- 2
+randomMat <- broadcast(sc, zm)
+
+reduce(rdd, function(x, y) max(x, y)*value(randomMat))
+```
+
+
