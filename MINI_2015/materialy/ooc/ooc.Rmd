@@ -1,5 +1,5 @@
 ---
-title: "Obliczenia ,,out of core''<br>Map Recuce, spark i inne pomysły"
+title: "Obliczenia ,,out of core''<br>Map Reduce, spark i inne pomysły"
 author: "Przemysław Biecek"
 date: "R i Duże Dane"
 output:
