@@ -1,0 +1,34 @@
+Kryteria
+
+1. Czy jest aplikacja shiny
+
+
+2. Czy jest skalowanie
+
+
+3. Ocena (i komentarze) z internetu
+
+* Projekt 1 - brak wybierania filmów, nie wiadomo czy tytuły wpisywać po angielsku czy po polsku a może w oryginale?
+
+* projekt 1 - wscisnalem szukaj poszedlem zaparzyc herbate potem do lazienki na dwojke a wyniki i tak sie nie doczekalem
+
+* Projekt 1 bardzo wolno wyszukuje.
+
+* Aplikacja z projektu 1 wymaga wpisania samemu tytułu, przez co wpisany tekst może być słowno muzyczny (nie jest odporne na debilizm użytkownika) przez co pojawia się komunikat "przykro nam - nie znaleźliśmy filmu".
+
+* 1 - nie jest intuicyjna. trzeba wciskać za każdym razem wyszukaj co jest upierdliwe. aplikacja długo się wczytuje
+
+* Projekt 1 'Co dziś obejrzeć' Co jest fajne - Krótkie i treściwe zebranie danych 'o mnie', dobrze napisana instrukcja, można wpisać swój ulubiony film. Co jest już gorsze - po wybraniu "Wyszukaj" nic się nie dzieje i nie wiem czy po prostu szuka czy może coś się zacięło. Po jakimś czasie pojawiają się dwa wykresy, z pierwszego nie jestem w stanie nic odczytać (domyślam się tylko że jest to mapa odległości), na drugim wykresie już lepiej, ale tu też brakuje opisów.
+
+* Projekt 1 ciągle wyrzucał komunikat, że danego filmu nie ma w bazie - a wpisywałem raczej popularne filmy (w szczególności te same co w innych projektach)
+
+* W pierwszym projekcie nie dało się wybrać filmu z listy, filmu, który wybrałam nie było. Ale czytelna grafika bez bajerów.
+
+
+
+W sumie
+
+/5 + /5 + 3/10 = 
+
+
+

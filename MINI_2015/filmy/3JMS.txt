@@ -1,0 +1,35 @@
+Kryteria
+
+1. Czy jest aplikacja shiny
+
+
+2. Czy jest skalowanie
+
+
+3. Ocena (i komentarze) z internetu
+
+* W projekcie 2 także nie otrzymałem wyników "Error: cannot allocate vector of size 190.7 Mb"
+
+* Projekt 2: działa, pokazuje się wykres, ale nie zachwyca mnie :) i w sumie nie zachęca do korzystania z aplikacji, a przecież aplikacje tworzy się po to, aby użytkownik chciał z niej korzystać. 
+
+* 2 - za mała czcionka, nie czytelne. nie wiadomo co się dzieje, po co są te liczby w tabelce. wczytuje się jeszcze dłużej niż poprzednia, która i tak wczytywała się tragicznie długo
+
+* Projekt 2 ma za dużo opcji do wyboru, przez co zniechęca
+
+* Projekt 2 'Filmy' Co jest fajne - estetycznie, dobra mapa, jasna lista wyszukanych filmów, ciekawa lista kryteriów. Co jest niefajne - kryteria wyszukiwania powinny być automatycznie odznaczone (bo jako użytkownik musze je odznaczać jeden po drugim). Po wybraniu kolejnego filmu pojawił się błąd "cannot allocate vector of size 190.7 Mb", zmieniałam tytuły, zmieniałam warunki, błąd ciągle ten sam.
+
+* Projekt 2. 'Filmy' 
+- Aplikacja po wskazaniu jako ulubionego filmu Filadelfii sugeruje jej ponowne obejrzenie. Choć nie w pierwszej kolejności. Należałoby jednak usunąć wyszukiwany tytuł z wyników rekomendacji. 
+- Lista wyboru nie jest posortowana alfabetycznie.
+- Wśród filmów podobnych do Filadelfii znalazł się także Kto wrobił królika Rogera, choć wybrane kryteria zdają się tego nie sugerować.
+
+* Projekt dwa - nieczytelny wynik.
+
+*  2 - bardzo dużo kryteriów (plus) ale wyniki bardzo słabo trafne (minus); 
+
+W sumie
+
+/5 + /5 + 3.5/10 = 
+
+
+

@@ -1,0 +1,49 @@
+Kryteria
+
+1. Czy jest aplikacja shiny
+
+
+2. Czy jest skalowanie
+
+
+3. Ocena (i komentarze) z internetu
+
+* ten terminator jest zbyt agrssywyny
+
+* Projekt 3 - fajna wybierałka, nie bangla
+
+* Projekt 3 wyrzuca mi jakieś błędy - nie otrzymałem wyników. 
+
+* Projekt 3: Bardzo mi się spodobał pomysł z MEGUSTA. Ciekawie wygląda, ale HeatMapa jest wg mnie mało czytelna. 
+
+* 3 - grafik płakał jak projektował
+
+* Wygrał zdecydowanie projekt 3 z uwagi na możliwość wyboru większej ilości filmów. 
+
+* Projekt 3 "Me Gusta" - super wyszukiwanie filmów (łatwe, filtrowane i można wybrać nawet kilka). Niestety pojawia się podstawowy błąd "cannot change working directory", a więc w efekcie niczego się więcej nie dowiem :(
+
+* Projekt 3. 'Megusta' 
+- Zdecydowanie najlepszy projekt.
+- Radzi sobie nieźle nawet, gdy wskazane tytuły są od siebie bardzo odległe.
+- Tytuły wybranych filmów można by usunąć z listy rekomendacji.
+
+* Projekt 3 jest najbardziej czytelny i działał całkiem sprawnie, tylko ta grafika w tle mogłaby być inna.
+Poza tym - można by jakoś dokładniej opisać jest na wykresach - a nie jakieś rzuty kanoniczne albo inne rzeczy :p
+
+* Projekt trzy - źle dobiera filmy do gustu,
+
+* Projekt 3 "Megusta" daje błędy JScript
+
+* Projekt 3: po wybraniu filmów domyślnych (Gladiator i Transformers: Wiek Zagłady), gatunek, scenariusz, kraje produkcji i słowa kluczowe, dostałem błąd: cannot allocate vector of size 122.1 Mb
+
+* projekt 3 - super panel wyszukiwania, niestety brak wyszukań dla kilu różnych zapytań czyli program nie działa; 
+
+
+
+
+W sumie
+
+/5 + /5 + 5.5/10 = 
+
+
+
