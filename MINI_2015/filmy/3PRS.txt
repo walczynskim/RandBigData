@@ -2,9 +2,12 @@ Kryteria
 
 1. Czy jest aplikacja shiny
 
+Tak, choć dużo czasu zajęło sprawienie by działa
+Poza tym wciąż nie otrzymałem danych
 
 2. Czy jest skalowanie
 
+Jest mapa filmów, ale nie jest jasne co determinuje odległości na tej mapie.
 
 3. Ocena (i komentarze) z internetu
 
@@ -30,7 +33,7 @@ zalety: działa, wyświetlanie opisu filmów podobnych - bardzo dobra funkcjonal
 
 W sumie
 
-/5 + /5 + 4(częściowo z uwagi na późniejszą dostępność)/10 = 
+3/5 + 2.5/5 + 4.5(częściowo z uwagi na późniejszą dostępność)/10 = 10
 
 
 

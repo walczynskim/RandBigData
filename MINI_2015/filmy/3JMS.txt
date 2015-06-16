@@ -2,9 +2,11 @@ Kryteria
 
 1. Czy jest aplikacja shiny
 
+Tak
 
 2. Czy jest skalowanie
 
+Jest mapa filmów, ale nie jest jasne co determinuje odległości na tej mapie.
 
 3. Ocena (i komentarze) z internetu
 
@@ -29,7 +31,7 @@ Kryteria
 
 W sumie
 
-/5 + /5 + 3.5/10 = 
+5/5 + 2.5/5 + 3.5/10 = 11
 
 
 

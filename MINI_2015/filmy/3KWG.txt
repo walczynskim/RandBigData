@@ -2,9 +2,11 @@ Kryteria
 
 1. Czy jest aplikacja shiny
 
+Tak
 
 2. Czy jest skalowanie
 
+Jest graf, ale nie sposób z niego odczytać podobieństw pomiędzy filmami
 
 3. Ocena (i komentarze) z internetu
 
@@ -37,7 +39,7 @@ wady: niejasność co oznacza przemnażanie krawędzi grafu
 
 W sumie
 
-/5 + /5 + 8/10 = 
+5/5 + 2/5 + 8/10 = 15
 
 
 

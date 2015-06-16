@@ -2,9 +2,13 @@ Kryteria
 
 1. Czy jest aplikacja shiny
 
+Była, już nie jest niedostępna
+Nie otrzymałem danych (bazy danych) dzięki którym mógłbym uruchomić tę aplikację lokalnie
+(plik PelnaBazaFilmow_zap.sql jest pusty)
 
 2. Czy jest skalowanie
 
+Jest wyznaczanie podobieństwa, ale nie jest wystarczająco jasne jakie czynniki wpływają na podobieństwo.
 
 3. Ocena (i komentarze) z internetu
 
@@ -28,7 +32,7 @@ Kryteria
 
 W sumie
 
-/5 + /5 + 3/10 = 
+4/5 + 2.5/5 + 3.5/10 = 10
 
 
 
