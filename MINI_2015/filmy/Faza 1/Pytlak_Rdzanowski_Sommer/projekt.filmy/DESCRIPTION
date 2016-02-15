@@ -1,9 +1,0 @@
-Package: projekt.filmy
-Title: PROJEKT FILMY
-Version: 0.0.0.9000
-Authors@R: c(person("Marta", "Sommer", ,email="sommerm@student.mini.pw.edu.pl", role = c("aut", "cre")), person("Marcin", "Rdzanowski", ,email="rdzanowskim@student.mini.pw.edu.pl", role = "aut"), person("Pawel", "Pytlak", ,email="pytlakp@student.mini.pw.edu.pl", role = "aut"))
-Description: Pakiet ma docelowo budowac mape filmow. Przechodzi on przez kolejne etapy - sciaganie tytulow filow z internetu, sciaganie wskaznikow o filmach, budownie macierzy korelacji itd.
-Depends: R (>= 3.1.1)
-License: GPL-2
-LazyData: true
-Imports: stringi, data.table, rvest, dplyr

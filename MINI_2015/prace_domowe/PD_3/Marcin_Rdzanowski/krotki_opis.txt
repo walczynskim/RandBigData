@@ -1,8 +1,0 @@
-Plik oryginal.R zawiera definicjê trzech funkcji. Ka¿da z tych funkcji jest bezargumentowa 
-i pobiera dane z ró¿nych stron internetowych. Wiêkszoœæ kodu w tych funkcjach siê powtarza 
-poza kilkoma wyj¹tkami z którymi poradzi³em sobie za pomoc¹ instrukcji if(){}else{}. Stworzy³em 
-jedn¹ funkcjê, która wykorzystuje informacje podane w ramce danych 'info'. Pierwsza kolumna 
-tej ramki to adresy stron internetowych zaœ pozosta³e to wyra¿enia uzyskane (podejrzewam) za 
-pomoc¹ Selectorgadgeta.
-
-W skrócie tworz¹c ramkê danych info oszczêdzi³em przepisywania trzy razy prawie takiego samego kodu. 
