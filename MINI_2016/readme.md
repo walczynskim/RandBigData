@@ -1,0 +1,77 @@
+Zakres:
+-------
+
+Dlatego celem tych zajęć nie jest poznanie żadnego konkrentego języka, narzędzia czy techniki, ale:
+
+1. poznanie problemów, które pojawiają się przy pracy z dużymi danymi,
+2. poznanie podejść do rozwiązywania tych problemów,
+3. wykształcenie umiejętności ciągłego wyszukiwania rozwiązań dla pojawiających się problemów,
+4. krytycznego patrzenia na własne rozwiązania,
+5. uczenia się z rozwiązań innych.
+
+
+# Sylabus
+
+Dostęp i przetwarzanie dużych zbiorów danych
+* Web scraping 
+* Praca z pakietami tidyr + dplyr 
+* Praca z SQL i bazami danych
+
+Powtarzalne obliczenia
+* Praca z GitHub i Waffle
+* knitr
+* archivist
+
+Web based data products
+* Tworzenie pakietów 
+* OpenCPU i serwer REST 
+* Shiny 
+
+Obliczenia równoległe / masywne
+* Równoległe uruchamianie zadań na domowym komputerze
+* profilowanie i debugowanie kodu 
+* Praca z klastrami obliczeniowymi HPC 
+* Praca z hadoop/spark
+
+
+
+Plan spotka&#324; MINI PW:
+-------------------------
+
+* 29 II 
+* 7 III
+* 14 III - prezentacja projektu 1, faza 1
+* 21 III 
+* 4 IV  - prezentacja projektu 1, faza 2
+* 11 IV 
+* 18 IV - prezentacja projektu 1, faza 3 
+
+* 25 IV
+* 9 V 
+* 16 V - prezentacja projektu 2, faza 1 
+* 23 V 
+* 30 V - prezentacja projektu 2, faza 2
+* 6 VI 
+* 13 VI - prezentacja projektu 2, faza 3 
+
+
+Projekty:
+---------
+
+Projekty mogą być realizowane w grupach od 2 do 4 osób. Te same osoby nie mogą razem uczestniczyć w obu projektach.
+Projekty będą przedstawiane na zajęciach (terminy wypisane powyżej). Należy je zgłosić przez GitHuba przed prezentacją. Projekty, które nie będą zaprezentowane nie zostaną ocenione.
+
+1. Projekt 'Scrapping i analiza tekstu'
+
+
+
+2. Projekt 'Centrum Nauki Kopernik'
+
+
+
+Ocena:
+------
+
+Prace domowe:
+-------------
+
