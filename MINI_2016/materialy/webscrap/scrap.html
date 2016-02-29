@@ -233,12 +233,18 @@ tabele &lt;-<span class="st"> </span><span class="kw">readHTMLTable</span>(xData
 <li>html_text, html_tag, html_attrs - wyciąga treść lub atrybuty węzłów html.</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rvest)
-gazeta &lt;-<span class="st"> </span><span class="kw">read_html</span>(<span class="st">&quot;http://o2.pl&quot;</span>)
+gazeta &lt;-<span class="st"> </span><span class="kw">read_html</span>(<span class="st">&quot;http://gazeta.pl&quot;</span>)
 cast &lt;-<span class="st"> </span><span class="kw">html_nodes</span>(gazeta, <span class="st">&quot;a&quot;</span>)
 <span class="kw">head</span>(<span class="kw">html_text</span>(cast))</code></pre>
-<pre><code>## character(0)</code></pre>
+<pre><code>## [1] &quot;&quot;           &quot;gazeta.pl&quot;  &quot;Wiadomo¶ci&quot; &quot;Sport&quot;      &quot;Biznes&quot;    
+## [6] &quot;Kobieta&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">html_attr</span>(cast, <span class="st">&quot;href&quot;</span>))</code></pre>
-<pre><code>## character(0)</code></pre>
+<pre><code>## [1] &quot;http://serwisy.gazeta.pl/O_nas/1,111259,8856779,Ochrona_prywatnosci.html&quot;
+## [2] &quot;http://www.gazeta.pl/0,0.html&quot;                                           
+## [3] &quot;http://wiadomosci.gazeta.pl/wiadomosci/0,0.html&quot;                         
+## [4] &quot;http://www.sport.pl/sport-hp/0,0.html&quot;                                   
+## [5] &quot;http://pieniadze.gazeta.pl/pieniadz/0,0.html&quot;                            
+## [6] &quot;http://kobieta.gazeta.pl/kobieta/0,0.html&quot;</code></pre>
 </div>
 <div id="jak-znajdowac-uchwyty-css" class="slide section level1">
 <h1>Jak znajdować uchwyty CSS</h1>
@@ -279,32 +285,24 @@ htab &lt;-<span class="st"> </span><span class="kw">html_nodes</span>(lego_movie
 </div>
 <div id="api-bez-autoryzacji" class="slide section level1">
 <h1>API bez autoryzacji</h1>
-<p>Fundacja MojePanstwo udostępnia API dzieki któremu można automatycznie pobrać dane w formacie JSON.</p>
-<p>Opis API jest na stronie</p>
-<p><a href="https://mojepanstwo.pl/api" class="uri">https://mojepanstwo.pl/api</a></p>
-<p>Między innymi udostępnia kopię Banku Danych Lokalnych. Poleceniem <code>search</code> można wyszukiwać tabele z odpowiednimi danymi.</p>
-<p><a href="https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie" class="uri">https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie</a></p>
-<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> 'https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie'</span>
+<p>Fundacja MojePanstwo udostępnia API dzieki któremu można automatycznie pobrać dane w formacie JSON. Opis API jest na stronie <a href="https://mojepanstwo.pl/api" class="uri">https://mojepanstwo.pl/api</a></p>
+<p><del>Między innymi udostępnia kopię Banku Danych Lokalnych. Poleceniem <code>search</code> można wyszukiwać tabele z odpowiednimi danymi.</del></p>
+<p>Między innymi udostępnia dane kandydatów do Sejmu. Poleceniem <code>https://api-v3.mojepanstwo.pl/dane/poslowie</code> pobrać listę posłów.</p>
+<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> 'https://api-v3.mojepanstwo.pl/dane/poslowie?limit=500'</span>
 document &lt;-<span class="st"> </span>rjson::<span class="kw">fromJSON</span>(<span class="dt">file=</span>url, <span class="dt">method=</span><span class="st">'C'</span>)
 
-tematy &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$bdl_wskazniki.tytul)
-kody &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$bdl_wskazniki.id)
-<span class="kw">cbind</span>(tematy, kody)</code></pre>
-</div>
-<div id="api-bez-autoryzacji-1" class="slide section level1">
-<h1>API bez autoryzacji</h1>
-<p>Poleceniem <code>series</code> można pobierać dane o określonej serii danych.</p>
-<p><a href="https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776" class="uri">https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776</a></p>
-<pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776&quot;</span>
-document &lt;-<span class="st"> </span>rjson::<span class="kw">fromJSON</span>(<span class="dt">file=</span>url, <span class="dt">method=</span><span class="st">'C'</span>)
-
-lista &lt;-<span class="st"> </span>document[[<span class="dv">1</span>]][[<span class="dv">1</span>]]$series
-vrok &lt;-<span class="st"> </span><span class="kw">sapply</span>(lista, function(x) x$year)
-vwal &lt;-<span class="st"> </span><span class="kw">sapply</span>(lista, function(x) x$value)
-<span class="kw">cbind</span>(vrok, vwal)
-
-<span class="kw">library</span>(ggplot2)
-<span class="kw">qplot</span>(<span class="kw">as.numeric</span>(vrok), <span class="kw">as.numeric</span>(vwal), <span class="dt">geom=</span><span class="st">&quot;line&quot;</span>)</code></pre>
+ludzie &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$ludzie.nazwa)
+kluby &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$sejm_kluby.nazwa)
+urodzenie &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$poslowie.data_urodzenia)
+glosy &lt;-<span class="st"> </span><span class="kw">sapply</span>(document[[<span class="dv">1</span>]], function(x) x$data$poslowie.liczba_glosow)
+<span class="kw">head</span>(<span class="kw">data.frame</span>(ludzie, kluby, urodzenie, glosy))</code></pre>
+<pre><code>##             ludzie                  kluby  urodzenie glosy
+## 1      Łukasz Tusk  Platforma Obywatelska 1985-09-24  8620
+## 2     Andrzej Dera    Zjednoczona Prawica 1961-09-10 17606
+## 3 Piotr Paweł Bauć          Ruch Palikota 1960-06-29 13392
+## 4  Rafał Grupiński  Platforma Obywatelska 1952-09-26 40510
+## 5   Grzegorz Długi               Kukiz'15 1955-06-16     0
+## 6   Leszek Galemba Prawo i Sprawiedliwość 1966-03-07     0</code></pre>
 </div>
 <div id="streaming-api-dla-twittera" class="slide section level1">
 <h1>Streaming API dla Twittera</h1>

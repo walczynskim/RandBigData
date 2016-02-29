@@ -112,7 +112,7 @@ Użyteczne funkcje:
 
 ```{r, warning=FALSE, message=FALSE}
 library(rvest)
-gazeta <- read_html("http://o2.pl")
+gazeta <- read_html("http://gazeta.pl")
 cast <- html_nodes(gazeta, "a")
 head(html_text(cast))
 head(html_attr(cast, "href"))
@@ -140,42 +140,23 @@ html_table(htab)
 # API bez autoryzacji
 
 Fundacja MojePanstwo udostępnia API dzieki któremu można automatycznie pobrać dane w formacie JSON.
+Opis API jest na stronie https://mojepanstwo.pl/api
 
-Opis API jest na stronie
+~~Między innymi udostępnia kopię Banku Danych Lokalnych. Poleceniem `search` można wyszukiwać tabele z odpowiednimi danymi.~~
 
-https://mojepanstwo.pl/api
+Między innymi udostępnia dane kandydatów do Sejmu. Poleceniem `https://api-v3.mojepanstwo.pl/dane/poslowie` pobrać listę posłów.
 
-Między innymi udostępnia kopię Banku Danych Lokalnych. Poleceniem `search` można wyszukiwać tabele z odpowiednimi danymi.
-
-https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie
-
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
-url <- 'https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie'
+```{r, warning=FALSE, message=FALSE}
+url <- 'https://api-v3.mojepanstwo.pl/dane/poslowie?limit=500'
 document <- rjson::fromJSON(file=url, method='C')
 
-tematy <- sapply(document[[1]], function(x) x$data$bdl_wskazniki.tytul)
-kody <- sapply(document[[1]], function(x) x$data$bdl_wskazniki.id)
-cbind(tematy, kody)
+ludzie <- sapply(document[[1]], function(x) x$data$ludzie.nazwa)
+kluby <- sapply(document[[1]], function(x) x$data$sejm_kluby.nazwa)
+urodzenie <- sapply(document[[1]], function(x) x$data$poslowie.data_urodzenia)
+glosy <- sapply(document[[1]], function(x) x$data$poslowie.liczba_glosow)
+head(data.frame(ludzie, kluby, urodzenie, glosy))
 ```
 
-# API bez autoryzacji
-
-Poleceniem `series` można pobierać dane o określonej serii danych.
-
-https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776
-
-```{r, warning=FALSE, message=FALSE, eval=FALSE}
-url <- "https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776"
-document <- rjson::fromJSON(file=url, method='C')
-
-lista <- document[[1]][[1]]$series
-vrok <- sapply(lista, function(x) x$year)
-vwal <- sapply(lista, function(x) x$value)
-cbind(vrok, vwal)
-
-library(ggplot2)
-qplot(as.numeric(vrok), as.numeric(vwal), geom="line")
-```
 
 # Streaming API dla Twittera
 
