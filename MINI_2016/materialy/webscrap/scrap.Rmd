@@ -45,7 +45,7 @@ head(dane)
 
 Dane nie mają struktury i takimi je chcemy odczytać.
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
 # http://www.gutenberg.org/ebooks/103
 # http://www.gutenberg.org/cache/epub/103/pg103.txt
 
@@ -112,9 +112,10 @@ Użyteczne funkcje:
 
 ```{r, warning=FALSE, message=FALSE}
 library(rvest)
-gazeta <- html("http://gazeta.pl")
-cast <- html_nodes(gazeta, "span.title")
-html_text(cast)
+gazeta <- read_html("http://o2.pl")
+cast <- html_nodes(gazeta, "a")
+head(html_text(cast))
+head(html_attr(cast, "href"))
 ```
 
 # Jak znajdować uchwyty CSS
@@ -123,7 +124,7 @@ Używając gadgetSeelctor można łatwo określić ścieżkę wyszukiwania w drz
 
 ```{r, warning=FALSE, message=FALSE}
 oskary <- html("http://www.filmweb.pl/oscary")
-filmy <- html_nodes(oskary, "#awardYearList .sep-comma a")
+filmy <- html_nodes(oskary, ".title")
 html_text(filmy)
 ```
 
@@ -152,8 +153,8 @@ https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie
 url <- 'https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki?q=bezrobocie'
 document <- rjson::fromJSON(file=url, method='C')
 
-tematy <- sapply(document, function(x) x$data$bdl_wskazniki.tytul)
-kody <- sapply(document, function(x) x$data$bdl_wskazniki.id)
+tematy <- sapply(document[[1]], function(x) x$data$bdl_wskazniki.tytul)
+kody <- sapply(document[[1]], function(x) x$data$bdl_wskazniki.id)
 cbind(tematy, kody)
 ```
 
@@ -161,10 +162,10 @@ cbind(tematy, kody)
 
 Poleceniem `series` można pobierać dane o określonej serii danych.
 
-http://api-v3.mojepanstwo.pl/bdl/series?metric_id=776
+https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776
 
 ```{r, warning=FALSE, message=FALSE, eval=FALSE}
-url <- "https://api-v3.mojepanstwo.pl/bdl/series?metric_id=776"
+url <- "https://api-v3.mojepanstwo.pl/dane/bdl_wskazniki/776"
 document <- rjson::fromJSON(file=url, method='C')
 
 lista <- document[[1]][[1]]$series
@@ -201,11 +202,10 @@ oauthKey <- "XXXXXXXXXXXXXXXXX"
 oauthSecret <- "XXXXXXXXXXXXXXXXX"
 
 # proces autoryzacji jest trzykrokowy
-paczka <- OAuthFactory$new(consumerKey = consumerKey, consumerSecret = consumerSecret, 
-    oauthKey = oauthKey, oauthSecret = oauthSecret,
-    requestURL = requestURL, accessURL = accessURL, authURL = authURL)
-
-paczka$handshake(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
+my_oauth <- OAuthFactory$new(consumerKey=consumerKey,
+                             consumerSecret=consumerSecret, 
+                             requestURL=requestURL, accessURL=accessURL, authURL=authURL)
+my_oauth$handshake(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl"))
 
 # zapiszemy dane tymczasowe do katalogu tmp
 setwd("~/tmp")
@@ -269,7 +269,4 @@ twListToDF(ut)
 
 # Zadanie
 
-Wybirz jeden portal informacyjny. 
-Sprawdź strukturę strony html.
-Pobierz informacje o artykułach za pomocą pakietu `rvest`.
-
+Wykorzystaj API Twittera aby sprawdzić co i kiedy i przez kogo mówiono na Twitterze o oskarach.
