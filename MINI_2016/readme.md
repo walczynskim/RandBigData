@@ -42,7 +42,7 @@ Obliczenia równoległe / masywne
 Plan spotka&#324; MINI PW:
 -------------------------
 
-* 29 II [scrapping, czytanie z API]
+* 29 II [scrapping, czytanie z API], linki do materiałów: http://bit.ly/21voO5h, http://bit.ly/1TMlCNM
 * 7 III [GitHub, Waffle, dplyr]
 * 14 III [knitr, praca z bazami danych], prezentacja projektu 1, faza 1
 * 21 III [shiny]
