@@ -1,6 +1,10 @@
 Zakres:
 -------
 
+Zanim zaczniemy
+
+http://goo.gl/forms/IxuatLQ0Av
+
 Celem tych zajęć nie jest poznanie konkretnego narzędzia czy techniki, ale:
 
 1. poznanie problemów, które pojawiają się przy pracy z dużymi danymi,
