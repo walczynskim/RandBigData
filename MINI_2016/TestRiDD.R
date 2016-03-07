@@ -1,1 +1,0 @@
-#Uczymy siê githuba
