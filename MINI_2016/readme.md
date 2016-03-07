@@ -44,13 +44,13 @@ Plan spotka&#324; MINI PW:
 
 * 29 II [scrapping, czytanie z API], linki do materiałów: http://bit.ly/21voO5h, http://bit.ly/1TMlCNM
 * 7 III [GitHub, Waffle, dplyr]
-* 14 III [knitr, praca z bazami danych], prezentacja projektu 1, faza 1
-* 21 III [shiny]
-* 4 IV [tworzenie pakietów z R], prezentacja projektu 1, faza 2
-* 11 IV [profilowanie, debugowanie kodu]
-* 18 IV [zrównoleglanie obliczeń], prezentacja projektu 1, faza 3 
+* 14 III [knitr, praca z bazami danych]
+* 21 III [shiny], prezentacja projektu 1, faza 1
+* 4 IV [tworzenie pakietów z R]
+* 11 IV [profilowanie, debugowanie kodu], prezentacja projektu 1, faza 2
+* 18 IV [zrównoleglanie obliczeń]
 
-* 25 IV [HPC + hydra]
+* 25 IV [HPC + hydra], prezentacja projektu 1, faza 3 
 * 9 V [open CPU]
 * 16 V [wyjazdowo], prezentacja projektu 2, faza 1 
 * 23 V [spark]
