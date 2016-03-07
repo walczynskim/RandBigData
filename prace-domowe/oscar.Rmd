@@ -1,0 +1,144 @@
+---
+title: "Praca domowa - Oscary"
+author: "Magdalena Mazurek"
+date: "5 marca 2016"
+output: html_document
+---
+
+```{r,echo=FALSE,results='hide',message=FALSE,warning=FALSE}
+
+library('dplyr')
+library('stringi')
+library('ggplot2')
+
+```
+
+
+#Dane
+Tweety pobrałam i zapisałam do pliku przy pomocy następującego kodu:
+```{r,eval=FALSE}
+tweets <- searchTwitter('oscar', n=100000, since='2016-02-28', until='2016-02-29', lang = 'en')
+   dftweets <- twListToDF(tweets)
+   write.csv(dftweets, oscar.csv)
+```
+Jak widać pobrałam 100000 tweet'ów tylko z zapytaniem o same oscary, tzn. `oscar`. Dodatkowo pobrałam tylko tweet'y w języku angielskim. Okazało się, że sa to tweety tylko z dwóch godzin:
+```{r,echo=FALSE,results='hide'}
+dane1<-read.csv("/home/magda/Dropbox/Magda/oscar.csv")
+
+dane11<-arrange(dane1,created)
+dane<-dane11
+dane[,1]<-seq(1,length(dane11[,1]))
+```
+```{r}
+min(levels(dane[,6]))
+max(levels(dane[,6]))
+```
+
+#Statystyki
+
+Zobaczmy, który tweet dostał najwięcej polubień.
+```{r}
+favorite<-dane[,4]
+max(favorite)
+```
+Sprawdźmy, co to był za tweet.
+```{r}
+dane[which.max(favorite),2]
+```
+Użytkownik, który dodał ten tweet jest jednym z bardziej znanych youtube'rów, więc nie dziwi ilość polubień.
+
+Zobaczmy na pozostałe tweety i ich polubienia.
+```{r}
+ggplot(dane[dane[,4]>50,],aes(x=X,y=favoriteCount))+
+   geom_point(col="limegreen",show.legend = FALSE)+
+   geom_text(aes(label=ifelse(favoriteCount>2000,X,'')),hjust=0.7, vjust=1.5,size=3)
+```
+
+Widać, że są tweet'y, których liczba polubień jest bardzo wysoka. Przyjrzyjmy się ich treści.
+```{r}
+dane[which(favorite>4000),2]
+```
+Dotyczą one aktora Leonarda Di Caprio. Zobaczmy wiec ile tweet'ów jest z nim zwiazanych.
+```{r}
+ile <- unlist(lapply(dane[,2],function(x){
+   stri_count_regex(as.character(x),"[Ll][Ee][Oo]")
+}))
+sum(ile!=0)
+```
+Połowa tweet'ów dotycze Leonardo, czyli można powiedzieć, że był on ulubieńcem "internetu".
+Spróbujmy dowiedzieć się czy reakcje odnośnie Leo były negatywne czy pozytywne. W tym celu wczytamy słowniki ze slowami pozytywnymi oraz negatywnymi i zliczymy dla każdego tweet'a ilość słów pozytywnych i negatywnych. Zajmiemy się tylko tymi tweet'ami, które nie były retweet'owane.
+```{r}
+slownik_neg<-read.table("/home/magda/RiBD/negative-words.txt",skip=35)
+slownik_pos<-read.table("/home/magda/RiBD/positive-words.txt",skip=35)
+
+leo<-dane[ile!=0 & dane[,14]==FALSE,1:2]
+
+ile_pos_neg<-sapply(as.character(leo[,2]), function(y){
+   tweet_slowa<-unlist(stri_extract_all_words(y))
+   wydzwiek_lista<-lapply(tweet_slowa, function(z){ 
+      if ( z %in% slownik_neg[,1] ) return(-1) else {
+         if ( z %in% slownik_pos[,1] ) return(1) else return (0) } 
+      })
+   wydzwiek<-unlist(wydzwiek_lista)
+   ile<-c(sum(wydzwiek>0),sum(wydzwiek<0))
+})
+ile_pos_neg2<-t(as.matrix.data.frame(ile_pos_neg,dimnames=list(1:2,seq(1,length(leo[,1])))))
+
+leo_wydzwiek<-cbind(leo,ile_pos_neg2)
+
+ile_neu<-sum(leo_wydzwiek[,3]==leo_wydzwiek[,4])
+ile_p<-sum(leo_wydzwiek[,3]>leo_wydzwiek[,4])
+ile_neg<-sum(leo_wydzwiek[,3]<leo_wydzwiek[,4])
+
+print(c(ile_neg,ile_neu,ile_p))
+
+```
+Okazuje się, że tweet'ów dla ktorych mamy tą samą liczbę negatywnych i pozytywnych wyrazów jest 4932, tweet'ów z większą liczbą wyrazów pozytywnych jest 7581, natomiast z większą liczbą wyrazów negatywnych jest 1043.
+
+Teraz zobaczmy jak w czasie rozkładała sięliczba dodawanych tweet'ów. Zobaczymy liczbę tweet'ów wstawianych co sekundę.
+
+```{r}
+czas<-dane[,6]
+licznosci<-table(czas)
+punkty<-matrix(0,nrow=length(licznosci),ncol=2)
+punkty[,1]<-table(czas)
+punkty[,2]<-seq(1,length(licznosci))
+colnames(punkty)<-c("y","x")
+punkty2<-as.data.frame(punkty)
+
+ggplot(punkty2[punkty2[,1]>20,],aes(x=x,y=y))+
+   geom_point(col="limegreen",show.legend = FALSE)
+
+(licznosci[6900])
+
+```
+
+Zobaczmy jeszcze na liczbę tweet'ów, które nie były retweet'owane, wstawianych co sekundę.
+
+```{r}
+
+dane2<-dane[dane[,14]==FALSE,]
+czas2<-dane2[,6]
+licznosci2<-table(czas2)
+punkt3<-as.data.frame(licznosci2)
+nr<-seq(1,length(licznosci2))
+punkt4<-cbind(punkt3,nr)
+
+ggplot(punkt4,aes(x=nr,y=Freq))+
+   geom_point(col="limegreen",show.legend = FALSE)
+```
+
+Widać, że dwa piki, które były widoczne na poprzednim wykresie zniknęły. Po przejrzeniu danych okazało się, że były to dwa tweet'y o bardzo dużej liczbie retweet'owań (i oczywiśćie dotyczyły Leo).
+
+```{r}
+as.character(dane[55489,2])
+as.character(dane[96875,2])
+```
+
+
+
+
+
+
+
+
