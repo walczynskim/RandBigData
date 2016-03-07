@@ -1,2 +1,0 @@
-Nazwa zespołu
-Skład zespołu
