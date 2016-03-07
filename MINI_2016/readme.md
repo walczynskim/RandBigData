@@ -45,7 +45,8 @@ Plan spotka&#324; MINI PW:
 * 29 II [scrapping](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_zeskrobywac_dane_ze_stron_www_uzywajac_pakietu.html), [czytanie z API](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pobierac_dane_z_twittera.html), 
 * 7 III [GitHub](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html), [Waffle](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_korzystac_z_serwisu_waffle.html), [dplyr](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html)
 * 14 III [knitr, praca z bazami danych]
-* 21 III [shiny], prezentacja projektu 1, faza 1
+* 21 III [shiny], 
+* 22 III [prezentacja projektu 1, faza 1, zamiast zajęć czwartkowych]
 * 4 IV [tworzenie pakietów z R]
 * 11 IV [profilowanie, debugowanie kodu], prezentacja projektu 1, faza 2
 * 18 IV [zrównoleglanie obliczeń]
@@ -86,12 +87,15 @@ Więcej informacji na zajęciach.
 Ocena:
 ------
 
-Pierwszy etap jest oceniany w skali 0-15, drugi 0-20, trzeci 0-25.
+Każdy projekt jest oceniany w skali 0-60 punktów.
+Pod uwagę brane są trzy aspekty:
+
+* inżynierska jakość kodu R, techniczne rozwiązania, pokonywanie ograniczeń dotyczących ilości danych,
+* pomysłowość i zaawansowanie metod modelowania danych,
+* sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
 
 Prace domowe:
 -------------
 
-Prace domowe są nieobowiązkowe.
-Reguły punktacji prac zostaną ustalane na zajęciach.
-Każda zgłoszona praca domowa otrzyma informację zwrotną.
-
+Prace domowe są nieobowiązkowe. 
+Punkty za prace domowe to punkty dodatkowe, dodawane do punktów z projektów.
