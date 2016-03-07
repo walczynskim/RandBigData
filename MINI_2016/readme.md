@@ -1,7 +1,7 @@
 Zakres:
 -------
 
-Zanim zaczniemy
+Zanim zaczniemy:
 
 http://goo.gl/forms/IxuatLQ0Av
 
