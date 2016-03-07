@@ -66,13 +66,22 @@ Projekty mogą być realizowane w grupach od 2 do 4 osób. Te same osoby nie mog
 Projekty będą przedstawiane na zajęciach (terminy wypisane powyżej). Należy je zgłosić przez GitHuba przed prezentacją. 
 Projekty, które nie będą zaprezentowane nie zostaną ocenione.
 
-1. Projekt 'Scrapping i analiza tekstu'
+1. Projekt 'Centrum Nauki Kopernik'
+
+Faza 1: 
+Dla wybranych stacji (jednej lub więcej) przygotować charakterystykę jak wygląda interakcja z daną stacją. Jaki jest rozkład czasów korzystania z tej stacji, jak wygląda on w różnych godzinach / dniach. Podsumowanie działania poszczególnej stacji.
+Wyniki tej eksploracji przedstawić na jednym plakacie formatu A3. 
+Plakat można wykonać w dowolnym narzędziu (R / ggplot2 / knitr / inkscape / word).
+Wersję elektroniczną należy umieścić na GitHub.
+Wydrukowany (!) plakat przynieść 22 marca na prezentacje pierwszej fazy.
+Prezentacje będą miały miejsce w CNK 22 marca w godzinach 14.15 - 15.45 
+(zalecane jest przyjście na cały ten okres, aby obejrzeć stacje i porozmawiać o kolejnych etapach,
+ale można też na wybrane pół godizny z tego przedziału).
+
+2. Projekt 'Scrapping i analiza tekstu'
 
 Więcej informacji na zajęciach.
 
-2. Projekt 'Centrum Nauki Kopernik'
-
-Więcej informacji na zajęciach.
 
 Ocena:
 ------
