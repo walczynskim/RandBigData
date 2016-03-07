@@ -1,0 +1,82 @@
+---
+title: "Analiza tweetów dotycz¹sych oskaróW"
+author: "Micha³ Muck"
+date: "6 marca 2016"
+output: html_document
+---
+
+#Obróbka danych
+
+Obróbka danych polega³a na wybraniu ze wszystkich tweetów, te zawieraj¹ce s³owo oskar. 
+```{r, warning=FALSE, message=FALSE}
+library(stringi)
+library(dplyr)
+tweets=read.csv2("C:\\Users\\Dom\\Documents\\R\\DataiR\\tweetList.csv",header = T,sep = ",")
+head(tweets)
+tweets=tweets[unlist(stri_detect_regex(tweets[,2], "oscar", case_insensitive=TRUE)),]
+```
+Nastêpnie próbowa³em usun¹æ linki które koñczy³y niektóre tweety. Nie uda³o to siê do koñca z powodu backsleshy wystêpuj¹cych w treœcach niektórych tweetów.
+```{r}
+tw=unlist(stri_extract_all_regex(tweets[,2], "^.+(?=http)"))
+tw[is.na(tw)]=as.vector.factor(tweets[is.na(tw),2])
+tweets[,2]=tw
+```
+#Analiza
+
+##Top 10
+Na pocz¹tek treœæ dziesiêciu najczêœciej retweetowanych tweetów.
+```{r}
+top10=tweets %>% select(text, retweetCount) %>% group_by(text) %>% summarise(retweet=max(retweetCount)) %>% arrange(desc(retweet)) %>% head(10)
+```
+```{r, echo=FALSE}
+top10[,1]
+top10[,2]
+```
+
+## Wyrazy - top 100 
+Zrobi³em zestawienie czêstoœci wyspowania poszczególnych s³ów. Aby unikn¹æ przyimków, zimków itp. wybra³em tylko s³owa o d³ugoœci przekraczaj¹cej 3. Oto 20 najczêœciej powtarzaj¹cych siê s³ów wraz z liczb¹ ich wyst¹pieñ.
+```{r}
+words=unlist(stri_extract_all_words(tweets[,2]))
+words=tolower(words)
+ferqu=table(words)
+ferqu=ferqu[stri_length(names(ferqu))>3]
+ferqu=ferqu[order(ferqu,decreasing = T)]
+ferqu[1:100]
+```
+
+## Wyrazy z popularnych tweetów
+Tutaj podobnie wyselekcjonowa³em wyrazy wraz z czêstoœci¹ ich wystêpowania, ale wybra³em je tylko z tweetów, które by³y co najmniej 1001 razy retweetowane.
+```{r}
+besttweets=tweets %>% filter(retweetCount>1000)
+bestwords=unlist(stri_extract_all_words(besttweets[,2]))
+bestwords=tolower(bestwords)
+frequbest=table(bestwords)
+frequbest=frequbest[stri_length(names(frequbest))>3]
+frequbest=frequbest[order(frequbest,decreasing = T)]
+frequbest[1:100]
+```
+
+## Hashtagi
+Wyszuka³em równie¿ hashtagi i równie¿ dla niech zrobi³em zestawienie jak czêsto siêpowtarza³y.
+```{r}
+hashtags=unlist(stri_extract_all_regex(tweets[,2], "#[\\p{L}\\p{N}]+"))
+hashtags=hashtags[is.na(hashtags)==FALSE]
+hashtags=hashtags[!stri_detect_regex(hashtags, "oscar", case_insensitive=TRUE)]
+hashfrequ=table(hashtags)
+hashfrequ=hashfrequ[order(hashfrequ, decreasing = T)]
+hashfrequ[1:100]
+```
+
+## Hashtagi z popularnych tweetów
+
+```{r}
+besthashtags=unlist(stri_extract_all_regex(besttweets[,2], "#[\\p{L}\\p{N}]+"))
+besthashtags=besthashtags[is.na(besthashtags)==FALSE]
+besthashtags=besthashtags[!stri_detect_regex(besthashtags, "oscar", case_insensitive=TRUE)]
+besthashtags
+```
+```{r}
+besthashfrequ=table(besthashtags)
+besthashfrequ=besthashfrequ[order(besthashfrequ, decreasing = T)]
+besthashfrequ
+```
