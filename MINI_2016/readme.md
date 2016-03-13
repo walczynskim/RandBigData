@@ -44,7 +44,7 @@ Plan spotka&#324; MINI PW:
 
 * 29 II [scrapping](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_zeskrobywac_dane_ze_stron_www_uzywajac_pakietu.html), [czytanie z API](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pobierac_dane_z_twittera.html), 
 * 7 III [GitHub](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html), [Waffle](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_korzystac_z_serwisu_waffle.html), [dplyr](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/czyscic_przetwarzac.html)
-* 14 III [knitr, praca z bazami danych]
+* 14 III [knitr](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_raporty.html), [praca z bazami danych](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pracowac_z_bazami_danych.html)
 * 21 III [shiny], 
 * 22 III [prezentacja projektu 1, faza 1, zamiast zajęć czwartkowych]
 * 4 IV [tworzenie pakietów z R]
