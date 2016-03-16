@@ -1,0 +1,489 @@
+---
+title: "Praca Domowa 2 - CNK - liczba unikalnych uzytkownikow (R i Big Data)"
+author: "Ewa Baranowska"
+date: "14 marca 2016"
+output: html_document
+---
+
+#### Przerabialam pliki .log z uzyciem pakietu parallel, starajac sie napisac kolejne kroki jako w miare oddzielone etapy, tak by moc je odtworzyc, bez potrzeby powtarzania poprzednich (tj. kilkukrotnie przerabialam pliki z danymi, tworzylam nowe pliki etc.). 
+
+#####Czesc etapow jest czasochlonna, wiec podalam jedynie kod i  osiagniety czas, bez wywolywania ich ponownie na uzytek tego raportu.
+
+## Przetwarzanie logow do .csv z kolumnami: month, day, visitor
+
+```{r, warning=FALSE, message=FALSE, eval=F}
+
+#zapisuje miejsce z danymi
+sciezka_do_danych <- file.path("C:/Users/E540/Desktop/SMAD/R i Big Data/Projekt 1/2013")
+
+#jesli ten folder istnieje (mamy dane) to przechodzimy dalej 
+if(dir.exists(sciezka_do_danych)){
+   
+   czas <- Sys.time() # zapisujemy czas by sprawdzic efektywnosc kodu
+   
+   # tworzymy wektor z lista miesiecy (folderow w folderze 2013)
+   foldery_mies <- list.dirs(sciezka_do_danych,full.names = F, recursive = F)
+   
+   # tworzymy wektor wszystkich folderow w folderach z miesiacami (tj. docelowo wektor nazw urzadzen)
+   sciezka_do_miesiac <- character(1)
+   urzadzenia <- character(0)
+   
+   for(miesiac in foldery_mies){
+      # z danego miesiaca wybieram urzadzenia
+      sciezka_do_miesiac <- file.path(sciezka_do_danych, miesiac)
+      urzadzenia_tmp <- list.dirs(sciezka_do_miesiac, full.names = F, recursive = F)
+      # dodaje wszystkie unikalne nazwy do nazw urzadzen
+      if(!setequal(urzadzenia, urzadzenia_tmp)){
+         urzadzenia <- union(urzadzenia, urzadzenia_tmp)
+      }
+   }
+   # zostawiamy w tym wektorze tylko nazwy typu "cnk...""
+   library(stringi)
+   urzadzenia_tylko <- as.character(na.omit(stri_extract_first_regex(urzadzenia, pattern = "cnk[\\p{N}\\p{L}]*")))
+   
+   # zakladam, ze unikalny uzytkownik to (rok,miesiac,dzien)=data + numer_karty, tj. unikalny u¿ytkownik to taki, 
+   # który mial jednoczesnie rozna date i numer karty
+   
+   #lacze argumenty w forme "01:cnk02a"
+   ile_urzadzen <- length(urzadzenia_tylko)
+
+   miesiac_urzadzenie <- data.frame(A = rep(foldery_mies, rep(ile_urzadzen, length(foldery_mies))),
+                               B = rep(urzadzenia_tylko,length(foldery_mies)), stringsAsFactors = F)
+   
+   miesiac_urzadzenie<- with(miesiac_urzadzenie, paste0(A,":", B))
+   
+   
+   
+   # uzywam pakietu parallel do jednoczesnego przetwarzania skryptu na wielu rdzeniach
+   library(parallel)
+   
+   ile_rdzeni <- detectCores() - 1 # jeden mniej, bym mogla robic cos przy okazji puszczania skryptu
+   klaster <-makeCluster(ile_rdzeni)
+   
+   # dodajemy zmienne i pakiety, ktore sa "zewnetrzne"
+   clusterExport(klaster, c("sciezka_do_danych", "miesiac_urzadzenie"))
+   clusterEvalQ(klaster, library(stringi))
+   
+   # paralelna wersja lapply
+   parLapply(klaster, miesiac_urzadzenie, function(x){
+      
+      miesiac <- unlist(stri_split_fixed(x,":"))[1]
+      urzadzenie <- unlist(stri_split_fixed(x,":"))[2]            
+                   
+      folder_do_zapisu <- file.path("C:/Users/E540/Desktop/SMAD/R i Big Data/PD2",urzadzenie,miesiac)
+      if( !dir.exists(folder_do_zapisu) ){
+         dir.create(folder_do_zapisu, recursive = T)
+      }
+                   
+         # w niektorych miesiacach nie ma pewnych maszyn
+         sciezka_konkretna <- file.path(sciezka_do_danych, miesiac, urzadzenie, paste(urzadzenie,".log", sep="", collapse = ""))
+         if( file.exists(sciezka_konkretna) ){
+                      
+            # wczytanie danych
+            raport <- readLines(sciezka_konkretna)
+            # wybor wiersza z numerem visitora
+            regex <- paste("([\\p{L}]{3}) ([\\p{N}]{2}| [\\p{N}]{1}) (?:.+) hostname=",urzadzenie,
+                           " INFO: APP/cnklib Added visitor (.+) to session (?:.+)", sep="", collape="")
+                      
+            string <- stri_match_first_regex(raport, pattern = regex)
+            string <- string[!is.na(string[,1]),c(2,3,4)] # wybieram tylko niepuste
+                      
+            # jesli dane urzadzenie mialo jakichs zarejestrowanych uzytkownikow to przetwarzam dalej, jak nie to zapisuje to w 
+            # pliku z bledami
+            if( length(string) > 0 ){
+               string <- as.data.frame(string)
+               colnames(string) <- c("month", "day", "visitor")
+               #zapisuje csv w folderze w PD2/urzadzenie_miesiac.csv
+               write.csv(string, file = file.path(folder_do_zapisu,paste(urzadzenie,'_',miesiac,".csv", collapse = "",sep="")),
+                         row.names = F)
+            }else{
+                  uwaga <- paste("Dla urzadzenia", urzadzenie, "w miesiacu", miesiac, "nie ma uzytkownikow")
+                  write(uwaga, file = file.path("C:/Users/E540/Desktop/SMAD/R i Big            Data/PD2/brak_uzytkownikow.txt"),  append=T)
+                  }
+                      
+         }
+                   
+                   
+   } 
+                
+   )
+      
+   
+   stopCluster(klaster)
+   
+   print(Sys.time() - czas)
+}
+
+#Time difference of 12.7919 mins
+
+# UWAGI:
+# wyczyscic te pliki z bledami, bo sie nadpisuja
+# usuwac w parallel zbedne zmienne na biezaco
+# niepotrzebnie tworzylam foldery w urzadzeniach, 01, 02 - i tak mam nazwy odpowiednie plikow
+```
+
+## Przetwarzanie uzyskanych .csv do plikow z suma unikalnych uzytkownikow wg urzadzen
+
+```{r, warning=FALSE, message=FALSE, eval=F}
+
+czas <- Sys.time()
+
+sciezka_do_tabel <- file.path("C:/Users/E540/Desktop/SMAD/R i Big Data/PD2")
+sciezka_zapisu <- file.path(sciezka_do_tabel,"analizy")
+
+if(!dir.exists(sciezka_zapisu)){
+   dir.create(sciezka_zapisu, recursive = T)
+}else{ # usuwa pliki z folderu przed analiza
+   do.call(file.remove, list(list.files(sciezka_zapisu, full.names = T)))
+}
+
+
+library(parallel)
+
+ile_rdzeni <- detectCores() - 1
+klaster <-makeCluster(ile_rdzeni)
+
+clusterExport( klaster, c("sciezka_do_tabel","sciezka_zapisu",  "miesiac_urzadzenie") )
+clusterEvalQ( klaster, c(library(stringi),library(dplyr)) )
+
+parLapply(klaster, miesiac_urzadzenie, function(x){
+   
+   miesiac <- unlist(stri_split_fixed(x,":"))[1]
+   urzadzenie <- unlist(stri_split_fixed(x,":"))[2]            
+
+   #wczytujemy odpowiedni plik .csv
+   sciezka_z_csv <- file.path(sciezka_do_tabel,urzadzenie,miesiac,paste(urzadzenie,"_", miesiac, ".csv", sep=""))
+   
+   if(file.exists(sciezka_z_csv)){
+      
+      dane <- read.csv(sciezka_z_csv, sep=",", stringsAsFactors = F, header = T)
+
+      dane %>% group_by(month, day, visitor) %>% filter(row_number() == 1) %>% # unikalne jednostki
+         group_by(month, day) %>% mutate(count = n()) %>% filter(row_number() == 1) %>%
+         select(-visitor) -> policzone_dane #zliczanie wystapien w dniu miesiaca
+      
+      # gdzie zapisac raport podsumowujacy dla urzadzenia
+      sciezka_raportu <- file.path(sciezka_zapisu,paste(urzadzenie,"_podsumowanie.csv", sep=""))
+   
+      
+      # jesli plik nie istnieje to dajemy colnames i nie nadpisujemy (bo nie ma czego)
+      if(!file.exists(sciezka_raportu)){
+         
+         write.table(policzone_dane, file= sciezka_raportu, sep=",", row.names = F,append=F) #write.csv nie ma opcji append
+         
+      }else{
+         
+         write.table(policzone_dane, file= sciezka_raportu, sep=",", row.names = F,append=T, col.names = F) 
+            
+         
+      }
+      
+   }  
+   
+}  )
+
+stopCluster(klaster)
+
+print(Sys.time() - czas)
+
+#Time difference of 28.86868 secs
+
+# robie calosciowy plik z podsumowaniami, zwyklym forem, na podstawie przed chwila uzyskanych plikow .csv
+
+czas <- Sys.time()
+
+library(dplyr)
+
+for(urzadzenie in urzadzenia_tylko){
+   
+   sciezka_z_podsumowaniem <- file.path(sciezka_zapisu,paste(urzadzenie,"_podsumowanie.csv", sep=""))
+   
+   if(file.exists(sciezka_z_podsumowaniem)){
+      
+      dane <- read.csv(sciezka_z_podsumowaniem, sep=",", stringsAsFactors = F, header = T)
+      
+      dane %>% mutate(device = urzadzenie) -> policzone_dane #dodajemy kolumne z nazwa urzadzenia
+      
+      # jeden plik wyjsciowy
+      sciezka_raportu_calosc <- file.path(sciezka_zapisu,paste("calosc_podsumowanie.csv", sep=""))
+      
+      if(!file.exists(sciezka_raportu_calosc)){
+         
+         write.table(policzone_dane, file= sciezka_raportu_calosc, sep=",", row.names = F,append=F)
+         
+      }else{
+         
+         write.table(policzone_dane, file= sciezka_raportu_calosc, sep=",", row.names = F,append=T, col.names = F) 
+         
+         
+      }
+      
+   }  
+   
+}
+
+print(Sys.time() - czas) 
+
+#Time difference of 0.4076009 secs
+
+#UWAGI:
+# append nadpisuje plik - moga pojawic sie problemy w zapisie (zle formaty, nachodzenie na siebie linijek)
+# dlatego lepiej raz otworzyc plik i zapisac w nim duzy obiekt R-owy (patrz nastepny etap)
+```
+
+## Przetwarzanie uzyskanych .csv do plikow z unikalnymi uzytkownikami w kazdym dniu (nie rozrozniam do ktorej maszyny podszedl danego dnia)
+
+```{r, warning=FALSE, message=FALSE, eval=F}
+
+czas <- Sys.time()
+
+library(parallel)
+
+ile_rdzeni <- detectCores() - 1
+klaster <-makeCluster(ile_rdzeni)
+
+lista <- vector(mode="list", length=0) #do zebrania danych w jeden obiekt
+
+clusterExport(klaster, c("sciezka_do_tabel","sciezka_zapisu",  "miesiac_urzadzenie", "lista"))
+clusterEvalQ(klaster, c(library(stringi),library(dplyr)))
+
+# przypisuje wynik parLapply do zmiennej, ktora potem wyeksportuje
+wynik <- parLapply(klaster, miesiac_urzadzenie, function(x){
+   
+   miesiac <- unlist(stri_split_fixed(x,":"))[1]
+   urzadzenie <- unlist(stri_split_fixed(x,":"))[2]    
+   
+   sciezka_z_csv <- file.path(sciezka_do_tabel,urzadzenie,miesiac,paste(urzadzenie,"_", miesiac, ".csv", sep=""))
+   
+   if(file.exists(sciezka_z_csv)){
+      dane <- read.csv(sciezka_z_csv, sep=",", stringsAsFactors = F, header = T)
+      
+      # biore unikalne wiersze tj w danym dniu raz tylko dany uzytkownik na danej maszynie
+      dane %>% group_by(month, day, visitor) %>% filter(row_number() == 1) %>% mutate(device = urzadzenie) -> policzone_dane 
+
+   }  
+   
+}  )
+
+
+sciezka_raportu <- file.path(sciezka_zapisu,"calosc_unikalne.csv")
+wynik <- do.call(args = wynik, what=rbind)
+write.csv(wynik, file= sciezka_raportu, row.names = F)
+
+stopCluster(klaster)
+
+print(Sys.time() - czas)
+
+#Time difference of 50.25738 secs
+```
+
+## Ostateczna obrobka danych i analiza
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+sciezka_do_tabel <- file.path("C:/Users/E540/Desktop/SMAD/R i Big Data/PD2")
+sciezka_zapisu <- file.path(sciezka_do_tabel,"analizy")
+
+
+# zmieniam format lokalny czasu, by R poprawnie czytal skroty Feb, Dec
+lct <- Sys.getlocale("LC_TIME")
+Sys.setlocale("LC_TIME", "C")
+#Sys.setlocale("LC_TIME", lct) wracam do swojej strefy czasowej
+
+sciezka_raportu_calosc <- file.path(sciezka_zapisu,paste("calosc_podsumowanie.csv", sep=""))
+
+dane <- read.csv(sciezka_raportu_calosc, stringsAsFactors = F)
+
+library(dplyr)
+
+cat("suma uzytkownikow dla poszczegolnych urzadzen w ciagu ca³ego roku")
+
+dane %>% group_by(device) %>% mutate( suma = sum(count)) %>% filter(row_number() == 1) %>%
+   select(device,suma) -> df_suma_urzadzenia
+
+plot(df_suma_urzadzenia$suma, main = "Wykres ilosci uzytkownikow poszczegolnych urzadzen \n w ciagu roku 2013",
+     xlab="", ylab="liczba uzytkownikow")
+text(df_suma_urzadzenia$suma,df_suma_urzadzenia$device, row.names(mtcars), cex=0.6, pos=4, col="red")
+
+summary(df_suma_urzadzenia$suma)
+```
+
+#####Z wykresu i podsumowania widac ¿e 
+   a) mamy 2 obserwacje o wyjatkowo niskiej liczbie uzytkownikow (cnk36 i cnk 63a) - zbadamy powod takiej sytuacji
+   b) po wykluczeniu tych 2 obserwacji najnizsza liczba uzytkownikow charakteryzuje sie cnk44, a najwyzsza cnk19a - przyjrzymy sie tym 2 urzadzeniom blizej
+   c) wiekszosc obserwacji wpada w pas od 20 000 unikalnych uzytkownikow w ciagu roku do 60 000 uzytkownikow - mediana dla wszystkich danych wynosi 40 880, a srednia 43 490 (podniesiona zapewne przez odstajaca obserwacje cnk19a)
+   
+```{r, warning=FALSE, message=FALSE, eval=T}
+
+# 2 odstajace obserwacje z niskimi wartosciami
+
+cat("suma dla cnk36 - nazwa skryptu pythonowego: sociograms.py")
+dla_cnk36 <- df_suma_urzadzenia[df_suma_urzadzenia$device == c("cnk36"),]
+dla_cnk36
+
+cat("przyjrzyjmy sie kiedy te urzadzenia byly uzytkowane")
+
+# odfiltrujemy wszystkie daty, w ktorych bylo to urzadzenie uzywane
+dane %>% filter(device =="cnk36") %>% mutate(date = as.Date(paste("2013",month, day), format="%Y %b %e")) %>%
+   select(date, count) -> df_cnk36
+cat("liczba dni uzytkowania w ciagu roku")
+nrow(df_cnk36)
+
+cat("urzadzenie bylo uzytkowane 9 dni w roku, przyjrzyjmy sie kiedy to bylo i czy rozklad liczby uzytkownikow jest rownomierny")
+
+plot(df_cnk36$count, xaxt="n", xlab="data", ylab="liczba uzytkownikow",yaxt="n",col="blue", pch=20, cex=3, type="l")
+axis(2,at=1:12)
+axis(1, at=1:nrow(df_cnk36), labels = format(df_cnk36$date,"%b %d"))
+```
+
+#####Jak widac poza 16 lutym 2013 (sobota), liczba uzytkownikow jest bardzo mala (moze warto spojrzec na ten dzien w innych analizach, dla malych liczb), urzadzenie bylo uzywane czesto 1-krotnie w ciagu dnia, a na przestrzeni calego roku, tylko pare dni w styczniu i lutym (wycofanie urzadzenia pozniej?, zmiana ustawien na brak rejestracji karty uzytkownika?)
+
+#####To samo zrobmy dla cnk63a , skrypt: messagetoothercivilisations.py
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+
+# suma dla cnk63a
+dla_cnk63a <- df_suma_urzadzenia[df_suma_urzadzenia$device == c("cnk63a"),]
+dla_cnk63a
+
+# przyjrzyjmy sie kiedy te urzadzenie bylo uzytkowane
+# odfiltrujemy wszystkie daty, w ktorych bylo to urzadzenie uzywane
+dane %>% filter(device =="cnk63a") %>% mutate(date = as.Date(paste("2013",month, day), format="%Y %b %e")) %>%
+   select(date, count) %>% arrange(date) -> df_cnk63a
+cat("liczba dni uzytkowania w ciagu roku")
+nrow(df_cnk63a)
+
+# urzadzenie bylo uzytkowane 42 dni w roku, przyjrzyjmy sie kiedy to bylo i czy rozklad liczby uzytkownikow jest rownomierny
+
+plot(df_cnk63a$count, xaxt="n", xlab="Data", ylab="liczba uzytkownikow", col="blue", pch=20, cex=3, type="l")
+axis(1, at=1:nrow(df_cnk63a), labels = format(df_cnk63a$date,"%b %d"), las=2)
+```
+
+##### Jak widac urzadzenie bylo wykorzystywane tylko w dniach od 1 stycznia 2013 do 17 lutego 2013, przy czym ilosc uzytkownikow zwiekszala sie wraz z czasem.Warto zauwazyc ze co tydzien wystepowaly dwa dni zwiekszonej liczby uzytkownikow, tj w sob i w ndz, czego mozna bylo sie oczywiscie spodziewac.
+
+##### Po wykluczeniu tych 2 obserwacji najnizsza liczba uzytkownikow charakteryzuje sie cnk44, a najwyzsza cnk19a - przyjrzymy sie tym 2 urzadzeniom blizej.
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+
+# suma dla min tego bez odstaj¹cych - cnk44 (migrations.py)
+dla_cnk44 <- df_suma_urzadzenia[df_suma_urzadzenia$device == c("cnk44"),]
+dla_cnk44
+
+# przyjrzyjmy sie kiedy te urzadzenia byly uzytkowane
+
+# odfiltrujemy wszystkie daty, w ktorych bylo to urzadzenie uzywane
+dane %>% filter(device =="cnk44") %>% mutate(date = as.Date(paste("2013",month, day), format="%Y %b %e")) %>%
+   select(date, count)  %>% arrange(date) -> df_cnk44
+
+# liczba dni uzytkowania w ciagu roku
+nrow(df_cnk44)
+
+#do etykiet
+ile <- 14
+co_ktora <- ceiling(nrow(df_cnk44)/ile)
+etykiety <- df_cnk44$date[seq(1,nrow(df_cnk44),by = co_ktora)]
+
+plot(df_cnk44$count, xlab="Data", xaxt='n',ylab="liczba uzytkownikow",col="blue", pch=20, cex=3, type="l")
+axis(1, at=seq(1,nrow(df_cnk44),by = co_ktora), labels = format(etykiety,"%b %d"))
+
+summary(df_cnk44$count)
+```
+
+##### Maksymalna ilosc uzytkownikow dla cnk44 to 124, a te wartosci oscylowalu kolo 62 (srednia, mediana), zatem œrednio ta maszyna jest s³abo (rzecz wzglêdna) u¿ytkowana przez rózne osoby w ciagu dnia.
+
+##### Sprawdzmy w jakie dni tygodnia bylo najwiecej i najmniej uzytkownikow.
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+head(df_cnk44[order(df_cnk44$count),],6)
+maxy <- tail(df_cnk44[order(df_cnk44$count),],6)
+
+weekdays(maxy$date)
+
+cat("3 najwieksze liczby sa 16 marca, 24 sierpnia i 23 lutego, s¹ to weekendy")
+
+# suma dla MAX z wszystkich urzadzen - cnk19a (clientstresseffects.py)
+
+dla_cnk19a <- df_suma_urzadzenia[df_suma_urzadzenia$device == c("cnk19a"),]
+dla_cnk19a
+
+# przyjrzyjmy sie kiedy te urzadzenie byly uzytkowane
+
+# odfiltrujemy wszystkie daty, w ktorych bylo to urzadzenie uzywane
+dane %>% filter(device =="cnk19a") %>% mutate(date = as.Date(paste("2013",month, day), format="%Y %b %e")) %>%
+   select(date, count)  %>% arrange(date) -> df_cnk19a
+
+# liczba dni uzytkowania w ciagu roku
+nrow(df_cnk19a)
+
+# urzadzenie bylo uzytkowane 308 dni w roku, przyjrzyjmy sie kiedy to bylo i czy rozklad liczby 
+# uzytkownikow jest rownomierny
+
+ile <- 14
+co_ktora <- ceiling(nrow(df_cnk19a)/ile)
+etykiety <- df_cnk19a$date[seq(1,nrow(df_cnk19a),by = co_ktora)]
+
+plot(df_cnk19a$count, xlab="Data", xaxt='n',ylab="liczba uzytkownikow",col="blue", pch=20, cex=3, type="l")
+axis(1, at=seq(1,nrow(df_cnk19a),by = co_ktora), labels = format(etykiety,"%b %d"))
+
+summary(df_cnk19a$count)
+```
+##### Maksymalna ilosc uzytkownikow dla cnk19a (tej max) to 784, a te wartsci oscylowalu kolo 440 (srednia - 425.6, mediana - 448.5), zatem œrednio ta maszyna jet czêsto (rzecz wzglêdna) u¿ytkowana przez rózne osoby w ciagu dnia.
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+
+miny <- head(df_cnk19a[order(df_cnk19a$count),],6)
+
+# dni o malej liczbie uzytkownikow
+weekdays(miny$date) # w pon ma³e liczebnosci (zamkniete cnk)
+
+maxy <- tail(df_cnk44[order(df_cnk44$count),],6)
+
+# dni o duxej liczbie uzytkownikow
+weekdays(maxy$date) # w weekendy najwiecej osob
+```
+##### Teraz spojrzmy jak to rozklada sie dla poszczegolnych dni w roku (liczymy unikalne jednostki w danym dniu, niezaleznie od ilosci
+urzadzen uzytych przez dana osobe).
+
+```{r, warning=FALSE, message=FALSE, eval=T}
+library(stringi)
+
+sciezka_raportu_calosc <- file.path(sciezka_zapisu,paste("calosc_unikalne.csv", sep=""))
+
+dane <- read.csv(sciezka_raportu_calosc, stringsAsFactors = F, sep=",", header=T)
+dane1 <- dane[,-4]
+dane1 <- dane1[!duplicated(dane1), ]
+
+#dane %>% group_by(visitor) %>% mutate( count = n()) %>% filter(row_number() == 1) -> aj
+
+dane1 %>% group_by(month, day) %>% mutate( count = n()) %>% filter(row_number() == 1) %>% 
+   mutate(date = as.Date(paste("2013",month, day), format="%Y %b %e")) %>%
+   select(- visitor) -> df_suma_dni
+
+# porzadkuje wg dat
+df_suma_dni <- df_suma_dni[order(df_suma_dni$date),]
+
+# laczna suma unikalnych uzytkownikow (traktowana jako w danym dniu kazda karta to 1 osoba tylko) wyniosla
+sum(df_suma_dni$count)
+
+summary(df_suma_dni$count)
+# min liczba uzytkownikow w jednym dniu to 1, a max 2085.
+
+library(xts)
+razem.xts <- xts(df_suma_dni$count, df_suma_dni$date)
+plot.xts(razem.xts, auto.grid = F, type="l",main = "Wykres ilosci uzytkownikow w poszczegolnych dniach \n w ciagu roku 2013",
+         xlab="", ylab="liczba uzytkownikow")
+lines(razem.xts, col = "blue")
+
+#porzadkuje wg liczby uzytkownikow
+
+#niepopularne dni:
+df_suma_dni <- df_suma_dni[order(df_suma_dni$count),]
+dni_min <- table(weekdays(head(df_suma_dni,50)$date))
+dni_min
+
+#popularne dni:
+dni_max <- table(weekdays(tail(df_suma_dni,50)$date))
+dni_max
+
+#UWAGI:
+#laczna liczba odwiedzajacych w 2013 wyniosla tutaj lekko ponad 300 tys. co nie jest zgodne z rzeczywistoscia (oficjalne wyniki mowia o ponad milionie) - zastanowic sie gdzie jest blad w przetwarzaniu
+```
