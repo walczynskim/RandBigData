@@ -29,7 +29,7 @@ Następnie po wstępnych analizach, zrobiliśmy 4 wykresy:
 * wykres szeregów czasowych dla średniego czasu odwiedzin dla 3 wybranych stacji w ciągu roku
 * wykres słupkowy dla całkowitego czasu użytkowania 3 urządzeń w ciągu dnia w rozbiciu na dni tygodnia.
 
-Wykresy oraz plakat znajdują się w folderze *Plakat*, natomiast kody do tworzenia wykresów w folderze *Kody*.
+Plakat znajduje się w folderze *Plakat*, natomiast kody do tworzenia wykresów w folderze *Kody*.
 
 
 
