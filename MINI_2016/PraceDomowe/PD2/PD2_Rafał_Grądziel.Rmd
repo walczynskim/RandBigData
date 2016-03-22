@@ -1,0 +1,67 @@
+---
+title: "Praca Domowa 2 - RiBD"
+author: "Rafał Grądziel"
+date: "13 marca 2016"
+output: html_document
+---
+#Wprowadzenie
+
+Nasze zadanie polegało na obliczeniu, ile różnych osób korzystało z danego urządzenia w danym roku - z dokładnościa do tego, iż żadna osoba nie wracała drugi raz do muzeum, aby ponownie z urządzenia skorzystać za pomocą karty z nowym ID.
+
+###Etap Pierwszy
+
+Wpierw zdefiniujmy funkcję pomocniczą, która dla zadanej ścieżki do pliku "*.log" znajduje liczbe różnych użytkowników. 
+
+```{r, pomocnicza, warning=FALSE, message=FALSE}
+library(stringi)
+zlicz <- function(sciezka) {
+   path=stri_paste("D:/RandBigData/exhibits-logs-2011/2013/",sciezka)
+   dane=readLines(con=path)
+   ktore=stri_detect_fixed(dane,"Added visitor") #nowy użytkownik
+   dane2=dane[ktore]
+   numery=stri_extract_first_regex(dane2,"[0-9]{3,}") 
+   #bo pierwszy taki regex to numer ID karty
+   dane4=unique(numery) # w razie gdyby ktos 2 razy skorzystał z urządzenia
+   return(length(dane4))
+}
+
+```
+
+###Etap Drugi
+
+Teraz musimy ztablicować listę ścieżek do pliku, abyśmy mogli skorzystać z naszej funkcji pomocniczej.
+
+```{r, lista, warning=FALSE, message=FALSE, dependson='pomocnicza'}
+lista=list.files("D:\\RandBigData\\exhibits-logs-2011\\2013", recursive = TRUE, )
+tylko_log=stri_detect_fixed(lista,"log") #pomijamy pliki o rozszerzeniu err
+lista2=lista[tylko_log]
+tylko_cnk=stri_detect_fixed(lista2,"cnk") #pomijamy foldery 'failed'
+lista3=lista2[tylko_cnk]
+listanazw=stri_extract_first_regex(lista3,"(?<=)/[a-z0-9]+(?=)/")
+#pierwszym napisem o dlugosci wiekszej niz 3 bylo ID w lista3
+head(listanazw)
+ile=numeric(length(listanazw))
+```
+
+Ostatnia liczba wskazuje nam z ilu plików będziemy czerpać dane.
+
+
+###Etap Trzy
+
+Dla każdej ścieżki zliczmy liczbe różnych użytkowników.
+
+```{r, ile, warning=FALSE, message=FALSE, dependson=c('lista2','pomocnicza')}
+for (i in 1:length(listanazw)) {
+   ile[i]=zlicz(lista3[i])
+}
+c(listanazw[1],ile[1]) #przykład
+```
+
+Mamy już wszystkie dane przeliczone, wystarczy teraz odpowiednio wysumować i Voilà:
+
+```{r, ile2, warning=FALSE, message=FALSE, dependson=c('lista2','pomocnicza','ile')}
+Sumarycznie=lapply(split(ile,listanazw),sum)
+Sumarycznie
+```
+
+W taki oto sposób zliczyliśmy liczbę użytkowników na każdym urządzeniu.
