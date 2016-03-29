@@ -1,0 +1,42 @@
+---
+title: "R1"
+author: "Magdalena Mazurek"
+date: "14 marca 2016"
+output: html_document
+---
+Wczytajmy sobie nasz pkaiet `PogromcyDanych` oraz pakiet pomocniczy `dplyr` i `knitr`:
+
+```{r,echo=FALSE,message=FALSE}
+library(PogromcyDanych)
+library(dplyr)
+library(knitr)
+```
+
+A teraz zróbmy przykładowy wykres oraz tabele.
+
+```{r}
+
+ceny<-auta2012 %>%
+  group_by(Marka) %>%
+    summarise(liczba = n(),srednia_cena=median(Cena.w.PLN)) %>%  
+      arrange(desc(srednia_cena)) 
+
+ceny %>% top_n(10) %>% kable
+```
+
+```{r}
+library(ggplot2)
+
+marki_a <- as.data.frame(ceny)[1:7,1] %>% as.character()
+auta_drogie<-auta2012 %>% filter(Marka %in% marki_a )
+
+
+
+ggplot(auta2012,mapping = aes(x=Marka,y=log(Cena.w.PLN)) )+
+   geom_density()
+
+ggplot(auta_drogie, aes(fill=Marka,Cena.w.PLN),alpha=0.5 )+
+   geom_density(position = position_fill())+
+  coord_trans(x="log10")
+
+```
