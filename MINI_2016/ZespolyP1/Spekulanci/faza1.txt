@@ -1,0 +1,31 @@
+1. Inżynierska jakość kodu R, techniczne rozwiązania, pokonywanie ograniczeń dotyczących ilości danych.
+
+Mogłoby być lepiej.
+
+- Po to poznawaliśmy pakiet knitr by z niego korzystać. Prowadzenie analiz w skryptach R to rozwiązanie z poprzedniego tysiąclecia.
+- Prosiłem aby nie umieszczać polskich znaków w nazwach plików.
+- W pierwszym skrypcie, ścieżka 'D:\\MichaÅ‚\\Matematyka\\MUF\\R i Big Data' powtarza się w 7 różnych miejscach. Powinna być jednym argumentem na początku skryptu. W ten sposób bardzo kłopotliwe byłoby odtworzenie tych wyników na innym komputerze.
+- Brak jakichkolwiek komentarzy i złe nazywanie zmiennych powoduje, że nie sposób zrozumieć co się dzieje np. w skrypcie 'twarze chirnoffa.R'
+- W tym samym skrypcie potrafią używać Panowie na przemian operatorów = i <-, raz otoczonych spacjami a raz nie. Więcej konsekwencji.
+- Co mogą oznaczać nazwy zmiennych takie jak 'ijsp'?
+
+2. Pomysłowość i zaawansowanie metod modelowania danych.
+
+Spróbowali Panowie wielu różnych rzeczy i to na plus.
+Ale brakuje spójności a z przedstawionych rezultatów niewiele wynika. Plakat przypomina zlepek losowo wygenerowanych ładnych obrazków.
+
+
+3. Sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
+
+Bardzo słabo.
+
+- Przedstawienie jakichkolwiek danych za pomocą wykresu tortowego to błąd porównywalny z dzieleniem przez zero!
+- Zupełnie nie rozumiem opisu na wykresie kołowym. Czy kolorem i szerokością zaznaczona jest ta sama cecha? To całkowicie nieczytelny wykres.
+- Nigdzie nie ma opisu tego czym jest 'grupa'. Przez to nie sposób cokolwiek wnioskować.
+- Nie wiem zupełnie jak czytać prawy dolny wykres. Dlaczego na skali są wszystkie kolory tęczy? Czy są grupy 1.5? Dlaczego dla jednej grupy jest kilka kropek?
+- Czy logarytm jest 10, czy 2 czy naturalny? 
+- Po przeczytanie tego plakatu nie potrafię nic powiedzieć o czasie korzystania z urządzeń. Nawet nie wiem w jakich jednostkach ten czas jest przedstawiany.
+- Każdy wykres ma inną wielkość opisów, część jest w ggplot z szarym tłem, część nie wiadomo w czym, zupełnie niespójne.
+- Twarze Chetnoffa, 'Wysokośc twarzy - średnia' ale średnia czego? Podobnie z medianą. Nie wiadomo jakie wartości są przedstawiane.
+- Na niektórych wykresach jest 8 grup na innych 6, dlaczego?
+
