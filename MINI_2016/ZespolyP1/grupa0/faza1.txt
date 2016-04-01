@@ -26,6 +26,7 @@ Ale z punktu widzenia modelarskiego to są tylko średnie i zliczenia. A można 
 
 Nieźle, ale mogłoby być lepiej.
 
+
 - Kolorowe ramki wokół wykresów są zupełnie zbędne. Nie dość że nic nie oznaczają (a wręcz powodują zamęt, bo na wykresach kolory znaczą coś innego), to jeszcze optycznie zmniejszają wykresy, znacznie lepiej już wykorzystać więcej dostępnej przestrzeni. 
 - To że na różnych wykresach kolory odpowiadają tym samym eksponatom to duży plus. Ale więcej konsekwencji. Dlaczego raz kropki są czarne a raz kolorowe? Raz linie są chudsze a raz grubsze?
 - Co to za wniosek 'gdzieniegdzie obserwuje się korelację...', trzeba powiedzieć gdzie się obserwuje a gdzie nie.
