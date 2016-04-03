@@ -5,6 +5,7 @@ library(DT)
 library(dplyr)
 
 sciezka<-getwd()
+sciezka <- "../../../materialy/"
 load(file.path(sciezka,"wynikiDF.rda"))
 
 wynikiDF<-as.data.frame.matrix(wynikiDF)

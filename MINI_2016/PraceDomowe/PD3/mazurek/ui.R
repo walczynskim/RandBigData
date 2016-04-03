@@ -2,7 +2,8 @@ library(shiny)
 library(stringi)
 library(dplyr)
 
-sciezka<-getwd()
+#sciezka<-getwd()
+sciezka <- "../../../materialy/"
 load(file.path(sciezka,"wynikiDF.rda"))
 
 wynikiDF<-as.data.frame.matrix(wynikiDF)
