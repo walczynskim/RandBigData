@@ -1,0 +1,184 @@
+---
+title: "Praca Domowa 1 - Twitter (R i Big Data)"
+author: "Ewa Baranowska"
+date: "6 marca 2016"
+output: html_document
+---
+
+##Autoryzacja 
+
+```{r, warning=FALSE, message=FALSE, eval=T, results='hide',cache=T}
+library(twitteR)
+consumerKey    <- "WYHDmAIe6jraCorsYKVwA4qV0"
+consumerSecret <- "Qs3RaMj9XrDVLSLlOZ23DTTWq5kjVsN1FAiB9KOKtIbjutOcAb"
+access_token   <- "3383457183-aiIif2jgSraGjzvUrLLBmTugNTrKQaQDPiELTSz"
+access_secret  <- "ULwQMSO5hPdkvFbZQOnYEXyaC1lahFSR9iGJ8yR3TgzJ0"
+setup_twitter_oauth(consumerKey, consumerSecret, access_token, access_secret)
+```
+
+
+##Sciaganie tweetow z hashtagiem #Oscars
+
+```{r, warning=FALSE, message=FALSE, cache=T, results='hide'}
+library(twitteR)
+# sciagamy 10000 tweetow od 29.02 (przed Oscarami) do 01.03 (po Oscarach) napisanych po angielsku
+Oscary <- searchTwitter('#oscars', since='2016-02-29', until='2016-03-01', n = 10000, lang="en")
+```
+
+##Zapis tekstow tweetow
+
+```{r, warning=FALSE, message=FALSE, eval=-8, echo=-5, cache=T}
+library(stringi)
+library(twitteR)
+dfOscary <- twListToDF(Oscary) #zamieniamy liste na ramke danych
+Oscary_text <- unique(dfOscary$text) #usuwamy retweety i zapisujemy to jako wektor napisow
+cat("Bedziemy pracowac na tweetach w ilosci: ", length(Oscary_text))
+#str(Oscary_text) # problem z multibyte string
+Oscary_text <- stri_replace_all_regex(Oscary_text,"[^[:graph:]]", " ") # zamiana nie-znakow na spacje
+str(Oscary_text) # zaiste wektor napisow
+df <- subset(dfOscary, !duplicated(dfOscary$text)) # ramka danych bez tych duplikatow
+```
+
+##Czas stworzenia analizowanych tweetow 
+
+####Gala rozpoczynala sie o 8:30 PM EST 28 lutego (podane wyniki cofniete o 5 godzin do tego czasu)
+
+```{r, warning=FALSE, message=FALSE, eval=T, echo=c(-4,-5,-13,-15,-19), cache=T}
+czasy <- df$created
+czasy <- as.POSIXct(czasy, tz="UTC") # czas od UTC ( -5 to czas EST)
+czasy <- czasy -5*60*60 # odjete te 5 godzin by byl tamten czas
+cat("najwczesniejszy tweet z godziny: ", as.character(min(czasy)))
+cat("najpoźniejszy tweet z godziny: ", as.character(max(czasy)))
+ile <- table(czasy) # ile tweetow w danej sekundzie
+razem <- data.frame( czas = names(ile), wystapienia = as.numeric(ile))
+library(xts)
+razem.xts <- xts(razem$wystapienia,as.POSIXct(razem$czas))
+#ends <- endpoints(razem.xts,on='seconds') #bedziemy agregowac po sekundach
+#skumulowane <- period.apply(razem.xts,ends ,sum)
+#head(skumulowane, 6)
+#cat("Ilosc tweetow wzrastala w ciagu tych 3 minut")
+#plot(skumulowane, main = "Wykres ilosci tweetow w czasie (sekundy)")
+cat("Agregacja tweetow w minuty")
+ends <- endpoints(razem.xts,on='minutes') #bedziemy agregowac po minutach
+skumulowane <- period.apply(razem.xts,ends ,sum)
+head(skumulowane, 6)
+cat("Ilosc tweetow wzrastala w rozpatrywanym czasie (tj. dzien po gali, w okolicach godziny 19 (wiadomosci w TV?, czas po pracy?)")
+plot.xts(skumulowane, main = "Wykres ilosci tweetow w czasie (minuty)", auto.grid = F, type="l")
+lines(skumulowane, col = "blue")
+```
+
+##Lokalizacja tych tweetow 
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE, echo=c(-9,-12), cache=T}
+# zapisujemy wspolrzedne tweetow
+where_long <- df$longitude
+where_lat <- df$latitude
+# filtrujemy NA
+where_long <- as.numeric(where_long[!is.na(where_long)])
+where_long
+where_lat <- as.numeric(where_lat[!is.na(where_lat)])
+where_lat
+cat("Mamy", length(where_long), "punktow do zlokalizowania na mapie") # mniej punktow niz tweetow, bo duzo NA
+#wyrysujemy je na mapie
+library(mapproj)
+cat("Czesc punktow ma bardzo zblizone wspolrzedne i zlewaja sie na mapie swiata")
+map(database= "world", col="gray90", fill=TRUE) # tworzymy mape
+coord <- mapproject(where_long, where_lat)  #konwersja punktow na dana projekcje
+points(coord, pch=20, cex=2, col="red") # rysujemy punkty
+```
+
+
+##Czyszczenie tekstow
+
+```{r,warning=FALSE, message=FALSE, eval=TRUE,cache=T}
+library(tm)
+library(stringi)
+Oscary_text <- stri_replace_all_regex(Oscary_text, pattern="�",replacement = " ")
+korpus <- Corpus(VectorSource(Oscary_text))
+korpus <- tm_map(korpus, content_transformer(tolower)) # male litery
+# usuwamy linki https
+korpus <- tm_map(korpus, function(x) stri_replace_all_regex(x, pattern="https[:graph:]*", replacement = " " ))
+korpus <- tm_map(korpus, function(x) stri_replace_all_regex(x, pattern="�", replacement = " " ))
+korpus <- tm_map(korpus, function(x) stri_replace_all_regex(x, pattern="\\\uFFFD", replacement = " " ))
+do_usuniecia <- c(stopwords("en"), "rt", "&amp", "amp") # lista slow do usuniecia
+korpus <- tm_map(korpus, removeWords, do_usuniecia)
+# usuwamy zbedne znaki
+korpus <- tm_map(korpus, function(x) stri_replace_all_regex(x, pattern="[:punct:]", replacement = " "))
+korpus <- tm_map(korpus, stripWhitespace) # usuwamy zbedne spacje
+korpus <- tm_map(korpus, PlainTextDocument) # zmieniamy na odpowiedni format (np. by zadzialalo TermDocumentMatrix())
+
+```
+
+
+##Liczenie frekwencji slow ich wizualizacja
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE, echo=c(-4, -6, -7,-17),cache=T}
+# do wyliczania frekwencji sloW
+tdm_oscary <- TermDocumentMatrix(korpus, control = list(wordLength = c(1, Inf))) 
+frekw_slowa <- findFreqTerms(tdm_oscary, lowfreq=100) # slowa o frekwencji powyzej 100
+cat("Slowa o frekwencji powyzej 100:")
+head(frekw_slowa, 15)
+cat("Jak widac czesc czestych slow zwiazanych bylo z wygrana Leonarda DiCaprio (actor, best, congrats, finally, leo), a takze z wystepem Lady Gagi i Chrisa Rocka")
+# do wykresu
+frekwencje <- rowSums(as.matrix(tdm_oscary)) # liczymy frekwencje slow
+frekwencje <- sort(frekwencje,decreasing = TRUE) # sortujemy slowa po frekwencji
+frekwencje <- frekwencje[-c(1)] # usuwamy oscars, bo pojawia sie w kazdym tweecie i daje zle proporcje wykresu
+frekwencje <- subset(frekwencje[frekwencje!="#oscars"], frekwencje >= 100) # bierzemy do wykresu tylko czeste slowa
+df_frekwencje <- data.frame(frekw = frekwencje,wyraz = names(frekwencje)) # tworz ramke danych z nich
+# porzadkuje malejaco wiersze wg frekwencji
+df_frekwencje$wyraz <- factor(df_frekwencje$wyraz, levels = df_frekwencje$wyraz[order(df_frekwencje$frekw)])
+library(ggplot2)
+cat("Wykres najczestszych slow (poza slowem oscars, ktore pojawialo sie w kazdym tweecie)")
+ggplot(df_frekwencje, aes(x=wyraz, y=frekw))+geom_bar(stat="identity", fill="olivedrab3") + xlab("Wyrazy") + ylab("Frekwencja") + 
+   coord_flip()+theme(text = element_text(size=15)) 
+
+```
+
+##Sprawdzanie skojarzen z konkretnym slowem i mapa skojarzen dla najczestszych slow
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE, cache=T, echo=c(-1,-9,-10,-11)}
+cat("Slowa zwiazane z podanymi:")
+findAssocs(tdm_oscary, "leonardo", corlimit = 0.1)
+findAssocs(tdm_oscary, "racism", corlimit = 0.2)
+findAssocs(tdm_oscary, "gaga", corlimit = 0.2)
+findAssocs(tdm_oscary, "chris", corlimit = 0.1)
+findAssocs(tdm_oscary, "joke", corlimit = 0.18)
+findAssocs(tdm_oscary, "madmax", corlimit = 0.2)
+findAssocs(tdm_oscary, "lgbt", corlimit = 0.2)
+# do pobrania graph i Rgraphviz (niedostepne na CRAN-ie)
+source("http://bioconductor.org/biocLite.R")
+    biocLite("Rgraphviz")
+library(Rgraphviz)
+library(graph)
+frekw_slowa2 <- findFreqTerms(tdm_oscary, lowfreq=100)
+plot(tdm_oscary,term =frekw_slowa2, corThreshold= 0.05,  weighting=T, attrs=list(node=list(fontsize=15, shape="ellipse", fixedsize=FALSE)))
+
+```
+
+# Inne wizualizacje najczestszych slow i ich powiazan
+
+##Chmura slow (worldcloud)
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE,cache=T}
+library(wordcloud)
+tdm_oscary_m <- as.matrix(tdm_oscary)
+frekwencje2 <- sort(rowSums(tdm_oscary_m), decreasing = T)# jeszcze raz liczymy frekwencje, ale teraz operujac na macierzy
+library(RColorBrewer)
+paleta <- brewer.pal(8,"Dark2")
+wordcloud(words = names(frekwencje2), freq= frekwencje2, max.words = 200, random.order = F, colors = paleta, scale=c(8,2))
+```
+   
+##Dendrogram
+
+```{r, warning=FALSE, message=FALSE, eval=TRUE ,cache=T}
+tdm_oscary2 <- removeSparseTerms(tdm_oscary, sparse = 0.95) # usuwa rzadkie, rozproszone slowa
+tdm_oscary2_m <- as.matrix(tdm_oscary2)
+dist_matrix <- dist(scale(tdm_oscary2_m))
+fit <- hclust(dist_matrix, method="ward")
+#plot(fit)
+library(sparcl)
+library(stats)
+y = cutree(fit, 3)
+ColorDendrogram(fit, y, main = "Dendogram dla naszych danych", branchlength = 50, labels = names(y), xlab = "", sub = "")
+
+```
