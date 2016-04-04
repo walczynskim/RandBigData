@@ -13,7 +13,7 @@ Mogłoby być lepiej.
 
 Dodanie wniosków to (oczywiście, choć tylko Państwo to zrobili) dobry pomysł.
 Nie jest jasne po co zielony wykres, skoro jest wykres fioletowy (z większą ilością informacji).
-Z punktu widzenia modelarskiego aż się prosi, by te narysowane szeregi czasowe potraktować jako szeregi czasowe i zrobić na nich stosowną analizę (dekompozycja trendu).
+
 
 
 3. Sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
