@@ -7,7 +7,7 @@ Jako temat drugiej fazy projekty wybraliśmy analizę ścieżek. Przetworzone w 
 Pliki `analiza_sciezek.R`, `sciezki.R` oraz `wybor_sciezek.R` zawierają skrypty wyszukujące drogi przebyte przez poszczególnych użytkowników zapisane w przystępnej
 formie. 
 
-Postanowiliśmy przedstawić jak wygląda ruch po wystawie ReGeneracja, oraz jak najprawdopodobniej przeciętny użytkownik poruszałby się po tej wystawie. Aby móc przedstawić
+Postanowiliśmy pokazać jak wygląda ruch po wystawie ReGeneracja, oraz jak najprawdopodobniej przeciętny użytkownik poruszałby się po tej wystawie. Aby móc przedstawić
 dane z różnych okresów czasowych stworzyliśmy aplikację w Shiny, która wizualizuje ruch po ReGeneracji. Dostępna jest ona pod adresem  https://topolskib.shinyapps.io/CNK_sciezki/.
 Po opis działania aplikacji odsyłam do instrukcji zawartej w samej aplikacji.
 
