@@ -1,0 +1,37 @@
+1. Inżynierska jakość kodu R, techniczne rozwiązania, pokonywanie ograniczeń dotyczących ilości danych.
+
+Nieźle, ale mogłoby być lepiej.
+
+- Kod raczej czytelny i podoba mi się użycie 'getwd()'. 
+- Bardzo brakuje funkcji przez co każdy skrypt to jakiś okropny makaron a bez knitra to brzydki makaron.
+- Po to uczymy się pakietu knitr by z niego korzystać. Prowadzenie analiz w skryptach R to rozwiązanie z poprzedniego tysiąclecia.
+- Jedna pętla for na 90 linii to nieczytelne rozwiązanie. Należy podzielić kod na funkcje, przez co każda pętla / każdy blok instrukcji nie powinien mieć więcej niż jedną stronę tekstu.
+- Copy-Paste trzech linijek
+(> tmp_unik_38 <- cnk38 %>% group_by(dzien_tyg,data,id) %>%  summarise(ile=n())
+l> icznosc_38 <- tmp_unik_38 %>% group_by(dzien_tyg) %>% summarise(n_odwiedz=n())
+> # dzielimy licznosc w danym dniu przez liczbe wszystkich użytkowników w ciagu roku
+> licznosc_38$n_odwiedz<- licznosc_38$n_odwiedz/nrow(tmp_unik_38)*100)
+to błąd porównywalny z dzieleniem przez zero. Żadna linia kodu nie powinna być niepotrzebnie kopiowana.
+
+
+2. Pomysłowość i zaawansowanie metod modelowania danych.
+
+Mogłoby być lepiej.
+
+Podoba mi się próba zachowania choć minimalnej spójności. 
+Ale z punktu widzenia modelarskiego to są tylko średnie i zliczenia. A można przeprowadzić analizę rozkładu / trendu / potraktować te dane jako szereg czasowy i zrobić dekompozycje / potraktować je jako graf i zrobić analizę koszykową, analizę węzłów centralnych w grafie.
+
+
+3. Sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
+
+Nieźle, ale mogłoby być lepiej.
+
+
+- Kolorowe ramki wokół wykresów są zupełnie zbędne. Nie dość że nic nie oznaczają (a wręcz powodują zamęt, bo na wykresach kolory znaczą coś innego), to jeszcze optycznie zmniejszają wykresy, znacznie lepiej już wykorzystać więcej dostępnej przestrzeni. 
+- To że na różnych wykresach kolory odpowiadają tym samym eksponatom to duży plus. Ale więcej konsekwencji. Dlaczego raz kropki są czarne a raz kolorowe? Raz linie są chudsze a raz grubsze?
+- Co to za wniosek 'gdzieniegdzie obserwuje się korelację...', trzeba powiedzieć gdzie się obserwuje a gdzie nie.
+- Warte (zapamiętania) uwagi powinny być jakoś przypisane do wykresów. Teraz czytam pierwszą uwagę i muszę się zastanawiać którego wykresu dotyczy.
+- Co wyniki z prawego dolnego wykresu? są jakieś różnice czy ich nie ma?
+- Niby drobiazg, ale tygodnie w roku numeruje się zazwyczaj od 1 a kończy na 52, a nie od 0 do 51.
+- Na wykresie prawym dolnym sobocie bliżej do piątku niż do niedzieli.
+
