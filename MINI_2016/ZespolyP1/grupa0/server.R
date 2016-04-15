@@ -16,9 +16,16 @@ shinyServer(function(input, output, session) {
    
    output$naj_eksponat <- renderPlot({
       # ramka - sciezka_eksponat
-      wykres_najdluzsza_eksponat(in_rok=input$e_daty_rok,in_miesiac = input$e_daty_miesiac,in_dzien = input$e_daty_dzien)
-
+      wykres<-wykres_najdluzsza_eksponat(in_rok=input$e_daty_rok,in_miesiac = input$e_daty_miesiac,in_dzien = input$e_daty_dzien)
+      wykres[[1]]
    })
+   
+   output$naj_eksponat2 <- renderDataTable({
+      # ramka - sciezka_eksponat
+      wykres<-wykres_najdluzsza_eksponat(in_rok=input$e_daty_rok,in_miesiac = input$e_daty_miesiac,in_dzien = input$e_daty_dzien)
+      wykres[[2]]
+   }, options = list(dom="tp"))
+
 
    output$naj_czas <- renderPlot({
       # ramka - maxczas, maxcza1
@@ -30,12 +37,12 @@ shinyServer(function(input, output, session) {
    
    output$typ <- renderPlot({
       # ramka - typowa_sciezka
-      typowa.dzien(input$t_daty_dzien)
+      typowa.mapa(input$t_daty_rok,input$t_daty_miesiac,input$t_daty_dzien)
    })
    
    output$typ2 <- renderDataTable({
       # ramka - typowa_sciezka
-      typowa.pop(dzien=input$t_daty_dzien,ile=5,kraniec=input$t_zmienna)
+      typowa.pop(input$t_daty_rok,input$t_daty_miesiac,input$t_daty_dzien,ile=5,kraniec=input$t_zmienna)
    }, options = list(dom="tp"))
 
 
@@ -51,5 +58,7 @@ shinyServer(function(input, output, session) {
       wordcloud_urz(in_miesiac = input$w_daty_miesiac,in_rok = input$w_daty_rok)
       
    })
+   
+
    
 })
