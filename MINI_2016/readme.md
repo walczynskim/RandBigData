@@ -47,8 +47,8 @@ Plan spotka&#324; MINI PW:
 * 14 III [knitr](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_raporty.html), [praca z bazami danych](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_pracowac_z_bazami_danych.html), [zabawka](https://github.com/pbiecek/RandBigData/blob/master/MINI_2015/materialy/bazy_danych/zabawka.db)
 * 21 III [Shiny](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/jak_tworzyc_aplikajce.html), [ekstra link 1](http://bit.ly/1LAlBKE), [ekstra link 2](https://github.com/pbiecek/RandBigData/blob/master/MINI_2016/materialy/wynikiDF.rda), [ekstra link 3](https://github.com/pbiecek/RandBigData/blob/master/MINI_2016/materialy/wynikiDF.csv.zip)
 * 22 III [prezentacja projektu 1, faza 1, zamiast zajęć czwartkowych]
-* 4 IV [tworzenie pakietów z R]
-* 11 IV [profilowanie, debugowanie kodu], prezentacja projektu 1, faza 2
+* 4 IV [tworzenie pakietów z R](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pakiety/po_co.html)
+* 11 IV [profilowanie](https://pbiecek.gitbooks.io/przewodnik/content/Programowanie/pazury/profilowanie.html), [debugowanie kodu], prezentacja projektu 1, faza 2
 * 18 IV [zrównoleglanie obliczeń]
 
 * 25 IV [HPC + hydra], prezentacja projektu 1, faza 3 

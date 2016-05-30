@@ -1,0 +1,31 @@
+1. Inżynierska jakość kodu R, techniczne rozwiązania, pokonywanie ograniczeń dotyczących ilości danych.
+
+Jest nieźle, lepiej byłoby gdyby te skrypty wykorzystywały knitra.
+
+- Kody raczej czytelne, może przydałaby się większa spójność w nazewnictwie obiektów, ale nie jest źle 
+- Po to uczymy się knitra by z niego korzystać. Używanie skryptów R z komentarzami po # to rozwiązanie z poprzedniego tysiąclecia.
+- Zaszywanie na sztywno ścieżek w środku skryptu 'C:/Users/E540/Desktop/SMAD/R i Big Data/Projekt 1/' to duże utrudnianie przy reprodukowalności kodu. Parametry powinny być na początku skryptu lub w osobnym pliku (już pomijam fakt, że w różnych plikach są różne ścieżki).
+- Niektóre skrypty 'wykresy_szeregow_czas' zawierają nagłówek z informacją co skrypt robi, inne nie (a to źle)
+
+2. Pomysłowość i zaawansowanie metod modelowania danych.
+
+Mogłoby być lepiej.
+
+Dodanie wniosków to (oczywiście, choć tylko Państwo to zrobili) dobry pomysł.
+Nie jest jasne po co zielony wykres, skoro jest wykres fioletowy (z większą ilością informacji).
+
+
+
+3. Sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
+
+Nieźle.
+
+- Lepiej byłoby dla wykresów (lepiej by wyglądały), gdyby kostki wykresów były tej samej szerokości. Teraz każdy jest innej szerokości. W wielu przypadkach wystarczy legendę przenieść na górę wykresu.
+- Podoba mi się, że użyli Państwo nazw stacji na górnych wykresach, ale dlaczego nie na dolnych wykresach? Czy ta stacja 'Klonowanie' to jedna z '46a/73/44'?
+- Dlaczego eksponaty są nazywane 'stacjami' na lewym dolnym wykresie a 'obiektami' na prawym dolnym? Kolory są też różne bez widocznego powodu.
+- Czy 'Czas użytkowania' o którym mowa na lewym górnym wykresie to 'Całkowity czas użytkowania' (prawy dolny) czy 'średni czas odwiedzin' (lewy dolny) czy jeszcze coś innego. Nazwa sugeruje jeszcze coś innego, ale co takiego?
+- Lewe wykresy mają osie opisane z dużych liter, prawe z małych, dlaczego?
+- wykres po prawej stronie u góry wygląda estetycznie, ale moim zdaniem niewiele można z niego odczytać. Lepiej już by było, gdyby był klasycznym wykresem kalendarzowym - jedna kratka - jeden dzień.
+- Na lewym dolnym wykresie są interesujące 'piki' Ale z czego one wynikają? Czy to artefakt sposobu uśredniania? Czy ta szara linia +-se coś wnosi?
+
+
