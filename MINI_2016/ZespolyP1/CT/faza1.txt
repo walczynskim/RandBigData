@@ -1,0 +1,25 @@
+1. Inżynierska jakość kodu R, techniczne rozwiązania, pokonywanie ograniczeń dotyczących ilości danych.
+
+Nie umieszczono kodów.
+
+2. Pomysłowość i zaawansowanie metod modelowania danych.
+
+Pokazują Panowie gęstości i częstości, ale z punktu widzenia modelarskiego to dopiero początek. Można przeprowadzić analizę trendu / potraktować te dane jako szereg czasowy i zrobić dekompozycje / potraktować je jako graf i zrobić analizę koszykową, analizę węzłów centralnych w grafie.
+
+
+3. Sposób prezentacji wyników, funkcjonalność i czytelność użytych rozwiązań.
+
+Nieźle, ale mogłoby być lepiej.
+
+Użycie pakietu ggplot2 to dobry pomysł, ale więcej uwagi powinni Panowie poświęcić temu co na wykresach jest prezentowane i jak jest prezentowane.
+
+Wykres na dole po lewej:
+- prezentując czas interakcji brakuje jednostki, czy to czas w sekundach czy minutach?
+- na lewym dolnym wykresie przedstawione są skrzypce ale nie wiadomo jaki jest wniosek. Czy te czasy się różnią czy się nie różnią? Dlaczego w każdym dniu maksymalny czas interakcji to 100?
+- prawy górny wykres dotyczy eksponatu cnk19a, czy pozostałe też dotyczą tylko jego czy wszystkich eksponatów? Nie wiadomo a bez tego trudno jakiekolwiek wnioski wyciągnąć.
+- Dlaczego na prawym środkowym wykresie gęstość przedstawiona jest poziomo a na lewym dolnym jako skrzypce? Jeżeli któraś z tych form jest lepsza to należy ją konsekwentnie używać. 
+- Przedstawianie liczby odwiedzin na miesiąc (lewy środkowy wykres) uwydatnia efekt liczby dni w miesiącu. Należałoby te liczby przeskalować na liczbę dni różnych od poniedziałku
+- obecny sposób prezentacji godziny rozpoczęcia interakcji (prawa góra) utrudnia wyciąganie jakichkolwiek wniosków. Są dwa kapelusze, trochę przesunięte, ale wyglądają dosyć podobnie. Są jakieś różnice czy ich nie ma?
+- Na osiach OX gdy są przedstawiane godziny, czasem są w skali do 18 a czasem do 20. Utrudnia to porównywanie wykresów.
+
+
